@@ -83,8 +83,8 @@ body {
     background-color: #007bff;
     background-image: url('img/Design sem nome.jpg');
     background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Ajusta a imagem para cobrir a área */
+    background-position: center; /* Centraliza a imagem */
     color: #fff;
     padding: 200px 0;
     text-align: center;
@@ -226,6 +226,7 @@ body {
         flex-direction: row;
         width: 100%;
         justify-content: center;
+        padding: 0;
     }
 
     .site-nav ul li {
@@ -235,5 +236,20 @@ body {
     .site-nav ul li a {
         padding: 8px 12px;
         font-size: 14px;
+    }
+
+    /* Ajuste da imagem de fundo na seção hero para dispositivos móveis */
+    .hero {
+        background-size: contain; /* Ajusta a imagem para se ajustar dentro da área */
+        background-attachment: scroll; /* Remove o efeito de fixação */
+        padding: 100px 0; /* Ajusta o padding conforme necessário */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
 }
