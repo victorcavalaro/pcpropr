@@ -88,6 +88,7 @@ body {
     color: #fff;
     padding: 200px 0;
     text-align: center;
+    background-repeat: no-repeat; /* Evita repetição da imagem */
 }
 
 .hero-title {
@@ -240,9 +241,10 @@ body {
 
     /* Ajuste da imagem de fundo na seção hero para dispositivos móveis */
     .hero {
-        background-size: contain; /* Ajusta a imagem para se ajustar dentro da área */
+        background-size: cover; /* Mantém a imagem cobrindo a área */
         background-attachment: scroll; /* Remove o efeito de fixação */
         padding: 100px 0; /* Ajusta o padding conforme necessário */
+        background-position: center top; /* Ajusta a posição da imagem */
     }
 
     .hero-title {
