@@ -58,24 +58,24 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Espaçamento entre itens */
 }
 
 .site-nav ul li {
-    display: inline;
+    margin: 0 10px;
 }
 
 .site-nav ul li a {
     text-decoration: none;
     color: #fff;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
+    padding: 8px 16px;
     background-color: #2c2c2c;
-    border-radius: 5%;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .site-nav ul li a:hover {
-    background-color: #333;
+    background-color: #1e1e1e;
 }
 
 /* Profile Section */
