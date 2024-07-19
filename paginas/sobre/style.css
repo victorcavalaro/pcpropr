@@ -1,0 +1,211 @@
+/* Reset de estilos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+    background-color: #242424;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logotipo {
+    height: 50px; /* Ajuste a altura conforme necessário */
+}
+
+.site-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.site-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Espaçamento entre itens */
+}
+
+.site-nav ul li {
+    display: inline;
+}
+
+.site-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    background-color: #2c2c2c;
+    border-radius: 5%;
+}
+
+.site-nav ul li a:hover {
+    background-color: #333;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.profile-details h1 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.profile-details h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  
+}
+
+
+
+
+.profile-details{
+    padding: 10px 10px;
+
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        order: -1; /* Move a logo para cima do menu */
+        margin-bottom: 10px;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .site-nav ul li a {
+        padding: 3px 5px;
+        font-size: 0.9rem;
+    }
+
+    .logotipo {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-details h2 {
+        font-size: 1rem;
+    }
+
+    .profile-details p,
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
