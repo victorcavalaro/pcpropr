@@ -194,20 +194,21 @@ body {
 
     .site-nav {
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* Alterado para row */
         align-items: center;
         width: 100%;
+        justify-content: center; /* Centraliza o menu horizontalmente */
     }
 
     .site-nav ul {
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row; /* Alterado para row */
+        width: auto;
         align-items: center;
     }
 
     .site-nav ul li {
-        margin: 5px 0;
+        margin: 0 5px; /* Ajustado para margens menores */
     }
 
     .site-nav ul li a {
@@ -225,3 +226,4 @@ body {
         padding: 8px 16px;
     }
 }
+
