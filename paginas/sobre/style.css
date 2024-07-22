@@ -30,10 +30,8 @@ body {
 
 .header-inner {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     max-width: 960px;
     margin: 0 auto;
 }
@@ -44,19 +42,16 @@ body {
 }
 
 .logotipo {
-    height: 50px; /* Ajuste a altura conforme necessário */
+    height: 50px;
 }
 
 .site-nav {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 .site-nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
@@ -91,7 +86,6 @@ body {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    
 }
 
 .profile-image img {
@@ -118,24 +112,7 @@ body {
 .profile-details p {
     font-size: 1rem;
     margin-bottom: 20px;
-  
 }
-
-
-
-
-.profile-details{
-    padding: 10px 10px;
-
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
 
 /* Footer */
 .site-footer {
@@ -153,23 +130,18 @@ body {
     }
 
     .logo-container {
-        order: -1; /* Move a logo para cima do menu */
+        order: -1;
         margin-bottom: 10px;
     }
 
     .site-nav ul {
         flex-direction: row;
-        align-items: center;
         gap: 5px;
     }
 
     .site-nav ul li a {
         padding: 3px 5px;
         font-size: 0.9rem;
-    }
-
-    .logotipo {
-        margin-bottom: 10px;
     }
 }
 
@@ -193,8 +165,7 @@ body {
         font-size: 1rem;
     }
 
-    .profile-details p,
-    .contact-info p {
+    .profile-details p {
         font-size: 0.9rem;
     }
 

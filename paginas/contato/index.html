@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/paginas/contato/style.css">
     <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon">
 
+    <!-- Importação da fonte Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-
-<!--menu-->
 <body>
+    <!-- Menu -->
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
@@ -25,61 +25,52 @@
                     <li><a href="/paginas/sobre/index.html">Sobre</a></li>
                     <li><a href="#">Projetos</a></li>
                     <li><a href="/paginas/contato/index.html">Contato</a></li>
-                    
                 </ul>
             </nav>
         </div>
     </header>
-<!--fim menu-->
+    <!-- Fim do Menu -->
 
-
-<!--forma de contato-->
-<section class="rede">
-    <h2 class="contato__titulo">Entre em contato</h2>
+    <!-- Forma de Contato -->
+    <section class="rede">
+        <h2 class="contato__titulo">Entre em contato</h2>
         <div class="contact-container">
-           <!--         
-               <div class="contact-option phone-contact">
-                <a href="tel:+5544999185267" class="contact-button">Numero para contato</a>
-            </div>
-            -->
             <div class="contact-option whatsapp-contact">
                 <a href="https://wa.me/5544999185267" class="contact-button">WhatsApp</a>
             </div>
             <div class="contact-option instagram-contact">
                 <a href="https://www.instagram.com/pcpropr/" class="contact-button">Instagram</a>
-
             </div>
         </div>
-</section>
+    </section>
+    <!-- Fim da Forma de Contato -->
 
+    <!-- Caixa de Pergunta -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Em que posso ajudar?</h2>
+            <form class="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
 
-<!--caixa de pergunta-->
-<section class="contact">
-    <div class="container">
-        <h2 class="section-title">Em que posso ajuda?</h2>
-        <form class="contact-form">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" required>
 
-            <label for="numero">Numero:</label>
-            <input type="numero" id="numero" name="numero" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
 
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <!-- Fim da Caixa de Pergunta -->
 
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-</section>
-
-
-
-<!--rodape-->
+    <!-- Rodapé -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2024 Victor Cavalaro. Todos os direitos reservados.</p>
         </div>
     </footer>
-<!--fim rodape-->
+    <!-- Fim do Rodapé -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Reset de estilos */
+/* Reset de estilos e importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -44,7 +44,7 @@ body {
 }
 
 .logotipo {
-    height: 50px; /* Ajuste a altura conforme necessário */
+    height: 50px;
 }
 
 .site-nav {
@@ -55,8 +55,6 @@ body {
 
 .site-nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
@@ -78,60 +76,55 @@ body {
     background-color: #1e1e1e;
 }
 
-.hero-title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-}
-
-/* About Section */
-.about {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.about-text {
-    font-size: 1.1rem;
-}
-
-/* Portfolio Section */
-.portfolio {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.portfolio-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
-.portfolio-item {
+/* Forma de Contato */
+.rede {
+    max-width: 600px;
+    margin: 50px auto;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 50px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.portfolio-item-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.contato__titulo {
+    font-size: 2rem;
 }
 
-.portfolio-item-description {
-    font-size: 1rem;
-    color: #666;
+.contact-option {
+    display: flex;
+    justify-content: center;
+    margin: 15px 15px;
 }
 
-/* Contact Section */
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos específicos para cada botão */
+.whatsapp-contact .contact-button {
+    background-color: #25D366;
+}
+
+.whatsapp-contact .contact-button:hover {
+    background-color: #075e54;
+}
+
+.instagram-contact .contact-button {
+    background-color: #f13171;
+}
+
+.instagram-contact .contact-button:hover {
+    background-color: rgb(224, 26, 43);
+}
+
+/* Caixa de Pergunta */
 .contact {
     padding: 60px 0;
     text-align: center;
@@ -184,69 +177,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 15px 0;
-    bottom: 0;
     width: 100%;
-}
-
-/* Estilo dos botões de contato */
-
-/* Estilos para cada opção de contato */
-.rede {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
-}
-
-.contato__titulo {
-    text-align: center;
-}
-
-.contact-option {
-    display: flex;
-    justify-content: center;
-    margin: 15px 15px;
-}
-
-.contact-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Estilos específicos para cada botão */
-/* Botão de ligação */
-.phone-contact .contact-button {
-    background-color: #4CAF50; /* Verde */
-}
-
-.phone-contact .contact-button:hover {
-    background-color: #45a049;
-}
-
-/* Botão para o WhatsApp */
-.whatsapp-contact .contact-button {
-    background-color: #25D366; /* Verde WhatsApp */
-}
-
-.whatsapp-contact .contact-button:hover {
-    background-color: #075e54;
-}
-
-/* Botão para o Instagram */
-.instagram-contact .contact-button {
-    background-color: #f13171; /* Rosa Instagram */
-}
-
-.instagram-contact .contact-button:hover {
-    background-color: rgb(224, 26, 43);
 }
 
 /* Responsividade */
@@ -263,22 +194,20 @@ body {
 
     .site-nav {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
     .site-nav ul {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
-        justify-content: center;
-        padding: 0;
+        align-items: center;
     }
 
     .site-nav ul li {
-        margin: 0 5px;
+        margin: 5px 0;
     }
 
     .site-nav ul li a {
@@ -286,36 +215,13 @@ body {
         font-size: 14px;
     }
 
-    /* Ajuste da imagem de fundo na seção hero para dispositivos móveis */
-    .hero {
-        background-size: cover; /* Mantém a imagem cobrindo a área */
-        background-attachment: scroll; /* Remove o efeito de fixação */
-        padding: 100px 0; /* Ajusta o padding conforme necessário */
-        background-position: center top; /* Ajusta a posição da imagem */
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .portfolio-items {
-        grid-template-columns: 1fr; /* Ajusta para uma coluna em telas pequenas */
-    }
-
-    .contact-form {
-        padding: 20px; /* Ajusta o padding para dispositivos menores */
-    }
-
+    .contact-form,
     .rede {
-        padding: 20px; /* Ajusta o padding para dispositivos menores */
+        padding: 20px;
     }
 
     .contact-button {
-        font-size: 1rem; /* Ajusta o tamanho da fonte para dispositivos menores */
-        padding: 8px 16px; /* Ajusta o padding do botão */
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }

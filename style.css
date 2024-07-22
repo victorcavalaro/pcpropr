@@ -86,7 +86,7 @@ body {
 /* Hero Section */
 .hero {
     background-color: #007bff;
-    background-image: url('/img/imagem\ de\ fundo.jpg');
+    background-image: url('/img/imagem de fundo.jpg');
     background-attachment: fixed;
     background-size: cover; /* Ajusta a imagem para cobrir a área */
     background-position: center; /* Centraliza a imagem */
@@ -105,8 +105,8 @@ body {
     font-size: 1.5rem;
 }
 
-/* About Section */
-.about {
+/* Portfolio Section */
+.portfolio {
     padding: 60px 0;
     text-align: center;
 }
@@ -114,16 +114,6 @@ body {
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 40px;
-}
-
-.about-text {
-    font-size: 1.1rem;
-}
-
-/* Portfolio Section */
-.portfolio {
-    padding: 60px 0;
-    text-align: center;
 }
 
 .portfolio-items {
@@ -149,53 +139,6 @@ body {
     color: #666;
 }
 
-/* Contact Section */
-.contact {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
 /* Footer */
 .site-footer {
     background-color: #333;
@@ -203,7 +146,7 @@ body {
     text-align: center;
     padding: 15px 0;
     width: 100%;
-    position:static;
+    position: static;
 }
 
 /* Responsividade */
