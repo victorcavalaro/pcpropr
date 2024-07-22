@@ -49,7 +49,7 @@ body {
 }
 
 .logotipo {
-    height: 50px; /* Ajuste a altura conforme necessário */
+    height: 50px;
 }
 
 .site-nav {
@@ -86,27 +86,43 @@ body {
 /* Hero Section */
 .hero {
     background-color: #007bff;
-    background-image: url('/img/imagem\ de\ fundo.jpg');
+    background-image: url('/img/fundo\ desfocado.png');
     background-attachment: fixed;
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center; /* Centraliza a imagem */
+    background-size: cover;
+    background-position: center;
     color: #fff;
     padding: 200px 0;
-    text-align: center;
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    text-align: left;
+    background-repeat: no-repeat;
 }
+
+.hero {
+    background-color: #00000094;
+    background-image: url('/img/fundo\ desfocado.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 200px 0;
+    text-align: left;
+    background-repeat: no-repeat;
+}
+
+
 
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
+    margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
+    margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
-/* About Section */
-.about {
+/* Portfolio Section */
+.portfolio {
     padding: 60px 0;
     text-align: center;
 }
@@ -114,16 +130,7 @@ body {
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 40px;
-}
-
-.about-text {
-    font-size: 1.1rem;
-}
-
-/* Portfolio Section */
-.portfolio {
-    padding: 60px 0;
-    text-align: center;
+    
 }
 
 .portfolio-items {
@@ -149,53 +156,6 @@ body {
     color: #666;
 }
 
-/* Contact Section */
-.contact {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
 /* Footer */
 .site-footer {
     background-color: #333;
@@ -203,7 +163,7 @@ body {
     text-align: center;
     padding: 15px 0;
     width: 100%;
-    position:static;
+    position: static;
 }
 
 /* Responsividade */
@@ -243,12 +203,11 @@ body {
         font-size: 14px;
     }
 
-    /* Ajuste da imagem de fundo na seção hero para dispositivos móveis */
     .hero {
-        background-size: cover; /* Mantém a imagem cobrindo a área */
-        background-attachment: scroll; /* Remove o efeito de fixação */
-        padding: 100px 0; /* Ajusta o padding conforme necessário */
-        background-position: center top; /* Ajusta a posição da imagem */
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 100px 0;
+        background-position: center top;
     }
 
     .hero-title {
@@ -257,5 +216,41 @@ body {
 
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-details h2 {
+        font-size: 1rem;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
