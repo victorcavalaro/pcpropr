@@ -13,17 +13,12 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
-    flex: 1;
 }
 
 /* Header */
@@ -81,19 +76,6 @@ body {
 
 .site-nav ul li a:hover {
     background-color: #1e1e1e;
-}
-
-/* Hero Section */
-.hero {
-    background-color: #007bff;
-    background-image: url('/img/imagem\ de\ fundo.jpg');
-    background-attachment: fixed;
-    background-size: cover; /* Ajusta a imagem para cobrir a área */
-    background-position: center; /* Centraliza a imagem */
-    color: #fff;
-    padding: 200px 0;
-    text-align: center;
-    background-repeat: no-repeat; /* Evita repetição da imagem */
 }
 
 .hero-title {
@@ -202,8 +184,69 @@ body {
     color: #fff;
     text-align: center;
     padding: 15px 0;
+    bottom: 0;
     width: 100%;
-    position:static;
+}
+
+/* Estilo dos botões de contato */
+
+/* Estilos para cada opção de contato */
+.rede {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+}
+
+.contato__titulo {
+    text-align: center;
+}
+
+.contact-option {
+    display: flex;
+    justify-content: center;
+    margin: 15px 15px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos específicos para cada botão */
+/* Botão de ligação */
+.phone-contact .contact-button {
+    background-color: #4CAF50; /* Verde */
+}
+
+.phone-contact .contact-button:hover {
+    background-color: #45a049;
+}
+
+/* Botão para o WhatsApp */
+.whatsapp-contact .contact-button {
+    background-color: #25D366; /* Verde WhatsApp */
+}
+
+.whatsapp-contact .contact-button:hover {
+    background-color: #075e54;
+}
+
+/* Botão para o Instagram */
+.instagram-contact .contact-button {
+    background-color: #f13171; /* Rosa Instagram */
+}
+
+.instagram-contact .contact-button:hover {
+    background-color: rgb(224, 26, 43);
 }
 
 /* Responsividade */
@@ -257,5 +300,22 @@ body {
 
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+
+    .portfolio-items {
+        grid-template-columns: 1fr; /* Ajusta para uma coluna em telas pequenas */
+    }
+
+    .contact-form {
+        padding: 20px; /* Ajusta o padding para dispositivos menores */
+    }
+
+    .rede {
+        padding: 20px; /* Ajusta o padding para dispositivos menores */
+    }
+
+    .contact-button {
+        font-size: 1rem; /* Ajusta o tamanho da fonte para dispositivos menores */
+        padding: 8px 16px; /* Ajusta o padding do botão */
     }
 }
