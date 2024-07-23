@@ -168,26 +168,91 @@ body {
     padding: 20px 0;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
-    /* Ajustes para telas menores */
     .header-inner {
-        flex-direction: column;
-    }
-
-    .site-nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    .site-nav ul li {
-        margin: 5px 0;
-    }
-
-    .logotipo {
+    .logo-container {
+        order: -1; /* Move a logo para cima do menu */
         margin-bottom: 10px;
     }
 
-    .service-cards {
-        grid-template-columns: 1fr;
+    .site-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .site-nav ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .site-nav ul li {
+        margin: 0 5px;
+    }
+
+    .site-nav ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .hero {
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 100px 0;
+        background-position: center top;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-details h2 {
+        font-size: 1rem;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
