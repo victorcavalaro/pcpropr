@@ -1,4 +1,4 @@
-/* Reset de estilos */
+/* Reset de estilos e importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -108,8 +108,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -121,136 +119,75 @@ body {
     margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
-/* Portfolio Section */
-.portfolio {
+/* Services Section */
+.services {
     padding: 60px 0;
     text-align: center;
 }
 
-.section-title {
+.services h2 {
     font-size: 2.5rem;
-    margin-bottom: 40px;
-    
+    margin-bottom: 20px;
 }
 
-.portfolio-items {
+.services p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.service-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
 }
 
-.portfolio-item {
+.service-card {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-.portfolio-item-title {
+.service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.portfolio-item-description {
+.service-card p {
     font-size: 1rem;
     color: #666;
 }
 
 /* Footer */
 .site-footer {
-    background-color: #333;
+    background-color: #242424;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
-    width: 100%;
-    position: static;
+    padding: 20px 0;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
+    /* Ajustes para telas menores */
     .header-inner {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .logo-container {
-        order: -1; /* Move a logo para cima do menu */
-        margin-bottom: 10px;
-    }
-
-    .site-nav {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
     }
 
     .site-nav ul {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-        padding: 0;
+        flex-direction: column;
+        align-items: center;
     }
 
     .site-nav ul li {
-        margin: 0 5px;
+        margin: 5px 0;
     }
 
-    .site-nav ul li a {
-        padding: 8px 12px;
-        font-size: 14px;
+    .logotipo {
+        margin-bottom: 10px;
     }
 
-    .hero {
-        background-size: cover;
-        background-attachment: scroll;
-        padding: 100px 0;
-        background-position: center top;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .profile-image img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-details h1 {
-        font-size: 1.5rem;
-    }
-
-    .profile-details h2 {
-        font-size: 1rem;
-    }
-
-    .profile-details p {
-        font-size: 0.9rem;
-    }
-
-    .logo-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .site-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    .service-cards {
+        grid-template-columns: 1fr;
     }
 }
