@@ -47,6 +47,12 @@ body {
     height: 50px;
 }
 
+.logotipo:hover{
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    padding: 1px ;
+}
+
 .site-nav {
     display: flex;
     flex-direction: row;
