@@ -1,13 +1,14 @@
-/* Reset de estilos e importação da fonte */
+/*Reset de estilos e importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/*configuração padrão da pagina do site, ele aplica a tudo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais */
+/*Estilos gerais da pagina*/
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -19,6 +20,7 @@ body {
     margin: 0;
 }
 
+/*classe do menu*/
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -26,13 +28,14 @@ body {
     flex: 1;
 }
 
-/* Header */
+/*classe da logo (cor da barra do menu e da letra e o tamanho da letra )*/
 .site-header {
     background-color: #242424;
     color: #fff;
     padding: 10px 0;
 }
 
+/*classe da logo (determina as posições dos botões e logo) */
 .header-inner {
     display: flex;
     flex-direction: row;
@@ -43,28 +46,32 @@ body {
     margin: 0 auto;
 }
 
+/*classe da logo (determina o tamanho do botão da nuvem)*/
 .logo-container {
     display: flex;
     align-items: center;
-
 }
 
+/*classe da logo determina o tamanho da imagem da nuvem */
 .logotipo {
     height: 50px;
-   
 }
 
+/*classe da logo (faz com que o botão mude de cor quando passa o mouse em cima)*/
 .logotipo:hover{
     background-color: #2c2c2c;
     border-radius: 5px;
     padding: 1px ;
 }
+
+/*classe menu ()*/
 .site-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+/*classe menu (faz com que o menu fique na horizontal)*/
 .site-nav ul {
     list-style-type: none;
     margin: 0;
@@ -72,10 +79,12 @@ body {
     display: flex;
 }
 
+/*classe menu (espaçamento entre os botões)*/
 .site-nav ul li {
     margin: 0 10px;
 }
 
+/*classe menu (estilização do botão)*/
 .site-nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -86,11 +95,12 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/*classe menu (faz com que o botão mude de cor ao passar o mouse)*/
 .site-nav ul li a:hover {
     background-color: #1e1e1e;
 }
 
-/* Hero Section */
+/*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
 .hero {
     background-color: #007bff;
     background-image: url('/img/fundo\ desfocado.png');
@@ -103,52 +113,46 @@ body {
     background-repeat: no-repeat;
 }
 
-.hero {
-    background-color: #00000094;
-    background-image: url('/img/fundo\ desfocado.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 200px 0;
-    text-align: left;
-    background-repeat: no-repeat;
-}
-
+/*classe imagem de fundo (formatação do texto central "titulo")*/
 .hero-title {
     font-size: 3rem;
     margin-bottom: 20px;
     margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
+/*classe imagem de fundo (formatação do texto central "subtitulo")*/
 .hero-subtitle {
     font-size: 1.5rem;
     margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
-/* Services Section */
+/*classe cards (orientação do texto (titulo e subtitulo))*/
 .services {
     padding: 60px 0;
     text-align: center;
 }
 
+/*classe cards (tamnho da fonte (titulo e subtitulo))*/
 .services h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
+/*classe cards (define um padrão para todas as tags p dentro do service)*/
 .services p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 40px;
 }
 
+/*classe cards (determina o tamnho e padrão dos cards)*/
 .service-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
 }
 
+/*classe cards (define as configurações do texto dentro do card)*/
 .service-card {
     background-color: #fff;
     padding: 20px;
@@ -157,17 +161,32 @@ body {
     text-align: left;
 }
 
+/*classe cards (faz o card trocar de cor ao passa o mouse em cima do card)*/
+.service-card:hover{
+    background-color: #000;
+    color:white
+}
+
+/*classe cards (faz com que as litras do paragrafo troca de cor ao passa o mouse em cima)*/
+.service-card:hover p{
+    background-color: #000;
+    color:rgb(192, 192, 192)
+}
+
+/*classe cards (define o tamanho da letra do titulo do card e sua posição*/
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+     
 }
 
+/*classe cards (determina o tamnho da letra e a cor na tag p)*/
 .service-card p {
     font-size: 1rem;
     color: #666;
 }
 
-/* Footer */
+/*Footer*/
 .site-footer {
     background-color: #242424;
     color: #fff;
@@ -177,89 +196,93 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    /* Aplica estilos quando a largura da tela é de até 768px (dispositivos móveis e tablets) */
+
     .header-inner {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Alinha os itens dentro do header verticalmente */
+        align-items: center; /* Centraliza os itens dentro do header */
     }
 
     .logo-container {
         order: -1; /* Move a logo para cima do menu */
-        margin-bottom: 10px;
+        margin-bottom: 10px; /* Adiciona margem inferior de 10px abaixo da logo */
     }
 
     .site-nav {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
+        display: flex; /* Define o menu de navegação como flexbox */
+        flex-direction: row; /* Alinha os itens do menu em uma linha */
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem para uma nova linha se necessário */
+        justify-content: center; /* Centraliza os itens do menu horizontalmente */
+        width: 100%; /* Define a largura do menu como 100% */
     }
 
     .site-nav ul {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-        padding: 0;
+        display: flex; /* Define a lista de navegação como flexbox */
+        flex-direction: row; /* Alinha os itens da lista em uma linha */
+        width: 100%; /* Define a largura da lista como 100% */
+        justify-content: center; /* Centraliza os itens da lista horizontalmente */
+        padding: 0; /* Remove o padding da lista */
     }
 
     .site-nav ul li {
-        margin: 0 5px;
+        margin: 0 5px; /* Adiciona margem de 5px aos lados de cada item da lista */
     }
 
     .site-nav ul li a {
-        padding: 8px 12px;
-        font-size: 14px;
+        padding: 8px 12px; /* Define o padding interno dos links */
+        font-size: 14px; /* Define o tamanho da fonte dos links */
     }
 
     .hero {
-        background-size: cover;
-        background-attachment: scroll;
-        padding: 100px 0;
-        background-position: center top;
+        background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o contêiner */
+        background-attachment: scroll; /* A imagem de fundo se move com o conteúdo */
+        padding: 100px 0; /* Define padding vertical de 100px */
+        background-position: center top; /* Posiciona a imagem de fundo no centro superior */
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Define o tamanho da fonte do título */
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Define o tamanho da fonte do subtítulo */
     }
 }
 
 @media (max-width: 480px) {
+    /* Aplica estilos quando a largura da tela é de até 480px (dispositivos móveis pequenos) */
+
     .profile-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column; /* Alinha os itens do perfil verticalmente */
+        align-items: center; /* Centraliza os itens do perfil */
+        text-align: center; /* Centraliza o texto dentro dos itens do perfil */
     }
 
     .profile-image img {
-        width: 100px;
-        height: 100px;
+        width: 100px; /* Define a largura da imagem do perfil */
+        height: 100px; /* Define a altura da imagem do perfil */
     }
 
     .profile-details h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Define o tamanho da fonte do título do perfil */
     }
 
     .profile-details h2 {
-        font-size: 1rem;
+        font-size: 1rem; /* Define o tamanho da fonte do subtítulo do perfil */
     }
 
     .profile-details p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Define o tamanho da fonte do parágrafo do perfil */
     }
 
     .logo-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Alinha os itens dentro do contêiner da logo verticalmente */
+        align-items: center; /* Centraliza os itens dentro do contêiner da logo */
     }
 
     .site-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: row; /* Alinha os itens da lista de navegação em uma linha */
+        flex-wrap: wrap; /* Permite que os itens da lista quebrem para uma nova linha se necessário */
+        justify-content: center; /* Centraliza os itens da lista horizontalmente */
     }
 }
