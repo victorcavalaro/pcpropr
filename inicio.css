@@ -255,6 +255,7 @@ body {
     .fundoDois_texto {
         width: 100%;
         padding: 10px 20px;
+        text-align: center;
     }
 
     .fundoDois {
@@ -283,6 +284,7 @@ body {
     .fundoDois_texto {
         width: 100%;
         padding: 10px;
+        text-align: center;
     }
 }
 
@@ -304,11 +306,13 @@ body {
 
     .fundoDois_titulo {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .fundoDois_subtitulo {
         font-size: 1rem;
         padding: 10px 0 0 0;
+        text-align: center;
     }
 }
 @media (max-width: 768px) {
