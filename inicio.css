@@ -59,7 +59,6 @@ body {
 
 /*classe da logo (faz com que o botão mude de cor quando passa o mouse em cima)*/
 .logotipo:hover{
-    background-color: #2c2c2c;
     border-radius: 5px;
     padding: 1px ;
 }
@@ -102,8 +101,7 @@ body {
 
 /*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
 .hero {
-    background-color: #007bff;
-    background-image: url('/img/fundo\ desfocado.png');
+    background-image: url('/pcpropr/img/fundo\ desfocado.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -186,6 +184,55 @@ body {
     color: #666;
 }
 
+
+
+.container_fundoDois{
+    padding: 5px 0px;
+}
+
+.container_fundo {
+    background-color: #2c2c2c;
+    display: flex;
+    position: relative;
+    padding: 10px 5px 10px 4px;
+    margin: 0px 183px 10px 214px;
+    border-radius: 10px;
+}
+
+.fundo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: auto;
+}
+
+
+.fundoDois{
+    height: auto;
+    width: 400px;
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+
+.fundoDois_texto{
+    padding: 10px 30px 10px 30px;
+    width: 573px;
+    height: auto;
+}
+
+.fundoDois_titulo{  
+    color: #fff;
+    text-align: justify;
+}
+
+.fundoDois_subtitulo{
+    color: #fff;
+    text-align: justify;
+    padding: 15px 0 0 0;
+}
+
+
+
 /*Footer*/
 .site-footer {
     background-color: #242424;
@@ -193,96 +240,160 @@ body {
     text-align: center;
     padding: 20px 0;
 }
-
 /* Responsividade */
+@media (max-width: 1024px) {
+    .container_fundo {
+        padding: 10px 50px;
+        margin: 0px 20px 10px 20px;
+    }
+    
+    .fundoDois_texto {
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .fundoDois {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
 @media (max-width: 768px) {
-    /* Aplica estilos quando a largura da tela é de até 768px (dispositivos móveis e tablets) */
-
-    .header-inner {
-        flex-direction: column; /* Alinha os itens dentro do header verticalmente */
-        align-items: center; /* Centraliza os itens dentro do header */
+    .container_fundo {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        margin: 10px 20px;
     }
 
-    .logo-container {
-        order: -1; /* Move a logo para cima do menu */
-        margin-bottom: 10px; /* Adiciona margem inferior de 10px abaixo da logo */
+    .fundo {
+        flex-direction: column;
     }
 
-    .site-nav {
-        display: flex; /* Define o menu de navegação como flexbox */
-        flex-direction: row; /* Alinha os itens do menu em uma linha */
-        flex-wrap: wrap; /* Permite que os itens do menu quebrem para uma nova linha se necessário */
-        justify-content: center; /* Centraliza os itens do menu horizontalmente */
-        width: 100%; /* Define a largura do menu como 100% */
+    .fundoDois {
+        width: 100%;
+        max-width: 300px;
     }
 
-    .site-nav ul {
-        display: flex; /* Define a lista de navegação como flexbox */
-        flex-direction: row; /* Alinha os itens da lista em uma linha */
-        width: 100%; /* Define a largura da lista como 100% */
-        justify-content: center; /* Centraliza os itens da lista horizontalmente */
-        padding: 0; /* Remove o padding da lista */
-    }
-
-    .site-nav ul li {
-        margin: 0 5px; /* Adiciona margem de 5px aos lados de cada item da lista */
-    }
-
-    .site-nav ul li a {
-        padding: 8px 12px; /* Define o padding interno dos links */
-        font-size: 14px; /* Define o tamanho da fonte dos links */
-    }
-
-    .hero {
-        background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o contêiner */
-        background-attachment: scroll; /* A imagem de fundo se move com o conteúdo */
-        padding: 100px 0; /* Define padding vertical de 100px */
-        background-position: center top; /* Posiciona a imagem de fundo no centro superior */
-    }
-
-    .hero-title {
-        font-size: 2.5rem; /* Define o tamanho da fonte do título */
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem; /* Define o tamanho da fonte do subtítulo */
+    .fundoDois_texto {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    /* Aplica estilos quando a largura da tela é de até 480px (dispositivos móveis pequenos) */
-
-    .profile-content {
-        flex-direction: column; /* Alinha os itens do perfil verticalmente */
-        align-items: center; /* Centraliza os itens do perfil */
-        text-align: center; /* Centraliza o texto dentro dos itens do perfil */
+    .container_fundo {
+        padding: 10px 10px;
+        margin: 10px 10px;
     }
 
-    .profile-image img {
-        width: 100px; /* Define a largura da imagem do perfil */
-        height: 100px; /* Define a altura da imagem do perfil */
+    .fundoDois {
+        width: 100%;
+        max-width: 250px;
     }
 
-    .profile-details h1 {
-        font-size: 1.5rem; /* Define o tamanho da fonte do título do perfil */
+    .fundoDois_texto {
+        width: 100%;
+        padding: 10px;
     }
 
-    .profile-details h2 {
-        font-size: 1rem; /* Define o tamanho da fonte do subtítulo do perfil */
+    .fundoDois_titulo {
+        font-size: 1.5rem;
+        text-align: center;
     }
 
-    .profile-details p {
-        font-size: 0.9rem; /* Define o tamanho da fonte do parágrafo do perfil */
+    .fundoDois_subtitulo {
+        font-size: 1rem;
+        padding: 10px 0 0 0;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo-container {
-        flex-direction: column; /* Alinha os itens dentro do contêiner da logo verticalmente */
-        align-items: center; /* Centraliza os itens dentro do contêiner da logo */
+        order: -1; /* Move a logo para cima do menu */
+        margin-bottom: 10px;
+    }
+
+    .site-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 
     .site-nav ul {
-        flex-direction: row; /* Alinha os itens da lista de navegação em uma linha */
-        flex-wrap: wrap; /* Permite que os itens da lista quebrem para uma nova linha se necessário */
-        justify-content: center; /* Centraliza os itens da lista horizontalmente */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .site-nav ul li {
+        margin: 0 5px;
+    }
+
+    .site-nav ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .hero {
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 100px 0;
+        background-position: center top;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-details h2 {
+        font-size: 1rem;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

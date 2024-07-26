@@ -53,7 +53,6 @@ body {
 }
 
 .logotipo:hover{
-    background-color: #2c2c2c;
     border-radius: 5px;
     padding: 1px ;
 }
@@ -92,7 +91,7 @@ body {
 /* Hero Section */
 .hero {
     background-color: #000000;
-    background-image: url('/img/fundo\ projeto.png');
+    background-image: url('/pcpropr/img/fundo\ projeto.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
