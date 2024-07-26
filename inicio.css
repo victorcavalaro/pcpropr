@@ -101,7 +101,9 @@ body {
 
 /*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
 .hero {
+
     background-image: url('/img/fundo\ desfocado.png');
+
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -188,12 +190,14 @@ body {
     padding: 5px 0px;
 }
 
-.container_fundo{
+.container_fundo {
     background-color: #2c2c2c;
     display: flex;
     position: relative;
+
     padding: 10px 10px 10px 10px;
     margin: 0px 434px 10px 440px;
+
     border-radius: 10px;
 }
 
@@ -203,6 +207,8 @@ body {
     align-items: center;
     padding: auto;
 }
+
+
 
 .fundoDois{
     height: auto;
@@ -227,6 +233,7 @@ body {
     text-align: justify;
     padding: 15px 0 0 0;
 }
+
 
 /*Footer*/
 .site-footer {
