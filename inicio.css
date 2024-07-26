@@ -101,7 +101,6 @@ body {
 
 /*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
 .hero {
-    background-color: #007bff;
     background-image: url('/img/fundo\ desfocado.png');
     background-attachment: fixed;
     background-size: cover;
