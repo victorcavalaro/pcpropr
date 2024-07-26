@@ -184,8 +184,6 @@ body {
     color: #666;
 }
 
-
-
 .container_fundoDois{
     padding: 5px 0px;
 }
@@ -194,8 +192,8 @@ body {
     background-color: #2c2c2c;
     display: flex;
     position: relative;
-    padding: 10px 575px 10px 3px;
-    margin: 0px 430px 10px 440px;
+    padding: 10px 10px 10px 10px;
+    margin: 0px 434px 10px 440px;
     border-radius: 10px;
 }
 
@@ -204,12 +202,6 @@ body {
     flex-direction: row;
     align-items: center;
     padding: auto;
-}
-
-.fundo:hover{
-    background-color: #353535;
-    border-radius: 10px;
-    padding: 0px 10px 0px 10px;
 }
 
 .fundoDois{
@@ -236,7 +228,6 @@ body {
     padding: 15px 0 0 0;
 }
 
-
 /*Footer*/
 .site-footer {
     background-color: #242424;
@@ -244,8 +235,87 @@ body {
     text-align: center;
     padding: 20px 0;
 }
-/* Responsividade */
-@media (max-width: 1024px) {
+
+/* Responsividade para Monitores Grandes (>=1200px) */
+
+@media (max-width: 1200px) {
+    .container_fundo {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        margin: 10px 20px;
+    }
+
+    .fundo {
+        flex-direction: column;
+    }
+
+    .fundoDois {
+        width: 100%;
+        max-width: 600px; /* Ajuste o valor conforme necessário */
+    }
+
+    .fundoDois_texto {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        order: -1; /* Move a logo para cima do menu */
+        margin-bottom: 10px;
+    }
+
+    .site-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .site-nav ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .site-nav ul li {
+        margin: 0 5px;
+    }
+
+    .site-nav ul li a {
+        padding: 8px 12px;
+        font-size: 16px; /* Ajuste o valor conforme necessário */
+    }
+
+    .hero {
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Ajuste o valor conforme necessário */
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem; /* Ajuste o valor conforme necessário */
+    }
+}
+
+
+
+/* Responsividade para Laptops (>=992px) */
+@media (max-width: 992px) {
     .container_fundo {
         padding: 10px 50px;
         margin: 0px 20px 10px 20px;
@@ -263,6 +333,7 @@ body {
     }
 }
 
+/* Responsividade para Tablets (>=768px) */
 @media (max-width: 768px) {
     .container_fundo {
         flex-direction: column;
@@ -285,36 +356,7 @@ body {
         padding: 10px;
         text-align: center;
     }
-}
 
-@media (max-width: 480px) {
-    .container_fundo {
-        padding: 10px 10px;
-        margin: 10px 10px;
-    }
-
-    .fundoDois {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .fundoDois_texto {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .fundoDois_titulo {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .fundoDois_subtitulo {
-        font-size: 1rem;
-        padding: 10px 0 0 0;
-        text-align: center;
-    }
-}
-@media (max-width: 768px) {
     .header-inner {
         flex-direction: column;
         align-items: center;
@@ -352,52 +394,47 @@ body {
 
     .hero {
         background-size: cover;
-        background-attachment: scroll;
+        background-position: center;
         padding: 100px 0;
-        background-position: center top;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
+/* Responsividade para Dispositivos Móveis (>=480px) */
 @media (max-width: 480px) {
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .container {
+        padding: 0 10px;
     }
 
-    .profile-image img {
-        width: 100px;
-        height: 100px;
+    .hero {
+        padding: 80px 0;
     }
 
-    .profile-details h1 {
+    .hero-title {
         font-size: 1.5rem;
     }
 
-    .profile-details h2 {
-        font-size: 1rem;
+    .hero-subtitle {
+        font-size: 0.875rem;
     }
 
-    .profile-details p {
-        font-size: 0.9rem;
+    .service-card {
+        padding: 15px;
     }
 
-    .logo-container {
-        flex-direction: column;
-        align-items: center;
+    .service-card h3 {
+        font-size: 1.25rem;
     }
 
-    .site-nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    .service-card p {
+        font-size: 0.875rem;
     }
 }
