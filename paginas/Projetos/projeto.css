@@ -91,7 +91,7 @@ body {
 /* Hero Section */
 .hero {
     background-color: #000000;
-    background-image: url('/pcpropr/img/fundo\ projeto.png');
+    background-image: url('/img/fundo\ projeto.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
