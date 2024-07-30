@@ -38,12 +38,12 @@ body {
 .hero-title {
     font-size: 3rem;
     margin-bottom: 15px;
-    margin-left: 20px; /* Adiciona uma leve distância da borda */
+    margin-left: 5px; /* Adiciona uma leve distância da borda */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-left: 20px; /* Adiciona uma leve distância da borda */
+    margin-left: 5px; /* Adiciona uma leve distância da borda */
     color: #d8d8d8;
 }
 
@@ -84,8 +84,8 @@ body {
 }
 
 .about-content {
-    padding: 40px;
-    flex:auto;
+    padding: 4px 40px 5px 40px;
+    flex: auto;
 }
 
 .about-content h2 {
