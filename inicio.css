@@ -300,6 +300,7 @@ body {
         background-size: cover;
         background-position: center;
         padding: 100px 0;
+        background-image: url('/img/fundo\ desfocado.png');
     }
 
     .hero-title {
@@ -396,6 +397,7 @@ body {
         background-size: cover;
         background-position: center;
         padding: 100px 0;
+        background-image: url('/img/fundo\ desfocado.png');
     }
 
     .hero-title {
@@ -416,6 +418,7 @@ body {
 
     .hero {
         padding: 80px 0;
+        background-image: url('/img/fundo\ desfocado.png');
     }
 
     .hero-title {
