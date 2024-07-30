@@ -81,10 +81,11 @@ body {
     height: auto;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(0.1, 0, 0, 0.1);
+    padding: 25px 10px 10px 10px;
 }
 
 .about-content {
-    padding: 4px 40px 5px 40px;
+    padding: 4px 40px 20px 40px;
     flex: auto;
 }
 

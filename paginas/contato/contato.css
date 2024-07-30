@@ -169,6 +169,7 @@ body {
     margin: 0;
 }
 
+
 .card .btn {
     display: inline-block;
     margin-top: 10px;
@@ -180,8 +181,12 @@ body {
     transition: background-color 0.3s ease;
 }
 
+
+
 .card .btn:hover {
-    background-color: #0056b3;
+    background-color: #007bffee;
+    color: #ddd;
+
 }
 
 /* Imagem e Descrição */
