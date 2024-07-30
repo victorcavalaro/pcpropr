@@ -421,6 +421,9 @@ body {
     .hero-title {
         font-size: 1.5rem;
     }
+    .services h2{
+        font-size: 25px;
+    }
 
     .hero-subtitle {
         font-size: 0.875rem;
