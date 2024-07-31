@@ -156,6 +156,7 @@ body {
     text-align: center;
     flex: 1;
     min-width: 200px;
+    display: grid;
 }
 
 .card h3 {
