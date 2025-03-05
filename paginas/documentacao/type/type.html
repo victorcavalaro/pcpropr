@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pcpropr - Documentação TypeScript</title>
+    <link rel="stylesheet" href="/paginas/documentacao/type/type.css" />
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+                    <li><a href="/paginas/Projetos/index.html">Projetos</a></li>
+                    <li><a href="/paginas/contato/index.html">Contato</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <section class="content-section">
+            <h1>TypeScript: Documentação Completa</h1>
+
+            <!-- Introdução ao TypeScript -->
+            <h2>Introdução ao TypeScript</h2>
+            <p>
+                O TypeScript é uma extensão do JavaScript desenvolvida pela Microsoft, projetada para adicionar tipagem estática e recursos avançados ao ecossistema JavaScript. Ele é um superset do JavaScript, o que significa que todo código JavaScript válido também é válido em TypeScript. No entanto, o TypeScript traz benefícios adicionais, como:
+            </p>
+            <ul>
+                <li><strong>Tipagem Estática:</strong> Permite definir tipos para variáveis, funções e objetos, ajudando a detectar erros durante o desenvolvimento.</li>
+                <li><strong>Melhor Suporte a Ferramentas:</strong> Facilita a autocompletar, refatoração e navegação no código.</li>
+                <li><strong>Compatibilidade com JavaScript:</strong> O código TypeScript é compilado para JavaScript puro, garantindo compatibilidade com qualquer ambiente que execute JavaScript.</li>
+            </ul>
+            <p>
+                Com o TypeScript, você pode escrever código mais seguro, escalável e fácil de manter, especialmente em projetos de grande porte.
+            </p>
+
+            <!-- Para que serve o TypeScript? -->
+            <h2>Para que serve o TypeScript?</h2>
+            <p>
+                O TypeScript é amplamente utilizado para melhorar a qualidade e a produtividade no desenvolvimento de aplicações JavaScript. Aqui estão alguns dos principais benefícios:
+            </p>
+            <ul>
+                <li><strong>Detecção de Erros em Tempo de Compilação:</strong> A tipagem estática ajuda a identificar erros antes mesmo de executar o código.</li>
+                <li><strong>Código Mais Legível e Organizado:</strong> A definição de tipos e interfaces torna o código mais claro e fácil de entender.</li>
+                <li><strong>Refatoração Segura:</strong> Com tipos bem definidos, é mais seguro fazer mudanças no código sem introduzir bugs.</li>
+                <li><strong>Suporte a Recursos Modernos:</strong> O TypeScript permite usar funcionalidades do ES6+ (como classes, módulos e arrow functions) em ambientes que ainda não suportam essas versões do JavaScript.</li>
+            </ul>
+            <p>
+                Ele é especialmente popular em frameworks como Angular, React e Vue.js, além de ser uma excelente escolha para back-ends em Node.js.
+            </p>
+
+            <!-- Aplicação prática do TypeScript -->
+            <h2>Aplicação prática do TypeScript</h2>
+            <p>
+                O TypeScript pode ser aplicado em diversos cenários de desenvolvimento, incluindo:
+            </p>
+            <ul>
+                <li><strong>Desenvolvimento Web:</strong> Criação de aplicações front-end e back-end com tipagem estática e organização de código.</li>
+                <li><strong>Desenvolvimento Mobile:</strong> Uso com frameworks como React Native para criar aplicativos móveis tipados e robustos.</li>
+                <li><strong>Desenvolvimento de Bibliotecas:</strong> Criação de pacotes tipados que facilitam a integração e o uso por outros desenvolvedores.</li>
+                <li><strong>Jogos e Ferramentas:</strong> Implementação em engines como Babylon.js para desenvolvimento de jogos e ferramentas gráficas.</li>
+            </ul>
+            <p>
+                Em resumo, o TypeScript é uma ferramenta versátil que pode ser usada em praticamente qualquer projeto JavaScript.
+            </p>
+
+            <!-- Instalação -->
+            <h2>Instalação</h2>
+            <p>
+                Para começar a usar o TypeScript, você precisa instalá-lo globalmente em sua máquina. Abaixo estão os passos para instalação:
+            </p>
+            <pre><code>npm install -g typescript</code></pre>
+            <p>
+                Após a instalação, você pode verificar a versão instalada com o seguinte comando:
+            </p>
+            <pre><code>tsc --version</code></pre>
+            <p>
+                Isso garantirá que o TypeScript esteja pronto para uso em seu ambiente de desenvolvimento.
+            </p>
+
+            <!-- Tipagem Estática -->
+            <h2>Tipagem Estática</h2>
+            <p>
+                Uma das principais características do TypeScript é a tipagem estática. Isso significa que você pode definir explicitamente os tipos de variáveis, parâmetros de funções e valores de retorno. Veja um exemplo:
+            </p>
+            <pre><code>let nome: string = "João";
+let idade: number = 25;
+let ativo: boolean = true;</code></pre>
+            <p>
+                Com a tipagem estática, o TypeScript ajuda a evitar erros comuns, como atribuir um valor do tipo errado a uma variável.
+            </p>
+
+            <!-- Inferência de Tipo -->
+            <h2>Inferência de Tipo</h2>
+            <p>
+                O TypeScript é inteligente o suficiente para inferir tipos automaticamente quando você não os declara explicitamente. Por exemplo:
+            </p>
+            <pre><code>let cidade = "São Paulo"; // TypeScript infere que "cidade" é do tipo string</code></pre>
+            <p>
+                Isso torna o código mais limpo, mas ainda mantém a segurança de tipos.
+            </p>
+
+            <!-- Tipos Primitivos -->
+            <h2>Tipos Primitivos</h2>
+            <p>
+                O TypeScript suporta os tipos primitivos básicos do JavaScript, além de alguns tipos adicionais. Aqui estão os principais:
+            </p>
+            <ul>
+                <li>string: Representa valores de texto, como "Olá, mundo!".</li>
+                <li>number: Representa números inteiros ou decimais, como 42 ou 3.14.</li>
+                <li>boolean: Representa valores verdadeiros ou falsos (true ou false).</li>
+                <li>null e undefined: Representam a ausência de valor.</li>
+                <li>any: Permite que uma variável receba qualquer tipo de valor, desativando a checagem de tipos.</li>
+                <li>void: Indica que uma função não retorna nenhum valor.</li>
+                <li>never: Representa funções que nunca retornam, como funções que lançam exceções ou entram em loops infinitos.</li>
+            </ul>
+
+            <!-- Estruturas de Dados -->
+            <h2>Estruturas de Dados</h2>
+            <p>
+                O TypeScript oferece suporte a várias estruturas de dados, como arrays, tuplas e enums. Veja exemplos abaixo:
+            </p>
+
+            <h3>Arrays</h3>
+            <pre><code>let numeros: number[] = [1, 2, 3];
+let strings: Array&lt;string&gt; = ["a", "b", "c"];</code></pre>
+
+            <h3>Tuplas</h3>
+            <pre><code>let tupla: [string, number] = ["João", 30];</code></pre>
+
+            <h3>Enums</h3>
+            <pre><code>enum Cores {
+  Vermelho,
+  Verde,
+  Azul
+}
+let corFavorita: Cores = Cores.Verde;</code></pre>
+
+            <!-- Objetos e Interfaces -->
+            <h2>Objetos e Interfaces</h2>
+            <p>
+                Em TypeScript, você pode definir a estrutura de objetos usando interfaces. Isso ajuda a garantir que os objetos sigam um formato específico.
+            </p>
+
+            <h3>Definição de Objetos</h3>
+            <pre><code>let pessoa: { nome: string; idade: number } = {
+  nome: "Maria",
+  idade: 28
+};</code></pre>
+
+            <h3>Interfaces</h3>
+            <pre><code>interface Pessoa {
+  nome: string;
+  idade: number;
+}
+let usuario: Pessoa = { nome: "Carlos", idade: 35 };</code></pre>
+
+            <!-- Funções -->
+            <h2>Funções</h2>
+            <p>
+                Funções em TypeScript podem ter tipos definidos para parâmetros e valores de retorno. Isso ajuda a garantir que a função seja usada corretamente.
+            </p>
+            <pre><code>function somar(a: number, b: number): number {
+  return a + b;
+}</code></pre>
+
+            <h3>Parâmetros Opcionais e Padrão</h3>
+            <pre><code>function saudacao(nome: string = "Visitante", idade?: number) {
+  return `Olá, ${nome}!`;
+}</code></pre>
+
+            <!-- Classes e POO -->
+            <h2>Classes e POO</h2>
+            <p>
+                O TypeScript suporta programação orientada a objetos (POO) com classes, herança e modificadores de acesso.
+            </p>
+            <pre><code>class Animal {
+  nome: string;
+  constructor(nome: string) {
+    this.nome = nome;
+  }
+  falar(): void {
+    console.log(`${this.nome} faz um som.`);
+  }
+}
+class Cachorro extends Animal {
+  latir(): void {
+    console.log(`${this.nome} late!`);
+  }
+}
+let dog = new Cachorro("Rex");
+dog.falar();
+dog.latir();</code></pre>
+
+            <!-- Generics -->
+            <h2>Generics</h2>
+            <p>
+                Generics permitem criar componentes reutilizáveis que funcionam com qualquer tipo de dado.
+            </p>
+            <pre><code>function identidade&lt;T&gt;(valor: T): T {
+  return valor;
+}
+let numero = identidade&lt;number&gt;(10);
+let texto = identidade&lt;string&gt;("Oi");</code></pre>
+
+            <!-- Modificadores de Acesso -->
+            <h2>Modificadores de Acesso</h2>
+            <p>
+                O TypeScript oferece modificadores de acesso para controlar a visibilidade de propriedades e métodos:
+            </p>
+            <ul>
+                <li>public: Acessível de qualquer lugar (padrão).</li>
+                <li>private: Acessível apenas dentro da classe.</li>
+                <li>protected: Acessível na classe e subclasses.</li>
+            </ul>
+            <pre><code>class Conta {
+  private saldo: number = 0;
+  depositar(valor: number) {
+    this.saldo += valor;
+  }
+}</code></pre>
+
+            <!-- Palavras Reservadas do TypeScript -->
+            <h2>Palavras Reservadas do TypeScript</h2>
+            <p>
+                Aqui está uma lista das principais palavras reservadas do TypeScript e suas definições:
+            </p>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Palavra-chave</th>
+                        <th>Definição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Palavras Reservadas do TypeScript -->
+<h2>Palavras Reservadas do TypeScript e suas Definições</h2>
+<p>
+    Aqui está uma lista das principais palavras reservadas do TypeScript e suas definições:
+</p>
+<table class="content-table">
+    <tbody>
+        <tr>
+            <td>abstract</td>
+            <td>Define uma classe abstrata que não pode ser instanciada diretamente.</td>
+        </tr>
+        <tr>
+            <td>as</td>
+            <td>Faz um type assertion (conversão de tipo).</td>
+        </tr>
+        <tr>
+            <td>async</td>
+            <td>Define uma função assíncrona.</td>
+        </tr>
+        <tr>
+            <td>await</td>
+            <td>Aguarda a resolução de uma Promise.</td>
+        </tr>
+        <tr>
+            <td>break</td>
+            <td>Interrompe um loop ou switch.</td>
+        </tr>
+        <tr>
+            <td>case</td>
+            <td>Define um caso dentro de um switch.</td>
+        </tr>
+        <tr>
+            <td>catch</td>
+            <td>Captura erros em um bloco try-catch.</td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>Define uma classe.</td>
+        </tr>
+        <tr>
+            <td>const</td>
+            <td>Declara uma constante.</td>
+        </tr>
+        <tr>
+            <td>continue</td>
+            <td>Pula para a próxima iteração de um loop.</td>
+        </tr>
+        <tr>
+            <td>debugger</td>
+            <td>Pausa a execução para depuração.</td>
+        </tr>
+        <tr>
+            <td>default</td>
+            <td>Define um caso padrão em um switch.</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>Remove propriedades de um objeto.</td>
+        </tr>
+        <tr>
+            <td>do</td>
+            <td>Executa um bloco de código pelo menos uma vez antes de verificar a condição do loop.</td>
+        </tr>
+        <tr>
+            <td>else</td>
+            <td>Define um bloco de código alternativo para um if.</td>
+        </tr>
+        <tr>
+            <td>enum</td>
+            <td>Declara um conjunto de valores nomeados.</td>
+        </tr>
+        <tr>
+            <td>export</td>
+            <td>Permite exportar funções, variáveis e classes.</td>
+        </tr>
+        <tr>
+            <td>extends</td>
+            <td>Define herança entre classes.</td>
+        </tr>
+        <tr>
+            <td>false</td>
+            <td>Valor booleano falso.</td>
+        </tr>
+        <tr>
+            <td>finally</td>
+            <td>Define um bloco de código que sempre é executado em um try-catch.</td>
+        </tr>
+        <tr>
+            <td>for</td>
+            <td>Estrutura de loop.</td>
+        </tr>
+        <tr>
+            <td>function</td>
+            <td>Declara uma função.</td>
+        </tr>
+        <tr>
+            <td>if</td>
+            <td>Estrutura condicional.</td>
+        </tr>
+        <tr>
+            <td>implements</td>
+            <td>Indica que uma classe implementa uma interface.</td>
+        </tr>
+        <tr>
+            <td>import</td>
+            <td>Importa módulos ou componentes externos.</td>
+        </tr>
+        <tr>
+            <td>in</td>
+            <td>Verifica se um valor existe em um objeto ou estrutura.</td>
+        </tr>
+        <tr>
+            <td>typeof</td>
+            <td>Retorna o tipo de um valor.</td>
+        </tr>
+        <tr>
+            <td>let</td>
+            <td>Declara uma variável de escopo limitado.</td>
+        </tr>
+        <tr>
+            <td>new</td>
+            <td>Cria uma nova instância de um objeto.</td>
+        </tr>
+        <tr>
+            <td>null</td>
+            <td>Representa a ausência de valor.</td>
+        </tr>
+        <tr>
+            <td>private</td>
+            <td>Modificador de acesso privado.</td>
+        </tr>
+        <tr>
+            <td>protected</td>
+            <td>Modificador de acesso protegido.</td>
+        </tr>
+        <tr>
+            <td>public</td>
+            <td>Modificador de acesso público.</td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>Define propriedades somente leitura.</td>
+        </tr>
+        <tr>
+            <td>return</td>
+            <td>Retorna um valor de uma função.</td>
+        </tr>
+        <tr>
+            <td>static</td>
+            <td>Define um método estático em uma classe.</td>
+        </tr>
+        <tr>
+            <td>super</td>
+            <td>Chama o construtor da classe pai.</td>
+        </tr>
+        <tr>
+            <td>switch</td>
+            <td>Estrutura condicional para múltiplos casos.</td>
+        </tr>
+        <tr>
+            <td>this</td>
+            <td>Referencia a própria instância de um objeto.</td>
+        </tr>
+        <tr>
+            <td>throw</td>
+            <td>Lança um erro.</td>
+        </tr>
+        <tr>
+            <td>true</td>
+            <td>Valor booleano verdadeiro.</td>
+        </tr>
+        <tr>
+            <td>try</td>
+            <td>Define um bloco para capturar erros.</td>
+        </tr>
+        <tr>
+            <td>var</td>
+            <td>Declara uma variável global ou de função.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Indica que uma função não retorna valor.</td>
+        </tr>
+        <tr>
+            <td>while</td>
+            <td>Estrutura de loop.</td>
+        </tr>
+        <tr>
+            <td>yield</td>
+            <td>Pausa e retorna um valor de uma função geradora.</td>
+        </tr>
+    </tbody>
+</table>
+            <!-- Conclusão -->
+            <h2>Conclusão</h2>
+            <p>
+                O TypeScript é uma ferramenta poderosa que melhora a produtividade e a qualidade do código JavaScript. Com tipagem estática, suporte a POO, interfaces e módulos, ele é ideal para projetos que exigem robustez, escalabilidade e facilidade de manutenção.
+            </p>
+            <p>
+                Seja para aplicações web, mobile ou back-end, o TypeScript é uma escolha excelente para desenvolvedores que desejam escrever código mais seguro e organizado. Adote o TypeScript e leve seus projetos para o próximo nível!
+            </p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Pcpropr.</p>
+    </footer>
+</body>
+</html>
