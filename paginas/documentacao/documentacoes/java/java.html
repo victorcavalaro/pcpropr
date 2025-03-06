@@ -11,11 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
                 <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
             </div>
+            <!-- Menu de Navegação -->
             <nav class="site-nav">
                 <ul>
                     <li><a href="/index.html">Início</a></li>
@@ -27,13 +29,16 @@
         </div>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main class="container">
         <section class="content-section">
             <h1>Java: Documentação.</h1>
 
+            <!-- Introdução ao Java -->
             <h2>Introdução ao Java</h2>
             <p>Java é uma linguagem de programação orientada a objetos, de alto nível e multiplataforma, amplamente utilizada para desenvolvimento de aplicações empresariais, web, desktop e mobile.</p>
 
+            <!-- Para que serve o Java? -->
             <h2>Para que serve o Java?</h2>
             <ul>
                 <li><strong>Aplicações Web:</strong> Desenvolvimento de sistemas robustos com Spring e Jakarta EE.</li>
@@ -43,29 +48,32 @@
                 <li><strong>IoT e Computação Embarcada:</strong> Dispositivos inteligentes e automação.</li>
             </ul>
 
+            <!-- Instalação -->
             <h2>Instalação</h2>
             <p>Para começar a programar em Java, instale o JDK (Java Development Kit). Baixe a versão mais recente do site oficial da Oracle ou use o OpenJDK:</p>
             <pre><code>sudo apt install openjdk-17-jdk</code></pre>
             <p>Verifique a instalação com:</p>
             <pre><code>java -version</code></pre>
 
+            <!-- Principais Comandos Java -->
             <h2>Principais Comandos Java</h2>
-<table class="content-table">
-    <thead>
-        <tr>
-            <th>Comando</th>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>System.out.println()</td><td>Exibe uma mensagem no console.</td></tr>
-        <tr><td>Scanner input = new Scanner(System.in)</td><td>Recebe entrada do usuário.</td></tr>
-        <tr><td>new</td><td>Cria um novo objeto.</td></tr>
-        <tr><td>extends</td><td>Indica herança entre classes.</td></tr>
-        <tr><td>implements</td><td>Indica implementação de uma interface.</td></tr>
-    </tbody>
-</table>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>System.out.println()</td><td>Exibe uma mensagem no console.</td></tr>
+                    <tr><td>Scanner input = new Scanner(System.in)</td><td>Recebe entrada do usuário.</td></tr>
+                    <tr><td>new</td><td>Cria um novo objeto.</td></tr>
+                    <tr><td>extends</td><td>Indica herança entre classes.</td></tr>
+                    <tr><td>implements</td><td>Indica implementação de uma interface.</td></tr>
+                </tbody>
+            </table>
 
+            <!-- Tipos de Dados -->
             <h2>Tipos de Dados</h2>
             <ul>
                 <li><strong>int:</strong> Números inteiros.</li>
@@ -75,6 +83,7 @@
                 <li><strong>String:</strong> Sequência de caracteres.</li>
             </ul>
 
+            <!-- Exemplo de Código -->
             <h2>Exemplo de Código</h2>
             <pre><code>public class Main {
     public static void main(String[] args) {
@@ -82,6 +91,7 @@
     }
 }</code></pre>
 
+            <!-- Orientada a Objetos -->
             <h2>Orientada a Objetos</h2>
             <p>Java é uma linguagem totalmente orientada a objetos. Isso significa que tudo em Java é um objeto, exceto os tipos primitivos. Os pilares da orientação a objetos são:</p>
             <ul>
@@ -110,6 +120,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Multiplataforma -->
             <h2>Multiplataforma</h2>
             <p>Java é multiplataforma porque o código-fonte é compilado para um formato intermediário chamado <strong>bytecode</strong>, que pode ser executado em qualquer dispositivo que tenha uma <strong>Java Virtual Machine (JVM)</strong>.</p>
             <pre><code>public class Main {
@@ -118,6 +129,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Gerenciamento de Memória -->
             <h2>Gerenciamento de Memória</h2>
             <p>Java possui um sistema de <strong>coleta de lixo (garbage collection)</strong> que gerencia automaticamente a alocação e liberação de memória.</p>
             <pre><code>public class Main {
@@ -129,6 +141,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Biblioteca Padrão Rica -->
             <h2>Biblioteca Padrão Rica</h2>
             <p>A <strong>Java Standard Library</strong> é uma coleção de classes e métodos prontos para uso, como estruturas de dados, manipulação de arquivos, redes e utilitários.</p>
             <pre><code>import java.util.ArrayList;
@@ -142,6 +155,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Segurança -->
             <h2>Segurança</h2>
             <p>Java foi projetado com segurança em mente. A JVM possui um <strong>gerenciador de segurança (Security Manager)</strong> que controla o acesso a recursos do sistema.</p>
             <pre><code>public class Main {
@@ -156,6 +170,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Concorrência -->
             <h2>Concorrência</h2>
             <p>Java possui suporte nativo para programação concorrente, permitindo que múltiplas tarefas sejam executadas simultaneamente.</p>
             <pre><code>public class Main {
@@ -168,6 +183,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Frameworks e Bibliotecas -->
             <h2>Frameworks e Bibliotecas</h2>
             <p>Java possui um ecossistema rico de frameworks e bibliotecas, como Spring, Hibernate e Apache Struts.</p>
             <pre><code>import org.springframework.boot.SpringApplication;
@@ -188,12 +204,15 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Comunidade e Ecossistema -->
             <h2>Comunidade e Ecossistema</h2>
             <p>Java tem uma das maiores comunidades de desenvolvedores do mundo, com muitos recursos de aprendizado, ferramentas de desenvolvimento avançadas e bibliotecas de código aberto.</p>
 
+            <!-- Aplicações -->
             <h2>Aplicações</h2>
             <p>Java é usado em uma ampla variedade de aplicações, desde aplicações web e móveis (Android) até sistemas embarcados e grandes sistemas empresariais.</p>
 
+            <!-- Versões -->
             <h2>Versões</h2>
             <p>Java é atualizado regularmente. A versão mais recente (em outubro de 2023) é o <strong>Java 21</strong>, que trouxe novos recursos como <strong>Pattern Matching</strong>, <strong>Virtual Threads</strong> e <strong>Records</strong>.</p>
             <pre><code>public record Pessoa(String nome, int idade) {}
@@ -206,6 +225,7 @@ public class Main {
     }
 }</code></pre>
 
+            <!-- Ferramentas de Desenvolvimento -->
             <h2>Ferramentas de Desenvolvimento</h2>
             <p>As principais ferramentas para desenvolvimento em Java são:</p>
             <ul>
@@ -214,110 +234,113 @@ public class Main {
                 <li><strong>NetBeans:</strong> IDE oficial da Apache.</li>
                 <li><strong>Maven/Gradle:</strong> Ferramentas de automação de build.</li>
             </ul>
-            <div class="container">
-              
-                    <h2>Palavras Reservadas do Java</h2>
-                    <table class="content-table">
-                        <thead>
-                            <tr>
-                                <th>Palavra Reservada</th>
-                                <th>Descrição</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>abstract</td><td>Define uma classe abstrata.</td></tr>
-                            <tr><td>assert</td><td>Utilizado para criar afirmações no código.</td></tr>
-                            <tr><td>boolean</td><td>Tipo de dado booleano (true ou false).</td></tr>
-                            <tr><td>break</td><td>Interrompe loops ou switch-case.</td></tr>
-                            <tr><td>byte</td><td>Tipo de dado numérico (8 bits).</td></tr>
-                            <tr><td>case</td><td>Define um bloco dentro de um switch.</td></tr>
-                            <tr><td>catch</td><td>Captura exceções em um bloco try.</td></tr>
-                            <tr><td>char</td><td>Tipo de dado para caracteres (16 bits).</td></tr>
-                            <tr><td>class</td><td>Define uma classe.</td></tr>
-                            <tr><td>const</td><td>Palavra reservada (não utilizada).</td></tr>
-                            <tr><td>continue</td><td>Pula para a próxima iteração de um loop.</td></tr>
-                            <tr><td>default</td><td>Define um caso padrão em switch-case.</td></tr>
-                            <tr><td>do</td><td>Executa um bloco de código antes da verificação do loop.</td></tr>
-                            <tr><td>double</td><td>Tipo de dado de ponto flutuante (64 bits).</td></tr>
-                            <tr><td>else</td><td>Define um bloco de código alternativo em um if.</td></tr>
-                            <tr><td>enum</td><td>Define um conjunto de constantes nomeadas.</td></tr>
-                            <tr><td>extends</td><td>Indica herança entre classes.</td></tr>
-                            <tr><td>final</td><td>Define constantes ou impede herança/métodos sobrescritos.</td></tr>
-                            <tr><td>finally</td><td>Bloco sempre executado após try-catch.</td></tr>
-                            <tr><td>float</td><td>Tipo de dado de ponto flutuante (32 bits).</td></tr>
-                            <tr><td>for</td><td>Estrutura de repetição.</td></tr>
-                            <tr><td>if</td><td>Estrutura condicional.</td></tr>
-                            <tr><td>implements</td><td>Indica implementação de uma interface.</td></tr>
-                            <tr><td>import</td><td>Importa pacotes/classes.</td></tr>
-                            <tr><td>instanceof</td><td>Verifica se um objeto pertence a uma classe.</td></tr>
-                            <tr><td>int</td><td>Tipo de dado numérico inteiro (32 bits).</td></tr>
-                            <tr><td>interface</td><td>Define uma interface.</td></tr>
-                            <tr><td>long</td><td>Tipo de dado numérico inteiro (64 bits).</td></tr>
-                            <tr><td>native</td><td>Indica um método nativo.</td></tr>
-                            <tr><td>new</td><td>Cria um novo objeto.</td></tr>
-                            <tr><td>null</td><td>Indica ausência de valor/referência.</td></tr>
-                            <tr><td>package</td><td>Define um pacote.</td></tr>
-                            <tr><td>private</td><td>Define um acesso restrito à classe.</td></tr>
-                            <tr><td>protected</td><td>Define um acesso dentro do pacote e subclasses.</td></tr>
-                            <tr><td>public</td><td>Define um acesso público.</td></tr>
-                            <tr><td>return</td><td>Retorna um valor de um método.</td></tr>
-                            <tr><td>short</td><td>Tipo de dado numérico (16 bits).</td></tr>
-                            <tr><td>static</td><td>Define um membro compartilhado entre instâncias.</td></tr>
-                            <tr><td>strictfp</td><td>Força precisão específica em cálculos de ponto flutuante.</td></tr>
-                            <tr><td>super</td><td>Chama a superclasse.</td></tr>
-                            <tr><td>switch</td><td>Estrutura condicional baseada em casos.</td></tr>
-                            <tr><td>synchronized</td><td>Controle de concorrência.</td></tr>
-                            <tr><td>this</td><td>Referencia a própria instância da classe.</td></tr>
-                            <tr><td>throw</td><td>Lança uma exceção.</td></tr>
-                            <tr><td>throws</td><td>Declara exceções que um método pode lançar.</td></tr>
-                            <tr><td>transient</td><td>Ignora um atributo durante a serialização.</td></tr>
-                            <tr><td>try</td><td>Define um bloco de código para capturar exceções.</td></tr>
-                            <tr><td>void</td><td>Indica que um método não retorna valor.</td></tr>
-                            <tr><td>volatile</td><td>Indica que uma variável pode ser alterada por múltiplas threads.</td></tr>
-                            <tr><td>while</td><td>Estrutura de repetição.</td></tr>
-                        </tbody>
-                    </table>
-            </div>
+
+            <!-- Palavras Reservadas do Java -->
+            <h2>Palavras Reservadas do Java</h2>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Palavra Reservada</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>abstract</td><td>Define uma classe abstrata.</td></tr>
+                    <tr><td>assert</td><td>Utilizado para criar afirmações no código.</td></tr>
+                    <tr><td>boolean</td><td>Tipo de dado booleano (true ou false).</td></tr>
+                    <tr><td>break</td><td>Interrompe loops ou switch-case.</td></tr>
+                    <tr><td>byte</td><td>Tipo de dado numérico (8 bits).</td></tr>
+                    <tr><td>case</td><td>Define um bloco dentro de um switch.</td></tr>
+                    <tr><td>catch</td><td>Captura exceções em um bloco try.</td></tr>
+                    <tr><td>char</td><td>Tipo de dado para caracteres (16 bits).</td></tr>
+                    <tr><td>class</td><td>Define uma classe.</td></tr>
+                    <tr><td>const</td><td>Palavra reservada (não utilizada).</td></tr>
+                    <tr><td>continue</td><td>Pula para a próxima iteração de um loop.</td></tr>
+                    <tr><td>default</td><td>Define um caso padrão em switch-case.</td></tr>
+                    <tr><td>do</td><td>Executa um bloco de código antes da verificação do loop.</td></tr>
+                    <tr><td>double</td><td>Tipo de dado de ponto flutuante (64 bits).</td></tr>
+                    <tr><td>else</td><td>Define um bloco de código alternativo em um if.</td></tr>
+                    <tr><td>enum</td><td>Define um conjunto de constantes nomeadas.</td></tr>
+                    <tr><td>extends</td><td>Indica herança entre classes.</td></tr>
+                    <tr><td>final</td><td>Define constantes ou impede herança/métodos sobrescritos.</td></tr>
+                    <tr><td>finally</td><td>Bloco sempre executado após try-catch.</td></tr>
+                    <tr><td>float</td><td>Tipo de dado de ponto flutuante (32 bits).</td></tr>
+                    <tr><td>for</td><td>Estrutura de repetição.</td></tr>
+                    <tr><td>if</td><td>Estrutura condicional.</td></tr>
+                    <tr><td>implements</td><td>Indica implementação de uma interface.</td></tr>
+                    <tr><td>import</td><td>Importa pacotes/classes.</td></tr>
+                    <tr><td>instanceof</td><td>Verifica se um objeto pertence a uma classe.</td></tr>
+                    <tr><td>int</td><td>Tipo de dado numérico inteiro (32 bits).</td></tr>
+                    <tr><td>interface</td><td>Define uma interface.</td></tr>
+                    <tr><td>long</td><td>Tipo de dado numérico inteiro (64 bits).</td></tr>
+                    <tr><td>native</td><td>Indica um método nativo.</td></tr>
+                    <tr><td>new</td><td>Cria um novo objeto.</td></tr>
+                    <tr><td>null</td><td>Indica ausência de valor/referência.</td></tr>
+                    <tr><td>package</td><td>Define um pacote.</td></tr>
+                    <tr><td>private</td><td>Define um acesso restrito à classe.</td></tr>
+                    <tr><td>protected</td><td>Define um acesso dentro do pacote e subclasses.</td></tr>
+                    <tr><td>public</td><td>Define um acesso público.</td></tr>
+                    <tr><td>return</td><td>Retorna um valor de um método.</td></tr>
+                    <tr><td>short</td><td>Tipo de dado numérico (16 bits).</td></tr>
+                    <tr><td>static</td><td>Define um membro compartilhado entre instâncias.</td></tr>
+                    <tr><td>strictfp</td><td>Força precisão específica em cálculos de ponto flutuante.</td></tr>
+                    <tr><td>super</td><td>Chama a superclasse.</td></tr>
+                    <tr><td>switch</td><td>Estrutura condicional baseada em casos.</td></tr>
+                    <tr><td>synchronized</td><td>Controle de concorrência.</td></tr>
+                    <tr><td>this</td><td>Referencia a própria instância da classe.</td></tr>
+                    <tr><td>throw</td><td>Lança uma exceção.</td></tr>
+                    <tr><td>throws</td><td>Declara exceções que um método pode lançar.</td></tr>
+                    <tr><td>transient</td><td>Ignora um atributo durante a serialização.</td></tr>
+                    <tr><td>try</td><td>Define um bloco de código para capturar exceções.</td></tr>
+                    <tr><td>void</td><td>Indica que um método não retorna valor.</td></tr>
+                    <tr><td>volatile</td><td>Indica que uma variável pode ser alterada por múltiplas threads.</td></tr>
+                    <tr><td>while</td><td>Estrutura de repetição.</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Classes, Métodos e Estruturas de Controle -->
             <h2>Classes, Métodos e Estruturas de Controle</h2>
 
             <h3>Classes</h3>
             <p>Uma classe em Java é um modelo para criar objetos. Ela define atributos e métodos que os objetos terão. Exemplo:</p>
             <pre><code>class Animal {
-                String nome;
-                void emitirSom() {
-                    System.out.println("Som genérico");
-                }
-            }</code></pre>
-            
+    String nome;
+    void emitirSom() {
+        System.out.println("Som genérico");
+    }
+}</code></pre>
+
             <h3>Métodos</h3>
             <p>Métodos são blocos de código que executam uma tarefa específica. Eles podem ter parâmetros e retornar valores.</p>
             <pre><code>class Calculadora {
-                int somar(int a, int b) {
-                    return a + b;
-                }
-            }</code></pre>
-            
+    int somar(int a, int b) {
+        return a + b;
+    }
+}</code></pre>
+
             <h3>Estruturas de Controle</h3>
             <p>Java possui estruturas de controle como:</p>
-            
+
             <h4>Condicionais</h4>
             <pre><code>if (idade >= 18) {
-                System.out.println("Maior de idade");
-            } else {
-                System.out.println("Menor de idade");
-            }</code></pre>
-            
+    System.out.println("Maior de idade");
+} else {
+    System.out.println("Menor de idade");
+}</code></pre>
+
             <h4>Laços de Repetição</h4>
             <pre><code>for (int i = 0; i < 5; i++) {
-                System.out.println("Número: " + i);
-            }</code></pre>
-            
+    System.out.println("Número: " + i);
+}</code></pre>
+
             <pre><code>while (contador < 5) {
-                System.out.println("Contando: " + contador);
-                contador++;
-            }</code></pre>
-            
+    System.out.println("Contando: " + contador);
+    contador++;
+}</code></pre>
+
             <p>Esses elementos são essenciais para a programação em Java, permitindo criar códigos organizados e eficientes.</p>
+
+            <!-- Conclusão -->
             <h2>Conclusão</h2>
             <p>
                 Dominar o uso de <strong>classes</strong>, <strong>métodos</strong> e <strong>estruturas de controle</strong> é fundamental para se tornar um programador Java eficiente. As classes permitem organizar o código de forma modular, os métodos encapsulam comportamentos específicos, e as estruturas de controle garantem a lógica e o fluxo do programa. Com esses conceitos bem compreendidos, você estará preparado para desenvolver aplicações robustas, escaláveis e de fácil manutenção em Java. Continue praticando e explorando os recursos da linguagem para aprimorar suas habilidades!
@@ -325,6 +348,7 @@ public class Main {
         </section>
     </main>
 
+    <!-- Rodapé -->
     <footer class="site-footer">
         <p>&copy; 2025 Pcpropr.</p>
     </footer>

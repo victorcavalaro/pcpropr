@@ -1,241 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pcpropr - Documentação React</title>
     <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
-    <link
-      rel="shortcut icon"
-      href="/img/logo barra superior.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Cabeçalho -->
     <header class="site-header">
-      <div class="header-inner">
-        <div class="logo-container">
-          <a href="/index.html"
-            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
-          /></a>
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+                    <li><a href="/paginas/contato/index.html">Contato</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="site-nav">
-          <ul>
-            <li><a href="/index.html">Início</a></li>
-            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
-            <li><a href="/paginas/contato/index.html">Contato</a></li>
-            <li>
-              <a href="/paginas/documentacao/index.html">Documentações</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main class="container">
-      <section class="content-section">
-        <h1>React: Documentação</h1>
+        <section class="content-section">
+            <h1>React: Documentação</h1>
 
-        <h2>Introdução ao React</h2>
-        <p>
-          React é uma biblioteca JavaScript para a construção de interfaces de
-          usuário interativas e dinâmicas. Criado pelo Facebook, permite o
-          desenvolvimento de aplicações de página única (SPA) e componentes
-          reutilizáveis.
-        </p>
+            <!-- Introdução ao React -->
+            <h2>Introdução ao React</h2>
+            <p>
+                React é uma biblioteca JavaScript para a construção de interfaces de usuário interativas e dinâmicas. Criado pelo Facebook, permite o desenvolvimento de aplicações de página única (SPA) e componentes reutilizáveis.
+            </p>
 
-        <h2>Como o React Funciona</h2>
-        <p>
-          O React utiliza uma abordagem baseada em componentes, onde a interface
-          é dividida em partes reutilizáveis. Ele usa JSX (JavaScript XML) para
-          definir a estrutura da UI e o Virtual DOM para otimizar o desempenho,
-          atualizando apenas as partes necessárias da interface.
-        </p>
+            <!-- Como o React Funciona -->
+            <h2>Como o React Funciona</h2>
+            <p>
+                O React utiliza uma abordagem baseada em componentes, onde a interface é dividida em partes reutilizáveis. Ele usa JSX (JavaScript XML) para definir a estrutura da UI e o Virtual DOM para otimizar o desempenho, atualizando apenas as partes necessárias da interface.
+            </p>
 
-        <h3>Principais Conceitos</h3>
-        <ul>
-          <li>
-            <strong>Componentes</strong>: Blocos reutilizáveis de código que
-            retornam elementos JSX.
-          </li>
-          <li>
-            <strong>JSX</strong>: Sintaxe que permite escrever HTML diretamente
-            no JavaScript.
-          </li>
-          <li>
-            <strong>Virtual DOM</strong>: Representação em memória do DOM real,
-            que melhora a eficiência das atualizações.
-          </li>
-          <li>
-            <strong>Estado (State)</strong>: Dados internos de um componente que
-            podem mudar ao longo do tempo.
-          </li>
-          <li>
-            <strong>Props</strong>: Dados passados de um componente pai para um
-            componente filho.
-          </li>
-        </ul>
+            <!-- Principais Conceitos -->
+            <h3>Principais Conceitos</h3>
+            <ul>
+                <li><strong>Componentes</strong>: Blocos reutilizáveis de código que retornam elementos JSX.</li>
+                <li><strong>JSX</strong>: Sintaxe que permite escrever HTML diretamente no JavaScript.</li>
+                <li><strong>Virtual DOM</strong>: Representação em memória do DOM real, que melhora a eficiência das atualizações.</li>
+                <li><strong>Estado (State)</strong>: Dados internos de um componente que podem mudar ao longo do tempo.</li>
+                <li><strong>Props</strong>: Dados passados de um componente pai para um componente filho.</li>
+            </ul>
 
-        <h2>Instalação do React</h2>
-        <p>
-          Para começar com React, você pode instalar usando o Create React App:
-        </p>
-        <pre><code>npx create-react-app minha-aplicacao</code></pre>
-        <p>Ou configurar manualmente com:</p>
-        <pre><code>npm install react react-dom</code></pre>
+            <!-- Instalação do React -->
+            <h2>Instalação do React</h2>
+            <p>
+                Para começar com React, você pode instalar usando o Create React App:
+            </p>
+            <pre><code>npx create-react-app minha-aplicacao</code></pre>
+            <p>Ou configurar manualmente com:</p>
+            <pre><code>npm install react react-dom</code></pre>
 
-        <h2>Componentes React</h2>
-        <p>
-          React utiliza componentes para dividir a UI em partes reutilizáveis.
-        </p>
-        <h3>Exemplo de Componente Funcional</h3>
-        <pre><code>function MeuComponente() {
-  return Olá, React!;
-}
-            </code></pre>
+            <!-- Componentes React -->
+            <h2>Componentes React</h2>
+            <p>
+                React utiliza componentes para dividir a UI em partes reutilizáveis.
+            </p>
 
-        <h3>Exemplo de Componente de Classe</h3>
-        <pre><code>class MeuComponente extends React.Component {
-  render() {
-    return <h1>Olá, React!</h1>;
-  }
-}
-            </code></pre>
+            <h3>Exemplo de Componente Funcional</h3>
+            <pre><code>function MeuComponente() {
+    return &lt;h1&gt;Olá, React!&lt;/h1&gt;;
+}</code></pre>
 
-        <h2>Props e State</h2>
-        <p>
-          Os <strong>props</strong> permitem passar dados para componentes. O
-          <strong>state</strong> é usado para armazenar dados dinâmicos dentro
-          de um componente.
-        </p>
-        <h3>Exemplo de Props</h3>
-        <pre><code>function Saudacao(props) {
-  return <h1>Olá, {props.nome}!</h1>;
-}
-            </code></pre>
+            <h3>Exemplo de Componente de Classe</h3>
+            <pre><code>class MeuComponente extends React.Component {
+    render() {
+        return &lt;h1&gt;Olá, React!&lt;/h1&gt;;
+    }
+}</code></pre>
 
-        <h3>Exemplo de State</h3>
-        <pre><code>class Contador extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { contador: 0 };
-  }
-  render() {
-    return <h1>Contagem: {this.state.contador}</h1>;
-  }
-}
-            </code></pre>
+            <!-- Props e State -->
+            <h2>Props e State</h2>
+            <p>
+                Os <strong>props</strong> permitem passar dados para componentes. O <strong>state</strong> é usado para armazenar dados dinâmicos dentro de um componente.
+            </p>
 
-        <h2>Hooks do React</h2>
-        <p>
-          Os Hooks permitem usar o estado e outras funcionalidades do React sem
-          escrever uma classe.
-        </p>
-        <h3>useState</h3>
+            <h3>Exemplo de Props</h3>
+            <pre><code>function Saudacao(props) {
+    return &lt;h1&gt;Olá, {props.nome}!&lt;/h1&gt;;
+}</code></pre>
 
-        <h3>useEffect</h3>
-        <pre><code>import { useEffect } from 'react';
+            <h3>Exemplo de State</h3>
+            <pre><code>class Contador extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { contador: 0 };
+    }
+    render() {
+        return &lt;h1&gt;Contagem: {this.state.contador}&lt;/h1&gt;;
+    }
+}</code></pre>
+
+            <!-- Hooks do React -->
+            <h2>Hooks do React</h2>
+            <p>
+                Os Hooks permitem usar o estado e outras funcionalidades do React sem escrever uma classe.
+            </p>
+
+            <h3>useState</h3>
+            <pre><code>import { useState } from 'react';
+
 function Exemplo() {
-  useEffect(() => {
-    console.log('Componente montado');
-  }, []);
-  return <h1>Veja o console!</h1>;
-}
-            </code></pre>
+    const [contador, setContador] = useState(0);
+    return (
+        &lt;div&gt;
+            &lt;p&gt;Você clicou {contador} vezes&lt;/p&gt;
+            &lt;button onClick={() => setContador(contador + 1)}&gt;
+                Clique aqui
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
 
-        <h2>Conceitos de Programação em JavaScript</h2>
-        <p>
-          Aqui estão alguns conceitos fundamentais de programação que são úteis
-          ao trabalhar com React e JavaScript.
-        </p>
+            <h3>useEffect</h3>
+            <pre><code>import { useEffect } from 'react';
 
-        <h3>Classes e Métodos</h3>
-        <p>
-          Classes são modelos para criar objetos, e métodos são funções dentro
-          dessas classes.
-        </p>
-        <pre><code>class Carro {
-  constructor(marca, modelo) {
-    this.marca = marca;
-    this.modelo = modelo;
-  }
+function Exemplo() {
+    useEffect(() => {
+        console.log('Componente montado');
+    }, []);
+    return &lt;h1&gt;Veja o console!&lt;/h1&gt;;
+}</code></pre>
 
-  exibirDetalhes() {
-    return `Marca: ${this.marca}, Modelo: ${this.modelo}`;
-  }
+            <!-- Conceitos de Programação em JavaScript -->
+            <h2>Conceitos de Programação em JavaScript</h2>
+            <p>
+                Aqui estão alguns conceitos fundamentais de programação que são úteis ao trabalhar com React e JavaScript.
+            </p>
+
+            <h3>Classes e Métodos</h3>
+            <p>
+                Classes são modelos para criar objetos, e métodos são funções dentro dessas classes.
+            </p>
+            <pre><code>class Carro {
+    constructor(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    exibirDetalhes() {
+        return `Marca: ${this.marca}, Modelo: ${this.modelo}`;
+    }
 }
 
 const meuCarro = new Carro("Toyota", "Corolla");
-console.log(meuCarro.exibirDetalhes()); // Saída: Marca: Toyota, Modelo: Corolla
-            </code></pre>
+console.log(meuCarro.exibirDetalhes()); // Saída: Marca: Toyota, Modelo: Corolla</code></pre>
 
-        <h3>Estruturas de Controle</h3>
-        <p>
-          Estruturas de controle permitem tomar decisões e repetir ações no
-          código.
-        </p>
-        <h4>Condicionais (if-else)</h4>
-        <pre><code>let idade = 18;
+            <h3>Estruturas de Controle</h3>
+            <p>
+                Estruturas de controle permitem tomar decisões e repetir ações no código.
+            </p>
+
+            <h4>Condicionais (if-else)</h4>
+            <pre><code>let idade = 18;
 
 if (idade >= 18) {
-  console.log("Maior de idade.");
+    console.log("Maior de idade.");
 } else {
-  console.log("Menor de idade.");
-}
-            </code></pre>
+    console.log("Menor de idade.");
+}</code></pre>
 
-        <h4>Loops (for)</h4>
-        <pre><code>for (let i = 0; i < 5; i++) {
-  console.log(`Iteração: ${i}`);
-}
-            </code></pre>
+            <h4>Loops (for)</h4>
+            <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(`Iteração: ${i}`);
+}</code></pre>
 
-        <h4>Loops (while)</h4>
-        <pre><code>let contador = 0;
+            <h4>Loops (while)</h4>
+            <pre><code>let contador = 0;
 
 while (contador < 5) {
-  console.log(`Contador: ${contador}`);
-  contador++;
-}
-            </code></pre>
+    console.log(`Contador: ${contador}`);
+    contador++;
+}</code></pre>
 
-        <h4>Switch-Case</h4>
-        <pre><code>let diaDaSemana = 3;
+            <h4>Switch-Case</h4>
+            <pre><code>let diaDaSemana = 3;
 
 switch (diaDaSemana) {
-  case 1:
-    console.log("Domingo");
-    break;
-  case 2:
-    console.log("Segunda-feira");
-    break;
-  case 3:
-    console.log("Terça-feira");
-    break;
-  default:
-    console.log("Dia inválido.");
-}
-            </code></pre>
+    case 1:
+        console.log("Domingo");
+        break;
+    case 2:
+        console.log("Segunda-feira");
+        break;
+    case 3:
+        console.log("Terça-feira");
+        break;
+    default:
+        console.log("Dia inválido.");
+}</code></pre>
 
-        <h2>Conclusão</h2>
-        <p>
-          React é uma ferramenta poderosa para o desenvolvimento moderno de
-          interfaces. Com componentes, estado e Hooks, é possível criar
-          aplicações eficientes e escaláveis. Além disso, entender conceitos
-          básicos de JavaScript, como classes, métodos e estruturas de controle,
-          é essencial para dominar o React.
-        </p>
-      </section>
+            <!-- Conclusão -->
+            <h2>Conclusão</h2>
+            <p>
+                React é uma ferramenta poderosa para o desenvolvimento moderno de interfaces. Com componentes, estado e Hooks, é possível criar aplicações eficientes e escaláveis. Além disso, entender conceitos básicos de JavaScript, como classes, métodos e estruturas de controle, é essencial para dominar o React.
+            </p>
+        </section>
     </main>
 
+    <!-- Rodapé -->
     <footer class="site-footer">
-      <p>&copy; 2025 Pcpropr.</p>
+        <p>&copy; 2025 Pcpropr.</p>
     </footer>
-  </body>
+</body>
 </html>
