@@ -1,11 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Completo de PHP: Tudo o Que Você Precisa Saber</title>
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
 </head>
 <body>
-    
+    <!-- Cabeçalho -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+                    <li><a href="/paginas/contato/index.html">Contato</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <section class="content-section">
+            <h1>Guia Completo de PHP: Tudo o Que Você Precisa Saber</h1>
+
+            <!-- Características Principais -->
+            <h2>Características Principais</h2>
+            <ul>
+                <li>Linguagem de script server-side: PHP é executado no servidor e envia o resultado (como HTML ou JSON) para o navegador do cliente.</li>
+                <li>Código embutido em HTML: Você pode misturar PHP diretamente com HTML, facilitando a criação de páginas dinâmicas.</li>
+                <li>Interpretado no servidor: Diferente de linguagens como JavaScript, PHP é processado pelo servidor (como Apache ou Nginx).</li>
+                <li>Open-source e multiplataforma: PHP é gratuito, de código aberto e roda em diferentes sistemas operacionais (Linux, Windows, Mac).</li>
+                <li>Suporte amplo para bancos de dados: Integra facilmente com bancos como MySQL, PostgreSQL, SQLite, entre outros.</li>
+                <li>Ampla comunidade e documentação: Por ser tão popular, PHP tem uma vasta quantidade de tutoriais, bibliotecas e fóruns.</li>
+            </ul>
+
+            <!-- Fluxo de Funcionamento -->
+            <h2>Fluxo de Funcionamento</h2>
+            <ul>
+                <li>Requisição do cliente: O navegador faz uma requisição HTTP.</li>
+                <li>Recebimento pelo servidor web: Apache ou Nginx recebe essa requisição.</li>
+                <li>Execução do script PHP: O servidor processa o código PHP.</li>
+                <li>Comunicação com serviços externos: PHP pode interagir com bancos de dados (MySQL, PostgreSQL), arquivos (JSON, XML, CSV) ou APIs externas.</li>
+                <li>Geração de resposta: PHP gera uma saída (HTML, JSON, XML) baseada na lógica do script.</li>
+                <li>Envio da resposta ao cliente: O navegador recebe e renderiza a resposta.</li>
+            </ul>
+
+            <!-- Recursos do PHP -->
+            <h2>Recursos do PHP</h2>
+            <ul>
+                <li>Manipulação de formulários: PHP coleta e processa dados enviados por formulários HTML.</li>
+                <li>Sessões e cookies: Gerencia informações persistentes entre diferentes páginas de um site.</li>
+                <li>Upload e manipulação de arquivos: Facilita o envio, armazenamento e manipulação de arquivos.</li>
+                <li>Validação e sanitização de dados: Garante a segurança ao verificar e limpar dados de entrada.</li>
+                <li>Criação e consumo de APIs REST: PHP pode criar ou consumir APIs para troca de dados.</li>
+                <li>Envio de e-mails: Com bibliotecas como PHPMailer ou a função nativa mail(), PHP envia e-mails com facilidade.</li>
+                <li>Tratamento de erros e exceções: PHP gerencia erros através de blocos try-catch e manipulação de exceções.</li>
+            </ul>
+
+            <!-- Paradigmas de Programação -->
+            <h2>Paradigmas de Programação</h2>
+            <ul>
+                <li>Procedural: Baseado em funções e variáveis globais, adequado para scripts menores.</li>
+                <li>Orientado a Objetos: Usa classes e objetos, promove organização, reutilização e escalabilidade.</li>
+                <li>Funcional: Usa funções anônimas, closures e callbacks, favorecendo modularidade e imutabilidade.</li>
+            </ul>
+
+            <!-- Frameworks Populares -->
+            <h2>Frameworks Populares</h2>
+            <ul>
+                <li>Laravel: Framework completo, com sintaxe elegante e ferramentas poderosas.</li>
+                <li>Symfony: Robusto e modular, ideal para projetos complexos.</li>
+                <li>CodeIgniter: Leve e rápido, perfeito para projetos menores.</li>
+                <li>Yii: Alta performance e produtividade, usado em aplicativos de grande escala.</li>
+                <li>Slim: Microframework eficiente, ótimo para APIs rápidas.</li>
+            </ul>
+
+            <!-- Ferramentas Complementares -->
+            <h2>Ferramentas Complementares</h2>
+            <ul>
+                <li>Composer: Gerenciador de pacotes que facilita a instalação e autoload de bibliotecas.</li>
+                <li>PHPUnit: Framework padrão de testes unitários.</li>
+                <li>Xdebug: Ferramenta de depuração que permite inspecionar variáveis e pausar a execução do código.</li>
+                <li>Docker: Cria ambientes isolados e idênticos ao de produção.</li>
+                <li>PHPStorm/VSCode: Editores robustos com suporte avançado a PHP.</li>
+            </ul>
+
+            <!-- Conclusão -->
+            <h2>Conclusão</h2>
+            <p>PHP continua sendo uma escolha forte para o desenvolvimento web, graças à sua flexibilidade, vasta comunidade e ferramentas poderosas. Com o domínio dessas características e ferramentas, você está mais do que preparado para construir projetos incríveis.</p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Pcpropr.</p>
+    </footer>
 </body>
 </html>
