@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pcpropr - Documentação TypeScript</title>
-    <link rel="stylesheet" href="/paginas/documentacao/type/type.css" />
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
     <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,6 @@
                 <ul>
                     <li><a href="/index.html">Início</a></li>
                     <li><a href="/paginas/sobre/index.html">Sobre</a></li>
-                    <li><a href="/paginas/Projetos/index.html">Projetos</a></li>
                     <li><a href="/paginas/contato/index.html">Contato</a></li>
                     <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
                 </ul>
@@ -33,7 +32,7 @@
     <!-- Conteúdo Principal -->
     <main class="container">
         <section class="content-section">
-            <h1>TypeScript: Documentação Completa</h1>
+            <h1>TypeScript: Documentação.</h1>
 
             <!-- Introdução ao TypeScript -->
             <h2>Introdução ao TypeScript</h2>
@@ -248,199 +247,193 @@ let texto = identidade&lt;string&gt;("Oi");</code></pre>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Palavras Reservadas do TypeScript -->
-<h2>Palavras Reservadas do TypeScript e suas Definições</h2>
-<p>
-    Aqui está uma lista das principais palavras reservadas do TypeScript e suas definições:
-</p>
-<table class="content-table">
-    <tbody>
-        <tr>
-            <td>abstract</td>
-            <td>Define uma classe abstrata que não pode ser instanciada diretamente.</td>
-        </tr>
-        <tr>
-            <td>as</td>
-            <td>Faz um type assertion (conversão de tipo).</td>
-        </tr>
-        <tr>
-            <td>async</td>
-            <td>Define uma função assíncrona.</td>
-        </tr>
-        <tr>
-            <td>await</td>
-            <td>Aguarda a resolução de uma Promise.</td>
-        </tr>
-        <tr>
-            <td>break</td>
-            <td>Interrompe um loop ou switch.</td>
-        </tr>
-        <tr>
-            <td>case</td>
-            <td>Define um caso dentro de um switch.</td>
-        </tr>
-        <tr>
-            <td>catch</td>
-            <td>Captura erros em um bloco try-catch.</td>
-        </tr>
-        <tr>
-            <td>class</td>
-            <td>Define uma classe.</td>
-        </tr>
-        <tr>
-            <td>const</td>
-            <td>Declara uma constante.</td>
-        </tr>
-        <tr>
-            <td>continue</td>
-            <td>Pula para a próxima iteração de um loop.</td>
-        </tr>
-        <tr>
-            <td>debugger</td>
-            <td>Pausa a execução para depuração.</td>
-        </tr>
-        <tr>
-            <td>default</td>
-            <td>Define um caso padrão em um switch.</td>
-        </tr>
-        <tr>
-            <td>delete</td>
-            <td>Remove propriedades de um objeto.</td>
-        </tr>
-        <tr>
-            <td>do</td>
-            <td>Executa um bloco de código pelo menos uma vez antes de verificar a condição do loop.</td>
-        </tr>
-        <tr>
-            <td>else</td>
-            <td>Define um bloco de código alternativo para um if.</td>
-        </tr>
-        <tr>
-            <td>enum</td>
-            <td>Declara um conjunto de valores nomeados.</td>
-        </tr>
-        <tr>
-            <td>export</td>
-            <td>Permite exportar funções, variáveis e classes.</td>
-        </tr>
-        <tr>
-            <td>extends</td>
-            <td>Define herança entre classes.</td>
-        </tr>
-        <tr>
-            <td>false</td>
-            <td>Valor booleano falso.</td>
-        </tr>
-        <tr>
-            <td>finally</td>
-            <td>Define um bloco de código que sempre é executado em um try-catch.</td>
-        </tr>
-        <tr>
-            <td>for</td>
-            <td>Estrutura de loop.</td>
-        </tr>
-        <tr>
-            <td>function</td>
-            <td>Declara uma função.</td>
-        </tr>
-        <tr>
-            <td>if</td>
-            <td>Estrutura condicional.</td>
-        </tr>
-        <tr>
-            <td>implements</td>
-            <td>Indica que uma classe implementa uma interface.</td>
-        </tr>
-        <tr>
-            <td>import</td>
-            <td>Importa módulos ou componentes externos.</td>
-        </tr>
-        <tr>
-            <td>in</td>
-            <td>Verifica se um valor existe em um objeto ou estrutura.</td>
-        </tr>
-        <tr>
-            <td>typeof</td>
-            <td>Retorna o tipo de um valor.</td>
-        </tr>
-        <tr>
-            <td>let</td>
-            <td>Declara uma variável de escopo limitado.</td>
-        </tr>
-        <tr>
-            <td>new</td>
-            <td>Cria uma nova instância de um objeto.</td>
-        </tr>
-        <tr>
-            <td>null</td>
-            <td>Representa a ausência de valor.</td>
-        </tr>
-        <tr>
-            <td>private</td>
-            <td>Modificador de acesso privado.</td>
-        </tr>
-        <tr>
-            <td>protected</td>
-            <td>Modificador de acesso protegido.</td>
-        </tr>
-        <tr>
-            <td>public</td>
-            <td>Modificador de acesso público.</td>
-        </tr>
-        <tr>
-            <td>readonly</td>
-            <td>Define propriedades somente leitura.</td>
-        </tr>
-        <tr>
-            <td>return</td>
-            <td>Retorna um valor de uma função.</td>
-        </tr>
-        <tr>
-            <td>static</td>
-            <td>Define um método estático em uma classe.</td>
-        </tr>
-        <tr>
-            <td>super</td>
-            <td>Chama o construtor da classe pai.</td>
-        </tr>
-        <tr>
-            <td>switch</td>
-            <td>Estrutura condicional para múltiplos casos.</td>
-        </tr>
-        <tr>
-            <td>this</td>
-            <td>Referencia a própria instância de um objeto.</td>
-        </tr>
-        <tr>
-            <td>throw</td>
-            <td>Lança um erro.</td>
-        </tr>
-        <tr>
-            <td>true</td>
-            <td>Valor booleano verdadeiro.</td>
-        </tr>
-        <tr>
-            <td>try</td>
-            <td>Define um bloco para capturar erros.</td>
-        </tr>
-        <tr>
-            <td>var</td>
-            <td>Declara uma variável global ou de função.</td>
-        </tr>
-        <tr>
-            <td>void</td>
-            <td>Indica que uma função não retorna valor.</td>
-        </tr>
-        <tr>
-            <td>while</td>
-            <td>Estrutura de loop.</td>
-        </tr>
-        <tr>
-            <td>yield</td>
-            <td>Pausa e retorna um valor de uma função geradora.</td>
-        </tr>
-    </tbody>
-</table>
+                    <tr>
+                        <td>abstract</td>
+                        <td>Define uma classe abstrata que não pode ser instanciada diretamente.</td>
+                    </tr>
+                    <tr>
+                        <td>as</td>
+                        <td>Faz um type assertion (conversão de tipo).</td>
+                    </tr>
+                    <tr>
+                        <td>async</td>
+                        <td>Define uma função assíncrona.</td>
+                    </tr>
+                    <tr>
+                        <td>await</td>
+                        <td>Aguarda a resolução de uma Promise.</td>
+                    </tr>
+                    <tr>
+                        <td>break</td>
+                        <td>Interrompe um loop ou switch.</td>
+                    </tr>
+                    <tr>
+                        <td>case</td>
+                        <td>Define um caso dentro de um switch.</td>
+                    </tr>
+                    <tr>
+                        <td>catch</td>
+                        <td>Captura erros em um bloco try-catch.</td>
+                    </tr>
+                    <tr>
+                        <td>class</td>
+                        <td>Define uma classe.</td>
+                    </tr>
+                    <tr>
+                        <td>const</td>
+                        <td>Declara uma constante.</td>
+                    </tr>
+                    <tr>
+                        <td>continue</td>
+                        <td>Pula para a próxima iteração de um loop.</td>
+                    </tr>
+                    <tr>
+                        <td>debugger</td>
+                        <td>Pausa a execução para depuração.</td>
+                    </tr>
+                    <tr>
+                        <td>default</td>
+                        <td>Define um caso padrão em um switch.</td>
+                    </tr>
+                    <tr>
+                        <td>delete</td>
+                        <td>Remove propriedades de um objeto.</td>
+                    </tr>
+                    <tr>
+                        <td>do</td>
+                        <td>Executa um bloco de código pelo menos uma vez antes de verificar a condição do loop.</td>
+                    </tr>
+                    <tr>
+                        <td>else</td>
+                        <td>Define um bloco de código alternativo para um if.</td>
+                    </tr>
+                    <tr>
+                        <td>enum</td>
+                        <td>Declara um conjunto de valores nomeados.</td>
+                    </tr>
+                    <tr>
+                        <td>export</td>
+                        <td>Permite exportar funções, variáveis e classes.</td>
+                    </tr>
+                    <tr>
+                        <td>extends</td>
+                        <td>Define herança entre classes.</td>
+                    </tr>
+                    <tr>
+                        <td>false</td>
+                        <td>Valor booleano falso.</td>
+                    </tr>
+                    <tr>
+                        <td>finally</td>
+                        <td>Define um bloco de código que sempre é executado em um try-catch.</td>
+                    </tr>
+                    <tr>
+                        <td>for</td>
+                        <td>Estrutura de loop.</td>
+                    </tr>
+                    <tr>
+                        <td>function</td>
+                        <td>Declara uma função.</td>
+                    </tr>
+                    <tr>
+                        <td>if</td>
+                        <td>Estrutura condicional.</td>
+                    </tr>
+                    <tr>
+                        <td>implements</td>
+                        <td>Indica que uma classe implementa uma interface.</td>
+                    </tr>
+                    <tr>
+                        <td>import</td>
+                        <td>Importa módulos ou componentes externos.</td>
+                    </tr>
+                    <tr>
+                        <td>in</td>
+                        <td>Verifica se um valor existe em um objeto ou estrutura.</td>
+                    </tr>
+                    <tr>
+                        <td>typeof</td>
+                        <td>Retorna o tipo de um valor.</td>
+                    </tr>
+                    <tr>
+                        <td>let</td>
+                        <td>Declara uma variável de escopo limitado.</td>
+                    </tr>
+                    <tr>
+                        <td>new</td>
+                        <td>Cria uma nova instância de um objeto.</td>
+                    </tr>
+                    <tr>
+                        <td>null</td>
+                        <td>Representa a ausência de valor.</td>
+                    </tr>
+                    <tr>
+                        <td>private</td>
+                        <td>Modificador de acesso privado.</td>
+                    </tr>
+                    <tr>
+                        <td>protected</td>
+                        <td>Modificador de acesso protegido.</td>
+                    </tr>
+                    <tr>
+                        <td>public</td>
+                        <td>Modificador de acesso público.</td>
+                    </tr>
+                    <tr>
+                        <td>readonly</td>
+                        <td>Define propriedades somente leitura.</td>
+                    </tr>
+                    <tr>
+                        <td>return</td>
+                        <td>Retorna um valor de uma função.</td>
+                    </tr>
+                    <tr>
+                        <td>static</td>
+                        <td>Define um método estático em uma classe.</td>
+                    </tr>
+                    <tr>
+                        <td>super</td>
+                        <td>Chama o construtor da classe pai.</td>
+                    </tr>
+                    <tr>
+                        <td>switch</td>
+                        <td>Estrutura condicional para múltiplos casos.</td>
+                    </tr>
+                    <tr>
+                        <td>this</td>
+                        <td>Referencia a própria instância de um objeto.</td>
+                    </tr>
+                    <tr>
+                        <td>throw</td>
+                        <td>Lança um erro.</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>Valor booleano verdadeiro.</td>
+                    </tr>
+                    <tr>
+                        <td>try</td>
+                        <td>Define um bloco para capturar erros.</td>
+                    </tr>
+                    <tr>
+                        <td>var</td>
+                        <td>Declara uma variável global ou de função.</td>
+                    </tr>
+                    <tr>
+                        <td>void</td>
+                        <td>Indica que uma função não retorna valor.</td>
+                    </tr>
+                    <tr>
+                        <td>while</td>
+                        <td>Estrutura de loop.</td>
+                    </tr>
+                    <tr>
+                        <td>yield</td>
+                        <td>Pausa e retorna um valor de uma função geradora.</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <!-- Conclusão -->
             <h2>Conclusão</h2>
             <p>
