@@ -1,14 +1,14 @@
-/* Reset de estilos e importação da fonte */
+/*Reset de estilos e importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Configuração padrão da página do site, aplica a tudo */
+/*configuração padrão da pagina do site, ele aplica a tudo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais da página */
+/*Estilos gerais da pagina*/
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -20,7 +20,7 @@ body {
     margin: 0;
 }
 
-/* Classe do menu */
+/*classe do menu*/
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -28,14 +28,14 @@ body {
     flex: 1;
 }
 
-/* Classe da logo (cor da barra do menu e da letra e o tamanho da letra) */
+/*classe da logo (cor da barra do menu e da letra e o tamanho da letra )*/
 .site-header {
     background-color: #242424;
     color: #fff;
     padding: 10px 0;
 }
 
-/* Classe da logo (determina as posições dos botões e logo) */
+/*classe da logo (determina as posições dos botões e logo) */
 .header-inner {
     display: flex;
     flex-direction: row;
@@ -46,31 +46,31 @@ body {
     margin: 0 auto;
 }
 
-/* Classe da logo (determina o tamanho do botão da nuvem) */
+/*classe da logo (determina o tamanho do botão da nuvem)*/
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-/* Classe da logo (determina o tamanho da imagem da nuvem) */
+/*classe da logo determina o tamanho da imagem da nuvem */
 .logotipo {
     height: 50px;
 }
 
-/* Classe da logo (faz com que o botão mude de cor quando passa o mouse em cima) */
-.logotipo:hover {
+/*classe da logo (faz com que o botão mude de cor quando passa o mouse em cima)*/
+.logotipo:hover{
     border-radius: 5px;
-    padding: 1px;
+    padding: 1px ;
 }
 
-/* Classe menu */
+/*classe menu ()*/
 .site-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-/* Classe menu (faz com que o menu fique na horizontal) */
+/*classe menu (faz com que o menu fique na horizontal)*/
 .site-nav ul {
     list-style-type: none;
     margin: 0;
@@ -78,12 +78,12 @@ body {
     display: flex;
 }
 
-/* Classe menu (espaçamento entre os botões) */
+/*classe menu (espaçamento entre os botões)*/
 .site-nav ul li {
     margin: 0 10px;
 }
 
-/* Classe menu (estilização do botão) */
+/*classe menu (estilização do botão)*/
 .site-nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -94,7 +94,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Classe menu (faz com que o botão mude de cor ao passar o mouse) */
+/*classe menu (faz com que o botão mude de cor ao passar o mouse)*/
 .site-nav ul li a:hover {
     background-color: #1e1e1e;
 }
@@ -103,45 +103,48 @@ body {
 .content-section {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
     margin: 30px 0;
 }
 
 .content-section h1 {
-    font-size: 2.8rem;
-    color: #222;
+    font-size: 2.5rem;
+    color: #1d1d1f;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: 600; /* Peso da fonte mais forte */
 }
 
 .content-section h2 {
     font-size: 2rem;
-    color: #444;
+    color: #1d1d1f;
     margin-top: 35px;
     margin-bottom: 20px;
-    border-bottom: 3px solid #242424;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #e0e0e0; /* Linha sutil */
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
 .content-section h3 {
     font-size: 1.6rem;
-    color: #555;
+    color: #1d1d1f;
     margin-top: 30px;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .content-section p {
     font-size: 1.1rem;
-    color: #666;
+    color: #666666; /* Texto mais suave */
     line-height: 1.8;
     margin-bottom: 25px;
 }
 
 /* Blocos de Código */
 pre {
-    background: #1e1e1e;
-    color: #f8f8f8;
+    background: #1d1d1f; /* Fundo escuro */
+    color: #f5f5f7;
     padding: 18px;
     border-radius: 8px;
     overflow-x: auto;
@@ -152,7 +155,7 @@ pre {
 code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95rem;
-    color: #bddf00;
+    color: #19b800;
 }
 
 /* Tabelas */
@@ -162,7 +165,7 @@ code {
     margin: 25px 0;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
     overflow: hidden;
 }
 
@@ -170,31 +173,28 @@ code {
 .content-table td {
     padding: 14px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0; /* Bordas sutis */
 }
 
 .content-table th {
-    background: linear-gradient(135deg, #242424, #1a1a1a);
-    color: #fff;
-    font-weight: bold;
-}
-
-.content-table tr:nth-child(even) {
-    background: #f7f7f7;
+    background-color: #f5f5f7; /* Fundo claro para cabeçalho */
+    color: #1d1d1f;
+    font-weight: 600;
 }
 
 .content-table tr:hover {
-    background: #ececec;
+    background-color: #f5f5f7; /* Fundo suave ao passar o mouse */
 }
 
 /* Rodapé */
 .site-footer {
-    background: #222;
-    color: #fff;
+    background: #ffffff;
+    color: #666666;
     text-align: center;
     padding: 25px 0;
     margin-top: 50px;
     font-size: 0.95rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil no topo */
 }
 
 .site-footer p {
@@ -206,77 +206,38 @@ code {
     .container {
         max-width: 90%;
     }
-
-    .content-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .content-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .content-section h3 {
-        font-size: 1.5rem;
-    }
 }
+
 @media (max-width: 768px) {
-    .header-inner {
-        flex-direction: row; /* Mantém o menu em linha */
-        align-items: center;
-    }
-
-    .logo-container {
-        margin-bottom: 0; /* Remove a margem inferior */
-    }
-
-    .site-nav ul {
-        flex-direction: row; /* Mantém os itens do menu em linha */
-        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
-        gap: 10px; /* Espaçamento entre os itens */
-    }
-
-    .site-nav ul li {
-        margin: 0; /* Remove a margem entre os itens */
-    }
-
-    .site-nav ul li a {
-        padding: 6px 12px; /* Reduz o padding para caber melhor */
-        font-size: 14px; /* Reduz o tamanho da fonte */
-    }
-}
-
-@media (max-width: 600px) {
-    .site-nav ul {
-        gap: 8px; /* Reduz o espaçamento entre os itens */
-    }
-
-    .site-nav ul li a {
-        padding: 5px 10px; /* Reduz ainda mais o padding */
-        font-size: 13px; /* Reduz o tamanho da fonte */
-    }
-}
-
-@media (max-width: 900px) {
     .header-inner {
         flex-direction: column;
         align-items: center;
     }
 
     .logo-container {
-        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
 
     .site-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
+    .site-nav ul li a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
     .content-section {
-        padding: 30px;
+        padding: 20px;
     }
 
     .content-section h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .content-section h2 {
@@ -287,73 +248,7 @@ code {
         font-size: 1.4rem;
     }
 
-    .content-table th,
-    .content-table td {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 600px) {
-    .content-section {
-        padding: 20px;
-    }
-
-    .content-section h1 {
-        font-size: 1.9rem;
-    }
-
-    .content-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .content-section h3 {
-        font-size: 1.3rem;
-    }
-
-    .site-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .site-nav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    .site-nav ul li a {
-        width: 100%;
-        display: block;
-        padding: 10px;
-    }
-
-    .content-table th,
-    .content-table td {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .content-section h1 {
-        font-size: 1.7rem;
-    }
-
-    .content-section h2 {
-        font-size: 1.4rem;
-    }
-
-    .content-section h3 {
-        font-size: 1.2rem;
-    }
-
     .content-section p {
         font-size: 1rem;
-    }
-
-    .content-table th,
-    .content-table td {
-        padding: 6px;
-        font-size: 0.8rem;
     }
 }
