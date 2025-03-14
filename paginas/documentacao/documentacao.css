@@ -1,17 +1,18 @@
-/* Reset de estilos */
+/*Reset de estilos e importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/*configuração padrão da pagina do site, ele aplica a tudo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais */
+/*Estilos gerais da pagina*/
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #e7e7e7;
     color: #000;
     display: flex;
     flex-direction: column;
@@ -19,6 +20,7 @@ body {
     margin: 0;
 }
 
+/*classe do menu*/
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -26,13 +28,14 @@ body {
     flex: 1;
 }
 
-/* Header */
+/*classe da logo (cor da barra do menu e da letra e o tamanho da letra )*/
 .site-header {
     background-color: #242424;
     color: #fff;
     padding: 10px 0;
 }
 
+/*classe da logo (determina as posições dos botões e logo) */
 .header-inner {
     display: flex;
     flex-direction: row;
@@ -43,36 +46,44 @@ body {
     margin: 0 auto;
 }
 
+/*classe da logo (determina o tamanho do botão da nuvem)*/
 .logo-container {
     display: flex;
     align-items: center;
 }
 
+/*classe da logo determina o tamanho da imagem da nuvem */
 .logotipo {
     height: 50px;
-    transition: transform 0.3s ease;
 }
 
+/*classe da logo (faz com que o botão mude de cor quando passa o mouse em cima)*/
 .logotipo:hover{
     border-radius: 5px;
     padding: 1px ;
 }
 
+/*classe menu ()*/
 .site-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+/*classe menu (faz com que o menu fique na horizontal)*/
 .site-nav ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
 }
 
+/*classe menu (espaçamento entre os botões)*/
 .site-nav ul li {
     margin: 0 10px;
 }
 
+/*classe menu (estilização do botão)*/
 .site-nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -83,6 +94,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/*classe menu (faz com que o botão mude de cor ao passar o mouse)*/
 .site-nav ul li a:hover {
     background-color: #1e1e1e;
 }

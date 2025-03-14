@@ -1,12 +1,483 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css">
-</head>
-<body>
-    
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--titulo-->
+    <title>Pcpropr</title>
+    <!--link css-->
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css"/>
+    <!--link da logo da barra do navegador-->
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon"/>
+    <!--importação do google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!--logo-->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-container">
+
+          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo"/></a>
+          <a href="/index.html" class="site-nav"></a>
+
+        </div>
+        <!--botões do menu-->
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+            <li><a href="/paginas/contato/index.html">Contato</a></li>
+            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Estrutura Básica -->
+        <section id="estrutura" class="content-section">
+            <h1>1. Estrutura Básica de um Documento HTML</h1>
+            <p>Todo documento HTML começa com a declaração <code>&lt;!DOCTYPE html&gt;</code>, que define o tipo de documento e a versão do HTML.</p>
+            <p>O documento é envolto pela tag <code>&lt;html&gt;</code>, que contém duas seções principais: <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <!-- Semântica HTML -->
+        <section id="semantica" class="content-section">
+            <h2>2. Semântica HTML</h2>
+            <p>Um especialista em HTML prioriza o uso de elementos semânticos para melhorar a acessibilidade e a SEO. Isso significa usar tags como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, etc., para descrever o conteúdo de forma significativa.</p>
+            <pre><code>&lt;header&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#servicos"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section id="sobre"&gt;
+        &lt;h2&gt;Sobre Nós&lt;/h2&gt;
+        &lt;p&gt;Informações sobre a empresa.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id="servicos"&gt;
+        &lt;h2&gt;Nossos Serviços&lt;/h2&gt;
+        &lt;p&gt;Descrição dos serviços oferecidos.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2023 Meu Site&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
+
+        <!-- Acessibilidade -->
+        <section id="acessibilidade" class="content-section">
+            <h2>3. Acessibilidade</h2>
+            <p>Um especialista em HTML sempre considera a acessibilidade, garantindo que o conteúdo seja acessível a todos os usuários, incluindo aqueles com deficiências. Isso inclui o uso de atributos como <code>alt</code> em imagens, <code>aria-* </code> para melhorar a acessibilidade de elementos interativos, e a estruturação correta do conteúdo.</p>
+            <pre><code>&lt;img src="imagem.jpg" alt="Descrição da imagem para leitores de tela"&gt;
+&lt;button aria-label="Fechar"&gt;X&lt;/button&gt;</code></pre>
+        </section>
+
+        <!-- Formulários HTML -->
+        <section id="formularios" class="content-section">
+            <h2>4. Formulários HTML</h2>
+            <p>Formulários são uma parte essencial de muitos sites. Um especialista em HTML sabe como estruturar formulários de forma eficiente, usando elementos como <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, e <code>&lt;button&gt;</code>.</p>
+            <pre><code>&lt;form action="/enviar" method="post"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+    &lt;textarea id="mensagem" name="mensagem" required&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </section>
+
+        <!-- SEO e Meta Tags -->
+        <section id="seo" class="content-section">
+            <h2>5. Meta Tags e SEO</h2>
+            <p>Um especialista em HTML entende a importância das meta tags para o SEO (Search Engine Optimization). Isso inclui a definição de meta charset, meta name="description", meta name="keywords", e outras tags que ajudam os motores de busca a entender o conteúdo da página.</p>
+            <pre><code>&lt;meta name="description" content="Descrição do site para motores de busca"&gt;
+&lt;meta name="keywords" content="HTML, CSS, JavaScript, Web Development"&gt;
+&lt;meta name="author" content="Seu Nome"&gt;</code></pre>
+        </section>
+
+        <!-- Boas Práticas -->
+        <section id="boas-praticas" class="content-section">
+            <h2>6. Boas Práticas</h2>
+            <p>Validação: Sempre validar o código HTML usando ferramentas como o W3C Validator para garantir que o código esteja livre de erros.</p>
+            <p>Compatibilidade: Garantir que o HTML seja compatível com diferentes navegadores e dispositivos.</p>
+            <p>Manutenção: Escrever código limpo e bem organizado, com comentários quando necessário, para facilitar a manutenção.</p>
+        </section>
+
+        <!-- CSS e JavaScript -->
+        <section id="css-js" class="content-section">
+            <h2>7. Integração com CSS e JavaScript</h2>
+            <p>Um especialista em HTML sabe como integrar corretamente CSS e JavaScript no documento HTML, usando as tags <code>&lt;link&gt;</code> e <code>&lt;script&gt;</code>.</p>
+            <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <!-- HTML5 APIs -->
+        <section id="html5-apis" class="content-section">
+            <h2>8. HTML5 APIs</h2>
+            <p>Um especialista em HTML está familiarizado com as APIs do HTML5, como localStorage, sessionStorage, geolocation, canvas, video, e audio, que permitem criar experiências interativas e dinâmicas.</p>
+            <pre><code>&lt;canvas id="meuCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById('meuCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(0, 0, 150, 75);
+&lt;/script&gt;</code></pre>
+        </section>
+
+        <!-- Responsividade -->
+        <section id="responsividade" class="content-section">
+            <h2>9. Responsividade</h2>
+            <p>Um especialista em HTML entende a importância de criar layouts responsivos que se adaptem a diferentes tamanhos de tela. Isso envolve o uso de meta tags como viewport e a integração com CSS para criar designs flexíveis.</p>
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+        </section>
+
+        <!-- Performance -->
+        <section id="performance" class="content-section">
+            <h2>10. Performance</h2>
+            <p>Um especialista em HTML considera a performance ao criar páginas web, minimizando o uso de recursos pesados, otimizando imagens e usando técnicas como lazy loading para melhorar o tempo de carregamento.</p>
+            <pre><code>&lt;img src="imagem.jpg" loading="lazy" alt="Descrição da imagem"&gt;</code></pre>
+        </section>
+
+        <section class="content-section">
+            <h2>Comandos HTML</h2>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Tag</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&lt;!DOCTYPE html&gt;</td>
+                    <td>Define o tipo de documento como HTML5.</td>
+                </tr>
+                <tr>
+                    <td>&lt;head&gt;</td>
+                    <td>Contém metadados sobre o documento, como título, links para CSS e scripts.</td>
+                </tr>
+                <tr>
+                    <td>&lt;title&gt;</td>
+                    <td>Define o título da página, exibido na aba do navegador.</td>
+                </tr>
+                <tr>
+                    <td>&lt;body&gt;</td>
+                    <td>Contém o conteúdo visível da página.</td>
+                </tr>
+                <tr>
+                    <td>&lt;h1&gt;</td>
+                    <td>Define um cabeçalho de nível 1 (título principal).</td>
+                </tr>
+                <tr>
+                    <td>&lt;h2&gt;</td>
+                    <td>Define um cabeçalho de nível 2 (subtítulo).</td>
+                </tr>
+                <tr>
+                    <td>&lt;h3&gt;</td>
+                    <td>Define um cabeçalho de nível 3.</td>
+                </tr>
+                <tr>
+                    <td>&lt;h4&gt;</td>
+                    <td>Define um cabeçalho de nível 4.</td>
+                </tr>
+                <tr>
+                    <td>&lt;h5&gt;</td>
+                    <td>Define um cabeçalho de nível 5.</td>
+                </tr>
+                <tr>
+                    <td>&lt;h6&gt;</td>
+                    <td>Define um cabeçalho de nível 6.</td>
+                </tr>
+                <tr>
+                    <td>&lt;p&gt;</td>
+                    <td>Define um parágrafo de texto.</td>
+                </tr>
+                <tr>
+                    <td>&lt;a&gt;</td>
+                    <td>Cria um link para outra página ou recurso.</td>
+                </tr>
+                <tr>
+                    <td>&lt;img&gt;</td>
+                    <td>Exibe uma imagem na página.</td>
+                </tr>
+                <tr>
+                    <td>&lt;ul&gt;</td>
+                    <td>Cria uma lista não ordenada (com marcadores).</td>
+                </tr>
+                <tr>
+                    <td>&lt;ol&gt;</td>
+                    <td>Cria uma lista ordenada (com números ou letras).</td>
+                </tr>
+                <tr>
+                    <td>&lt;li&gt;</td>
+                    <td>Define um item de lista (usado dentro de &lt;ul&gt; ou &lt;ol&gt;).</td>
+                </tr>
+                <tr>
+                    <td>&lt;div&gt;</td>
+                    <td>Cria uma divisão ou seção genérica no documento.</td>
+                </tr>
+                <tr>
+                    <td>&lt;br&gt;</td>
+                    <td>Cria uma linha de quebra de texto (sem fechamento).</td>
+                </tr>
+                <tr>
+                    <td>&lt;hr&gt;</td>
+                    <td>Cria uma linha horizontal (usada para separar conteúdo).</td>
+                </tr>
+                <tr>
+                    <td>&lt;form&gt;</td>
+                    <td>Define um formulário para coletar dados do usuário.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input&gt;</td>
+                    <td>Cria um campo de entrada de texto, e-mail, senha, etc.</td>
+                </tr>
+                <tr>
+                    <td>&lt;button&gt;</td>
+                    <td>Define um botão clicável.</td>
+                </tr>
+                <tr>
+                    <td>&lt;textarea&gt;</td>
+                    <td>Cria uma área de texto para múltiplas linhas de entrada.</td>
+                </tr>
+                <tr>
+                    <td>&lt;select&gt;</td>
+                    <td>Define uma lista suspensa (dropdown).</td>
+                </tr>
+                <tr>
+                    <td>&lt;option&gt;</td>
+                    <td>Define uma opção em uma lista suspensa (usada dentro de &lt;select&gt;).</td>
+                </tr>
+                <tr>
+                    <td>&lt;fieldset&gt;</td>
+                    <td>Agrupa elementos em um formulário e adiciona uma legenda.</td>
+                </tr>
+                <tr>
+                    <td>&lt;legend&gt;</td>
+                    <td>Define a legenda de um &lt;fieldset&gt;.</td>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Cria uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Define uma linha em uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Define uma célula de cabeçalho em uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Define uma célula de dados em uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;thead&gt;</td>
+                    <td>Define o cabeçalho de uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;tbody&gt;</td>
+                    <td>Define o corpo de uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;tfoot&gt;</td>
+                    <td>Define o rodapé de uma tabela.</td>
+                </tr>
+                <tr>
+                    <td>&lt;figure&gt;</td>
+                    <td>Cria um contêiner para conteúdo multimídia, como vídeos ou áudios.</td>
+                </tr>
+                <tr>
+                    <td>&lt;figcaption&gt;</td>
+                    <td>Define uma legenda para um &lt;figure&gt;.</td>
+                </tr>
+                <tr>
+                    <td>&lt;blockquote&gt;</td>
+                    <td>Cria um bloco de citação.</td>
+                </tr>
+                <tr>
+                    <td>&lt;q&gt;</td>
+                    <td>Define uma citação curta.</td>
+                </tr>
+                <tr>
+                    <td>&lt;em&gt;</td>
+                    <td>Define texto em itálico (ênfase).</td>
+                </tr>
+                <tr>
+                    <td>&lt;strong&gt;</td>
+                    <td>Define texto em negrito (importância).</td>
+                </tr>
+                <tr>
+                    <td>&lt;u&gt;</td>
+                    <td>Define texto sublinhado.</td>
+                </tr>
+                <tr>
+                    <td>&lt;s&gt;</td>
+                    <td>Define texto riscado.</td>
+                </tr>
+                <tr>
+                    <td>&lt;small&gt;</td>
+                    <td>Define texto pequeno (comentários ou notas).</td>
+                </tr>
+                <tr>
+                    <td>&lt;code&gt;</td>
+                    <td>Define texto como código de computador.</td>
+                </tr>
+                <tr>
+                    <td>&lt;pre&gt;</td>
+                    <td>Define texto pré-formatado (preserva espaços e quebras de linha).</td>
+                </tr>
+                <tr>
+                    <td>&lt;link&gt;</td>
+                    <td>Cria um link para um arquivo CSS externo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;script&gt;</td>
+                    <td>Define um script JavaScript dentro do documento.</td>
+                </tr>
+                <tr>
+                    <td>&lt;style&gt;</td>
+                    <td>Define um estilo CSS dentro do documento.</td>
+                </tr>
+                <tr>
+                    <td>&lt;!-- --&gt;</td>
+                    <td>Define um comentário (não é exibido no navegador).</td>
+                </tr>
+                <tr>
+                    <td>&lt;header&gt;</td>
+                    <td>Define o cabeçalho da página ou seção.</td>
+                </tr>
+                <tr>
+                    <td>&lt;footer&gt;</td>
+                    <td>Define o rodapé da página ou seção.</td>
+                </tr>
+                <tr>
+                    <td>&lt;main&gt;</td>
+                    <td>Define a seção principal do conteúdo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;article&gt;</td>
+                    <td>Define uma seção independente do conteúdo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;section&gt;</td>
+                    <td>Define uma seção genérica do conteúdo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;nav&gt;</td>
+                    <td>Define uma barra de navegação.</td>
+                </tr>
+                <tr>
+                    <td>&lt;aside&gt;</td>
+                    <td>Define conteúdo adicional ou relacionado ao conteúdo principal.</td>
+                </tr>
+                <tr>
+                    <td>&lt;details&gt;</td>
+                    <td>Define detalhes que podem ser expandidos/recolhidos pelo usuário.</td>
+                </tr>
+                <tr>
+                    <td>&lt;summary&gt;</td>
+                    <td>Define o resumo visível de um &lt;details&gt;.</td>
+                </tr>
+                <tr>
+                    <td>&lt;video&gt;</td>
+                    <td>Define um vídeo incorporado na página.</td>
+                </tr>
+                <tr>
+                    <td>&lt;audio&gt;</td>
+                    <td>Define um áudio incorporado na página.</td>
+                </tr>
+                <tr>
+                    <td>&lt;track&gt;</td>
+                    <td>Define uma legenda para um vídeo ou áudio.</td>
+                </tr>
+                <tr>
+                    <td>&lt;iframe&gt;</td>
+                    <td>Define um contêiner para conteúdo externo, como um mapa ou vídeo do YouTube.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="date"&gt;</td>
+                    <td>Define um campo de entrada de data.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="color"&gt;</td>
+                    <td>Define um campo de entrada de cor.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="email"&gt;</td>
+                    <td>Define um campo de entrada de e-mail.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="password"&gt;</td>
+                    <td>Define um campo de entrada de senha.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="number"&gt;</td>
+                    <td>Define um campo de entrada de número.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="file"&gt;</td>
+                    <td>Define um campo de entrada de arquivo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="search"&gt;</td>
+                    <td>Define um campo de entrada de pesquisa.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="url"&gt;</td>
+                    <td>Define um campo de entrada de URL.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="range"&gt;</td>
+                    <td>Define um campo de entrada de intervalo (slider).</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="time"&gt;</td>
+                    <td>Define um campo de entrada de tempo.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="datetime-local"&gt;</td>
+                    <td>Define um campo de entrada de data e hora.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Todos os direitos reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
