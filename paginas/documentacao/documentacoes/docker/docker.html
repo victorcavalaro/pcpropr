@@ -1,137 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pcpropr - Documentação Docker</title>
-    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
-    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pcpropr - Documentação Docker</title>
+  <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
+  <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header class="site-header">
-        <div class="header-inner">
-            <div class="logo-container">
-                <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
-            </div>
-            <!-- Menu de Navegação -->
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="/index.html">Início</a></li>
-                    <li><a href="/paginas/sobre/index.html">Sobre</a></li>
-                    <li><a href="/paginas/contato/index.html">Contato</a></li>
-                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
-                </ul>
-            </nav>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-container">
+        <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+          <li><a href="/paginas/contato/index.html">Contato</a></li>
+          <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container">
+    <section class="content-section">
+      <h1>Docker: Guia Completo</h1>
+      <p style="text-align: center;">Aprenda tudo sobre containers, imagens, Dockerfile, Docker Compose e mais!</p>
+
+      <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
+        <!-- Cards -->
+        <!-- Modelo de Card -->
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Conceito" style="width: 50px;">
+          <h3>📦 O que é Docker?</h3>
+          <p>Plataforma de código aberto para empacotar, distribuir e executar aplicações em containers de forma isolada e consistente.</p>
         </div>
-    </header>
-    <section class="hero">
-        <h1 class="hero-title">Docker: Guia Completo</h1>
-        <p class="hero-subtitle">Aprenda tudo sobre containers, imagens, Dockerfile, Docker Compose e mais!</p>
-      </section>
-    
-      <!-- Cards -->
-      <section id="cards" class="container">
-        <h2>Documentação Docker</h2>
-        <div class="card-container">
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Conceito">
-            <div class="card-content">
-              <h3>📦 O que é Docker?</h3>
-              <p>Docker é uma plataforma de código aberto que permite empacotar, distribuir e executar aplicações em containers de forma isolada e consistente em qualquer ambiente.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3940/3940056.png" alt="Container">
-            <div class="card-content">
-              <h3>🧱 O que é um Container?</h3>
-              <p>Um container é uma unidade leve que empacota o código da aplicação, suas bibliotecas e dependências para rodar de forma portátil e previsível.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="Funcionamento">
-            <div class="card-content">
-              <h3>⚙️ Como o Docker Funciona?</h3>
-              <p>Funciona com imagens, que são moldes, e containers, que são instâncias dessas imagens. Tudo é definido em um Dockerfile, com comandos para montar o ambiente.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Instalação">
-            <div class="card-content">
-              <h3>📥 Instalação</h3>
-              <p>Baixe o Docker Desktop do site oficial. Após instalar, use o terminal para verificar com <code>docker --version</code>.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Exemplo">
-            <div class="card-content">
-              <h3>🚀 Criando um Container</h3>
-              <p>Crie um projeto com <code>Dockerfile</code>, construa com <code>docker build</code> e execute com <code>docker run</code>.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="Comandos">
-            <div class="card-content">
-              <h3>📌 Comandos Essenciais</h3>
-              <p><strong>docker build</strong>, <strong>docker run</strong>, <strong>docker ps</strong>, <strong>docker stop</strong>, <strong>docker rm</strong>, <strong>docker rmi</strong>.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Dockerfile">
-            <div class="card-content">
-              <h3>📄 Dockerfile</h3>
-              <p>Arquivo que define instruções para construir a imagem da aplicação: imagem base, diretório, dependências, comandos e portas.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Compose">
-            <div class="card-content">
-              <h3>🧩 Docker Compose</h3>
-              <p>Ferramenta para definir e rodar múltiplos containers com um arquivo <code>docker-compose.yml</code>. Ideal para apps com banco de dados e back-end separados.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3222/3222651.png" alt="Hub">
-            <div class="card-content">
-              <h3>☁️ Docker Hub</h3>
-              <p>Repositório público onde você pode baixar ou publicar imagens Docker, como <code>mysql</code>, <code>nginx</code>, <code>node</code>, entre outras.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Vantagens">
-            <div class="card-content">
-              <h3>✅ Vantagens do Docker</h3>
-              <p>Ambiente padronizado, leve, rápido, fácil de escalar, facilita o CI/CD e reduz erros entre dev e produção.</p>
-            </div>
-          </div>
-    
-          <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/857/857681.png" alt="Casos de Uso">
-            <div class="card-content">
-              <h3>💼 Casos de Uso</h3>
-              <p>Ambientes de desenvolvimento, microserviços, testes automatizados, integração contínua, deploy em nuvem, e mais.</p>
-            </div>
-          </div>
-    
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3940/3940056.png" alt="Container" style="width: 50px;">
+          <h3>🧱 O que é um Container?</h3>
+          <p>Unidade leve que empacota o código, bibliotecas e dependências da aplicação de forma portátil.</p>
         </div>
-      </section>
-</body>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="Funcionamento" style="width: 50px;">
+          <h3>⚙️ Como Funciona?</h3>
+          <p>Docker usa imagens como moldes para containers. Tudo é descrito em um Dockerfile.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Instalação" style="width: 50px;">
+          <h3>📥 Instalação</h3>
+          <p>Baixe do site oficial e verifique com <code>docker --version</code>.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Exemplo" style="width: 50px;">
+          <h3>🚀 Criando um Container</h3>
+          <p>Use <code>Dockerfile</code>, <code>docker build</code> e <code>docker run</code>.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="Comandos" style="width: 50px;">
+          <h3>📌 Comandos Essenciais</h3>
+          <p><code>build</code>, <code>run</code>, <code>ps</code>, <code>stop</code>, <code>rm</code>, <code>rmi</code>.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Dockerfile" style="width: 50px;">
+          <h3>📄 Dockerfile</h3>
+          <p>Define a construção da imagem: base, comandos, dependências, portas e diretórios.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Compose" style="width: 50px;">
+          <h3>🧩 Docker Compose</h3>
+          <p>Gerencia múltiplos containers com <code>docker-compose.yml</code>.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3222/3222651.png" alt="Hub" style="width: 50px;">
+          <h3>☁️ Docker Hub</h3>
+          <p>Repositório de imagens. Use <code>mysql</code>, <code>nginx</code>, <code>node</code> e mais.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Vantagens" style="width: 50px;">
+          <h3>✅ Vantagens</h3>
+          <p>Ambiente padronizado, leve, rápido, escalável e ideal para CI/CD.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/857/857681.png" alt="Casos de Uso" style="width: 50px;">
+          <h3>💼 Casos de Uso</h3>
+          <p>Ambientes dev, microserviços, testes, integração contínua e deploy.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <!-- Rodapé -->
   <footer class="site-footer">
     <p>&copy; 2025 Pcpropr.</p>
-</footer>
+  </footer>
 </body>
 </html>
