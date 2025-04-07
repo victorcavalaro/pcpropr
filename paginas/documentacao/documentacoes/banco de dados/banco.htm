@@ -101,46 +101,46 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>SELECT</td><td><code>SELECT * FROM funcionarios;</code></td></tr>
-            <tr><td>INSERT INTO</td><td><code>INSERT INTO funcionarios (nome, cargo) VALUES ('Ana', 'Gerente');</code></td></tr>
-            <tr><td>UPDATE</td><td><code>UPDATE funcionarios SET cargo = 'Diretora' WHERE nome = 'Ana';</code></td></tr>
-            <tr><td>DELETE</td><td><code>DELETE FROM funcionarios WHERE nome = 'Ana';</code></td></tr>
-            <tr><td>CREATE TABLE</td><td><code>CREATE TABLE funcionarios (id INT PRIMARY KEY, nome VARCHAR(100));</code></td></tr>
-            <tr><td>ALTER TABLE</td><td><code>ALTER TABLE funcionarios ADD COLUMN salario DECIMAL(10,2);</code></td></tr>
-            <tr><td>DROP TABLE</td><td><code>DROP TABLE funcionarios;</code></td></tr>
-            <tr><td>CREATE DATABASE</td><td><code>CREATE DATABASE empresa;</code></td></tr>
-            <tr><td>DROP DATABASE</td><td><code>DROP DATABASE empresa;</code></td></tr>
-            <tr><td>USE</td><td><code>USE empresa;</code></td></tr>
-            <tr><td>WHERE</td><td><code>SELECT * FROM funcionarios WHERE cargo = 'Analista';</code></td></tr>
-            <tr><td>ORDER BY</td><td><code>SELECT * FROM funcionarios ORDER BY nome ASC;</code></td></tr>
-            <tr><td>GROUP BY</td><td><code>SELECT cargo, COUNT(*) FROM funcionarios GROUP BY cargo;</code></td></tr>
-            <tr><td>HAVING</td><td><code>SELECT cargo, COUNT(*) FROM funcionarios GROUP BY cargo HAVING COUNT(*) > 2;</code></td></tr>
-            <tr><td>JOIN</td><td><code>SELECT * FROM funcionarios JOIN departamentos ON funcionarios.depto_id = departamentos.id;</code></td></tr>
-            <tr><td>INNER JOIN</td><td><code>SELECT * FROM funcionarios INNER JOIN departamentos ON funcionarios.depto_id = departamentos.id;</code></td></tr>
-            <tr><td>LEFT JOIN</td><td><code>SELECT * FROM funcionarios LEFT JOIN departamentos ON funcionarios.depto_id = departamentos.id;</code></td></tr>
-            <tr><td>RIGHT JOIN</td><td><code>SELECT * FROM funcionarios RIGHT JOIN departamentos ON funcionarios.depto_id = departamentos.id;</code></td></tr>
-            <tr><td>FULL JOIN</td><td><code>SELECT * FROM funcionarios FULL OUTER JOIN departamentos ON funcionarios.depto_id = departamentos.id;</code></td></tr>
-            <tr><td>UNION</td><td><code>SELECT nome FROM funcionarios UNION SELECT nome FROM clientes;</code></td></tr>
-            <tr><td>DISTINCT</td><td><code>SELECT DISTINCT cargo FROM funcionarios;</code></td></tr>
-            <tr><td>LIKE</td><td><code>SELECT * FROM funcionarios WHERE nome LIKE 'A%';</code></td></tr>
-            <tr><td>IN</td><td><code>SELECT * FROM funcionarios WHERE cargo IN ('Gerente', 'Diretor');</code></td></tr>
-            <tr><td>BETWEEN</td><td><code>SELECT * FROM funcionarios WHERE salario BETWEEN 2000 AND 5000;</code></td></tr>
-            <tr><td>IS NULL</td><td><code>SELECT * FROM funcionarios WHERE data_saida IS NULL;</code></td></tr>
-            <tr><td>AS</td><td><code>SELECT nome AS 'Funcionário', cargo AS 'Cargo Atual' FROM funcionarios;</code></td></tr>
-            <tr><td>LIMIT</td><td><code>SELECT * FROM funcionarios LIMIT 5;</code></td></tr>
-            <tr><td>OFFSET</td><td><code>SELECT * FROM funcionarios LIMIT 5 OFFSET 10;</code></td></tr>
-            <tr><td>DEFAULT</td><td><code>CREATE TABLE produtos (id INT, nome VARCHAR(50), status VARCHAR(20) DEFAULT 'ativo');</code></td></tr>
-            <tr><td>PRIMARY KEY</td><td><code>CREATE TABLE funcionarios (id INT PRIMARY KEY, nome VARCHAR(100));</code></td></tr>
-            <tr><td>FOREIGN KEY</td><td><code>ALTER TABLE funcionarios ADD CONSTRAINT fk_depto FOREIGN KEY (depto_id) REFERENCES departamentos(id);</code></td></tr>
-            <tr><td>AUTO_INCREMENT</td><td><code>id INT AUTO_INCREMENT PRIMARY KEY</code></td></tr>
-            <tr><td>NOT NULL</td><td><code>nome VARCHAR(100) NOT NULL</code></td></tr>
-            <tr><td>CHECK</td><td><code>salario DECIMAL(10,2) CHECK (salario > 0)</code></td></tr>
-            <tr><td>INDEX</td><td><code>CREATE INDEX idx_nome ON funcionarios(nome);</code></td></tr>
-            <tr><td>VIEW</td><td><code>CREATE VIEW analistas AS SELECT * FROM funcionarios WHERE cargo = 'Analista';</code></td></tr>
-            <tr><td>TRUNCATE TABLE</td><td><code>TRUNCATE TABLE funcionarios;</code></td></tr>
-            <tr><td>RENAME TABLE</td><td><code>RENAME TABLE funcionarios TO colaboradores;</code></td></tr>
-            <tr><td>GRANT</td><td><code>GRANT SELECT ON empresa.funcionarios TO 'usuario';</code></td></tr>
-            <tr><td>REVOKE</td><td><code>REVOKE SELECT ON empresa.funcionarios FROM 'usuario';</code></td></tr>
+            <tr><td>SELECT</td><td>SELECT * FROM funcionarios;</td></tr>
+            <tr><td>INSERT INTO</td><td>INSERT INTO funcionarios (nome, cargo) VALUES ('Ana', 'Gerente');</td></tr>
+            <tr><td>UPDATE</td><td>UPDATE funcionarios SET cargo = 'Diretora' WHERE nome = 'Ana';</td></tr>
+            <tr><td>DELETE</td><td>DELETE FROM funcionarios WHERE nome = 'Ana';</td></tr>
+            <tr><td>CREATE TABLE</td><td>CREATE TABLE funcionarios (id INT PRIMARY KEY, nome VARCHAR(100));</td></tr>
+            <tr><td>ALTER TABLE</td><td>ALTER TABLE funcionarios ADD COLUMN salario DECIMAL(10,2);</td></tr>
+            <tr><td>DROP TABLE</td><td>DROP TABLE funcionarios;</td></tr>
+            <tr><td>CREATE DATABASE</td><td>CREATE DATABASE empresa;</td></tr>
+            <tr><td>DROP DATABASE</td><td>DROP DATABASE empresa;</td></tr>
+            <tr><td>USE</td><td>USE empresa;</td></tr>
+            <tr><td>WHERE</td><td>SELECT * FROM funcionarios WHERE cargo = 'Analista';</td></tr>
+            <tr><td>ORDER BY</td><td>SELECT * FROM funcionarios ORDER BY nome ASC;</td></tr>
+            <tr><td>GROUP BY</td><td>SELECT cargo, COUNT(*) FROM funcionarios GROUP BY cargo;</td></tr>
+            <tr><td>HAVING</td><td>SELECT cargo, COUNT(*) FROM funcionarios GROUP BY cargo HAVING COUNT(*) > 2;</td></tr>
+            <tr><td>JOIN</td><td>SELECT * FROM funcionarios JOIN departamentos ON funcionarios.depto_id = departamentos.id;</td></tr>
+            <tr><td>INNER JOIN</td><td>SELECT * FROM funcionarios INNER JOIN departamentos ON funcionarios.depto_id = departamentos.id;</td></tr>
+            <tr><td>LEFT JOIN</td><td>SELECT * FROM funcionarios LEFT JOIN departamentos ON funcionarios.depto_id = departamentos.id;</td></tr>
+            <tr><td>RIGHT JOIN</td><td>SELECT * FROM funcionarios RIGHT JOIN departamentos ON funcionarios.depto_id = departamentos.id;</td></tr>
+            <tr><td>FULL JOIN</td><td>SELECT * FROM funcionarios FULL OUTER JOIN departamentos ON funcionarios.depto_id = departamentos.id;</td></tr>
+            <tr><td>UNION</td><td>SELECT nome FROM funcionarios UNION SELECT nome FROM clientes;</td></tr>
+            <tr><td>DISTINCT</td><td>SELECT DISTINCT cargo FROM funcionarios;</td></tr>
+            <tr><td>LIKE</td><td>SELECT * FROM funcionarios WHERE nome LIKE 'A%';</td></tr>
+            <tr><td>IN</td><td>SELECT * FROM funcionarios WHERE cargo IN ('Gerente', 'Diretor');</td></tr>
+            <tr><td>BETWEEN</td><td>SELECT * FROM funcionarios WHERE salario BETWEEN 2000 AND 5000;</td></tr>
+            <tr><td>IS NULL</td><td>SELECT * FROM funcionarios WHERE data_saida IS NULL;</td></tr>
+            <tr><td>AS</td><td>SELECT nome AS 'Funcionário', cargo AS 'Cargo Atual' FROM funcionarios;</td></tr>
+            <tr><td>LIMIT</td><td>SELECT * FROM funcionarios LIMIT 5;</td></tr>
+            <tr><td>OFFSET</td><td>SELECT * FROM funcionarios LIMIT 5 OFFSET 10;</td></tr>
+            <tr><td>DEFAULT</td><td>CREATE TABLE produtos (id INT, nome VARCHAR(50), status VARCHAR(20) DEFAULT 'ativo');</td></tr>
+            <tr><td>PRIMARY KEY</td><td>CREATE TABLE funcionarios (id INT PRIMARY KEY, nome VARCHAR(100));</td></tr>
+            <tr><td>FOREIGN KEY</td><td>ALTER TABLE funcionarios ADD CONSTRAINT fk_depto FOREIGN KEY (depto_id) REFERENCES departamentos(id);</td></tr>
+            <tr><td>AUTO_INCREMENT</td><td>id INT AUTO_INCREMENT PRIMARY KEY</td></tr>
+            <tr><td>NOT NULL</td><td>nome VARCHAR(100) NOT NULL</td></tr>
+            <tr><td>CHECK</td><td>salario DECIMAL(10,2) CHECK (salario > 0)</td></tr>
+            <tr><td>INDEX</td><td>CREATE INDEX idx_nome ON funcionarios(nome);</td></tr>
+            <tr><td>VIEW</td><td>CREATE VIEW analistas AS SELECT * FROM funcionarios WHERE cargo = 'Analista';</td></tr>
+            <tr><td>TRUNCATE TABLE</td><td>TRUNCATE TABLE funcionarios;</td></tr>
+            <tr><td>RENAME TABLE</td><td>RENAME TABLE funcionarios TO colaboradores;</td></tr>
+            <tr><td>GRANT</td><td>GRANT SELECT ON empresa.funcionarios TO 'usuario';</td></tr>
+            <tr><td>REVOKE</td><td>REVOKE SELECT ON empresa.funcionarios FROM 'usuario';</td></tr>
           </tbody>
         </table>
       </section>
