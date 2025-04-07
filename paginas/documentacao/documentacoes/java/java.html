@@ -345,7 +345,165 @@ public class Main {
             <p>
                 Dominar o uso de <strong>classes</strong>, <strong>métodos</strong> e <strong>estruturas de controle</strong> é fundamental para se tornar um programador Java eficiente. As classes permitem organizar o código de forma modular, os métodos encapsulam comportamentos específicos, e as estruturas de controle garantem a lógica e o fluxo do programa. Com esses conceitos bem compreendidos, você estará preparado para desenvolver aplicações robustas, escaláveis e de fácil manutenção em Java. Continue praticando e explorando os recursos da linguagem para aprimorar suas habilidades!
             </p>
-        </section>
+
+            <section class="content-section">
+                <h1>Projeto CRUD com Spring Boot</h1>
+          
+                <h2>Estrutura de Diretórios</h2>
+                <pre><code>src/
+          ├─ main/
+          │  ├─ java/com/exemplo/crud/
+          │  │  ├─ CrudApplication.java
+          │  │  ├─ model/Item.java
+          │  │  ├─ repository/ItemRepository.java
+          │  │  ├─ service/ItemService.java
+          │  │  └─ controller/ItemController.java
+          │  └─ resources/
+          │     └─ application.properties</code></pre>
+          
+                <h2>Model</h2>
+                <pre><code>package com.exemplo.crud.model;
+          
+          import jakarta.persistence.*;
+          
+          @Entity
+          public class Item {
+              @Id
+              @GeneratedValue(strategy = GenerationType.IDENTITY)
+              private Long id;
+          
+              private String nome;
+              private String descricao;
+          
+              // Getters e Setters
+              public Long getId() { return id; }
+              public void setId(Long id) { this.id = id; }
+          
+              public String getNome() { return nome; }
+              public void setNome(String nome) { this.nome = nome; }
+          
+              public String getDescricao() { return descricao; }
+              public void setDescricao(String descricao) { this.descricao = descricao; }
+          }</code></pre>
+          
+                <h2>Repository</h2>
+                <pre><code>package com.exemplo.crud.repository;
+          
+          import com.exemplo.crud.model.Item;
+          import org.springframework.data.jpa.repository.JpaRepository;
+          
+          public interface ItemRepository extends JpaRepository&lt;Item, Long&gt; {
+          }</code></pre>
+          
+                <h2>Service</h2>
+                <pre><code>package com.exemplo.crud.service;
+          
+          import com.exemplo.crud.model.Item;
+          import com.exemplo.crud.repository.ItemRepository;
+          import org.springframework.stereotype.Service;
+          
+          import java.util.List;
+          import java.util.Optional;
+          
+          @Service
+          public class ItemService {
+          
+              private final ItemRepository itemRepository;
+          
+              public ItemService(ItemRepository itemRepository) {
+                  this.itemRepository = itemRepository;
+              }
+          
+              public List&lt;Item&gt; listarTodos() {
+                  return itemRepository.findAll();
+              }
+          
+              public Optional&lt;Item&gt; buscarPorId(Long id) {
+                  return itemRepository.findById(id);
+              }
+          
+              public Item salvar(Item item) {
+                  return itemRepository.save(item);
+              }
+          
+              public void excluir(Long id) {
+                  itemRepository.deleteById(id);
+              }
+          }</code></pre>
+          
+                <h2>Controller</h2>
+                <pre><code>package com.exemplo.crud.controller;
+
+import com.exemplo.crud.model.Item;
+import com.exemplo.crud.service.ItemService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/itens")
+public class ItemController {
+
+private final ItemService itemService;
+
+public ItemController(ItemService itemService) {
+    this.itemService = itemService;
+}
+
+@GetMapping
+public List&lt;Item&gt; listar() {
+    return itemService.listarTodos();
+}
+
+@GetMapping("/{id}")
+public ResponseEntity&lt;Item&gt; buscar(@PathVariable Long id) {
+    return itemService.buscarPorId(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+}
+
+@PostMapping
+public Item criar(@RequestBody Item item) {
+    return itemService.salvar(item);
+}
+
+@PutMapping("/{id}")
+public ResponseEntity&lt;Item&gt; atualizar(@PathVariable Long id, @RequestBody Item itemAtualizado) {
+    return itemService.buscarPorId(id)
+            .map(item -&gt; {
+                item.setNome(itemAtualizado.getNome());
+                item.setDescricao(itemAtualizado.getDescricao());
+                return ResponseEntity.ok(itemService.salvar(item));
+            })
+            .orElse(ResponseEntity.notFound().build());
+}
+
+@DeleteMapping("/{id}")
+public ResponseEntity&lt;Void&gt; excluir(@PathVariable Long id) {
+    if (itemService.buscarPorId(id).isPresent()) {
+        itemService.excluir(id);
+        return ResponseEntity.noContent().build();
+    }
+    return ResponseEntity.notFound().build();
+}
+          }</code></pre>
+          
+                <h2>Configurações do Banco de Dados</h2>
+                <pre><code>spring.datasource.url=jdbc:h2:mem:cruddb
+          spring.datasource.driverClassName=org.h2.Driver
+          spring.datasource.username=sa
+          spring.datasource.password=
+          
+          spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+          spring.h2.console.enabled=true
+          spring.jpa.show-sql=true</code></pre>
+          
+                <h2>Rodando a Aplicação</h2>
+                <p>Use o comando abaixo no terminal para iniciar a aplicação:</p>
+                <pre><code>./mvnw spring-boot:run</code></pre>
+                <p>Ou rode diretamente pela sua IDE (IntelliJ, VS Code, Eclipse...)</p>
+              </section>      
     </main>
 
     <!-- Rodapé -->
