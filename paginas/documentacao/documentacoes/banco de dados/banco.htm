@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--titulo-->
+    <title>Pcpropr</title>
+    <!--link css-->
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css"/>
+    <!--link da logo da barra do navegador-->
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon"/>
+    <!--importação do google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!--logo-->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-container">
+          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo"/></a>
+          <a href="/index.html" class="site-nav"></a>
+        </div>
+        <!--botões do menu-->
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+            <li><a href="/paginas/contato/index.html">Contato</a></li>
+            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- conteúdo principal -->
+    <main class="container">
+      <section class="content-section">
+        <h1>Comandos SQL e Suas Funções</h1>
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Comando SQL</th>
+              <th>O que o comando faz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SELECT</td><td>Seleciona dados de uma ou mais tabelas</td></tr>
+            <tr><td>INSERT INTO</td><td>Insere novos dados em uma tabela</td></tr>
+            <tr><td>UPDATE</td><td>Atualiza dados existentes em uma tabela</td></tr>
+            <tr><td>DELETE</td><td>Remove dados de uma tabela</td></tr>
+            <tr><td>CREATE TABLE</td><td>Cria uma nova tabela no banco de dados</td></tr>
+            <tr><td>ALTER TABLE</td><td>Modifica uma tabela existente</td></tr>
+            <tr><td>DROP TABLE</td><td>Remove uma tabela do banco de dados</td></tr>
+            <tr><td>CREATE DATABASE</td><td>Cria um novo banco de dados</td></tr>
+            <tr><td>DROP DATABASE</td><td>Exclui um banco de dados</td></tr>
+            <tr><td>USE</td><td>Seleciona o banco de dados que será utilizado</td></tr>
+            <tr><td>WHERE</td><td>Filtra os registros com base em uma condição</td></tr>
+            <tr><td>ORDER BY</td><td>Ordena os resultados por uma ou mais colunas</td></tr>
+            <tr><td>GROUP BY</td><td>Agrupa os resultados com base em colunas</td></tr>
+            <tr><td>HAVING</td><td>Filtra grupos de resultados após o GROUP BY</td></tr>
+            <tr><td>JOIN</td><td>Combina registros de duas ou mais tabelas</td></tr>
+            <tr><td>INNER JOIN</td><td>Retorna registros com correspondência em ambas as tabelas</td></tr>
+            <tr><td>LEFT JOIN</td><td>Todos da esquerda e correspondentes da direita</td></tr>
+            <tr><td>RIGHT JOIN</td><td>Todos da direita e correspondentes da esquerda</td></tr>
+            <tr><td>FULL JOIN</td><td>Todos os registros com correspondência em uma das tabelas</td></tr>
+            <tr><td>UNION</td><td>Combina o resultado de duas instruções SELECT</td></tr>
+            <tr><td>DISTINCT</td><td>Retorna apenas valores distintos</td></tr>
+            <tr><td>LIKE</td><td>Pesquisa por um padrão em uma coluna</td></tr>
+            <tr><td>IN</td><td>Verifica se um valor está em uma lista</td></tr>
+            <tr><td>BETWEEN</td><td>Verifica se está dentro de um intervalo</td></tr>
+            <tr><td>IS NULL</td><td>Verifica se o valor é nulo</td></tr>
+            <tr><td>AS</td><td>Define um apelido para tabela ou coluna</td></tr>
+            <tr><td>LIMIT</td><td>Define o número máximo de registros retornados</td></tr>
+            <tr><td>OFFSET</td><td>Define o ponto inicial dos registros retornados</td></tr>
+            <tr><td>DEFAULT</td><td>Define valor padrão para coluna</td></tr>
+            <tr><td>PRIMARY KEY</td><td>Define uma chave primária</td></tr>
+            <tr><td>FOREIGN KEY</td><td>Define uma chave estrangeira</td></tr>
+            <tr><td>AUTO_INCREMENT</td><td>Valor auto incrementado automaticamente</td></tr>
+            <tr><td>NOT NULL</td><td>Impede que a coluna tenha valores nulos</td></tr>
+            <tr><td>CHECK</td><td>Impõe uma condição de validação</td></tr>
+            <tr><td>INDEX</td><td>Cria um índice para performance</td></tr>
+            <tr><td>VIEW</td><td>Cria uma visualização (consulta salva)</td></tr>
+            <tr><td>TRUNCATE TABLE</td><td>Remove todos os registros da tabela</td></tr>
+            <tr><td>RENAME TABLE</td><td>Renomeia uma tabela existente</td></tr>
+            <tr><td>GRANT</td><td>Concede permissões a usuários</td></tr>
+            <tr><td>REVOKE</td><td>Remove permissões de usuários</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <p>&copy; 2025 Pcpropr.</p>
+    </footer>
+  </body>
 </html>
