@@ -1,12 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css">
-    <title>Document</title>
-</head>
-<body>
-    
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--titulo-->
+    <title>Pcpropr</title>
+    <!--link css-->
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css"/>
+    <!--link da logo da barra do navegador-->
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon"/>
+    <!--importação do google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!--logo-->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-container">
+
+          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo"/></a>
+          <a href="/index.html" class="site-nav"></a>
+
+        </div>
+        <!--botões do menu-->
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+            <li><a href="/paginas/contato/index.html">Contato</a></li>
+            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+<!-- Conteúdo Principal -->
+<main class="container">
+  <section class="content-section">
+    <h1>🎨 Estilização de Texto e Fontes</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>color</td><td>Define a cor do texto.</td></tr>
+        <tr><td>font-size</td><td>Define o tamanho da fonte.</td></tr>
+        <tr><td>font-family</td><td>Define a família tipográfica.</td></tr>
+        <tr><td>font-weight</td><td>Define a espessura da fonte (ex: bold, normal).</td></tr>
+        <tr><td>font-style</td><td>Define o estilo da fonte (normal, italic, etc.).</td></tr>
+        <tr><td>text-align</td><td>Alinha o texto (left, right, center, justify).</td></tr>
+        <tr><td>text-decoration</td><td>Adiciona/Remove decoração (ex: underline, none).</td></tr>
+        <tr><td>text-transform</td><td>Transforma o texto (uppercase, lowercase, capitalize).</td></tr>
+        <tr><td>letter-spacing</td><td>Define o espaçamento entre letras.</td></tr>
+        <tr><td>line-height</td><td>Define a altura da linha (espaçamento vertical entre linhas).</td></tr>
+        <tr><td>text-shadow</td><td>Adiciona sombra ao texto.</td></tr>
+      </tbody>
+    </table>
+
+    <h1>🎨 Cores e Fundos</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>background-color</td><td>Define a cor de fundo.</td></tr>
+        <tr><td>background-image</td><td>Define uma imagem de fundo.</td></tr>
+        <tr><td>background-size</td><td>Define o tamanho da imagem de fundo.</td></tr>
+        <tr><td>background-position</td><td>Define a posição da imagem de fundo.</td></tr>
+        <tr><td>background-repeat</td><td>Define se a imagem de fundo se repete.</td></tr>
+        <tr><td>opacity</td><td>Define a transparência do elemento.</td></tr>
+        <tr><td>box-shadow</td><td>Adiciona sombra ao elemento.</td></tr>
+        <tr><td>border</td><td>Define borda (largura, estilo, cor).</td></tr>
+        <tr><td>border-radius</td><td>Arredonda os cantos da borda.</td></tr>
+      </tbody>
+    </table>
+
+    <h1>📐 Tamanho e Espaçamento</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>width</td><td>Define a largura do elemento.</td></tr>
+        <tr><td>height</td><td>Define a altura do elemento.</td></tr>
+        <tr><td>max-width</td><td>Define a largura máxima.</td></tr>
+        <tr><td>max-height</td><td>Define a altura máxima.</td></tr>
+        <tr><td>min-width</td><td>Define a largura mínima.</td></tr>
+        <tr><td>min-height</td><td>Define a altura mínima.</td></tr>
+        <tr><td>margin</td><td>Define a margem externa.</td></tr>
+        <tr><td>padding</td><td>Define o espaçamento interno.</td></tr>
+        <tr><td>box-sizing</td><td>Define como o tamanho total é calculado (content-box, border-box).</td></tr>
+      </tbody>
+    </table>
+
+    <h1>🧱 Layout e Posicionamento</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>display</td><td>Define o tipo de exibição (block, inline, flex, grid, none, etc.).</td></tr>
+        <tr><td>position</td><td>Define a posição (static, relative, absolute, fixed, sticky).</td></tr>
+        <tr><td>top, right, bottom, left</td><td>Define o deslocamento do elemento conforme a posição.</td></tr>
+        <tr><td>z-index</td><td>Controla a sobreposição entre elementos.</td></tr>
+        <tr><td>overflow</td><td>Define o que acontece com conteúdo excedente.</td></tr>
+        <tr><td>visibility</td><td>Define se o elemento é visível ou não (ainda ocupa espaço).</td></tr>
+      </tbody>
+    </table>
+
+    <h1>📦 Flexbox</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>display: flex</td><td>Ativa o layout flexível.</td></tr>
+        <tr><td>flex-direction</td><td>Define a direção (row, column).</td></tr>
+        <tr><td>justify-content</td><td>Alinha os itens no eixo principal.</td></tr>
+        <tr><td>align-items</td><td>Alinha os itens no eixo cruzado (vertical).</td></tr>
+        <tr><td>flex-wrap</td><td>Define se os itens podem quebrar linha.</td></tr>
+        <tr><td>gap</td><td>Define o espaço entre os itens.</td></tr>
+        <tr><td>flex</td><td>Controla o crescimento/encolhimento de um item.</td></tr>
+      </tbody>
+    </table>
+
+    <h1>🧮 Grid Layout</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>display: grid</td><td>Ativa o layout em grade.</td></tr>
+        <tr><td>grid-template-columns</td><td>Define o número e tamanho das colunas.</td></tr>
+        <tr><td>grid-template-rows</td><td>Define o número e tamanho das linhas.</td></tr>
+        <tr><td>grid-gap</td><td>Define o espaço entre linhas e colunas.</td></tr>
+        <tr><td>grid-column</td><td>Controla onde o item começa e termina na coluna.</td></tr>
+        <tr><td>grid-row</td><td>Controla onde o item começa e termina na linha.</td></tr>
+      </tbody>
+    </table>
+
+    <h1>✨ Efeitos e Transições</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>transition</td><td>Define animações suaves entre mudanças de estado.</td></tr>
+        <tr><td>transform</td><td>Aplica transformações (rotate, scale, translate, skew).</td></tr>
+        <tr><td>animation</td><td>Define animações com keyframes.</td></tr>
+        <tr><td>@keyframes</td><td>Define etapas da animação personalizada.</td></tr>
+      </tbody>
+    </table>
+
+    <h1>🖱️ Outros Comandos Úteis</h1>
+    <table class="content-table">
+      <thead><tr><th>Comando CSS</th><th>O que ele faz</th></tr></thead>
+      <tbody>
+        <tr><td>cursor</td><td>Define o tipo de cursor (ex: pointer, default, not-allowed).</td></tr>
+        <tr><td>pointer-events</td><td>Controla se o elemento pode receber eventos de mouse.</td></tr>
+        <tr><td>visibility</td><td>Define se o elemento é visível sem removê-lo do fluxo do layout.</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+  
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Todos os direitos reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
