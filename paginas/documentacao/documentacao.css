@@ -214,7 +214,6 @@ body {
     }
 
     .site-nav ul {
-        flex-wrap: wrap;
         justify-content: center;
     }
 

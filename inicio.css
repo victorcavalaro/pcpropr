@@ -12,7 +12,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #e7e7e7;
+    background-color: #ebebeb;
     color: #000;
     display: flex;
     flex-direction: column;
@@ -157,7 +157,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
     text-align: left;
 }
 
@@ -183,7 +183,7 @@ body {
 /*classe cards (determina o tamnho da letra e a cor na tag p)*/
 .service-card p {
     font-size: 1rem;
-    color: #666;
+    color: #363636;
 }
 
 .container_fundoDois{

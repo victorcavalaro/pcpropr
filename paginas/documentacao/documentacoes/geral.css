@@ -80,7 +80,7 @@ body {
 
 /*classe menu (espaçamento entre os botões)*/
 .site-nav ul li {
-    margin: 0 10px;
+    margin: 0 1px;
 }
 
 /*classe menu (estilização do botão)*/
@@ -219,9 +219,8 @@ code {
     }
 
     .site-nav ul {
-        flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 4px;
     }
 
     .site-nav ul li a {
