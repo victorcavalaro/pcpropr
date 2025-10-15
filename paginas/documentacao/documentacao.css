@@ -1,5 +1,37 @@
+/* --- Variáveis CSS (Custom Properties) para Estilo Corporativo --- */
+:root {
+    /* Cores */
+    --cor-principal-fundo: #f0f2f5; /* Cinza claro, suave para o fundo */
+    --cor-secundaria-fundo: #ffffff; /* Branco puro para cards e seções */
+    --cor-header-footer: #1a202c; /* Azul marinho escuro, elegante */
+    --cor-accent: #3b82f6; /* Azul vibrante para acentos e interatividade */
+    --cor-accent-hover: #2563eb; /* Azul um pouco mais escuro para hover */
+    --cor-texto-escuro: #2d3748; /* Cinza escuro para títulos e textos principais */
+    --cor-texto-medio: #4a5568; /* Cinza médio para parágrafos */
+    --cor-texto-claro: #e2e8f0; /* Cinza muito claro para texto em fundos escuros */
+    --cor-borda: #cbd5e0; /* Cinza claro para bordas sutis */
+    --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
+    --sombra-media: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
+
+    /* Tipografia */
+    --fonte-principal: 'Poppins', sans-serif;
+    --tamanho-titulo-hero: 4rem;
+    --tamanho-subtitulo-hero: 1.8rem;
+    --tamanho-titulo-secao: 2.5rem;
+    --tamanho-titulo-card: 1.5rem;
+    --tamanho-paragrafo-card: 1rem;
+    --tamanho-texto-nav: 1rem;
+
+    /* Espaçamentos e Geometria */
+    --largura-maxima: 1100px; /* Um pouco mais largo para um ar "premium" */
+    --padding-secao: 80px 0;
+    --raio-borda-elementos: 12px; /* Bordas mais arredondadas */
+    --raio-borda-botoes: 8px;
+    --transicao-padrao: all 0.3s ease-in-out;
+}
+
 /*Reset de estilos e importação da fonte */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); /* Importando mais pesos de fonte */
 
 /*configuração padrão da pagina do site, ele aplica a tudo */
 * {
@@ -10,10 +42,10 @@
 
 /*Estilos gerais da pagina*/
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: #e7e7e7;
-    color: #000;
+    font-family: var(--fonte-principal);
+    line-height: 1.7; /* Linha de texto um pouco mais espaçada para leitura */
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-medio);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -99,72 +131,100 @@ body {
     background-color: #1e1e1e;
 }
 
-/* Hero Section */
+/*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
 .hero {
-    background-color: #000;
-    background-image: url('/img/fundo projeto.png');
+
+    background-image: url('/img/fundo\ desfocado.png');
+
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 150px 0;
+    padding: 200px 0;
     text-align: left;
+    background-repeat: no-repeat;
 }
 
+/*classe imagem de fundo (formatação do texto central "titulo")*/
 .hero-title {
     font-size: 3rem;
-    margin-bottom: 15px;
-    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
 
+/*classe imagem de fundo (formatação do texto central "subtitulo")*/
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-left: 20px;
-    color: #d8d8d8;
+    margin-left: 20px; /* Adiciona uma leve distância da borda */
 }
+
+
 
 /* Seção de Cards */
 #cards {
-    padding: 40px 0;
-    background-color: #f9f9f9;
+    padding: var(--padding-secao);
+    background-color: var(--cor-secundaria-fundo); /* Branco puro */
 }
 
 #cards h2 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 50px; /* Mais espaçamento */
+    font-size: var(--tamanho-titulo-secao);
+    color: var(--cor-texto-escuro);
+    font-weight: 700;
 }
 
 .card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center; /* Centraliza os cards */
+    display: grid; /* Usar grid para melhor controle de layout em telas maiores */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas flexíveis */
+    gap: 30px; /* Mais espaçamento entre os cards */
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
 }
 
 .card {
     display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ajuste a largura conforme necessário */
-    max-width: 960px; /* Limita a largura máxima */
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column; /* Conteúdo empilhado para melhor leitura */
+    background-color: var(--cor-secundaria-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-elementos);
+    box-shadow: var(--sombra-leve);
+    padding: 30px; /* Mais padding interno */
+    transition: var(--transicao-padrao);
+    overflow: hidden; /* Garante que a sombra da imagem não vaze */
+    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px); /* Elevação mais notável */
+    box-shadow: var(--sombra-media);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Garante que o link ocupe todo o card */
+    outline: none;
+    border-radius: var(--raio-borda-elementos); /* Mantém o foco dentro da borda do card */
+}
+
+.card-link:focus .card {
+    box-shadow: 0 0 0 4px var(--cor-accent), var(--sombra-media); /* Contorno de foco + sombra */
+    transform: translateY(-8px);
 }
 
 .card img {
-    width: 80px; /* Tamanho fixo para a logo */
-    height: 80px;
-    border-radius: 8px;
-    margin-right: 20px; /* Espaço entre a logo e o conteúdo */
+    width: 90px; /* Ícone um pouco maior */
+    height: 90px;
+    border-radius: var(--raio-borda-padrao);
+    margin-bottom: 20px; /* Espaço entre a logo e o conteúdo */
+    align-self: flex-start; /* Alinha a imagem à esquerda */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    background-color: var(--cor-principal-fundo); /* Fundo sutil para a imagem */
+    padding: 10px;
 }
 
 .card-content {
@@ -174,84 +234,173 @@ body {
 }
 
 .card h3 {
-    margin-bottom: 10px;
-    color: #000;
-    font-size: 1.25rem;
-    line-height: 1.2; /* Ajuste para duas linhas */
+    margin-bottom: 15px;
+    color: var(--cor-texto-escuro);
+    font-size: var(--tamanho-titulo-card);
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: auto; /* Alinha a descrição à direita */
+    color: var(--cor-texto-medio);
+    font-size: var(--tamanho-paragrafo-card);
+    margin-bottom: 15px; /* Espaço para o "leia mais" */
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
 }
 
-.card-link {
+/* Adicionando um "Call to Action" sutil nos cards */
+.card-action {
+    color: var(--cor-accent);
+    font-weight: 600;
     text-decoration: none;
-    color: inherit;
     display: flex;
-    width: 100%; /* Garante que o link ocupe todo o card */
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
 }
 
-/* Rodapé */
+.card-action:hover {
+    color: var(--cor-accent-hover);
+}
+
+/*Footer*/
 .site-footer {
-    background-color: #333;
+    background-color: #242424;
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    margin-top: auto;
 }
 
-/* Responsividade */
+/* Animações (para o Hero Section) */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsividade Aprimorada */
+@media (max-width: 1024px) {
+    :root {
+        --tamanho-titulo-hero: 3.5rem;
+        --tamanho-subtitulo-hero: 1.6rem;
+    }
+    .hero {
+        padding: 150px 0;
+    }
+}
+
 @media (max-width: 768px) {
+    :root {
+        --tamanho-titulo-hero: 2.8rem;
+        --tamanho-subtitulo-hero: 1.3rem;
+        --tamanho-titulo-secao: 2rem;
+        --padding-secao: 60px 0;
+    }
+
     .header-inner {
         flex-direction: column;
         align-items: center;
+        gap: 15px; /* Espaço entre logo e nav */
     }
 
     .logo-container {
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Removido para o gap */
     }
 
     .site-nav ul {
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
         justify-content: center;
+        gap: 10px; /* Espaço entre os botões do nav */
+    }
+
+    .site-nav ul li {
+        margin: 0; /* Removido para usar gap */
     }
 
     .hero {
         padding: 100px 0;
+        text-align: center;
         background-attachment: scroll;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: var(--tamanho-titulo-hero);
+        margin-left: 0;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: var(--tamanho-subtitulo-hero);
+        margin-left: 0;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr; /* Cards empilhados em telas menores */
     }
 
     .card {
         flex-direction: column;
         align-items: flex-start;
+        width: 90%; /* Ajuste para preencher mais a tela */
+        margin: 0 auto;
     }
 
     .card img {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         margin-right: 0;
     }
 }
 
 @media (max-width: 480px) {
+    :root {
+        --tamanho-titulo-hero: 2.2rem;
+        --tamanho-subtitulo-hero: 1.1rem;
+        --tamanho-titulo-secao: 1.8rem;
+    }
+    .hero {
+        padding: 80px 0;
+    }
     .hero-title {
-        font-size: 2rem;
+        font-size: var(--tamanho-titulo-hero);
     }
-
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: var(--tamanho-subtitulo-hero);
     }
-
     .site-nav ul li a {
-        padding: 6px 12px;
-        font-size: 14px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card img {
+        width: 70px;
+        height: 70px;
     }
 }
