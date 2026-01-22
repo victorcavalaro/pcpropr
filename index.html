@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -6,14 +6,21 @@
     <!--titulo-->
     <title>Pcpropr</title>
     <!--link css-->
-    <link rel="stylesheet" href="/inicio.css"/>
+    <link rel="stylesheet" href="/inicio.css" />
     <!--link da logo da barra do navegador-->
-    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon"/>
+    <link
+      rel="shortcut icon"
+      href="/img/logo barra superior.png"
+      type="image/x-icon"
+    />
     <!--importação do google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet"/>
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
   </head>
 
   <body>
@@ -21,10 +28,10 @@
     <header class="site-header">
       <div class="header-inner">
         <div class="logo-container">
-
-          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo"/></a>
+          <a href=""
+            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
+          /></a>
           <a href="/index.html" class="site-nav"></a>
-
         </div>
         <!--botões do menu-->
         <nav class="site-nav">
@@ -32,8 +39,17 @@
             <li><a href="/index.html">Início</a></li>
             <!-- <li><a href="/paginas/sobre/index.html">Sobre</a></li> -->
             <li><a href="/paginas/contato/index.html">Conteudos</a></li>
-            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
-            <li><a href="https://aram-cyan.vercel.app/" target="_blank" rel="noopener noreferrer">SGF</a></li>
+            <li>
+              <a href="/paginas/documentacao/index.html">Documentações</a>
+            </li>
+            <li>
+              <a
+                href="https://aram-cyan.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >SGF</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -49,7 +65,71 @@
 
     <!--blocos brancos-->
 
-    <section class="services container" id="services">
+    
+      <section class="services container" id="services">
+  <div class="main-radar-container">
+    
+    <div class="section-header">
+      <h2>Radar de Notícias</h2>
+      <p>As atualizações mais relevantes de tecnologia e mercado financeiro filtradas para você.</p>
+    </div>
+
+    <div class="service-cards">
+      <div class="service-card" id="card-tecmundo">
+        <div class="card-tag">Tecnologia</div>
+        <h3>TecMundo</h3>
+        <div class="news-list">
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item"></div>
+        </div>
+      </div>
+
+      <div class="service-card" id="card-olhardigital">
+        <div class="card-tag">Tecnologia</div>
+        <h3>Olhar Digital</h3>
+        <div class="news-list"><div class="skeleton-item"></div></div>
+      </div>
+
+      <div class="service-card" id="card-canaltech">
+        <div class="card-tag">Tecnologia</div>
+        <h3>Canaltech</h3>
+        <div class="news-list"><div class="skeleton-item"></div></div>
+      </div>
+
+      <div class="service-card" id="card-infomoney">
+        <div class="card-tag finance">Finanças</div>
+        <h3>InfoMoney</h3>
+        <div class="news-list"><div class="skeleton-item"></div></div>
+      </div>
+
+      <div class="service-card" id="card-valor">
+        <div class="card-tag finance">Finanças</div>
+        <h3>Valor Econômico</h3>
+        <div class="news-list"><div class="skeleton-item"></div></div>
+      </div>
+
+      <div class="service-card" id="card-investing">
+        <div class="card-tag finance">Finanças</div>
+        <h3>Investing.com</h3>
+        <div class="news-list"><div class="skeleton-item"></div></div>
+      </div>
+    </div>
+
+  </div> <div id="newsModal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <span id="modalTitle">Carregando notícia...</span>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="newsIframe" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+      <section class="services container" id="services">
       <h2>Entenda mais sobre o mundo da tecnologia.</h2>
       <p style="color: rgb(15, 15, 15);">
         Hoje existem diversas opções de ferramentas e tecnologias disponiveis, independente do seu segmento você utiliza a tecnologia de alguma forma, isso faz com que você esteja tão proximo a ela quanto qualquer pessoa, com isso você precisa ter noções sobre como ela funciona ou até mesmo do que ela seja. 
@@ -93,27 +173,107 @@
             Banco de dados é um sistema usado para armazenar informações de forma estruturada e segura. Ele permite que aplicações e sites guardem dados e os recuperem rapidamente quando necessário. O banco de dados funciona em conjunto com o back-end, que faz as consultas e atualizações conforme o uso do sistema. Existem dois principais tipos: os bancos relacionais que organizam dados em tabelas, e os não relacionais, que usam estruturas mais flexíveis.
           </p>
         </div>
-      </div>
-    </section>
+      </div> 
+    </section> -->
 
     <!--rodape-->
-    
+
     <footer class="site-footer">
       <div class="container">
         <p>&copy; 2025 Victor Cavalaro. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
-     crossorigin="anonymous">
-    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+      window.va =
+        window.va ||
+        function () {
+          (window.va.q = window.va.q || []).push(arguments);
+        };
     </script>
     <script src="/_vercel/insights/script.js" defer></script>
-  
-  
-  
-    </body>
+
+    <script>// 1. Funções de Controle do Modal
+function openModal(url, title) {
+    const modal = document.getElementById('newsModal');
+    const iframe = document.getElementById('newsIframe');
+    const titleSpan = document.getElementById('modalTitle');
+
+    titleSpan.innerText = title;
+    iframe.src = url; 
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; 
+}
+
+function closeModal() {
+    const modal = document.getElementById('newsModal');
+    const iframe = document.getElementById('newsIframe');
+    modal.style.display = 'none';
+    iframe.src = ''; 
+    document.body.style.overflow = 'auto'; 
+}
+
+// 2. Carregamento dos Feeds
+const feeds = [
+    { id: "card-tecmundo", url: "https://rss.tecmundo.com.br/feed" },
+    { id: "card-olhardigital", url: "https://olhardigital.com.br/feed/" },
+    { id: "card-canaltech", url: "https://canaltech.com.br/rss/" },
+    { id: "card-infomoney", url: "https://www.infomoney.com.br/feed/" },
+    { id: "card-valor", url: "https://valor.globo.com/rss/valor/" },
+    { id: "card-investing", url: "https://br.investing.com/rss/news.rss" },
+];
+
+async function loadAllFeeds() {
+    for (const feed of feeds) {
+        try {
+            const response = await fetch(
+                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`
+            );
+            const data = await response.json();
+            const cardContainer = document.querySelector(`#${feed.id} .news-list`);
+
+            if (data.status === "ok") {
+                cardContainer.innerHTML = ""; 
+
+                data.items.slice(0, 3).forEach((item) => {
+                    const article = document.createElement("div");
+                    article.className = "news-item";
+                    
+                    // Lógica para extração de imagem
+                    let imgSrc = 'https://via.placeholder.com/80?text=News';
+                    if (item.thumbnail) imgSrc = item.thumbnail;
+                    else if (item.enclosure && item.enclosure.link) imgSrc = item.enclosure.link;
+                    
+                    // Limpeza de HTML no resumo
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = item.description;
+                    const plainDescription = tempDiv.textContent || tempDiv.innerText || "";
+                    const safeTitle = item.title.replace(/'/g, "\\'");
+
+                    article.innerHTML = `
+                        <a href="javascript:void(0)" onclick="openModal('${item.link}', '${safeTitle}')">
+                            <img src="${imgSrc}" class="news-thumb" alt="thumbnail">
+                            <div class="news-info">
+                                <span class="news-title">${item.title}</span>
+                                <p class="news-excerpt">${plainDescription.substring(0, 65)}...</p>
+                                <span class="news-date">${new Date(item.pubDate).toLocaleDateString("pt-BR")}</span>
+                            </div>
+                        </a>`;
+                    cardContainer.appendChild(article);
+                });
+            }
+        } catch (error) {
+            console.error(`Erro ao carregar ${feed.id}:`, error);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadAllFeeds);</script>
+  </body>
 </html>
