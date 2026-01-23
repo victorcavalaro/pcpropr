@@ -2,10 +2,17 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Pcpropr</title>
     <link rel="stylesheet" href="/inicio.css" />
-    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/img/logo barra superior.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,16 +25,25 @@
     <header class="site-header">
       <div class="header-inner">
         <div class="logo-container">
-          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+          <a href=""
+            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
+          /></a>
           <a href="/index.html" class="site-nav"></a>
         </div>
         <nav class="site-nav">
           <ul>
             <li><a href="/index.html">Início</a></li>
             <li><a href="/paginas/contato/index.html">Conteudos</a></li>
-            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
             <li>
-              <a href="https://aram-cyan.vercel.app/" target="_blank" rel="noopener noreferrer">SGF</a>
+              <a href="/paginas/documentacao/index.html">Documentações</a>
+            </li>
+            <li>
+              <a
+                href="https://aram-cyan.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >SGF</a
+              >
             </li>
           </ul>
         </nav>
@@ -43,54 +59,81 @@
 
     <section class="services container" id="services">
       
-      <div class="section-header">
-        <h2>Radar Pcpropr</h2>
-        <p>Acompanhe tudo sem sair da nossa plataforma.</p>
-      </div>
+  <div class="section-header">
+    <span class="header-overline">Atualizações em Tempo Real</span>
+    <h2>Radar <span class="highlight">PCPROPR</span></h2>
+    <p>Acompanhe tudo sem sair da nossa plataforma.</p>
+  </div>
 
-      <div class="category-wrapper">
-        <div class="category-title">
-          <span class="badge tech">Tecnologia</span>
-          <h3>Destaques Tech</h3>
-        </div>
-        <div class="news-feed-list" id="feed-tech">
-          <div class="loading-skeleton"></div>
-          <div class="loading-skeleton"></div>
-        </div>
-      </div>
+  <div class="category-wrapper">
+    <div class="category-title">
+      <span class="badge tech">Tecnologia</span>
+      <h3>Destaques Tech</h3>
+    </div>
+    <div class="news-feed-list" id="feed-tech">
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+    </div>
+  </div>
 
-      <div class="category-wrapper">
-        <div class="category-title">
-          <span class="badge finance">Finanças</span>
-          <h3>Mercado Hoje</h3>
-        </div>
-        <div class="news-feed-list" id="feed-finance">
-           <div class="loading-skeleton"></div>
-          <div class="loading-skeleton"></div>
-        </div>
-      </div>
+  <div class="category-wrapper">
+    <div class="category-title">
+      <span class="badge finance">Finanças</span>
+      <h3>Mercado Hoje</h3>
+    </div>
+    <div class="news-feed-list" id="feed-finance">
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+    </div>
+  </div>
 
-      <div id="newsDrawer" class="drawer-overlay">
-        <div class="drawer-content">
-          <div class="drawer-header">
-            <div class="drawer-title-container">
-              <span class="drawer-label">Lendo agora</span>
-              <span id="drawerTitle">Carregando...</span>
-            </div>
-            <button class="close-drawer-btn" onclick="closeDrawer()" aria-label="Fechar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-          <div class="drawer-body">
-            <iframe id="newsIframe" src="" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+  <div class="category-wrapper">
+    <div class="category-title">
+      <span class="badge politics">Política</span>
+      <h3>Brasil e Mundo</h3>
+    </div>
+    <div class="news-feed-list" id="feed-politics">
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+    </div>
+  </div>
 
-    </section>
+  <div class="category-wrapper">
+    <div class="category-title">
+      <span class="badge sports">Futebol</span>
+      <h3>Lance a Lance</h3>
+    </div>
+    <div class="news-feed-list" id="feed-sports">
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+      <div class="loading-skeleton"></div>
+    </div>
+  </div>
+
+  <div id="newsDrawer" class="drawer-overlay">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-title-container">
+          <span class="drawer-label">Lendo agora</span>
+          <span id="drawerTitle">Carregando...</span>
+        </div>
+        <button class="close-drawer-btn" onclick="closeDrawer()" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-body">
+        <iframe id="newsIframe" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
 
     <footer class="site-footer">
       <div class="container">
@@ -99,142 +142,153 @@
     </footer>
 
     <script>
-      // 1. Configuração dos Feeds
-      const feedSources = {
-        tech: [
-          { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
-          { name: "Olhar Digital", url: "https://olhardigital.com.br/feed/" },
-          { name: "Canaltech", url: "https://canaltech.com.br/rss/" }
-        ],
-        finance: [
-          { name: "InfoMoney", url: "https://www.infomoney.com.br/feed/" },
-          { name: "Valor Investe", url: "https://valorinveste.globo.com/rss/valor-investe/" }, // Link mais estável
-          { name: "Investing", url: "https://br.investing.com/rss/news.rss" }
-        ]
-      };
+  // 1. Configuração dos Feeds (Adicionado Política e Futebol)
+  const feedSources = {
+    tech: [
+      { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
+      { name: "Olhar Digital", url: "https://olhardigital.com.br/feed/" },
+      { name: "Canaltech", url: "https://canaltech.com.br/rss/" }
+    ],
+    finance: [
+      { name: "InfoMoney", url: "https://www.infomoney.com.br/feed/" },
+      { name: "Valor", url: "https://valor.globo.com/rss/valor/" },
+      { name: "Investing", url: "https://br.investing.com/rss/news.rss" }
+    ],
+    politics: [
+      { name: "CNN Brasil", url: "https://www.cnnbrasil.com.br/politica/feed/" },
+      { name: "UOL Política", url: "https://rss.uol.com.br/feed/noticias.xml" }, // UOL mistura, mas é ágil
+      { name: "BBC Brasil", url: "https://feeds.bbci.co.uk/portuguese/rss.xml" } // Ótimo para contexto mundial
+    ],
+    sports: [
+      { name: "GE Futebol", url: "https://ge.globo.com/rss/esporte/futebol/" }, // A maior referência
+      { name: "ESPN", url: "https://www.espn.com.br/rss" },
+      { name: "Lance!", url: "https://www.lance.com.br/rss" }
+    ]
+  };
 
-      // 2. Fetch de Notícias
-      async function fetchCategoryNews(categoryKey) {
-        const sources = feedSources[categoryKey];
-        let allNews = [];
+  // 2. Fetch de Notícias (Lógica mantida)
+  async function fetchCategoryNews(categoryKey) {
+    const sources = feedSources[categoryKey];
+    let allNews = [];
 
-        const promises = sources.map(source => 
-          fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
-            .then(res => res.json())
-            .then(data => {
-              if (data.status === 'ok') {
-                return data.items.map(item => ({ ...item, sourceName: source.name }));
-              }
-              return [];
-            })
-            .catch(err => console.error("Erro no feed:", err))
-        );
-
-        const results = await Promise.all(promises);
-        results.forEach(arr => { if(arr) allNews = [...allNews, ...arr]; });
-
-        // Ordenar e pegar as 6 mais recentes (melhor performance no mobile)
-        allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-        return allNews.slice(0, 6); 
-      }
-
-      // 3. Renderização
-      async function initNews() {
-        const techNews = await fetchCategoryNews('tech');
-        renderList(techNews, 'feed-tech');
-
-        const finNews = await fetchCategoryNews('finance');
-        renderList(finNews, 'feed-finance');
-      }
-
-      function renderList(newsArray, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = ''; 
-
-        if (newsArray.length === 0) {
-          container.innerHTML = '<p style="text-align:center; color:#999;">Atualizações indisponíveis no momento.</p>';
-          return;
-        }
-
-        newsArray.forEach(item => {
-          let image = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop'; // Fallback Tech
-          if (containerId === 'feed-finance') image = 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop'; // Fallback Finance
-
-          if (item.thumbnail) image = item.thumbnail;
-          else if (item.enclosure && item.enclosure.link) image = item.enclosure.link;
-          else {
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = item.description;
-            const imgTag = tempDiv.querySelector('img');
-            if (imgTag) image = imgTag.src;
+    const promises = sources.map(source => 
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === 'ok') {
+            return data.items.map(item => ({ ...item, sourceName: source.name }));
           }
+          return [];
+        })
+        .catch(err => console.error(`Erro no feed ${categoryKey}:`, err))
+    );
 
-          const date = new Date(item.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute:'2-digit' });
+    const results = await Promise.all(promises);
+    results.forEach(arr => { if(arr) allNews = [...allNews, ...arr]; });
 
-          const card = document.createElement('div');
-          card.className = 'news-wide-card';
-          // Ação de clique para abrir o Modal
-          card.onclick = () => openDrawer(item.link, item.title);
+    // Ordenar por data
+    allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+    
+    // AGORA RETORNA 10 NOTÍCIAS (Requisito do usuário)
+    return allNews.slice(0, 10); 
+  }
 
-          card.innerHTML = `
-            <div class="news-img-wrapper">
-              <img src="${image}" alt="Capa da notícia" loading="lazy">
-            </div>
-            <div class="news-content">
-              <div class="news-meta">
-                <span class="source-tag">${item.sourceName}</span>
-                <span>${date}</span>
-              </div>
-              <h4>${item.title}</h4>
-              <button class="read-more-btn"></button>
-            </div>
-          `;
-          container.appendChild(card);
-        });
+  // 3. Renderização (Chamando as 4 categorias)
+  async function initNews() {
+    // Carregamento paralelo para ser mais rápido
+    const [tech, finance, politics, sports] = await Promise.all([
+        fetchCategoryNews('tech'),
+        fetchCategoryNews('finance'),
+        fetchCategoryNews('politics'),
+        fetchCategoryNews('sports')
+    ]);
+
+    renderList(tech, 'feed-tech');
+    renderList(finance, 'feed-finance');
+    renderList(politics, 'feed-politics');
+    renderList(sports, 'feed-sports');
+  }
+
+  function renderList(newsArray, containerId) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = ''; 
+
+    if (!newsArray || newsArray.length === 0) {
+      container.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Carregando atualizações...</p>';
+      return;
+    }
+
+    newsArray.forEach(item => {
+      // Lógica de Fallback de Imagem por Categoria
+      let fallbackImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=400&auto=format&fit=crop'; // Tech
+      
+      if (containerId === 'feed-finance') fallbackImg = 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop';
+      if (containerId === 'feed-politics') fallbackImg = 'https://images.unsplash.com/photo-1529101091760-61df6be24296?q=80&w=400&auto=format&fit=crop'; // Prédio governamental
+      if (containerId === 'feed-sports') fallbackImg = 'https://images.unsplash.com/photo-1579952363873-27f3bde9be2b?q=80&w=400&auto=format&fit=crop'; // Bola de futebol
+
+      let image = fallbackImg;
+
+      if (item.thumbnail) image = item.thumbnail;
+      else if (item.enclosure && item.enclosure.link) image = item.enclosure.link;
+      else {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = item.description;
+        const imgTag = tempDiv.querySelector('img');
+        if (imgTag) image = imgTag.src;
       }
 
-      // 4. Controle do Modal (Foco na Retenção)
-      function openDrawer(url, title) {
-        const drawer = document.getElementById('newsDrawer');
-        const iframe = document.getElementById('newsIframe');
-        const titleSpan = document.getElementById('drawerTitle');
+      const date = new Date(item.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute:'2-digit' });
 
-        // Limpa o iframe antes de carregar o novo para não mostrar o site anterior
-        iframe.src = 'about:blank';
-        
-        // Pequeno delay para animação fluir melhor
-        setTimeout(() => {
-            iframe.src = url;
-        }, 50);
+      const card = document.createElement('div');
+      card.className = 'news-wide-card';
+      // Ação de clique para abrir o Modal
+      card.onclick = () => openDrawer(item.link, item.title);
 
-        titleSpan.innerText = title;
-        drawer.classList.add('active');
-        
-        // Trava o scroll da página de fundo (Crucial para mobile)
-        document.body.style.overflow = 'hidden';
-      }
+      card.innerHTML = `
+        <div class="news-img-wrapper">
+          <img src="${image}" alt="Capa" loading="lazy" onerror="this.src='${fallbackImg}'">
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="source-tag">${item.sourceName}</span>
+            <span>${date}</span>
+          </div>
+          <h4>${item.title}</h4>
+          <button class="read-more-btn"></button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
 
-      function closeDrawer() {
-        const drawer = document.getElementById('newsDrawer');
-        const iframe = document.getElementById('newsIframe');
-        
-        drawer.classList.remove('active');
-        
-        // Destrava o scroll
-        document.body.style.overflow = '';
-        
-        // Limpa iframe para economizar memória do celular
-        setTimeout(() => {
-            iframe.src = ''; 
-        }, 400); // Espera a animação de fechar terminar
-      }
+  // 4. Funções do Modal (Mantidas iguais)
+  function openDrawer(url, title) {
+    const drawer = document.getElementById('newsDrawer');
+    const iframe = document.getElementById('newsIframe');
+    const titleSpan = document.getElementById('drawerTitle');
 
-      // Fechar ao clicar fora (Opcional, mas bom para UX)
-      document.getElementById('newsDrawer').addEventListener('click', function(e) {
-        if (e.target === this) closeDrawer();
-      });
+    iframe.src = 'about:blank';
+    setTimeout(() => { iframe.src = url; }, 50);
 
-      document.addEventListener("DOMContentLoaded", initNews);
-    </script>
+    titleSpan.innerText = title;
+    drawer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('newsDrawer');
+    const iframe = document.getElementById('newsIframe');
+    drawer.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { iframe.src = ''; }, 400);
+  }
+
+  // Fechar ao clicar fora
+  document.getElementById('newsDrawer').addEventListener('click', function(e) {
+    if (e.target === this) closeDrawer();
+  });
+
+  document.addEventListener("DOMContentLoaded", initNews);
+</script>
   </body>
 </html>
