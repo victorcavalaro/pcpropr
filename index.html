@@ -56,12 +56,11 @@
         <p class="hero-subtitle">Transformando suas ideias em realidade.</p>
       </div>
     </section>
-
     <section class="services container" id="services">
       <div class="section-header">
         <span class="header-overline">Atualizações em Tempo Real</span>
-        <h2>Radar <span class="highlight">PCPROPR</span></h2>
-        <p>Acompanhe tudas as noticias em apenas um lugar.</p>
+        <h2>Radar <span class="highlight">Pcpropr</span></h2>
+        <p>Acompanhe tudo sem sair da nossa plataforma.</p>
       </div>
 
       <div class="category-wrapper">
@@ -70,7 +69,6 @@
           <h3>Destaques Tech</h3>
         </div>
         <div class="news-feed-list" id="feed-tech">
-          <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
         </div>
@@ -84,7 +82,6 @@
         <div class="news-feed-list" id="feed-finance">
           <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
-          <div class="loading-skeleton"></div>
         </div>
       </div>
 
@@ -96,59 +93,52 @@
         <div class="news-feed-list" id="feed-politics">
           <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
-          <div class="loading-skeleton"></div>
         </div>
       </div>
 
       <div class="category-wrapper">
         <div class="category-title">
-          <span class="badge sports">Futebol</span>
-          <h3>Lance a Lance</h3>
+          <span class="badge sports">Esportes</span>
+          <h3>Mundo Esportivo</h3>
         </div>
         <div class="news-feed-list" id="feed-sports">
-          <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
           <div class="loading-skeleton"></div>
         </div>
       </div>
 
-      <div id="newsDrawer" class="drawer-overlay">
-        <div class="drawer-content">
-          <div class="drawer-header">
-            <div class="drawer-title-container">
-              <span class="drawer-label">Lendo agora</span>
-              <span id="drawerTitle">Carregando...</span>
-            </div>
-            <button
-              class="close-drawer-btn"
-              onclick="closeDrawer()"
-              aria-label="Fechar"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-          <div class="drawer-body">
-            <iframe
-              id="newsIframe"
-              src=""
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
+   <div id="newsDrawer" class="drawer-overlay">
+  <div class="drawer-content">
+    
+    <div class="drawer-header">
+      <div class="drawer-title-container">
+        <span class="drawer-label">Visualização Rápida</span>
+        <span id="drawerTitle">Carregando...</span>
       </div>
+      
+      <div class="drawer-actions">
+          <a id="externalLinkBtn" href="#" target="_blank" class="external-btn">
+              Abrir no Site ↗
+          </a>
+      </div>
+    </div>
+    
+    <div class="drawer-body">
+      <div id="iframeLoader" class="iframe-loader">
+          <div class="spinner"></div>
+          <p>Carregando fonte externa...</p>
+      </div>
+      <iframe id="newsIframe" src="" frameborder="0" allowfullscreen onload="hideLoader()"></iframe>
+    </div>
+
+    <div class="drawer-footer">
+        <button class="back-site-btn" onclick="closeDrawer()">
+            Voltar ao Pcpropr
+        </button>
+    </div>
+
+  </div>
+</div>
     </section>
 
     <footer class="site-footer">
@@ -156,9 +146,8 @@
         <p>&copy; 2025 PCPROPR. Todos os direitos reservados.</p>
       </div>
     </footer>
-
     <script>
-      // 1. Fontes de Notícias
+      // 1. Fontes de Notícias (Atualizado para Esportes Gerais)
       const feedSources = {
         tech: [
           { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
@@ -172,25 +161,34 @@
         ],
         politics: [
           {
-            name: "CNN Brasil",
+            name: "CNN Política",
             url: "https://www.cnnbrasil.com.br/politica/feed/",
           },
           { name: "UOL", url: "https://rss.uol.com.br/feed/noticias.xml" },
-          { name: "BBC", url: "https://feeds.bbci.co.uk/portuguese/rss.xml" },
+          {
+            name: "BBC Brasil",
+            url: "https://feeds.bbci.co.uk/portuguese/rss.xml",
+          },
         ],
         sports: [
-          { name: "GE", url: "https://ge.globo.com/rss/esporte/futebol/" },
-          { name: "ESPN", url: "https://www.espn.com.br/rss" },
+          // Fontes variadas. Nota: Sites grandes bloqueiam iframe, o botão externo resolve.
+          {
+            name: "CNN Esportes",
+            url: "https://www.cnnbrasil.com.br/esportes/feed/",
+          },
+          {
+            name: "Gazeta Esportiva",
+            url: "https://www.gazetaesportiva.com/feed/",
+          },
           { name: "Lance!", url: "https://www.lance.com.br/rss" },
         ],
       };
 
-      // 2. Função de Fetch com Timeout (Evita travamentos)
+      // 2. Fetch com Timeout (Anti-travamento)
       async function fetchWithTimeout(resource, options = {}) {
-        const { timeout = 5000 } = options; // 5 segundos maximo
+        const { timeout = 6000 } = options;
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), timeout);
-
         try {
           const response = await fetch(resource, {
             ...options,
@@ -204,33 +202,26 @@
         }
       }
 
-      // 3. Validação e Busca de Notícias
+      // 3. Validação e Busca
       async function fetchCategoryNews(categoryKey) {
         const sources = feedSources[categoryKey];
         let allNews = [];
 
-        // Processa cada fonte individualmente
         const promises = sources.map(async (source) => {
           try {
             const response = await fetchWithTimeout(
               `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`,
             );
-
-            // Validação 1: Conexão HTTP
-            if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
-
+            if (!response.ok) return [];
             const data = await response.json();
-
-            // Validação 2: Status da API RSS
-            if (data.status !== "ok") throw new Error("Erro na leitura do RSS");
+            if (data.status !== "ok") return [];
 
             return data.items.map((item) => ({
               ...item,
               sourceName: source.name,
             }));
           } catch (err) {
-            console.warn(`Fonte ignorada (${source.name}):`, err.message);
-            return []; // Retorna array vazio se falhar, não quebra o resto
+            return [];
           }
         });
 
@@ -239,93 +230,76 @@
           if (arr) allNews = [...allNews, ...arr];
         });
 
-        // Ordenar e limitar
         allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
         return allNews.slice(0, 10);
       }
 
-      // 4. Carregamento Independente (O segredo da velocidade)
+      // 4. Carregamento Independente
       async function loadCategory(key, containerId) {
         const container = document.getElementById(containerId);
-
         try {
           const news = await fetchCategoryNews(key);
           renderList(news, containerId);
         } catch (error) {
-          console.error(`Falha fatal em ${key}:`, error);
           container.innerHTML =
-            '<p style="text-align:center; color:#999;">Não foi possível atualizar.</p>';
+            '<p style="text-align:center; color:#999; padding:10px;">Indisponível.</p>';
         }
       }
 
       function initNews() {
-        // Dispara os 4 carregamentos em paralelo, mas independentes
         loadCategory("tech", "feed-tech");
         loadCategory("finance", "feed-finance");
         loadCategory("politics", "feed-politics");
         loadCategory("sports", "feed-sports");
       }
 
-      // 5. Renderização com Validação de Imagem
+      // 5. Renderização
       function renderList(newsArray, containerId) {
         const container = document.getElementById(containerId);
         container.innerHTML = "";
 
         if (!newsArray || newsArray.length === 0) {
           container.innerHTML =
-            '<p style="text-align:center; color:#999; padding:15px; font-size:0.8rem;">Sem atualizações recentes.</p>';
+            '<p style="text-align:center; color:#999; font-size:0.8rem; padding:15px;">Sem notícias recentes.</p>';
           return;
         }
 
-        // Configuração de Fallbacks (Imagens padrão)
+        // Imagens Padrão (Fallbacks)
         const fallbacks = {
           "feed-tech":
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&fit=crop",
           "feed-finance":
-            "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&fit=crop",
           "feed-politics":
-            "https://images.unsplash.com/photo-1541872703-74c5963631df?q=80&w=400&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=400&fit=crop",
           "feed-sports":
-            "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=400&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=400&fit=crop",
         };
         const defaultImg = fallbacks[containerId];
 
         newsArray.forEach((item) => {
-          // Validação 3: Verificação de Imagem
-          let image = null;
-
-          if (item.thumbnail && item.thumbnail.match(/^http/)) {
+          // Validador de Imagem Simples
+          let image = defaultImg;
+          if (item.thumbnail && item.thumbnail.startsWith("http"))
             image = item.thumbnail;
-          } else if (
-            item.enclosure &&
-            item.enclosure.link &&
-            item.enclosure.link.match(/^http/)
-          ) {
+          else if (item.enclosure?.link?.startsWith("http"))
             image = item.enclosure.link;
-          } else {
-            // Tenta extrair do HTML da descrição
-            const tempDiv = document.createElement("div");
-            tempDiv.innerHTML = item.description;
-            const imgTag = tempDiv.querySelector("img");
-            if (imgTag && imgTag.src) image = imgTag.src;
+          else {
+            // Extração Regex simples para tentar achar img na descrição
+            const match = item.description.match(/src="([^"]+)"/);
+            if (match) image = match[1];
           }
 
-          // Se não achou imagem válida, usa o fallback imediatamente
-          if (!image) image = defaultImg;
-
-          // Formatação de Data
-          const dateObj = new Date(item.pubDate);
-          const date = isNaN(dateObj)
-            ? "Hoje"
-            : dateObj.toLocaleDateString("pt-BR", {
-                day: "2-digit",
-                month: "short",
-                hour: "2-digit",
-                minute: "2-digit",
-              });
+          const date = new Date(item.pubDate).toLocaleDateString("pt-BR", {
+            day: "2-digit",
+            month: "short",
+            hour: "2-digit",
+            minute: "2-digit",
+          });
 
           const card = document.createElement("div");
           card.className = "news-wide-card";
+          // Passa o link para o Modal
           card.onclick = () => openDrawer(item.link, item.title);
 
           card.innerHTML = `
@@ -345,13 +319,22 @@
         });
       }
 
-      // 6. Controle do Modal
+      // 6. Controle do Modal com Loader e Botão Externo
       function openDrawer(url, title) {
         const drawer = document.getElementById("newsDrawer");
         const iframe = document.getElementById("newsIframe");
         const titleSpan = document.getElementById("drawerTitle");
+        const externalBtn = document.getElementById("externalLinkBtn");
+        const loader = document.getElementById("iframeLoader");
 
-        iframe.src = "about:blank"; // Limpa anterior
+        // Resetar estado
+        iframe.src = "about:blank";
+        loader.style.display = "flex"; // Mostra loader
+
+        // Atualiza link do botão de escape
+        externalBtn.href = url;
+
+        // Pequeno delay para transição suave
         setTimeout(() => {
           iframe.src = url;
         }, 50);
@@ -359,6 +342,13 @@
         titleSpan.innerText = title;
         drawer.classList.add("active");
         document.body.style.overflow = "hidden";
+      }
+
+      // Função chamada pelo Iframe quando termina de carregar
+      function hideLoader() {
+        const loader = document.getElementById("iframeLoader");
+        // Esconde o loader, mostrando o iframe (ou a tela branca se bloqueado)
+        loader.style.display = "none";
       }
 
       function closeDrawer() {
@@ -377,7 +367,6 @@
           if (e.target === this) closeDrawer();
         });
 
-      // Iniciar
       document.addEventListener("DOMContentLoaded", initNews);
     </script>
   </body>

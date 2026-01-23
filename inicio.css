@@ -1,5 +1,5 @@
 /* =========================================
-   RESET E BASE
+   1. RESET E BASE
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -14,17 +14,46 @@ body {
     -webkit-font-smoothing: antialiased; /* Texto mais nítido em iPhones */
 }
 
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
 /* =========================================
-   HEADER E HERO (MANTIDO)
+   2. HEADER E NAVEGAÇÃO
    ========================================= */
-.site-header { background-color: #242424; color: #fff; padding: 10px 0; z-index: 100; position: relative; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; padding: 0 20px;}
+.site-header { 
+    background-color: #242424; 
+    color: #fff; 
+    padding: 10px 0; 
+    z-index: 100; 
+    position: relative; 
+}
+
+.header-inner { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
 .logo-container { display: flex; align-items: center; }
 .logotipo { height: 50px; transition: 0.3s; }
-.site-nav ul { list-style: none; display: flex; flex-wrap: wrap; } /* Flex-wrap ajuda no mobile se precisar */
-.site-nav ul li { margin: 0 5px; }
-.site-nav ul li a { text-decoration: none; color: #fff; padding: 8px 12px; background-color: #2c2c2c; border-radius: 5px; font-size: 0.9rem; transition: 0.3s; }
 
+.site-nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+.site-nav ul li { margin: 0 5px; }
+.site-nav ul li a { 
+    text-decoration: none; 
+    color: #fff; 
+    padding: 8px 12px; 
+    background-color: #2c2c2c; 
+    border-radius: 5px; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+}
+
+/* =========================================
+   3. HERO SECTION (BANNER PRINCIPAL)
+   ========================================= */
 .hero {
     background-image: url('/img/fundo\ desfocado.png');
     background-color: #333;
@@ -33,24 +62,73 @@ body {
     background-attachment: fixed;
     color: #fff;
     padding: 140px 0;
-    text-align: left; /* Garante alinhamento */
+    text-align: left;
 }
-.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
 .hero-title { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
 .hero-subtitle { font-size: 1.2rem; opacity: 0.9; }
 
 /* =========================================
-   SEÇÃO DE NOTÍCIAS (FEED)
+   4. TÍTULOS DE SEÇÃO (ESTILO EMPRESARIAL)
    ========================================= */
 .services { padding: 40px 0; }
 
-.section-header { margin-bottom: 40px; }
-.section-header h2 { font-size: 2rem; color: #1d1d1f; margin-bottom: 5px; letter-spacing: -0.5px; }
-.section-header p { color: #86868b; font-size: 0.95rem; }
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 0 20px;
+}
 
+.header-overline {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #007AFF;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1d1d1f;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.section-header h2 .highlight {
+    background: -webkit-linear-gradient(45deg, #000000, #757575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #86868b;
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Linha decorativa */
+.section-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #007AFF, #34C759);
+    margin: 25px auto 0;
+    border-radius: 4px;
+}
+
+/* =========================================
+   5. FEED DE NOTÍCIAS (CATEGORIAS E BADGES)
+   ========================================= */
 .category-wrapper { margin-bottom: 50px; }
 
-/* Cabeçalho da Categoria */
 .category-title {
     display: flex;
     align-items: center;
@@ -62,17 +140,21 @@ body {
 
 .category-title h3 { font-size: 1.3rem; font-weight: 600; color: #1d1d1f; }
 
+/* Badges (Etiquetas Coloridas) */
 .badge {
     font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
     padding: 5px 10px; border-radius: 6px; letter-spacing: 0.5px;
 }
-.badge.tech { background: #e0f2fe; color: #0284c7; } /* Azul moderno */
-.badge.finance { background: #dcfce7; color: #16a34a; } /* Verde moderno */
+
+.badge.tech { background: #e0f2fe; color: #0284c7; }      /* Azul */
+.badge.finance { background: #dcfce7; color: #16a34a; }   /* Verde */
+.badge.politics { background: #fee2e2; color: #991b1b; }  /* Vermelho */
+.badge.sports { background: #fff7ed; color: #c2410c; border: 1px solid #ffedd5; } /* Laranja */
 
 .news-feed-list { display: flex; flex-direction: column; gap: 16px; }
 
 /* =========================================
-   CARD DE NOTÍCIA (DESKTOP DEFAULT)
+   6. CARDS DE NOTÍCIA
    ========================================= */
 .news-wide-card {
     display: flex;
@@ -85,8 +167,8 @@ body {
     height: 130px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-    position: relative; /* Para o efeito de clique */
-    -webkit-tap-highlight-color: transparent; /* Remove flash azul no mobile */
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .news-wide-card:hover {
@@ -94,20 +176,21 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.news-wide-card:active { transform: scale(0.98); } /* Feedback tátil */
+.news-wide-card:active { transform: scale(0.98); }
 
-/* Imagem */
+/* Imagem do Card */
 .news-img-wrapper {
     width: 180px;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
 }
+
 .news-img-wrapper img {
     width: 100%; height: 100%; object-fit: cover;
 }
 
-/* Conteúdo */
+/* Conteúdo do Card */
 .news-content {
     flex: 1; padding: 16px;
     display: flex; flex-direction: column; justify-content: center;
@@ -117,6 +200,7 @@ body {
     display: flex; justify-content: space-between; align-items: center;
     font-size: 0.75rem; color: #86868b; margin-bottom: 6px;
 }
+
 .source-tag { font-weight: 600; color: #444; }
 
 .news-content h4 {
@@ -130,7 +214,7 @@ body {
     background: none; border: none; padding: 0; cursor: pointer;
 }
 
-/* Skeleton Loading */
+/* Skeleton Loading (Animação de Carregamento) */
 .loading-skeleton {
     height: 130px; background: #e0e0e0; border-radius: 12px;
     animation: pulse 1.5s infinite;
@@ -138,8 +222,9 @@ body {
 @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 0.8; } 100% { opacity: 0.6; } }
 
 /* =========================================
-   GAVETA / MODAL (HÍBRIDO)
+   7. GAVETA / MODAL (DRAWER)
    ========================================= */
+/* Fundo Escuro */
 .drawer-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
@@ -150,6 +235,7 @@ body {
 
 .drawer-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
 
+/* Conteúdo Principal da Gaveta */
 .drawer-content {
     background: #fff;
     display: flex; flex-direction: column;
@@ -167,11 +253,13 @@ body {
 
 .drawer-title-container {
     display: flex; flex-direction: column;
-    max-width: 80%;
+    max-width: 60%;
 }
 
 .drawer-label { font-size: 0.7rem; color: #86868b; text-transform: uppercase; font-weight: 600; }
 #drawerTitle { font-size: 0.9rem; font-weight: 600; color: #1d1d1f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.drawer-actions { display: flex; align-items: center; gap: 10px; }
 
 .close-drawer-btn {
     width: 36px; height: 36px; border-radius: 50%;
@@ -180,118 +268,80 @@ body {
     cursor: pointer; color: #1d1d1f;
 }
 
-.drawer-body { flex: 1; background: #fff; position: relative; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+/* Corpo do Modal (Onde fica o Iframe) */
+.drawer-body { 
+    flex: 1; 
+    background: #fff; 
+    position: relative; 
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+
 #newsIframe { width: 100%; height: 100%; border: none; display: block; }
 
-/* Adicione isso junto com os outros badges no CSS */
-
-.badge.politics { 
-    background: #fee2e2; 
-    color: #991b1b; /* Vermelho Escuro */
+/* Botão "Abrir no Site" */
+.external-btn {
+    font-size: 0.75rem; font-weight: 600; color: #007AFF; text-decoration: none;
+    background: #f0f8ff; padding: 6px 12px; border-radius: 20px;
+    border: 1px solid rgba(0, 122, 255, 0.2); white-space: nowrap; transition: 0.2s;
 }
 
-.badge.sports { 
-    background: #ffedd5; 
-    color: #c2410c; /* Laranja Vibrante */
+.external-btn:hover { background: #007AFF; color: #fff; }
+
+/* Loader (Spinner) */
+.iframe-loader {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #f9f9f9; z-index: 1; color: #888; font-size: 0.8rem;
+}
+
+.spinner {
+    width: 30px; height: 30px; border: 3px solid #ddd;
+    border-top-color: #007AFF; border-radius: 50%;
+    animation: spin 1s linear infinite; margin-bottom: 10px;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* =========================================
+   8. RODAPÉ DO MODAL (BOTAO VOLTAR)
+   ========================================= */
+.drawer-footer {
+    padding: 15px 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: flex; justify-content: center; align-items: center;
+    flex-shrink: 0; z-index: 20;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+
+.back-site-btn {
+    width: 100%; max-width: 400px; padding: 14px 20px;
+    background-color: #1d1d1f; color: #fff;
+    border: none; border-radius: 12px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+.back-site-btn:hover { background-color: #000; transform: translateY(-1px); }
+.back-site-btn:active { transform: scale(0.98); }
+
+/* =========================================
+   9. SITE FOOTER
+   ========================================= */
+.site-footer { 
+    background-color: #242424; 
+    color: #fff; 
+    text-align: center; 
+    padding: 20px 0; 
+    margin-top: auto; 
 }
 
 /* =========================================
-   HEADER DA SEÇÃO (MODERNO E EMPRESARIAL)
+   10. RESPONSIVIDADE (MEDIA QUERIES)
    ========================================= */
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    padding: 0 20px;
-}
-
-/* 1. Pequeno texto acima do título (Toque sofisticado) */
-.header-overline {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #007AFF; /* Azul da marca */
-    margin-bottom: 10px;
-}
-
-/* 2. Título Principal */
-.section-header h2 {
-    font-size: 2.8rem;
-    font-weight: 800; /* Extra bold para impacto */
-    color: #1d1d1f;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    letter-spacing: -1px; /* Deixa as letras mais juntinhas (moderno) */
-}
-
-/* Destaque na palavra Pcpropr */
-.section-header h2 .highlight {
-    background: -webkit-linear-gradient(45deg, #000000, #757575); /* Gradiente Azul -> Verde */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* 3. Subtítulo (Texto de apoio) */
-.section-header p {
-    font-size: 1.1rem;
-    color: #86868b;
-    font-weight: 400;
-    max-width: 500px; /* Impede que o texto fique muito largo */
-    margin: 0 auto; /* Centraliza o bloco de texto */
-}
-
-/* 4. Elemento Decorativo (Linha Gradiente abaixo) */
-.section-header::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #007AFF, #34C759);
-    margin: 25px auto 0; /* Espaço acima da linha */
-    border-radius: 4px;
-}
-
-/* =========================================
-   AJUSTE MOBILE (RESPONSIVIDADE)
-   ========================================= */
-@media (max-width: 768px) {
-    .section-header {
-        margin-bottom: 30px;
-        text-align: left; /* No celular, alinhado à esquerda fica mais fácil de ler */
-    }
-
-    .header-overline {
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
-    }
-
-    .section-header h2 {
-        font-size: 2rem; /* Reduz um pouco para não quebrar feio */
-    }
-
-    .section-header p {
-        font-size: 0.95rem;
-        max-width: 100%;
-    }
-
-    /* Ajuste da linha decorativa no mobile */
-    .section-header::after {
-        margin: 20px 0 0 0; /* Alinha a linha à esquerda também */
-        width: 40px; /* Um pouco menor */
-    }
-}
-
-
-
-
-/* =========================================
-   RESPONSIVIDADE E COMPORTAMENTO MOBILE
-   ========================================= */
-
-/* DESKTOP (Drawer Lateral) - MANTIDO */
+/* --- DESKTOP (Telas acima de 769px) --- */
 @media (min-width: 769px) {
     .drawer-overlay { display: flex; justify-content: flex-end; }
     .drawer-content {
@@ -301,93 +351,69 @@ body {
     .drawer-overlay.active .drawer-content { transform: translateX(0); }
 }
 
-/* MOBILE E TABLETS (Ajuste Compacto) */
+/* --- MOBILE E TABLETS (Telas abaixo de 768px) --- */
 @media (max-width: 768px) {
     
-    /* 1. Header Compacto */
+    /* Header e Menu Compacto */
     .header-inner { 
-        flex-direction: column; 
-        gap: 10px; 
-        padding-bottom: 10px;
-        width: 100%;
+        flex-direction: column; gap: 10px; padding-bottom: 10px; width: 100%;
     }
-
     .logo-container { margin-bottom: 0; }
 
-    /* MENU COMPACTO EM UMA LINHA */
-    .site-nav {
-        width: 100%;
-        overflow: hidden; /* Bloqueia qualquer rolagem */
-    }
-
+    .site-nav { width: 100%; overflow: hidden; }
     .site-nav ul { 
-        display: flex;
-        flex-wrap: nowrap; /* Força linha única */
-        justify-content: center; /* Centraliza os botões */
-        align-items: center;
-        gap: 4px; /* Espaço mínimo entre botões */
-        padding: 0 5px; /* Margem de segurança nas bordas */
-        width: 100%;
+        display: flex; flex-wrap: nowrap; justify-content: center; align-items: center;
+        gap: 4px; padding: 0 5px; width: 100%;
     }
-
-    .site-nav ul li { 
-        margin: 0; 
-        flex-shrink: 1; /* Permite que o botão encolha se necessário */
-    }
-
+    .site-nav ul li { margin: 0; flex-shrink: 1; }
     .site-nav ul li a { 
-        font-size: 0.75rem; /* Fonte menor (aprox 12px) */
-        padding: 6px 8px; /* Botão mais magrinho */
-        white-space: nowrap; /* Texto não quebra linha */
-        background: rgba(255, 255, 255, 0.1); 
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 6px;
-        display: block;
+        font-size: 0.75rem; padding: 6px 8px; white-space: nowrap;
+        background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 6px; display: block;
     }
     
-    /* Hero ajustado */
+    /* Hero */
     .hero { padding: 90px 0 50px 0; text-align: center; }
     .hero-title { font-size: 1.6rem; }
 
-    /* 2. Cards Verticais */
-    .news-wide-card {
-        flex-direction: column;
-        height: auto;
-    }
-    
-    .news-img-wrapper {
-        width: 100%;
-        height: 180px;
-    }
+    /* Títulos de Seção */
+    .section-header { margin-bottom: 30px; text-align: left; }
+    .header-overline { font-size: 0.7rem; letter-spacing: 1.5px; }
+    .section-header h2 { font-size: 2rem; }
+    .section-header p { font-size: 0.95rem; max-width: 100%; }
+    .section-header::after { margin: 20px 0 0 0; width: 40px; }
 
+    /* Cards Estilo Feed (Vertical) */
+    .news-wide-card { flex-direction: column; height: auto; }
+    .news-img-wrapper { width: 100%; height: 180px; }
     .news-content { padding: 15px; }
     .news-content h4 { font-size: 1.1rem; -webkit-line-clamp: 3; }
 
-    /* 3. MODAL FLUTUANTE */
+    /* Modal Flutuante (Bottom Sheet) */
     .drawer-overlay { align-items: flex-end; }
-
+    
     .drawer-content {
-        width: 100%;
-        height: 90vh; 
+        width: 100%; height: 90vh; 
         border-radius: 20px 20px 0 0;
         transform: translateY(100%);
     }
-
     .drawer-overlay.active .drawer-content { transform: translateY(0); }
 
+    /* Puxador Visual do Modal */
     .drawer-header::before {
-        content: '';
-        position: absolute;
+        content: ''; position: absolute;
         top: 8px; left: 50%; transform: translateX(-50%);
-        width: 40px; height: 4px;
-        background: #e0e0e0; border-radius: 10px;
+        width: 40px; height: 4px; background: #e0e0e0; border-radius: 10px;
     }
+    .drawer-header { padding-top: 15px; border-bottom: 1px solid #eee; }
 
-    .drawer-header {
-        padding-top: 15px;
-        border-bottom: 1px solid #eee;
-    }
+    /* Ajuste Rodapé do Modal */
+    .drawer-footer { padding: 15px; padding-bottom: 25px; background: #f9f9f9; }
+    .back-site-btn { font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 }
 
-/* Rodapé */
-.site-footer { background-color: #242424; color: #fff; text-align: center; padding: 20px 0; margin-top: auto; }
+/* --- SMALL MOBILE (Telas muito pequenas) --- */
+@media (max-width: 480px) {
+    .drawer-label { display: none; } /* Esconde texto extra para caber o botão */
+    .external-btn { padding: 5px 10px; font-size: 0.7rem; }
+}
