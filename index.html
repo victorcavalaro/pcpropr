@@ -2,60 +2,38 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--titulo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Pcpropr</title>
-    <!--link css-->
     <link rel="stylesheet" href="/inicio.css" />
-    <!--link da logo da barra do navegador-->
-    <link
-      rel="shortcut icon"
-      href="/img/logo barra superior.png"
-      type="image/x-icon"
-    />
-    <!--importação do google fonts-->
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
   </head>
 
   <body>
-    <!--logo-->
     <header class="site-header">
       <div class="header-inner">
         <div class="logo-container">
-          <a href=""
-            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
-          /></a>
+          <a href=""><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
           <a href="/index.html" class="site-nav"></a>
         </div>
-        <!--botões do menu-->
         <nav class="site-nav">
           <ul>
             <li><a href="/index.html">Início</a></li>
-            <!-- <li><a href="/paginas/sobre/index.html">Sobre</a></li> -->
             <li><a href="/paginas/contato/index.html">Conteudos</a></li>
+            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
             <li>
-              <a href="/paginas/documentacao/index.html">Documentações</a>
-            </li>
-            <li>
-              <a
-                href="https://aram-cyan.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >SGF</a
-              >
+              <a href="https://aram-cyan.vercel.app/" target="_blank" rel="noopener noreferrer">SGF</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!--mensagem na tela home fica em cima da foto-->
     <section class="hero">
       <div class="container">
         <h2 class="hero-title">Bem-vindo ao Pcpropr</h2>
@@ -63,120 +41,56 @@
       </div>
     </section>
 
-    <!--blocos brancos-->
+    <section class="services container" id="services">
+      
+      <div class="section-header">
+        <h2>Radar Pcpropr</h2>
+        <p>Acompanhe tudo sem sair da nossa plataforma.</p>
+      </div>
 
-    
-      <section class="services container" id="services">
-  <div class="main-radar-container">
-    
-    <div class="section-header">
-      <h2>Radar de Notícias</h2>
-      <p>As atualizações mais relevantes de tecnologia e mercado financeiro filtradas para você.</p>
-    </div>
-
-    <div class="service-cards">
-      <div class="service-card" id="card-tecmundo">
-        <div class="card-tag">Tecnologia</div>
-        <h3>TecMundo</h3>
-        <div class="news-list">
-          <div class="skeleton-item"></div>
-          <div class="skeleton-item"></div>
-          <div class="skeleton-item"></div>
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge tech">Tecnologia</span>
+          <h3>Destaques Tech</h3>
+        </div>
+        <div class="news-feed-list" id="feed-tech">
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
         </div>
       </div>
 
-      <div class="service-card" id="card-olhardigital">
-        <div class="card-tag">Tecnologia</div>
-        <h3>Olhar Digital</h3>
-        <div class="news-list"><div class="skeleton-item"></div></div>
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge finance">Finanças</span>
+          <h3>Mercado Hoje</h3>
+        </div>
+        <div class="news-feed-list" id="feed-finance">
+           <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+        </div>
       </div>
 
-      <div class="service-card" id="card-canaltech">
-        <div class="card-tag">Tecnologia</div>
-        <h3>Canaltech</h3>
-        <div class="news-list"><div class="skeleton-item"></div></div>
+      <div id="newsDrawer" class="drawer-overlay">
+        <div class="drawer-content">
+          <div class="drawer-header">
+            <div class="drawer-title-container">
+              <span class="drawer-label">Lendo agora</span>
+              <span id="drawerTitle">Carregando...</span>
+            </div>
+            <button class="close-drawer-btn" onclick="closeDrawer()" aria-label="Fechar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="drawer-body">
+            <iframe id="newsIframe" src="" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
 
-      <div class="service-card" id="card-infomoney">
-        <div class="card-tag finance">Finanças</div>
-        <h3>InfoMoney</h3>
-        <div class="news-list"><div class="skeleton-item"></div></div>
-      </div>
-
-      <div class="service-card" id="card-valor">
-        <div class="card-tag finance">Finanças</div>
-        <h3>Valor Econômico</h3>
-        <div class="news-list"><div class="skeleton-item"></div></div>
-      </div>
-
-      <div class="service-card" id="card-investing">
-        <div class="card-tag finance">Finanças</div>
-        <h3>Investing.com</h3>
-        <div class="news-list"><div class="skeleton-item"></div></div>
-      </div>
-    </div>
-
-  </div> <div id="newsModal" class="modal-overlay">
-    <div class="modal-container">
-      <div class="modal-header">
-        <span id="modalTitle">Carregando notícia...</span>
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <iframe id="newsIframe" src="" frameborder="0"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 
-      <section class="services container" id="services">
-      <h2>Entenda mais sobre o mundo da tecnologia.</h2>
-      <p style="color: rgb(15, 15, 15);">
-        Hoje existem diversas opções de ferramentas e tecnologias disponiveis, independente do seu segmento você utiliza a tecnologia de alguma forma, isso faz com que você esteja tão proximo a ela quanto qualquer pessoa, com isso você precisa ter noções sobre como ela funciona ou até mesmo do que ela seja. 
-      </p>
-      <div class="service-cards">
-        <div class="service-card">
-          <h3>Frontend</h3>
-          <p>
-        Front-end é a parte de um site que o usuário vê e interage diretamente. Responsável por transformar o design e as ideias em uma interface visual, exibindo textos, imagens, botões e menus de forma organizada e interativa. O desenvolvimento front-end utiliza principalmente HTML, CSS e JavaScript para estruturar, estilizar e adicionar dinamismo às páginas.
-          </p>
-          </a>
-        </div>
-        <div class="service-card">
-            <h3>UI-UX</h3>
-            <p>
-              UI (User Interface) e UX (User Experience) são áreas que trabalham juntas para criar produtos digitais funcionais e agradáveis. UI se refere à interface do usuário, ou seja, à parte visual de um site ou aplicativo cores, botões, ícones e tipografia tudo o que o usuário vê e toca. Já UX diz respeito à experiência do usuário.
-            </p>
-         
-        </div>
-        <div class="service-card">
-            <h3>GitHub</h3>
-            <p>
-             GitHub é uma plataforma online usada para armazenar, gerenciar e compartilhar códigos de programação. Permitindo acompanhar alterações no código e trabalhar em equipe de forma organizada. Baseado no sistema de controle de versão Git, o GitHub registra o histórico de modificações, facilita o trabalho em diferentes partes de um mesmo projeto e ajuda a integrar contribuições de várias pessoas.
-            </p>  
-        </div>
-        <div class="service-card">
-          <h3>Backend</h3>
-          <p>
-            Back-end é a parte de um site ou aplicativo que funciona nos bastidores, responsável por processar dados, executar regras de negócio e se comunicar com o banco de dados. Diferente do front-end, o back-end não é visível para o usuário, mas é essencial para que tudo funcione corretamente. Ele recebe as solicitações do front-end, realiza as operações necessárias e devolve as respostas adequadas.
-        </p>
-        </div>
-        <div class="service-card">
-          <h3>HardWare</h3>
-          <p>
-           Hardware é a parte física de um computador, ou seja, todos os componentes que podem ser tocados. Ele inclui peças como o processador (CPU), memória RAM, placa-mãe, disco rígido (HD ou SSD) e placa de vídeo. Cada componente tem uma função específica: o processador executa as tarefas, a memória armazena dados temporariamente e o disco guarda as informações de forma permanente.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Banco de Dados</h3>
-          <p>
-            Banco de dados é um sistema usado para armazenar informações de forma estruturada e segura. Ele permite que aplicações e sites guardem dados e os recuperem rapidamente quando necessário. O banco de dados funciona em conjunto com o back-end, que faz as consultas e atualizações conforme o uso do sistema. Existem dois principais tipos: os bancos relacionais que organizam dados em tabelas, e os não relacionais, que usam estruturas mais flexíveis.
-          </p>
-        </div>
-      </div> 
-    </section> -->
-
-    <!--rodape-->
+    </section>
 
     <footer class="site-footer">
       <div class="container">
@@ -184,96 +98,143 @@
       </div>
     </footer>
 
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
-      crossorigin="anonymous"
-    ></script>
-
     <script>
-      window.va =
-        window.va ||
-        function () {
-          (window.va.q = window.va.q || []).push(arguments);
-        };
-    </script>
-    <script src="/_vercel/insights/script.js" defer></script>
+      // 1. Configuração dos Feeds
+      const feedSources = {
+        tech: [
+          { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
+          { name: "Olhar Digital", url: "https://olhardigital.com.br/feed/" },
+          { name: "Canaltech", url: "https://canaltech.com.br/rss/" }
+        ],
+        finance: [
+          { name: "InfoMoney", url: "https://www.infomoney.com.br/feed/" },
+          { name: "Valor Investe", url: "https://valorinveste.globo.com/rss/valor-investe/" }, // Link mais estável
+          { name: "Investing", url: "https://br.investing.com/rss/news.rss" }
+        ]
+      };
 
-    <script>// 1. Funções de Controle do Modal
-function openModal(url, title) {
-    const modal = document.getElementById('newsModal');
-    const iframe = document.getElementById('newsIframe');
-    const titleSpan = document.getElementById('modalTitle');
+      // 2. Fetch de Notícias
+      async function fetchCategoryNews(categoryKey) {
+        const sources = feedSources[categoryKey];
+        let allNews = [];
 
-    titleSpan.innerText = title;
-    iframe.src = url; 
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; 
-}
+        const promises = sources.map(source => 
+          fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
+            .then(res => res.json())
+            .then(data => {
+              if (data.status === 'ok') {
+                return data.items.map(item => ({ ...item, sourceName: source.name }));
+              }
+              return [];
+            })
+            .catch(err => console.error("Erro no feed:", err))
+        );
 
-function closeModal() {
-    const modal = document.getElementById('newsModal');
-    const iframe = document.getElementById('newsIframe');
-    modal.style.display = 'none';
-    iframe.src = ''; 
-    document.body.style.overflow = 'auto'; 
-}
+        const results = await Promise.all(promises);
+        results.forEach(arr => { if(arr) allNews = [...allNews, ...arr]; });
 
-// 2. Carregamento dos Feeds
-const feeds = [
-    { id: "card-tecmundo", url: "https://rss.tecmundo.com.br/feed" },
-    { id: "card-olhardigital", url: "https://olhardigital.com.br/feed/" },
-    { id: "card-canaltech", url: "https://canaltech.com.br/rss/" },
-    { id: "card-infomoney", url: "https://www.infomoney.com.br/feed/" },
-    { id: "card-valor", url: "https://valor.globo.com/rss/valor/" },
-    { id: "card-investing", url: "https://br.investing.com/rss/news.rss" },
-];
+        // Ordenar e pegar as 6 mais recentes (melhor performance no mobile)
+        allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+        return allNews.slice(0, 6); 
+      }
 
-async function loadAllFeeds() {
-    for (const feed of feeds) {
-        try {
-            const response = await fetch(
-                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`
-            );
-            const data = await response.json();
-            const cardContainer = document.querySelector(`#${feed.id} .news-list`);
+      // 3. Renderização
+      async function initNews() {
+        const techNews = await fetchCategoryNews('tech');
+        renderList(techNews, 'feed-tech');
 
-            if (data.status === "ok") {
-                cardContainer.innerHTML = ""; 
+        const finNews = await fetchCategoryNews('finance');
+        renderList(finNews, 'feed-finance');
+      }
 
-                data.items.slice(0, 3).forEach((item) => {
-                    const article = document.createElement("div");
-                    article.className = "news-item";
-                    
-                    // Lógica para extração de imagem
-                    let imgSrc = 'https://via.placeholder.com/80?text=News';
-                    if (item.thumbnail) imgSrc = item.thumbnail;
-                    else if (item.enclosure && item.enclosure.link) imgSrc = item.enclosure.link;
-                    
-                    // Limpeza de HTML no resumo
-                    const tempDiv = document.createElement("div");
-                    tempDiv.innerHTML = item.description;
-                    const plainDescription = tempDiv.textContent || tempDiv.innerText || "";
-                    const safeTitle = item.title.replace(/'/g, "\\'");
+      function renderList(newsArray, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = ''; 
 
-                    article.innerHTML = `
-                        <a href="javascript:void(0)" onclick="openModal('${item.link}', '${safeTitle}')">
-                            <img src="${imgSrc}" class="news-thumb" alt="thumbnail">
-                            <div class="news-info">
-                                <span class="news-title">${item.title}</span>
-                                <p class="news-excerpt">${plainDescription.substring(0, 65)}...</p>
-                                <span class="news-date">${new Date(item.pubDate).toLocaleDateString("pt-BR")}</span>
-                            </div>
-                        </a>`;
-                    cardContainer.appendChild(article);
-                });
-            }
-        } catch (error) {
-            console.error(`Erro ao carregar ${feed.id}:`, error);
+        if (newsArray.length === 0) {
+          container.innerHTML = '<p style="text-align:center; color:#999;">Atualizações indisponíveis no momento.</p>';
+          return;
         }
-    }
-}
 
-document.addEventListener("DOMContentLoaded", loadAllFeeds);</script>
+        newsArray.forEach(item => {
+          let image = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop'; // Fallback Tech
+          if (containerId === 'feed-finance') image = 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop'; // Fallback Finance
+
+          if (item.thumbnail) image = item.thumbnail;
+          else if (item.enclosure && item.enclosure.link) image = item.enclosure.link;
+          else {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = item.description;
+            const imgTag = tempDiv.querySelector('img');
+            if (imgTag) image = imgTag.src;
+          }
+
+          const date = new Date(item.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute:'2-digit' });
+
+          const card = document.createElement('div');
+          card.className = 'news-wide-card';
+          // Ação de clique para abrir o Modal
+          card.onclick = () => openDrawer(item.link, item.title);
+
+          card.innerHTML = `
+            <div class="news-img-wrapper">
+              <img src="${image}" alt="Capa da notícia" loading="lazy">
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <span class="source-tag">${item.sourceName}</span>
+                <span>${date}</span>
+              </div>
+              <h4>${item.title}</h4>
+              <button class="read-more-btn"></button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // 4. Controle do Modal (Foco na Retenção)
+      function openDrawer(url, title) {
+        const drawer = document.getElementById('newsDrawer');
+        const iframe = document.getElementById('newsIframe');
+        const titleSpan = document.getElementById('drawerTitle');
+
+        // Limpa o iframe antes de carregar o novo para não mostrar o site anterior
+        iframe.src = 'about:blank';
+        
+        // Pequeno delay para animação fluir melhor
+        setTimeout(() => {
+            iframe.src = url;
+        }, 50);
+
+        titleSpan.innerText = title;
+        drawer.classList.add('active');
+        
+        // Trava o scroll da página de fundo (Crucial para mobile)
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        const drawer = document.getElementById('newsDrawer');
+        const iframe = document.getElementById('newsIframe');
+        
+        drawer.classList.remove('active');
+        
+        // Destrava o scroll
+        document.body.style.overflow = '';
+        
+        // Limpa iframe para economizar memória do celular
+        setTimeout(() => {
+            iframe.src = ''; 
+        }, 400); // Espera a animação de fechar terminar
+      }
+
+      // Fechar ao clicar fora (Opcional, mas bom para UX)
+      document.getElementById('newsDrawer').addEventListener('click', function(e) {
+        if (e.target === this) closeDrawer();
+      });
+
+      document.addEventListener("DOMContentLoaded", initNews);
+    </script>
   </body>
 </html>
