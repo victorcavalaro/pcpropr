@@ -58,195 +58,279 @@
     </section>
 
     <section class="services container" id="services">
-      
-  <div class="section-header">
-    <span class="header-overline">Atualizações em Tempo Real</span>
-    <h2>Radar <span class="highlight">PCPROPR</span></h2>
-    <p>Acompanhe tudo sem sair da nossa plataforma.</p>
-  </div>
+      <div class="section-header">
+        <span class="header-overline">Atualizações em Tempo Real</span>
+        <h2>Radar <span class="highlight">PCPROPR</span></h2>
+        <p>Acompanhe tudo sem sair da nossa plataforma.</p>
+      </div>
 
-  <div class="category-wrapper">
-    <div class="category-title">
-      <span class="badge tech">Tecnologia</span>
-      <h3>Destaques Tech</h3>
-    </div>
-    <div class="news-feed-list" id="feed-tech">
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-    </div>
-  </div>
-
-  <div class="category-wrapper">
-    <div class="category-title">
-      <span class="badge finance">Finanças</span>
-      <h3>Mercado Hoje</h3>
-    </div>
-    <div class="news-feed-list" id="feed-finance">
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-    </div>
-  </div>
-
-  <div class="category-wrapper">
-    <div class="category-title">
-      <span class="badge politics">Política</span>
-      <h3>Brasil e Mundo</h3>
-    </div>
-    <div class="news-feed-list" id="feed-politics">
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-    </div>
-  </div>
-
-  <div class="category-wrapper">
-    <div class="category-title">
-      <span class="badge sports">Futebol</span>
-      <h3>Lance a Lance</h3>
-    </div>
-    <div class="news-feed-list" id="feed-sports">
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-      <div class="loading-skeleton"></div>
-    </div>
-  </div>
-
-  <div id="newsDrawer" class="drawer-overlay">
-    <div class="drawer-content">
-      <div class="drawer-header">
-        <div class="drawer-title-container">
-          <span class="drawer-label">Lendo agora</span>
-          <span id="drawerTitle">Carregando...</span>
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge tech">Tecnologia</span>
+          <h3>Destaques Tech</h3>
         </div>
-        <button class="close-drawer-btn" onclick="closeDrawer()" aria-label="Fechar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+        <div class="news-feed-list" id="feed-tech">
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+        </div>
       </div>
-      <div class="drawer-body">
-        <iframe id="newsIframe" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
 
-</section>
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge finance">Finanças</span>
+          <h3>Mercado Hoje</h3>
+        </div>
+        <div class="news-feed-list" id="feed-finance">
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+        </div>
+      </div>
+
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge politics">Política</span>
+          <h3>Brasil e Mundo</h3>
+        </div>
+        <div class="news-feed-list" id="feed-politics">
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+        </div>
+      </div>
+
+      <div class="category-wrapper">
+        <div class="category-title">
+          <span class="badge sports">Futebol</span>
+          <h3>Lance a Lance</h3>
+        </div>
+        <div class="news-feed-list" id="feed-sports">
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+          <div class="loading-skeleton"></div>
+        </div>
+      </div>
+
+      <div id="newsDrawer" class="drawer-overlay">
+        <div class="drawer-content">
+          <div class="drawer-header">
+            <div class="drawer-title-container">
+              <span class="drawer-label">Lendo agora</span>
+              <span id="drawerTitle">Carregando...</span>
+            </div>
+            <button
+              class="close-drawer-btn"
+              onclick="closeDrawer()"
+              aria-label="Fechar"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="drawer-body">
+            <iframe
+              id="newsIframe"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; 2025 Victor Cavalaro. Todos os direitos reservados.</p>
+        <p>&copy; 2025 PCPROPR. Todos os direitos reservados.</p>
       </div>
     </footer>
 
     <script>
-  // 1. Configuração dos Feeds (Adicionado Política e Futebol)
-  const feedSources = {
-    tech: [
-      { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
-      { name: "Olhar Digital", url: "https://olhardigital.com.br/feed/" },
-      { name: "Canaltech", url: "https://canaltech.com.br/rss/" }
-    ],
-    finance: [
-      { name: "InfoMoney", url: "https://www.infomoney.com.br/feed/" },
-      { name: "Valor", url: "https://valor.globo.com/rss/valor/" },
-      { name: "Investing", url: "https://br.investing.com/rss/news.rss" }
-    ],
-    politics: [
-      { name: "CNN Brasil", url: "https://www.cnnbrasil.com.br/politica/feed/" },
-      { name: "UOL Política", url: "https://rss.uol.com.br/feed/noticias.xml" }, // UOL mistura, mas é ágil
-      { name: "BBC Brasil", url: "https://feeds.bbci.co.uk/portuguese/rss.xml" } // Ótimo para contexto mundial
-    ],
-    sports: [
-      { name: "GE Futebol", url: "https://ge.globo.com/rss/esporte/futebol/" }, // A maior referência
-      { name: "ESPN", url: "https://www.espn.com.br/rss" },
-      { name: "Lance!", url: "https://www.lance.com.br/rss" }
-    ]
-  };
+      // 1. Fontes de Notícias
+      const feedSources = {
+        tech: [
+          { name: "TecMundo", url: "https://rss.tecmundo.com.br/feed" },
+          { name: "Olhar Digital", url: "https://olhardigital.com.br/feed/" },
+          { name: "Canaltech", url: "https://canaltech.com.br/rss/" },
+        ],
+        finance: [
+          { name: "InfoMoney", url: "https://www.infomoney.com.br/feed/" },
+          { name: "Valor", url: "https://valor.globo.com/rss/valor/" },
+          { name: "Investing", url: "https://br.investing.com/rss/news.rss" },
+        ],
+        politics: [
+          {
+            name: "CNN Brasil",
+            url: "https://www.cnnbrasil.com.br/politica/feed/",
+          },
+          { name: "UOL", url: "https://rss.uol.com.br/feed/noticias.xml" },
+          { name: "BBC", url: "https://feeds.bbci.co.uk/portuguese/rss.xml" },
+        ],
+        sports: [
+          { name: "GE", url: "https://ge.globo.com/rss/esporte/futebol/" },
+          { name: "ESPN", url: "https://www.espn.com.br/rss" },
+          { name: "Lance!", url: "https://www.lance.com.br/rss" },
+        ],
+      };
 
-  // 2. Fetch de Notícias (Lógica mantida)
-  async function fetchCategoryNews(categoryKey) {
-    const sources = feedSources[categoryKey];
-    let allNews = [];
+      // 2. Função de Fetch com Timeout (Evita travamentos)
+      async function fetchWithTimeout(resource, options = {}) {
+        const { timeout = 5000 } = options; // 5 segundos maximo
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), timeout);
 
-    const promises = sources.map(source => 
-      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.status === 'ok') {
-            return data.items.map(item => ({ ...item, sourceName: source.name }));
-          }
-          return [];
-        })
-        .catch(err => console.error(`Erro no feed ${categoryKey}:`, err))
-    );
-
-    const results = await Promise.all(promises);
-    results.forEach(arr => { if(arr) allNews = [...allNews, ...arr]; });
-
-    // Ordenar por data
-    allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-    
-    // AGORA RETORNA 10 NOTÍCIAS (Requisito do usuário)
-    return allNews.slice(0, 10); 
-  }
-
-  // 3. Renderização (Chamando as 4 categorias)
-  async function initNews() {
-    // Carregamento paralelo para ser mais rápido
-    const [tech, finance, politics, sports] = await Promise.all([
-        fetchCategoryNews('tech'),
-        fetchCategoryNews('finance'),
-        fetchCategoryNews('politics'),
-        fetchCategoryNews('sports')
-    ]);
-
-    renderList(tech, 'feed-tech');
-    renderList(finance, 'feed-finance');
-    renderList(politics, 'feed-politics');
-    renderList(sports, 'feed-sports');
-  }
-
-  function renderList(newsArray, containerId) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = ''; 
-
-    if (!newsArray || newsArray.length === 0) {
-      container.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Carregando atualizações...</p>';
-      return;
-    }
-
-    newsArray.forEach(item => {
-      // Lógica de Fallback de Imagem por Categoria
-      let fallbackImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=400&auto=format&fit=crop'; // Tech
-      
-      if (containerId === 'feed-finance') fallbackImg = 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop';
-      if (containerId === 'feed-politics') fallbackImg = 'https://images.unsplash.com/photo-1529101091760-61df6be24296?q=80&w=400&auto=format&fit=crop'; // Prédio governamental
-      if (containerId === 'feed-sports') fallbackImg = 'https://images.unsplash.com/photo-1579952363873-27f3bde9be2b?q=80&w=400&auto=format&fit=crop'; // Bola de futebol
-
-      let image = fallbackImg;
-
-      if (item.thumbnail) image = item.thumbnail;
-      else if (item.enclosure && item.enclosure.link) image = item.enclosure.link;
-      else {
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = item.description;
-        const imgTag = tempDiv.querySelector('img');
-        if (imgTag) image = imgTag.src;
+        try {
+          const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal,
+          });
+          clearTimeout(id);
+          return response;
+        } catch (error) {
+          clearTimeout(id);
+          throw error;
+        }
       }
 
-      const date = new Date(item.pubDate).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', hour: '2-digit', minute:'2-digit' });
+      // 3. Validação e Busca de Notícias
+      async function fetchCategoryNews(categoryKey) {
+        const sources = feedSources[categoryKey];
+        let allNews = [];
 
-      const card = document.createElement('div');
-      card.className = 'news-wide-card';
-      // Ação de clique para abrir o Modal
-      card.onclick = () => openDrawer(item.link, item.title);
+        // Processa cada fonte individualmente
+        const promises = sources.map(async (source) => {
+          try {
+            const response = await fetchWithTimeout(
+              `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`,
+            );
 
-      card.innerHTML = `
+            // Validação 1: Conexão HTTP
+            if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+
+            const data = await response.json();
+
+            // Validação 2: Status da API RSS
+            if (data.status !== "ok") throw new Error("Erro na leitura do RSS");
+
+            return data.items.map((item) => ({
+              ...item,
+              sourceName: source.name,
+            }));
+          } catch (err) {
+            console.warn(`Fonte ignorada (${source.name}):`, err.message);
+            return []; // Retorna array vazio se falhar, não quebra o resto
+          }
+        });
+
+        const results = await Promise.all(promises);
+        results.forEach((arr) => {
+          if (arr) allNews = [...allNews, ...arr];
+        });
+
+        // Ordenar e limitar
+        allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+        return allNews.slice(0, 10);
+      }
+
+      // 4. Carregamento Independente (O segredo da velocidade)
+      async function loadCategory(key, containerId) {
+        const container = document.getElementById(containerId);
+
+        try {
+          const news = await fetchCategoryNews(key);
+          renderList(news, containerId);
+        } catch (error) {
+          console.error(`Falha fatal em ${key}:`, error);
+          container.innerHTML =
+            '<p style="text-align:center; color:#999;">Não foi possível atualizar.</p>';
+        }
+      }
+
+      function initNews() {
+        // Dispara os 4 carregamentos em paralelo, mas independentes
+        loadCategory("tech", "feed-tech");
+        loadCategory("finance", "feed-finance");
+        loadCategory("politics", "feed-politics");
+        loadCategory("sports", "feed-sports");
+      }
+
+      // 5. Renderização com Validação de Imagem
+      function renderList(newsArray, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+
+        if (!newsArray || newsArray.length === 0) {
+          container.innerHTML =
+            '<p style="text-align:center; color:#999; padding:15px; font-size:0.8rem;">Sem atualizações recentes.</p>';
+          return;
+        }
+
+        // Configuração de Fallbacks (Imagens padrão)
+        const fallbacks = {
+          "feed-tech":
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400&auto=format&fit=crop",
+          "feed-finance":
+            "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=400&auto=format&fit=crop",
+          "feed-politics":
+            "https://images.unsplash.com/photo-1541872703-74c5963631df?q=80&w=400&auto=format&fit=crop",
+          "feed-sports":
+            "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=400&auto=format&fit=crop",
+        };
+        const defaultImg = fallbacks[containerId];
+
+        newsArray.forEach((item) => {
+          // Validação 3: Verificação de Imagem
+          let image = null;
+
+          if (item.thumbnail && item.thumbnail.match(/^http/)) {
+            image = item.thumbnail;
+          } else if (
+            item.enclosure &&
+            item.enclosure.link &&
+            item.enclosure.link.match(/^http/)
+          ) {
+            image = item.enclosure.link;
+          } else {
+            // Tenta extrair do HTML da descrição
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = item.description;
+            const imgTag = tempDiv.querySelector("img");
+            if (imgTag && imgTag.src) image = imgTag.src;
+          }
+
+          // Se não achou imagem válida, usa o fallback imediatamente
+          if (!image) image = defaultImg;
+
+          // Formatação de Data
+          const dateObj = new Date(item.pubDate);
+          const date = isNaN(dateObj)
+            ? "Hoje"
+            : dateObj.toLocaleDateString("pt-BR", {
+                day: "2-digit",
+                month: "short",
+                hour: "2-digit",
+                minute: "2-digit",
+              });
+
+          const card = document.createElement("div");
+          card.className = "news-wide-card";
+          card.onclick = () => openDrawer(item.link, item.title);
+
+          card.innerHTML = `
         <div class="news-img-wrapper">
-          <img src="${image}" alt="Capa" loading="lazy" onerror="this.src='${fallbackImg}'">
+          <img src="${image}" alt="Notícia" loading="lazy" onerror="this.src='${defaultImg}'">
         </div>
         <div class="news-content">
           <div class="news-meta">
@@ -257,38 +341,44 @@
           <button class="read-more-btn"></button>
         </div>
       `;
-      container.appendChild(card);
-    });
-  }
+          container.appendChild(card);
+        });
+      }
 
-  // 4. Funções do Modal (Mantidas iguais)
-  function openDrawer(url, title) {
-    const drawer = document.getElementById('newsDrawer');
-    const iframe = document.getElementById('newsIframe');
-    const titleSpan = document.getElementById('drawerTitle');
+      // 6. Controle do Modal
+      function openDrawer(url, title) {
+        const drawer = document.getElementById("newsDrawer");
+        const iframe = document.getElementById("newsIframe");
+        const titleSpan = document.getElementById("drawerTitle");
 
-    iframe.src = 'about:blank';
-    setTimeout(() => { iframe.src = url; }, 50);
+        iframe.src = "about:blank"; // Limpa anterior
+        setTimeout(() => {
+          iframe.src = url;
+        }, 50);
 
-    titleSpan.innerText = title;
-    drawer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+        titleSpan.innerText = title;
+        drawer.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
 
-  function closeDrawer() {
-    const drawer = document.getElementById('newsDrawer');
-    const iframe = document.getElementById('newsIframe');
-    drawer.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => { iframe.src = ''; }, 400);
-  }
+      function closeDrawer() {
+        const drawer = document.getElementById("newsDrawer");
+        const iframe = document.getElementById("newsIframe");
+        drawer.classList.remove("active");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          iframe.src = "";
+        }, 400);
+      }
 
-  // Fechar ao clicar fora
-  document.getElementById('newsDrawer').addEventListener('click', function(e) {
-    if (e.target === this) closeDrawer();
-  });
+      document
+        .getElementById("newsDrawer")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeDrawer();
+        });
 
-  document.addEventListener("DOMContentLoaded", initNews);
-</script>
+      // Iniciar
+      document.addEventListener("DOMContentLoaded", initNews);
+    </script>
   </body>
 </html>
