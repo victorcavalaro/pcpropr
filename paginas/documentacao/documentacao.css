@@ -1,406 +1,53 @@
-/* --- Variáveis CSS (Custom Properties) para Estilo Corporativo --- */
-:root {
-    /* Cores */
-    --cor-principal-fundo: #f0f2f5; /* Cinza claro, suave para o fundo */
-    --cor-secundaria-fundo: #ffffff; /* Branco puro para cards e seções */
-    --cor-header-footer: #1a202c; /* Azul marinho escuro, elegante */
-    --cor-accent: #3b82f6; /* Azul vibrante para acentos e interatividade */
-    --cor-accent-hover: #2563eb; /* Azul um pouco mais escuro para hover */
-    --cor-texto-escuro: #2d3748; /* Cinza escuro para títulos e textos principais */
-    --cor-texto-medio: #4a5568; /* Cinza médio para parágrafos */
-    --cor-texto-claro: #e2e8f0; /* Cinza muito claro para texto em fundos escuros */
-    --cor-borda: #cbd5e0; /* Cinza claro para bordas sutis */
-    --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
-    --sombra-media: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
+/* === style.css === */
 
-    /* Tipografia */
-    --fonte-principal: 'Poppins', sans-serif;
-    --tamanho-titulo-hero: 4rem;
-    --tamanho-subtitulo-hero: 1.8rem;
-    --tamanho-titulo-secao: 2.5rem;
-    --tamanho-titulo-card: 1.5rem;
-    --tamanho-paragrafo-card: 1rem;
-    --tamanho-texto-nav: 1rem;
+/* 1. Importação da Fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-    /* Espaçamentos e Geometria */
-    --largura-maxima: 1100px; /* Um pouco mais largo para um ar "premium" */
-    --padding-secao: 80px 0;
-    --raio-borda-elementos: 12px; /* Bordas mais arredondadas */
-    --raio-borda-botoes: 8px;
-    --transicao-padrao: all 0.3s ease-in-out;
-}
-
-/*Reset de estilos e importação da fonte */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); /* Importando mais pesos de fonte */
-
-/*configuração padrão da pagina do site, ele aplica a tudo */
-* {
+/* 2. Configurações Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a; /* Cor de fundo de segurança (Slate 900) */
+    color: #e2e8f0; /* Texto claro */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/*Estilos gerais da pagina*/
-body {
-    font-family: var(--fonte-principal);
-    line-height: 1.7; /* Linha de texto um pouco mais espaçada para leitura */
-    background-color: var(--cor-principal-fundo);
-    color: var(--cor-texto-medio);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
 }
 
-/*classe do menu*/
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex: 1;
-}
-
-/*classe da logo (cor da barra do menu e da letra e o tamanho da letra )*/
-.site-header {
-    background-color: #242424;
-    color: #fff;
-    padding: 10px 0;
-}
-
-/*classe da logo (determina as posições dos botões e logo) */
-.header-inner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-/*classe da logo (determina o tamanho do botão da nuvem)*/
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-/*classe da logo determina o tamanho da imagem da nuvem */
-.logotipo {
-    height: 50px;
-}
-
-/*classe da logo (faz com que o botão mude de cor quando passa o mouse em cima)*/
-.logotipo:hover{
-    border-radius: 5px;
-    padding: 1px ;
-}
-
-/*classe menu ()*/
-.site-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/*classe menu (faz com que o menu fique na horizontal)*/
-.site-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-/*classe menu (espaçamento entre os botões)*/
-.site-nav ul li {
-    margin: 0 10px;
-}
-
-/*classe menu (estilização do botão)*/
-.site-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px 16px;
-    background-color: #2c2c2c;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-/*classe menu (faz com que o botão mude de cor ao passar o mouse)*/
-.site-nav ul li a:hover {
-    background-color: #1e1e1e;
-}
-
-/*classe imagem de fundo (imagem de fundo da tela de inicio e as configurações dela)*/
-.hero {
-
-    background-image: url('/img/fundo\ desfocado.png');
-
-    background-attachment: fixed;
+/* 3. Configuração da Imagem de Fundo (Hero) */
+/* Mantém sua imagem original mas prepara para o estilo imersivo */
+.hero-bg {
+    background-image: url('/img/fundo desfocado.png'); /* Caminho da sua imagem */
+    background-attachment: fixed; /* Efeito Parallax */
     background-size: cover;
     background-position: center;
-    color: #fff;
-    padding: 200px 0;
-    text-align: left;
     background-repeat: no-repeat;
-}
-
-/*classe imagem de fundo (formatação do texto central "titulo")*/
-.hero-title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    margin-left: 20px; /* Adiciona uma leve distância da borda */
-}
-
-/*classe imagem de fundo (formatação do texto central "subtitulo")*/
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-left: 20px; /* Adiciona uma leve distância da borda */
-}
-
-
-
-/* Seção de Cards */
-#cards {
-    padding: var(--padding-secao);
-    background-color: var(--cor-secundaria-fundo); /* Branco puro */
-}
-
-#cards h2 {
-    text-align: center;
-    margin-bottom: 50px; /* Mais espaçamento */
-    font-size: var(--tamanho-titulo-secao);
-    color: var(--cor-texto-escuro);
-    font-weight: 700;
-}
-
-.card-container {
-    display: grid; /* Usar grid para melhor controle de layout em telas maiores */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas flexíveis */
-    gap: 30px; /* Mais espaçamento entre os cards */
-    max-width: var(--largura-maxima);
-    margin: 0 auto;
-}
-
-.card {
-    display: flex;
-    flex-direction: column; /* Conteúdo empilhado para melhor leitura */
-    background-color: var(--cor-secundaria-fundo);
-    border: 1px solid var(--cor-borda);
-    border-radius: var(--raio-borda-elementos);
-    box-shadow: var(--sombra-leve);
-    padding: 30px; /* Mais padding interno */
-    transition: var(--transicao-padrao);
-    overflow: hidden; /* Garante que a sombra da imagem não vaze */
     position: relative;
 }
 
-.card:hover {
-    transform: translateY(-8px); /* Elevação mais notável */
-    box-shadow: var(--sombra-media);
-}
-
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
+/* Overlay para garantir leitura do texto no Hero */
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Escurece a imagem em 50% */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%; /* Garante que o link ocupe todo o card */
-    outline: none;
-    border-radius: var(--raio-borda-elementos); /* Mantém o foco dentro da borda do card */
+    height: 100%;
+    z-index: 1;
 }
 
-.card-link:focus .card {
-    box-shadow: 0 0 0 4px var(--cor-accent), var(--sombra-media); /* Contorno de foco + sombra */
-    transform: translateY(-8px);
+/* 4. Scrollbar Personalizada (Opcional, para dar toque "App") */
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-.card img {
-    width: 90px; /* Ícone um pouco maior */
-    height: 90px;
-    border-radius: var(--raio-borda-padrao);
-    margin-bottom: 20px; /* Espaço entre a logo e o conteúdo */
-    align-self: flex-start; /* Alinha a imagem à esquerda */
-    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
-    background-color: var(--cor-principal-fundo); /* Fundo sutil para a imagem */
-    padding: 10px;
+::-webkit-scrollbar-track {
+    background: #0f172a;
 }
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
 }
-
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--cor-texto-escuro);
-    font-size: var(--tamanho-titulo-card);
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.card p {
-    color: var(--cor-texto-medio);
-    font-size: var(--tamanho-paragrafo-card);
-    margin-bottom: 15px; /* Espaço para o "leia mais" */
-    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
-}
-
-/* Adicionando um "Call to Action" sutil nos cards */
-.card-action {
-    color: var(--cor-accent);
-    font-weight: 600;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
-}
-
-.card-action:hover {
-    color: var(--cor-accent-hover);
-}
-
-/*Footer*/
-.site-footer {
-    background-color: #242424;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Animações (para o Hero Section) */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Responsividade Aprimorada */
-@media (max-width: 1024px) {
-    :root {
-        --tamanho-titulo-hero: 3.5rem;
-        --tamanho-subtitulo-hero: 1.6rem;
-    }
-    .hero {
-        padding: 150px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    :root {
-        --tamanho-titulo-hero: 2.8rem;
-        --tamanho-subtitulo-hero: 1.3rem;
-        --tamanho-titulo-secao: 2rem;
-        --padding-secao: 60px 0;
-    }
-
-    .header-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; /* Espaço entre logo e nav */
-    }
-
-    .logo-container {
-        margin-bottom: 0; /* Removido para o gap */
-    }
-
-    .site-nav ul {
-        flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
-        justify-content: center;
-        gap: 10px; /* Espaço entre os botões do nav */
-    }
-
-    .site-nav ul li {
-        margin: 0; /* Removido para usar gap */
-    }
-
-    .hero {
-        padding: 100px 0;
-        text-align: center;
-        background-attachment: scroll;
-    }
-
-    .hero-title {
-        font-size: var(--tamanho-titulo-hero);
-        margin-left: 0;
-    }
-
-    .hero-subtitle {
-        font-size: var(--tamanho-subtitulo-hero);
-        margin-left: 0;
-    }
-
-    .card-container {
-        grid-template-columns: 1fr; /* Cards empilhados em telas menores */
-    }
-
-    .card {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 90%; /* Ajuste para preencher mais a tela */
-        margin: 0 auto;
-    }
-
-    .card img {
-        margin-bottom: 15px;
-        margin-right: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    :root {
-        --tamanho-titulo-hero: 2.2rem;
-        --tamanho-subtitulo-hero: 1.1rem;
-        --tamanho-titulo-secao: 1.8rem;
-    }
-    .hero {
-        padding: 80px 0;
-    }
-    .hero-title {
-        font-size: var(--tamanho-titulo-hero);
-    }
-    .hero-subtitle {
-        font-size: var(--tamanho-subtitulo-hero);
-    }
-    .site-nav ul li a {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    .card {
-        padding: 20px;
-    }
-    .card img {
-        width: 70px;
-        height: 70px;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
 }
