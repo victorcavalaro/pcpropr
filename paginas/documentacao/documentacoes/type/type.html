@@ -40,364 +40,767 @@
     </header>
 <section>
     <main class="container">
-        
-        <section class="content-section">
-            <h1>Documentação de Estudo: TypeScript</h1>
-            <p>Um guia completo, do básico ao avançado, para dominar o superset mais popular do mercado.</p>
-
-            <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; border-left: 5px solid #3178c6;">
-                <h3>Conteúdo do Módulo</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>1. Fundamentos:</strong> Superset, Tipagem e Compilação</li>
-                    <li><strong>2. Tipos Primitivos:</strong> O básico da tipagem</li>
-                    <li><strong>3. Tipos Avançados:</strong> Interfaces, Generics e Tuplas</li>
-                    <li><strong>4. Orientação a Objetos:</strong> Classes e Modificadores</li>
-                    <li><strong>5. Manipulação de Código:</strong> Módulos e Decorators</li>
-                    <li><strong>6. Ferramentas:</strong> Configuração e Linting</li>
-                    <li><strong>7. Integração:</strong> Node.js, React e Angular</li>
-                    <li><strong>8. Boas Práticas:</strong> Escreva código limpo (Clean Code)</li>
-                    <li><strong>9. Projeto Prático:</strong> CRUD com TypeScript e DOM</li>
-                </ul>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>1. Fundamentos do TypeScript</h1>
-            <p>TypeScript é uma linguagem desenvolvida pela Microsoft que atua como um <em>superset</em> (superconjunto) do JavaScript. O objetivo principal é adicionar <strong>tipagem estática</strong> ao código, permitindo que erros sejam detectados durante o desenvolvimento (tempo de compilação) e não apenas quando o usuário está usando o sistema (tempo de execução).</p>
-
-            <h2>1.1 Superset do JavaScript</h2>
-            <p>Imagine que o JavaScript é uma casa. O TypeScript é essa mesma casa, mas reformada com sistemas de segurança modernos. Todo código JavaScript válido é, tecnicamente, um código TypeScript válido. Você não perde o que já sabe; você apenas ganha novas ferramentas.</p>
-            <pre><code>
-// JS Puro (Válido em TS)
-function somar(a, b) {
-    return a + b;
-}
-            </code></pre>
-
-            <h2>1.2 Tipagem Estática Opcional</h2>
-            <p>A "mágica" do TypeScript. Enquanto no JS as variáveis podem mudar de tipo a qualquer momento (o que causa bugs), no TS definimos contratos claros.</p>
-            <pre><code>
-// TypeScript
-let nome: string = "João";
-// nome = 10; // ❌ O compilador avisa imediatamente: "Type 'number' is not assignable to type 'string'"
-            </code></pre>
-
-            <h2>1.3 Transpilação</h2>
-            <p>Navegadores não leem TypeScript. Eles leem JavaScript. O processo de transformar TS em JS chama-se <strong>Transpilação</strong>. O arquivo final que vai para a produção é sempre <code>.js</code>, limpo e otimizado.</p>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>2. Tipos Primitivos</h1>
-            <p>Os blocos de construção básicos da linguagem.</p>
-
-            <table class="content-table" border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
-                <thead style="background-color: #eee;">
-                    <tr>
-                        <th style="padding: 10px;">Tipo</th>
-                        <th style="padding: 10px;">Descrição</th>
-                        <th style="padding: 10px;">Exemplo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 10px;"><code>string</code></td>
-                        <td style="padding: 10px;">Textos e caracteres.</td>
-                        <td style="padding: 10px;"><code>"Olá Mundo"</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>number</code></td>
-                        <td style="padding: 10px;">Inteiros e flutuantes.</td>
-                        <td style="padding: 10px;"><code>42</code>, <code>10.5</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>boolean</code></td>
-                        <td style="padding: 10px;">Verdadeiro ou Falso.</td>
-                        <td style="padding: 10px;"><code>true</code>, <code>false</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>void</code></td>
-                        <td style="padding: 10px;">Vazio (geralmente para funções sem retorno).</td>
-                        <td style="padding: 10px;"><code>function log(): void {}</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>unknown</code></td>
-                        <td style="padding: 10px;">Seguro. Exige verificação antes de usar.</td>
-                        <td style="padding: 10px;">Uso em APIs externas.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>any</code></td>
-                        <td style="padding: 10px;"><strong>Perigoso.</strong> Aceita tudo. Evite.</td>
-                        <td style="padding: 10px;">Legado ou testes rápidos.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;"><code>never</code></td>
-                        <td style="padding: 10px;">Nunca retorna (ex: erro ou loop infinito).</td>
-                        <td style="padding: 10px;"><code>throw new Error()</code></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>3. Tipos Avançados</h1>
-            <p>Recursos que dão poder real ao TypeScript para modelar regras de negócio complexas.</p>
-
-            <h2>3.1 Interfaces e Type Aliases</h2>
-            <p>Usados para definir a forma de um objeto.</p>
-            <pre><code>
-// Interface (Preferível para objetos e extensibilidade)
-interface Usuario {
-    id: number;
-    nome: string;
-    email?: string; // ? significa opcional
-}
-
-// Type Alias (Preferível para uniões e primitivos)
-type ID = string | number;
-
-const user: Usuario = { id: 1, nome: "Ana" };
-            </code></pre>
-
-            <h2>3.2 Union Types (|) e Intersection Types (&)</h2>
-            <p><strong>Union</strong> permite que uma variável seja de um tipo OU de outro. <strong>Intersection</strong> combina múltiplos tipos em um só.</p>
-            <pre><code>
-function printId(id: number | string) {
-    console.log("Seu ID é: " + id);
-}
-
-type Trabalhador = { empresa: string };
-type Pessoa = { nome: string };
-type Funcionario = Pessoa & Trabalhador; // Tem nome E empresa
-            </code></pre>
-
-            <h2>3.3 Generics (&lt;T&gt;)</h2>
-            <p>Permitem criar componentes reutilizáveis que funcionam com vários tipos, mantendo a segurança.</p>
-            <pre><code>
-// Uma função que devolve o que recebeu, mantendo o tipo
-function identidade&lt;T&gt;(arg: T): T {
-    return arg;
-}
-
-let saida1 = identidade&lt;string&gt;("meuString");
-let saida2 = identidade&lt;number&gt;(100);
-            </code></pre>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>4. Orientação a Objetos</h1>
-            <p>O TypeScript traz recursos de linguagens como Java e C# para o JavaScript.</p>
-            
-            <pre><code>
-class Animal {
-    protected nome: string; // Acessível aqui e nas subclasses
-
-    constructor(nome: string) {
-        this.nome = nome;
-    }
-
-    public mover(distancia: number): void {
-        console.log(`${this.nome} moveu-se ${distancia}m.`);
-    }
-}
-
-class Cachorro extends Animal {
-    latir() {
-        console.log("Au! Au!");
-    }
-}
-
-const dog = new Cachorro("Rex");
-dog.latir();
-dog.mover(10);
-            </code></pre>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>8. Boas Práticas (Best Practices)</h1>
-            <p>Escrever código que funciona é fácil. Escrever código sustentável exige disciplina. Aqui estão as regras de ouro do TypeScript:</p>
-
-            <h3>🚫 1. Evite o <code>any</code> a todo custo</h3>
-            <p>Usar <code>any</code> desliga a checagem do TypeScript. É como dirigir sem cinto de segurança. Se não souber o tipo, use <code>unknown</code>.</p>
-
-            <h3>✅ 2. Use Strict Mode</h3>
-            <p>Mantenha <code>"strict": true</code> no seu <code>tsconfig.json</code>. Isso ativa verificações rigorosas de nulos e tipos implícitos.</p>
-
-            <h3>⚡ 3. Use Interfaces para Contratos de API</h3>
-            <p>Sempre que receber dados de um backend (JSON), crie uma Interface que represente esses dados. Isso garante que você não tente acessar propriedades que não existem.</p>
-
-            <h3>🔒 4. Utilize Readonly</h3>
-            <p>Se uma propriedade não deve ser alterada após a criação, use <code>readonly</code> para garantir imutabilidade.</p>
-            <pre><code>
-interface Config {
-    readonly apiEndpoint: string;
-}
-            </code></pre>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h1>9. Tutorial Prático: CRUD com TypeScript e DOM</h1>
-            <p>Abaixo, transformamos um exemplo clássico de JavaScript para TypeScript. Note o uso de <strong>Type Assertions</strong> (<code>as HTMLInputElement</code>) para dizer ao TS que elemento HTML estamos manipulando.</p>
-            
-            <h3>9.1 Estrutura HTML</h3>
-            <div style="background-color: #2d2d2d; color: #fff; padding: 15px; border-radius: 5px;">
-<pre><code>&lt;!-- HTML --&gt;
-&lt;form id="aluno-form"&gt;
-    &lt;input type="text" id="nome" placeholder="Nome do aluno" required&gt;
-    &lt;button type="submit"&gt;Adicionar Aluno&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Nome&lt;/th&gt;
-            &lt;th&gt;Ações&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody id="alunos-tabela"&gt;
-        &lt;!-- Dados renderizados via TS --&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-            </div>
-
-            <h3>9.2 O Código TypeScript</h3>
-            <p>Observe como definimos a interface <code>Aluno</code> e tipamos os elementos do DOM.</p>
-            <div style="background-color: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 5px; overflow-x: auto;">
-<pre><code>
-// 1. Definição do Tipo de Dados (Contrato)
-interface Aluno {
-    id: number;
-    nome: string;
-}
-
-// 2. Seleção de Elementos com Type Casting
-// O 'as HTMLFormElement' garante que temos acesso a métodos de formulário
-const formulario = document.getElementById("aluno-form") as HTMLFormElement;
-const tabela = document.getElementById("alunos-tabela") as HTMLTableSectionElement;
-const nomeInput = document.getElementById("nome") as HTMLInputElement;
-
-// 3. Estado da Aplicação
-let alunos: Aluno[] = []; 
-
-// 4. Função para Adicionar
-formulario.addEventListener("submit", (evento: Event) => {
-    evento.preventDefault(); // Evita recarregamento da página
-
-    const nomeAluno = nomeInput.value.trim();
-
-    if (nomeAluno) {
-        const novoAluno: Aluno = {
-            id: Date.now(),
-            nome: nomeAluno
-        };
-        
-        alunos.push(novoAluno);
-        atualizarTabela();
-        nomeInput.value = ""; // Limpa o input
-        nomeInput.focus();
-    }
-});
-
-// 5. Função de Renderização
-function atualizarTabela(): void {
-    tabela.innerHTML = ""; // Limpa a tabela
-
-    alunos.forEach((aluno) => {
-        const linha = document.createElement("tr");
-
-        // Criando células manualmente ou via Template String
-        linha.innerHTML = `
-            &lt;td&gt;${aluno.nome}&lt;/td&gt;
-            &lt;td&gt;
-                &lt;button class="btn-editar" data-id="${aluno.id}"&gt;Editar&lt;/button&gt;
-                &lt;button class="btn-excluir" data-id="${aluno.id}" style="background-color: #dc3545;"&gt;Excluir&lt;/button&gt;
-            &lt;/td&gt;
-        `;
-        tabela.appendChild(linha);
-    });
-
-    // Reatribuir eventos aos novos botões (necessário pois o HTML foi recriado)
-    adicionarEventosBotoes();
-}
-
-// 6. Manipulação de Eventos Dinâmicos
-function adicionarEventosBotoes(): void {
-    const btnsEditar = document.querySelectorAll(".btn-editar");
-    const btnsExcluir = document.querySelectorAll(".btn-excluir");
-
-    btnsEditar.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = Number((btn as HTMLButtonElement).getAttribute("data-id"));
-            editarAluno(id);
-        });
-    });
-
-    btnsExcluir.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = Number((btn as HTMLButtonElement).getAttribute("data-id"));
-            deletarAluno(id);
-        });
-    });
-}
-
-// 7. Ações de Edição e Exclusão
-function editarAluno(id: number): void {
-    const aluno = alunos.find(a => a.id === id);
-
-    if (aluno) {
-        const novoNome = prompt("Digite o novo nome:", aluno.nome);
-        if (novoNome && novoNome.trim() !== "") {
-            aluno.nome = novoNome.trim();
-            atualizarTabela();
+        <header class="hero-container">
+    <style>
+        /* CSS Específico para o Hero do TypeScript */
+        .hero-container {
+            background-color: #1a1a1a; /* Fundo Dark */
+            color: #ffffff;
+            padding: 80px 20px;
+            border-bottom: 6px solid #3178c6; /* AZUL TYPESCRIPT */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
         }
-    }
-}
 
-function deletarAluno(id: number): void {
-    // Confirmação simples
-    if(confirm("Tem certeza que deseja excluir?")) {
-        alunos = alunos.filter(a => a.id !== id);
-        atualizarTabela();
-    }
-}
-</code></pre>
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .ts-logo {
+            width: 100px;
+            height: 100px;
+            background-color: white; /* Contraste para o logo */
+            border-radius: 15px;
+            padding: 5px;
+            box-shadow: 0 0 25px rgba(49, 120, 198, 0.5); /* Brilho azul */
+            transition: transform 0.3s ease;
+        }
+
+        .ts-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .hero-tag-ts {
+            background-color: #3178c6; /* Azul TS */
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #d1d1d1;
+            max-width: 650px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+        }
+    </style>
+
+    <div class="hero-content">
+        <div class="hero-logo">
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="Logo Oficial TypeScript" class="ts-logo">
+        </div>
+        
+        <div class="hero-text">
+            <span class="hero-tag-ts">JavaScript com Superpoderes</span>
+            <h1 class="hero-title">TypeScript: O Guia Definitivo</h1>
+            <p class="hero-subtitle">
+                Pare de corrigir bugs em produção. Aprenda a tipagem estática e descubra por que os maiores projetos do mundo não usam mais JavaScript puro.
+            </p>
+            <div class="hero-meta">
+                <span>📘 Atualizado em 2026</span>
+                <span>⏱️ 25 min de leitura</span>
             </div>
-        </section>
-
+        </div>
+    </div>
+        </header>
+    
         <section class="content-section">
-            <h1>Resumo de Sintaxe TypeScript</h1>
-            <table class="content-table" border="1" style="width: 100%; border-collapse: collapse;">
-                <thead style="background-color: #000; color: #fff;">
-                <tr>
-                    <th style="padding: 10px;">Comando / Sintaxe</th>
-                    <th style="padding: 10px;">Descrição</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr><td><code>let x: string</code></td><td>Declara variável string.</td></tr>
-                <tr><td><code>interface X {}</code></td><td>Define estrutura de objeto.</td></tr>
-                <tr><td><code>x as string</code></td><td>Força o tipo (Type Assertion).</td></tr>
-                <tr><td><code>x?: number</code></td><td>Propriedade opcional (pode ser undefined).</td></tr>
-                <tr><td><code>readonly</code></td><td>Impede alteração do valor.</td></tr>
-                <tr><td><code>Array&lt;T&gt;</code></td><td>Lista genérica.</td></tr>
-                </tbody>
-            </table>
-        </section>
+        
+        <main class="container">
+            <section class="content-section">
+        <h2>1. TypeScript: A Evolução Necessária</h2>
+        <p>
+            Para entender o TypeScript, precisamos olhar para a história. O JavaScript foi criado em 1995 em apenas <strong>10 dias</strong>. O objetivo dele era simples: fazer pequenas animações e validações de formulário em sites estáticos.
+        </p>
+        <p>
+            Ninguém imaginava que, 20 anos depois, usaríamos essa mesma linguagem para criar sistemas bancários, jogos 3D e inteligências artificiais. O JavaScript cresceu, mas sua base continuou "frágil" para projetos grandes. Foi aí que a Microsoft interveio.
+        </p>
 
-    </main>
-</section>
-    </main>
+        <hr>
+
+        <h3>1.1. O Conceito de "Superset" (Superconjunto)</h3>
+        <p>
+            Muitos acham que TypeScript é uma linguagem totalmente nova. Não é. Ele é um <strong>Superset</strong> do JavaScript.
+        </p>
+        <p>
+            Imagine círculos concêntricos:
+        </p>
+        
+        <ul>
+            <li><strong>Círculo Menor (JavaScript):</strong> É a linguagem padrão que roda no navegador.</li>
+            <li><strong>Círculo Maior (TypeScript):</strong> Engloba todo o JavaScript e adiciona uma camada extra de funcionalidades (Tipagem, Interfaces, Enums).</li>
+        </ul>
+        <blockquote style="border-left: 5px solid #3178c6; background: #222327; padding: 15px;">
+            <strong>A Regra de Ouro:</strong> Todo código JavaScript válido é automaticamente um código TypeScript válido. Você pode pegar um arquivo <code>.js</code>, mudar a extensão para <code>.ts</code>, e ele funcionará (embora sem os benefícios da tipagem ainda).
+        </blockquote>
+
+        <hr>
+
+        <h3>1.2. Por que ele foi criado? (A Dor da Escala)</h3>
+        <p>
+            A Microsoft criou o TypeScript em 2012 (liderada por Anders Hejlsberg, o pai do C#) para resolver um problema específico: <strong>A Falta de Escalabilidade do JS.</strong>
+        </p>
+        <p>
+            No JavaScript puro (Dinâmico e Fracamente Tipado), você tem liberdade total, o que é perigoso em times grandes:
+        </p>
+        <ul>
+            <li>Você não sabe o que uma função espera receber (é um número? uma string? um objeto?).</li>
+            <li>Você só descobre erros quando o código roda no navegador do cliente (Runtime Error).</li>
+            <li>O autocompletar (IntelliSense) das IDEs é limitado porque o editor não sabe o tipo das variáveis.</li>
+        </ul>
+        <p>
+            O TypeScript traz a disciplina de linguagens como Java e C# para o mundo Web, permitindo que equipes gigantes trabalhem no mesmo código sem quebrar as funcionalidades uns dos outros.
+        </p>
+
+        <hr>
+
+        <h3>1.3. Como funciona "Por Baixo do Capô"?</h3>
+        <p>
+            Aqui está o segredo que confunde iniciantes: <strong>O navegador NÃO entende TypeScript.</strong> O Chrome, Firefox e Edge só leem JavaScript.
+        </p>
+        <p>
+            Então, como funciona? O TypeScript precisa de um processo chamado <strong>Transpilação</strong>.
+        </p>
+
+        
+
+        <ol>
+            <li><strong>Desenvolvimento:</strong> Você escreve código em arquivos <code>.ts</code> com tipagem forte e segurança.</li>
+            <li><strong>Compilação (TSC):</strong> O compilador do TypeScript (<code>tsc</code>) lê seu código. Se houver erros de tipo, ele trava e te avisa.</li>
+            <li><strong>Transpilação:</strong> Se não houver erros, ele remove toda a tipagem e gera um arquivo <code>.js</code> limpo.</li>
+            <li><strong>Execução:</strong> O navegador roda esse arquivo <code>.js</code> gerado.</li>
+        </ol>
+
+        <p>
+            Ou seja: O TypeScript é uma ferramenta de <strong>Desenvolvimento</strong>. Ele existe para ajudar o programador a não cometer erros. No final, tudo vira JavaScript.
+        </p>
+             </section>
+        </main>
+
+       <main class="container">
+            <section class="content-section">
+        <h2>2. O Sistema de Tipos: Dominando a Base</h2>
+        <p>
+            No JavaScript, as variáveis são "caixas abertas": você pode colocar um gato dentro, tirar o gato e colocar um tijolo. No TypeScript, as caixas têm etiquetas. Se a caixa diz "Gato", você jamais poderá colocar um "Tijolo" lá dentro.
+        </p>
+
+        <hr>
+
+        <h3>2.1. O Duelo: Tipagem Explícita vs. Inferência</h3>
+        <p>
+            Uma dúvida comum é: <em>"Eu preciso colocar <code>: string</code> em todas as minhas variáveis?"</em>. A resposta é: <strong>Não.</strong>
+        </p>
+        <p>
+            O TypeScript possui um recurso poderoso chamado <strong>Type Inference</strong> (Inferência de Tipo). Ele analisa o valor que você atribuiu e "trava" a variável automaticamente.
+        </p>
+
+        <h4>A) Inferência (O jeito limpo)</h4>
+        <p>Use quando você já inicializa a variável com um valor. Deixe o código menos verboso.</p>
+        <pre><code>// O TS vê as aspas e entende: "Isso é uma string para sempre"
+let curso = "TypeScript"; 
+
+// curso = 10; // ❌ Erro: O TS não deixa mudar para número</code></pre>
+
+        <h4>B) Tipagem Explícita (O jeito seguro)</h4>
+        <p>Use em dois casos principais:</p>
+        <ol>
+            <li>Quando você cria a variável mas não atribui valor na hora.</li>
+            <li><strong>Em parâmetros de função (Obrigatório).</strong></li>
+        </ol>
+        <pre><code>// Caso 1: Variável iniciada vazia
+let resposta: string; 
+// ...muitas linhas depois...
+resposta = "Sucesso";
+
+// Caso 2: Parâmetros de Função
+// O TS não tem como adivinhar o que 'n1' e 'n2' serão, você TEM que dizer.
+function somar(n1: number, n2: number) {
+    return n1 + n2;
+}</code></pre>
+
+        <hr>
+
+        <h3>2.2. Guia Prático dos Tipos Essenciais</h3>
+        <p>
+            Abaixo, temos exemplos reais de como aplicar cada tipo primitivo. Copie e teste no seu editor.
+        </p>
+
+        <h4>🔤 String, Number e Boolean (Os Primitivos)</h4>
+        <p>A base de 90% das variáveis.</p>
+        <pre><code>// STRING: Textos, frases e Template Strings
+const nomeCompleto: string = "Maria Silva";
+const mensagem: string = `Bem-vinda, ${nomeCompleto}`; // Template String
+
+// NUMBER: Inteiros e Decimais (tudo é number em JS)
+const idade: number = 30;
+const altura: number = 1.65;
+
+// BOOLEAN: Verdadeiro ou Falso (Flags de controle)
+const isAdmin: boolean = true;
+const temPermissao: boolean = false;</code></pre>
+
+        <h4>⚠️ Any vs. Unknown (O Perigo e a Solução)</h4>
+        <p>Aqui mora a diferença entre um júnior e um sênior.</p>
+        
+        <p><strong>ANY (O Vilão):</strong> Desliga o TypeScript. Aceita qualquer coisa e não avisa erros.</p>
+        <pre><code>let variavelPerigosa: any = "Texto";
+variavelPerigosa = 10;      // Aceita mudar
+variavelPerigosa.metodoQueNaoExiste(); // ❌ Aceita rodar (mas vai quebrar o site!)</code></pre>
+
+        <p><strong>UNKNOWN (O Herói Seguro):</strong> Aceita qualquer coisa, mas te obriga a verificar antes de usar.</p>
+        <pre><code>let variavelSegura: unknown = "Texto";
+variavelSegura = 10; // Aceita mudar
+
+// variavelSegura.toUpperCase(); // ❌ O TS bloqueia: "Você não garantiu que é texto!"
+
+// Passo a passo para usar Unknown:
+if (typeof variavelSegura === "string") {
+    console.log(variavelSegura.toUpperCase()); // ✅ Agora o TS permite
+}</code></pre>
+
+        <h4>🛑 Void vs. Never (O Retorno das Funções)</h4>
+        <p>Usados para tipar o que uma função devolve.</p>
+        
+        <p><strong>VOID (Vazio):</strong> A função executa algo, mas não devolve nenhum valor útil (apenas <code>undefined</code>).</p>
+        <pre><code>function logarMensagem(msg: string): void {
+    console.log("Log do Sistema: " + msg);
+    // Não tem 'return'
+}</code></pre>
+
+        <p><strong>NEVER (Nunca):</strong> A função <strong>jamais</strong> termina sua execução com sucesso. Geralmente usada para erros fatais ou loops infinitos.</p>
+        <pre><code>function tratarErro(mensagem: string): never {
+    throw new Error(mensagem); 
+    // O script morre aqui. Ele nunca chega na linha de baixo.
+}</code></pre>
+
+        <blockquote style="border-left: 5px solid #3178c6; background: #23262b; padding: 15px;">
+            <strong>Resumo de Estudo:</strong><br>
+            1. Use <strong>Inferência</strong> sempre que possível para limpar o código.<br>
+            2. Use <strong>Explícita</strong> em parâmetros de funções.<br>
+            3. Jamais use <code>any</code>, prefira <code>unknown</code>.<br>
+            4. Use <code>void</code> para funções de efeito colateral (logs, alertas).
+        </blockquote>
+
+            </section>
+        </main>
+
+        <main class="container">
+            <section class="content-section">
+                <h2>3. Modelagem de Dados: O Poder da Estrutura</h2>
+                <p>
+                    No JavaScript, um objeto é uma bagunça. Você pode criar um usuário com `nome`, depois adicionar um `endereço` e, por fim, deletar o `nome`. O código vira uma terra sem lei.
+                </p>
+                <p>
+                    No TypeScript, nós impomos a ordem. Antes de criar um objeto, nós desenhamos a "planta baixa" dele. Se o objeto não seguir a planta, o código não compila.
+                </p>
+
+                <hr>
+
+                <h3>3.1. Interfaces: O Contrato do seu Código</h3>
+                <p>
+                    <strong>O que é?</strong> Uma Interface é um <strong>contrato</strong>. Ela define a forma exata que um objeto deve ter.
+                </p>
+                <p>
+                    <strong>Por que usar?</strong>
+                </p>
+                <ul>
+                    <li><strong>Segurança:</strong> Impede que você esqueça um campo obrigatório (ex: esquecer a senha do usuário).</li>
+                    <li><strong>IntelliSense:</strong> Ao digitar <code>usuario.</code>, o VS Code vai listar todas as propriedades disponíveis automaticamente.</li>
+                    <li><strong>Manutenção:</strong> Se você mudar o nome de um campo na Interface, o TS avisa todos os lugares do código que precisam ser atualizados.</li>
+                </ul>
+
+                
+
+                <h4>🎓 Passo a Passo: Modelando um E-commerce</h4>
+                <p>
+                    Vamos criar um sistema de produtos. Queremos garantir que todo produto tenha nome e preço, mas a descrição seja opcional.
+                </p>
+
+                <p><strong>Passo 1: Criar o Contrato (A Interface)</strong></p>
+                <pre><code>interface Produto {
+            id: number;
+            titulo: string;
+            preco: number;
+            
+            // O '?' indica que este campo não é obrigatório
+            descricao?: string; 
+            
+            // 'readonly' significa que, uma vez criado, não pode mudar
+            readonly dataCadastro: Date; 
+        }</code></pre>
+
+                <p><strong>Passo 2: Assinar o Contrato (Criar o Objeto)</strong></p>
+                <pre><code>// O TS verifica se 'meuCelular' respeita a Interface 'Produto'
+        const meuCelular: Produto = {
+            id: 1,
+            titulo: "iPhone 15",
+            preco: 5000,
+            dataCadastro: new Date()
+            // Note que não coloquei 'descricao', e o TS aceitou porque é opcional (?)
+        };</code></pre>
+
+                <p><strong>Passo 3: Testando as Regras</strong></p>
+                <pre><code>meuCelular.titulo = "iPhone 16"; // ✅ Permitido (é string)
+        meuCelular.preco = "Caro";       // ❌ Erro: Esperava number, recebeu string
+
+        // ❌ Erro: 'dataCadastro' é somente leitura (readonly)
+        // meuCelular.dataCadastro = new Date();</code></pre>
+
+                <hr>
+
+                <h3>3.2. Union Types: O Poder do "OU" (Flexibilidade)</h3>
+                <p>
+                    <strong>O que é?</strong> O operador <code>|</code> (pipe) funciona como um "OU". Ele diz ao TypeScript: "Esta variável pode ser X <strong>OU</strong> Y".
+                </p>
+                <p>
+                    <strong>Por que usar?</strong> O mundo real não é perfeito. Às vezes um ID vem do banco como número (1), às vezes vem da URL como texto ("1"). Às vezes um status pode ser "sucesso" ou "falha". O Union Type modela essa incerteza de forma segura.
+                </p>
+
+                <h4>🎓 Tutorial Prático 1: O "ID Híbrido"</h4>
+                <p>
+                    Vamos criar uma função que aceita tanto número quanto texto.
+                </p>
+
+                <pre><code>// Definimos um "Type Alias" para não repetir código
+        type ID = string | number;
+
+        function exibirID(codigo: ID) {
+            // O TS sabe que 'codigo' pode ser string ou number
+            console.log(`O código do produto é: ${codigo}`);
+        }
+
+        exibirID(10);      // ✅ Funciona
+        exibirID("A-50");  // ✅ Funciona
+        exibirID(true);    // ❌ Erro: Boolean não está na lista permitida</code></pre>
+
+                <h4>🎓 Tutorial Prático 2: Literal Types (O Semáforo)</h4>
+                <p>
+                    Podemos ser ainda mais específicos. Em vez de permitir <em>qualquer</em> string, podemos permitir apenas palavras específicas. Isso é incrível para configurações.
+                </p>
+
+                <pre><code>// A variável só pode ter um desses 3 valores exatos
+        type StatusPedido = "pendente" | "aprovado" | "cancelado";
+
+        function atualizarStatus(novoStatus: StatusPedido) {
+            console.log(`Status alterado para: ${novoStatus}`);
+        }
+
+        atualizarStatus("aprovado"); // ✅ Funciona
+        // atualizarStatus("entregue"); // ❌ Erro: "entregue" não existe no tipo StatusPedido</code></pre>
+
+                <blockquote style="border-left: 5px solid #3178c6; background: #292c30; padding: 15px;">
+                    <strong>Dica de Mestre (Type Guard):</strong><br>
+                    Quando você usa Union Types (ex: <code>string | number</code>), às vezes precisa saber qual dos dois é o atual para usar métodos específicos (como <code>.toUpperCase()</code> que só existe em strings).<br><br>
+                    Use o <code>typeof</code> para garantir:
+                    <pre style="background: none; border: none; padding: 0; margin: 10px 0;"><code>function formatar(entrada: string | number) {
+            if (typeof entrada === "string") {
+                return entrada.toUpperCase(); // ✅ TS sabe que aqui é string
+            } else {
+                return entrada.toFixed(2);    // ✅ TS sabe que aqui sobrou o number
+            }
+        }</code></pre>
+                </blockquote>
+
+            </section>
+        </main>
+
+       <main class="container">
+            <section class="content-section">
+                <h2>4. TypeScript e o DOM: A Ponte entre Código e Tela</h2>
+                <p>
+                    Antes de falarmos de código, precisamos entender o conceito. <strong>DOM (Document Object Model)</strong> é a representação do seu HTML na memória do navegador.
+                </p>
+                <p>
+                    Imagine que o HTML é a "planta arquitetônica" da casa (papel estático). O DOM é a "casa construída" (interativa). O JavaScript/TypeScript precisa manipular a casa construída, não o papel.
+                </p>
+
+                
+
+                <h3>4.1. O Problema: A Cegueira do TypeScript</h3>
+                <p>
+                    Aqui está o segredo que ninguém conta: <strong>O TypeScript NÃO lê o seu arquivo HTML.</strong>
+                </p>
+                <p>
+                    Quando você escreve <code>document.getElementById("meu-input")</code>, o TypeScript não faz ideia se esse ID existe no HTML, nem se ele é um botão, uma imagem ou um campo de texto.
+                </p>
+                <p>
+                    Por segurança, o TS assume que o elemento é um <strong><code>HTMLElement</code></strong> (um elemento genérico).
+                </p>
+                <ul>
+                    <li><strong>HTMLElement (Genérico):</strong> Tem coisas básicas como <code>.style</code>, <code>.id</code>, <code>.click()</code>.</li>
+                    <li><strong>HTMLInputElement (Específico):</strong> Tem tudo do genérico MAIS o <code>.value</code>.</li>
+                </ul>
+                <p>
+                    Se você tentar acessar <code>.value</code> em um elemento genérico, o TS grita: "Ei! Nem todo elemento HTML tem valor! E se isso for uma <code>&lt;div&gt;</code>?".
+                </p>
+
+                
+
+                <hr>
+
+                <h3>4.2. A Solução: Type Assertion (O comando 'as')</h3>
+                <p>
+                    Já que o TS é cego para o HTML, você precisa ser os olhos dele. Usamos a palavra-chave <code>as</code> para garantir: "TypeScript, confie em mim, eu sei que esse ID pertence a um Input".
+                </p>
+
+                <h4>Tutorial Passo a Passo: Capturando um Valor</h4>
+
+                <p><strong>Cenário:</strong> Temos um campo de texto no HTML e queremos pegar o que o usuário digitou.</p>
+
+                <p><strong>1. O HTML (A Tela)</strong></p>
+                <pre><code>&lt;!-- Um campo de e-mail --&gt;
+        &lt;input type="email" id="email-usuario" placeholder="Digite seu e-mail"&gt;</code></pre>
+
+                <p><strong>2. O Erro (Sem Tipagem)</strong></p>
+                <pre><code>const email = document.getElementById("email-usuario");
+
+        // ❌ ERRO: Property 'value' does not exist on type 'HTMLElement'.
+        // O TS pensa: "Isso pode ser uma div, e div não tem value!"
+        console.log(email.value);</code></pre>
+
+                <p><strong>3. A Correção (Type Assertion)</strong></p>
+                <pre><code>// ✅ CORRETO: Usamos 'as HTMLInputElement'
+        const email = document.getElementById("email-usuario") as HTMLInputElement;
+
+        // Agora o TS sabe que é um Input e habilita o .value
+        console.log(email.value);</code></pre>
+
+                <hr>
+
+                <h3>4.3. Glossário: Qual tipo devo usar?</h3>
+                <p>
+                    Como saber qual <code>HTML...Element</code> usar? Geralmente o nome é óbvio, mas aqui está uma tabela dos mais comuns para você consultar:
+                </p>
+
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Tag HTML</th>
+                            <th>Tipo no TypeScript</th>
+                            <th>Propriedade Exclusiva (Exemplo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;input&gt;</code></td>
+                            <td><code>HTMLInputElement</code></td>
+                            <td><code>.value</code>, <code>.placeholder</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;button&gt;</code></td>
+                            <td><code>HTMLButtonElement</code></td>
+                            <td><code>.disabled</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;a&gt;</code></td>
+                            <td><code>HTMLAnchorElement</code></td>
+                            <td><code>.href</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td><code>HTMLImageElement</code></td>
+                            <td><code>.src</code>, <code>.alt</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;form&gt;</code></td>
+                            <td><code>HTMLFormElement</code></td>
+                            <td><code>.submit()</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;div&gt;</code></td>
+                            <td><code>HTMLDivElement</code></td>
+                            <td>(Apenas propriedades genéricas)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <blockquote style="border-left: 5px solid #3178c6; background: #292d33; padding: 15px;">
+                    <strong>Dica de Segurança:</strong><br>
+                    O comando <code>getElementById</code> pode retornar <code>null</code> (se o ID não existir). Em projetos rigorosos, o TS pode exigir que você verifique se o elemento existe antes de usar:
+                    <pre style="margin-top: 10px;"><code>const btn = document.getElementById("botao") as HTMLButtonElement;
+
+        if (btn) { // Só entra aqui se 'btn' não for nulo
+            btn.disabled = true;
+        }</code></pre>
+                </blockquote>
+
+            </section>
+        </main>
+        
+        <main class="container">
+            <section class="content-section">
+                <h2>5. Projeto Prático: To-Do List (Tipada e Segura)</h2>
+                <p>
+                    A melhor forma de aprender TypeScript é vendo ele "salvar" seu código. Vamos refatorar uma lista de tarefas. Em JavaScript puro, você poderia acidentalmente adicionar um número na lista ou esquecer de salvar o texto. Com TypeScript, o código nem compila se você errar.
+                </p>
+                <p>
+                    Vamos dividir a construção em 3 camadas lógicas:
+                </p>
+                <ol>
+                    <li><strong>Modelagem:</strong> O Contrato de Dados (Interface).</li>
+                    <li><strong>Visualização:</strong> O HTML (Estrutura).</li>
+                    <li><strong>Controle:</strong> A Lógica (TypeScript).</li>
+                </ol>
+
+                <hr>
+
+                <h3>Passo 1: A Modelagem (O Contrato)</h3>
+                <p>
+                    Antes de pensar em funções ou botões, pense nos <strong>DADOS</strong>. O que compõe uma tarefa?
+                </p>
+                <p>
+                    Criamos uma <code>interface</code>. Ela será o nosso "molde". Todo objeto que criarmos no futuro precisará passar nesse teste de qualidade.
+                </p>
+
+                <pre><code>// 1. O Contrato de Dados
+        interface Tarefa {
+            id: number;          // Identificador único (para podermos apagar depois)
+            texto: string;       // O conteúdo da tarefa
+            concluida: boolean;  // Estado: true (riscada) ou false (pendente)
+        }</code></pre>
+
+                <blockquote style="border-left: 5px solid #3178c6; background: #25272b; padding: 15px;">
+                    <strong>Por que fazer isso?</strong><br>
+                    Se no futuro você tentar fazer <code>tarefa.concluida = "sim"</code> (string), o TypeScript vai gritar erro. Você garante a integridade do banco de dados na memória.
+                </blockquote>
+
+                <hr>
+
+                <h3>Passo 2: A Estrutura (HTML)</h3>
+                <p>
+                    Precisamos dos elementos na tela. Crie um arquivo <code>index.html</code> simples:
+                </p>
+                <pre><code>&lt;!-- Simples e Limpo --&gt;
+        &lt;div class="container"&gt;
+            &lt;h2&gt;Minhas Tarefas&lt;/h2&gt;
+            
+            &lt;div class="input-group"&gt;
+                &lt;input type="text" id="taskInput" placeholder="Nova tarefa..."&gt;
+                &lt;button id="btnAdd"&gt;Adicionar&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;ul id="lista"&gt;
+                &lt;!-- As tarefas vão aparecer aqui --&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;</code></pre>
+
+                <hr>
+
+                <h3>Passo 3: A Lógica Segura (TypeScript)</h3>
+                <p>
+                    Agora vamos conectar tudo. Leia os comentários no código abaixo para entender a decisão técnica de cada linha.
+                </p>
+
+                <h4>3.1. Seleção e Estado</h4>
+                <p>
+                    Aqui usamos o <strong>Type Assertion</strong> (`as HTML...`) que aprendemos antes.
+                </p>
+                <pre><code>// A. Capturando elementos do DOM (A Ponte)
+        const inputTask = document.getElementById("taskInput") as HTMLInputElement;
+        const btnAdd = document.getElementById("btnAdd") as HTMLButtonElement;
+        const listElement = document.getElementById("lista") as HTMLUListElement;
+
+        // B. O Estado da Aplicação (Single Source of Truth)
+        // Dizemos: "Este é um array que SÓ aceita objetos do tipo Tarefa"
+        const tarefas: Tarefa[] = [];</code></pre>
+
+                <h4>3.2. A Função de Adicionar</h4>
+                <pre><code>function adicionarTarefa() {
+            // Validação básica
+            if (inputTask.value === "") return;
+
+            // C. Criação do Objeto
+            // Se eu esquecer o 'id', o TS avisa que o contrato foi quebrado!
+            const novaTarefa: Tarefa = {
+                id: Date.now(),       // Gera um número único baseado no tempo (timestamp)
+                texto: inputTask.value,
+                concluida: false
+            };
+
+            // Adiciona ao array e atualiza a tela
+            tarefas.push(novaTarefa);
+            renderizar();
+            
+            // UX: Limpa o campo e foca para digitar a próxima
+            inputTask.value = "";
+            inputTask.focus();
+        }
+
+        // Ouvinte de Evento
+        btnAdd.addEventListener("click", adicionarTarefa);</code></pre>
+
+                <h4>3.3. A Função de Renderizar (O Espelho)</h4>
+                <p>
+                    Esta função pega o estado (Array) e o reflete na tela (HTML).
+                </p>
+                <pre><code>function renderizar() {
+            listElement.innerHTML = ""; // 1. Limpa a lista visual atual
+            
+            tarefas.forEach(task => {
+                // 2. Cria o elemento na memória
+                const li = document.createElement("li");
+                li.innerText = task.texto;
+                
+                // 3. Aplica estilo se estiver concluída
+                if (task.concluida) {
+                    li.style.textDecoration = "line-through";
+                    li.style.opacity = "0.6";
+                }
+
+                // 4. Funcionalidade Extra: Clique para riscar
+                li.addEventListener("click", () => {
+                    task.concluida = !task.concluida; // Inverte (true <-> false)
+                    renderizar(); // Atualiza a tela novamente
+                });
+                
+                // 5. Joga o elemento na tela
+                listElement.appendChild(li);
+            });
+        }</code></pre>
+
+                <hr>
+
+                <h3>Análise Técnica: Onde o TypeScript brilhou?</h3>
+                <p>
+                    Se tivéssemos feito isso em JavaScript puro, estaríamos expostos a vários riscos que o TS eliminou:
+                </p>
+                <ul class="summary-list">
+                    <li><strong>Autocompletar Inteligente:</strong> Ao digitar <code>task.</code> dentro do <code>forEach</code>, o VS Code sugeriu <code>.texto</code> e <code>.concluida</code>. No JS, teríamos que decorar os nomes.</li>
+                    <li><strong>Segurança no Array:</strong> Se tentássemos fazer <code>tarefas.push("Comprar pão")</code> (apenas a string), o TS impediria, pois definimos que o array espera objetos completos da interface <code>Tarefa</code>.</li>
+                    <li><strong>Manipulação do DOM:</strong> Ao usar <code>as HTMLInputElement</code>, garantimos que a propriedade <code>.value</code> existe, evitando erros de "undefined" em tempo de execução.</li>
+                </ul>
+
+            </section>
+        </main>
+
+        <main class="container">
+            <section class="content-section">
+                <h2>6. Conclusão: A Verdade sobre o TypeScript</h2>
+                <p>
+                    Vou ser bem honesto com você: nas primeiras semanas, o TypeScript parece chato. Você vai tentar somar dois números e o VS Code vai gritar um erro vermelho. Você vai pensar: <em>"Poxa, em JavaScript isso funcionava, por que complicar?"</em>.
+                </p>
+                <p>
+                    Mas a virada de chave acontece quando você volta no seu código 2 meses depois. Graças à tipagem, você sabe exatamente o que aquela função <code>calcularImposto(valor)</code> espera receber, sem precisar ler o código inteiro de novo.
+                </p>
+                <p>
+                    <strong>TypeScript não é sobre escrever mais código. É sobre dormir tranquilo sabendo que seu sistema não vai quebrar na mão do cliente por um erro bobo de digitação.</strong>
+                </p>
+
+                <hr>
+
+                <h3>O Grande Desafio Final: A Trindade (Node + TS + Docker)</h3>
+                <p>
+                    Lembra que criamos um container Docker no artigo passado? E agora aprendemos TypeScript? O mercado de trabalho exige que você saiba misturar os dois.
+                </p>
+                <p>
+                    <strong>Sua missão:</strong> Criar uma API simples em Node.js usando TypeScript e fazê-la rodar dentro de um container Docker.
+                </p>
+                <p>
+                    Parece difícil? Tente fazer sozinho primeiro. Se travar (ou se quiser conferir se fez do jeito "profissional"), clique na caixa abaixo. Eu deixei o gabarito completo para você.
+                </p>
+
+                <details style="background-color: #27272c; border: 1px solid #18181a; border-radius: 8px; padding: 15px; margin-top: 20px;">
+                    <summary style="cursor: pointer; font-weight: bold; color: #3178c6; font-size: 1.1rem; list-style: none;">
+                        👁️ Ver a Solução Completa (Gabarito)
+                    </summary>
+                    
+                    <div style="margin-top: 20px;">
+                        <p>Para isso funcionar, você precisa de 4 arquivos na mesma pasta. Aqui está a receita:</p>
+
+                        <h4>1. package.json (As Dependências)</h4>
+                        <p>Inicie com <code>npm init -y</code> e instale: <code>npm i express</code> e <code>npm i -D typescript @types/express @types/node</code>.</p>
+
+                        <h4>2. tsconfig.json (Configuração do TS)</h4>
+                        <p>Crie este arquivo para dizer ao TS: "Transforme o código da pasta /src para JavaScript na pasta /dist".</p>
+                        <pre><code>{
+        "compilerOptions": {
+            "target": "es2016",
+            "module": "commonjs",
+            "rootDir": "./src",
+            "outDir": "./dist",
+            "strict": true,
+            "esModuleInterop": true
+        }
+        }</code></pre>
+
+                        <h4>3. src/index.ts (O Código da API)</h4>
+                        <pre><code>import express, { Request, Response } from 'express';
+
+        const app = express();
+        const port = 3000;
+
+        app.get('/', (req: Request, res: Response) => {
+            res.json({ 
+                mensagem: "Funcionou! TypeScript + Docker 🐳💙",
+                timestamp: new Date()
+            });
+        });
+
+        app.listen(port, () => {
+            console.log(`Servidor rodando na porta ${port}`);
+        });</code></pre>
+
+                        <h4>4. Dockerfile (A Mágica)</h4>
+                        <p>Aqui está o segredo: O Docker precisa <strong>compilar</strong> o TS para JS antes de rodar.</p>
+                        <pre><code># Etapa 1: Base
+        FROM node:18-alpine
+
+        WORKDIR /app
+
+        # Etapa 2: Instalar Dependências
+        COPY package*.json ./
+        RUN npm install
+
+        # Etapa 3: Copiar código e COMPILAR (Build)
+        COPY . .
+        RUN npx tsc
+
+        # Etapa 4: Rodar o JavaScript gerado na pasta dist
+        EXPOSE 3000
+        CMD ["node", "dist/index.js"]</code></pre>
+
+                        <p><strong>Como rodar?</strong></p>
+                        <pre><code>docker build -t minha-api-ts .
+        docker run -p 3000:3000 minha-api-ts</code></pre>
+                    </div>
+                </details>
+
+                <p class="final-quote" style="margin-top: 30px;">
+                    Isso encerra nossa série de fundamentos. Agora você tem a base de HTML, CSS, JS, Docker e TypeScript. O próximo passo? Escolha um framework (React ou Next.js) e comece a construir projetos reais para o seu portfólio. <strong>Te vejo no topo! 🚀</strong>
+                </p>
+
+            </section>
+        </main>
+
+    </section>
+</main>
 
     <!-- Rodapé -->
     <footer class="site-footer">

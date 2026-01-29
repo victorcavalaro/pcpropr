@@ -3,192 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pcpropr</title>
-    <link rel="stylesheet" href="/paginas/documentacao/documentacao.css">
+    <title>Pcpropr - Documentação Imersiva</title>
+    
     <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913">
-<script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
                     colors: {
-                        'header-bg': '#242424', // Cor exata do seu menu original
-                        'card-glass': 'rgba(255, 255, 255, 0.05)', // Vidro dos cards
-                        'neon-blue': '#3b82f6',
-                        'neon-purple': '#8b5cf6',
+                        'brand-dark': '#0f172a', // Fundo principal escuro
+                        'brand-header': '#242424', // Cor original do seu header
+                        'brand-glass': 'rgba(255, 255, 255, 0.03)', // Vidro dos cards
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-slate-900 text-gray-100 flex flex-col min-h-screen">
 
-    <header class="bg-header-bg text-white py-3 shadow-lg z-50 relative border-b border-gray-800">
+    <style>
+        /* CSS Auxiliar para garantir o funcionamento exato da imagem de fundo */
+        body { font-family: 'Poppins', sans-serif; }
+        
+        .hero-bg {
+            background-image: url('/img/fundo desfocado.png'); /* Sua imagem original */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-200 flex flex-col min-h-screen">
+
+    <header class="bg-[#242424] text-white py-3 shadow-md z-50">
         <div class="max-w-[960px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
             <div class="flex items-center">
-                <a href="/index.html" class="hover:opacity-80 transition duration-300">
+                <a href="/index.html" class="hover:bg-white/10 p-1 rounded transition duration-300">
                     <img src="/img/logo barra menu.png" alt="logo" class="h-[50px] object-contain"/>
                 </a>
             </div>
 
             <nav class="w-full md:w-auto">
-                <ul class="flex flex-wrap justify-center gap-3">
-                    <li><a href="/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base font-medium block">Início</a></li>
-                    <li><a href="/paginas/contato/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base font-medium block">Conteúdos</a></li>
-                    <li><a href="/paginas/documentacao/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base font-medium block">Documentações</a></li>
-                    <li><a href="https://aram-cyan.vercel.app/" target="_blank" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base font-medium block">SGF</a></li>
+                <ul class="flex flex-wrap justify-center gap-3 list-none p-0 m-0">
+                    <li><a href="/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base text-white decoration-0 block">Início</a></li>
+                    <li><a href="/paginas/contato/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base text-white decoration-0 block">Conteúdos</a></li>
+                    <li><a href="/paginas/documentacao/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base text-white decoration-0 block">Documentações</a></li>
+                    <li><a href="https://aram-cyan.vercel.app/" target="_blank" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm md:text-base text-white decoration-0 block">SGF</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero-bg py-32 md:py-40 text-white relative">
-        <div class="hero-overlay"></div> <div class="max-w-[960px] mx-auto px-5 relative z-10 text-center md:text-left">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-                Descubra Inovações que <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Transformam o Futuro</span>
-            </h2>
-            <p class="text-lg md:text-xl text-gray-200 max-w-2xl font-light drop-shadow-md">
-                Explore nossos projetos e veja como podemos ajudar a realizar suas visões tecnológicas.
-            </p>
+    <section class="hero-bg py-32 text-white relative">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        
+        <div class="max-w-[960px] mx-auto px-5 relative z-10 text-center md:text-left">
+            <h2 class="text-4xl md:text-6xl font-bold mb-5 leading-tight">Descubra Inovações que Transformam o Futuro</h2>
+            <p class="text-lg md:text-2xl font-light text-gray-100 max-w-2xl">Explore nossos projetos e veja como podemos ajudar a realizar suas visões tecnológicas.</p>
         </div>
     </section>
 
     <main id="cards" class="flex-grow bg-[#0f111a] py-20 relative overflow-hidden">
         
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-20 right-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[100px]"></div>
         </div>
 
         <div class="max-w-[1100px] mx-auto px-6 relative z-10">
             
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Documentações</h2>
-                <div class="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"></div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Documentações</h2>
+                <div class="h-[2px] w-32 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
                 <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
                     
-                    <a href="/paginas/documentacao/documentacoes/type/type.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/ts.svg" alt="TypeScript" class="w-14 h-14 object-contain">
+                    <a href="/paginas/documentacao/documentacoes/type/type.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-blue-400/50 transition-all duration-300 group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/ts.svg" alt="TypeScript" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">TypeScript</h3>
-                            <p class="text-sm text-gray-400 mt-1">Tipagem estática para JavaScript moderno.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/Javascript/javascript.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-yellow-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/js.svg" alt="JavaScript" class="w-14 h-14 object-contain">
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">JavaScript</h3>
-                            <p class="text-sm text-gray-400 mt-1">Linguagem de programação web.</p>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors mb-1">TypeScript</h3>
+                            <p class="text-sm text-gray-400">Documentação completa e tipagem estática.</p>
                         </div>
                     </a>
                 </article>
 
                 <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/java/java.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-red-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/java.svg" alt="Java" class="w-14 h-14 object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/Javascript/javascript.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-yellow-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/js.svg" alt="JavaScript" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-red-400 transition-colors">Java</h3>
-                            <p class="text-sm text-gray-400 mt-1">Desenvolvimento robusto e seguro.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/php/php.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/php.svg" alt="PHP" class="w-14 h-14 object-contain">
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">PHP</h3>
-                            <p class="text-sm text-gray-400 mt-1">Scripting server-side flexível.</p>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-yellow-300 transition-colors mb-1">JavaScript</h3>
+                            <p class="text-sm text-gray-400">Guia essencial da linguagem web.</p>
                         </div>
                     </a>
                 </article>
 
                 <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/react/react.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/react.svg" alt="React" class="w-14 h-14 object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/java/java.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-red-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/java.svg" alt="Java" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">React</h3>
-                            <p class="text-sm text-gray-400 mt-1">Biblioteca para interfaces de usuário.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/docker/docker.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/docker.svg" alt="Docker" class="w-14 h-14 object-contain">
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">Docker</h3>
-                            <p class="text-sm text-gray-400 mt-1">Plataforma de containerização.</p>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-red-300 transition-colors mb-1">Java</h3>
+                            <p class="text-sm text-gray-400">Conceitos de POO e backend robusto.</p>
                         </div>
                     </a>
                 </article>
 
                 <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/HTML/HTML.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-orange-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/html.svg" alt="HTML" class="w-14 h-14 object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/php/php.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-indigo-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/php.svg" alt="PHP" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">HTML</h3>
-                            <p class="text-sm text-gray-400 mt-1">Estrutura padrão da web.</p>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-indigo-300 transition-colors mb-1">PHP</h3>
+                            <p class="text-sm text-gray-400">Desenvolvimento server-side dinâmico.</p>
                         </div>
                     </a>
                 </article>
 
                 <article class="group relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <a href="/paginas/documentacao/documentacoes/Css/css.html" class="relative flex items-center bg-card-glass backdrop-blur-md border border-white/10 rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg">
-                        <div class="shrink-0 mr-5 bg-[#1e1e1e] p-3 rounded-xl border border-white/5">
-                            <img src="/svg/css.svg" alt="CSS" class="w-14 h-14 object-contain">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/react/react.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-cyan-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/react.svg" alt="React" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">CSS</h3>
-                            <p class="text-sm text-gray-400 mt-1">Estilização e layout.</p>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors mb-1">React</h3>
+                            <p class="text-sm text-gray-400">Interfaces de usuário reativas.</p>
                         </div>
                     </a>
                 </article>
 
-            </div>
-            </div>
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/docker/docker.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-blue-500/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/docker.svg" alt="Docker" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors mb-1">Docker</h3>
+                            <p class="text-sm text-gray-400">Containerização e deploy simplificado.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/banco de dados/banco.htm" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-orange-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/mysql.svg" alt="MySQL" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-orange-300 transition-colors mb-1">MySQL</h3>
+                            <p class="text-sm text-gray-400">Gestão de banco de dados relacional.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/HTML/HTML.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-orange-500/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/html.svg" alt="HTML" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-orange-300 transition-colors mb-1">HTML</h3>
+                            <p class="text-sm text-gray-400">Estruturação semântica da web.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/Css/css.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-blue-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/css.svg" alt="CSS" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors mb-1">CSS</h3>
+                            <p class="text-sm text-gray-400">Estilização e design visual.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/Flutter/flutter.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-blue-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/flutter.svg" alt="Flutter" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors mb-1">Flutter</h3>
+                            <p class="text-sm text-gray-400">Desenvolvimento de apps multiplataforma.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-700 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/bootstrap/bootstrap.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-purple-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/bootstrap.svg" alt="Bootstrap" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors mb-1">Bootstrap</h3>
+                            <p class="text-sm text-gray-400">Framework CSS para layouts responsivos.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    <a href="/paginas/documentacao/documentacoes/mui/mui.html" class="relative flex items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full hover:-translate-y-2 hover:border-blue-400/50 transition-all duration-300">
+                        <div class="shrink-0 mr-6 bg-[#1e1e1e] p-3 rounded-xl border border-white/5 shadow-inner">
+                            <img src="/svg/material ui.svg" alt="MUI" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                        </div>
+                        <div class="flex-1 border-l border-white/10 pl-6">
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors mb-1">Material UI</h3>
+                            <p class="text-sm text-gray-400">Componentes React prontos.</p>
+                        </div>
+                    </a>
+                </article>
+                
+                </div>
+        </div>
     </main>
 
-    <footer class="bg-header-bg text-white py-8 text-center border-t border-gray-800 mt-auto">
+    <footer class="bg-[#242424] text-white py-6 text-center border-t border-gray-700 mt-auto">
         <div class="max-w-[960px] mx-auto px-5">
-            <p class="text-sm text-gray-400">&copy; 2025 Pcpropr.</p>
+            <p class="text-sm opacity-80">&copy; 2025 Pcpropr.</p>
         </div>
     </footer>
 
