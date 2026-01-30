@@ -42,438 +42,415 @@
 
     <!-- Conteúdo Principal -->
     <main class="container">
-        <!-- Estrutura Básica -->
-        <section id="estrutura" class="content-section">
-            <h1>1. Estrutura Básica de um Documento HTML</h1>
-            <p>Todo documento HTML começa com a declaração <code>&lt;!DOCTYPE html&gt;</code>, que define o tipo de documento e a versão do HTML.</p>
-            <p>O documento é envolto pela tag <code>&lt;html&gt;</code>, que contém duas seções principais: <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p>
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="pt-BR"&gt;
+
+        <header class="hero-container">
+    <style>
+        /* CSS Específico para o Hero do HTML */
+        .hero-container {
+            background-color: #1a1a1a; /* Fundo Dark */
+            color: #ffffff;
+            padding: 80px 20px;
+            border-bottom: 6px solid #E34F26; /* LARANJA HTML5 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .html-logo {
+            width: 100px;
+            height: 100px;
+            /* Brilho laranja característico */
+            filter: drop-shadow(0 0 25px rgba(227, 79, 38, 0.4)); 
+            transition: transform 0.3s ease;
+        }
+
+        .html-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .hero-tag-html {
+            background-color: #E34F26; /* Laranja HTML5 */
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #d1d1d1;
+            max-width: 650px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+        }
+    </style>
+
+    <div class="hero-content">
+        <div class="hero-logo">
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Logo Oficial HTML5" class="html-logo">
+        </div>
+        
+        <div class="hero-text">
+            <span class="hero-tag-html">A Fundação da Web</span>
+            <h1 class="hero-title">HTML5: O Guia Definitivo</h1>
+            <p class="hero-subtitle">
+                Mais do que tags: domine a Semântica, Acessibilidade e SEO Técnico que diferenciam um site amador de uma aplicação profissional.
+            </p>
+            <div class="hero-meta">
+                <span>🌐 Atualizado em 2026</span>
+                <span>⏱️ 20 min de leitura</span>
+            </div>
+        </div>
+    </div>
+</header>
+    
+    <section id="estrutura" class="content-section">
+        <h2>1. A Arquitetura: Estrutura Básica de um Documento</h2>
+        <p>
+            Um documento HTML não é apenas texto solto. Pense nele como o <strong>esqueleto</strong> de um corpo humano. Sem ossos fortes (estrutura), os músculos (CSS) e o cérebro (JS) não têm onde se apoiar.
+        </p>
+        <p>
+            Todo documento moderno começa com a declaração <code>&lt;!DOCTYPE html&gt;</code>. Isso não é uma tag HTML, é uma instrução para o navegador: "Trate este arquivo como HTML5 moderno, não entre em modo de compatibilidade legado (Quirks Mode)".
+        </p>
+
+        
+
+        <h3>O Boilerplate Padrão</h3>
+        <p>
+            O documento é envolto pela tag <code>&lt;html&gt;</code> e dividido em duas realidades: o <strong>Head</strong> (Configurações invisíveis) e o <strong>Body</strong> (Conteúdo visível).
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt; &lt;!-- Importante para SEO e Leitores de Tela --&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta charset="UTF-8"&gt; &lt;!-- Garante que acentos funcionem (ç, ã) --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- Responsividade --&gt;
     &lt;title&gt;Título da Página&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+    &lt;p&gt;Este é o começo de tudo.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-        </section>
+    </section>
 
-        <!-- Semântica HTML -->
-        <section id="semantica" class="content-section">
-            <h2>2. Semântica HTML</h2>
-            <p>Um especialista em HTML prioriza o uso de elementos semânticos para melhorar a acessibilidade e a SEO. Isso significa usar tags como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, etc., para descrever o conteúdo de forma significativa.</p>
-            <pre><code>&lt;header&gt;
-    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    <hr>
+
+    <section id="semantica" class="content-section">
+        <h2>2. Semântica: Escrevendo para Máquinas</h2>
+        <p>
+            Qual a diferença entre usar um <code>&lt;div&gt;</code> e um <code>&lt;header&gt;</code>? Visualmente, nenhuma. Mas para o Google (SEO) e para Leitores de Tela (Acessibilidade), a diferença é brutal.
+        </p>
+        <p>
+            <strong>Semântica</strong> é dar significado ao código. É dizer "Isso aqui é um rodapé", em vez de "Isso aqui é uma caixa no fundo".
+        </p>
+        
+        
+
+        <ul class="summary-list">
+            <li><strong>&lt;header&gt;:</strong> O topo, geralmente com logo e navegação.</li>
+            <li><strong>&lt;nav&gt;:</strong> Blocos de links de navegação principal.</li>
+            <li><strong>&lt;main&gt;:</strong> O conteúdo principal (único por página).</li>
+            <li><strong>&lt;article&gt;:</strong> Conteúdo que faz sentido sozinho (ex: um post de blog).</li>
+            <li><strong>&lt;section&gt;:</strong> Uma parte temática do conteúdo.</li>
+            <li><strong>&lt;aside&gt;:</strong> Conteúdo lateral (banners, "veja também").</li>
+            <li><strong>&lt;footer&gt;:</strong> Rodapé com direitos autorais e contatos.</li>
+        </ul>
+
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Tech Blog&lt;/h1&gt;
     &lt;nav&gt;
         &lt;ul&gt;
-            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#servicos"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#artigos"&gt;Artigos&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
 &lt;/header&gt;
+
 &lt;main&gt;
-    &lt;section id="sobre"&gt;
-        &lt;h2&gt;Sobre Nós&lt;/h2&gt;
-        &lt;p&gt;Informações sobre a empresa.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;section id="servicos"&gt;
-        &lt;h2&gt;Nossos Serviços&lt;/h2&gt;
-        &lt;p&gt;Descrição dos serviços oferecidos.&lt;/p&gt;
-    &lt;/section&gt;
+    &lt;article&gt;
+        &lt;h2&gt;A Importância da Semântica&lt;/h2&gt;
+        &lt;p&gt;Semântica ajuda o Google a entender seu site.&lt;/p&gt;
+    &lt;/article&gt;
 &lt;/main&gt;
+
 &lt;footer&gt;
-    &lt;p&gt;&copy; 2023 Meu Site&lt;/p&gt;
+    &lt;p&gt;&copy; 2026 Tech Blog&lt;/p&gt;
 &lt;/footer&gt;</code></pre>
-        </section>
+    </section>
 
-        <!-- Acessibilidade -->
-        <section id="acessibilidade" class="content-section">
-            <h2>3. Acessibilidade</h2>
-            <p>Um especialista em HTML sempre considera a acessibilidade, garantindo que o conteúdo seja acessível a todos os usuários, incluindo aqueles com deficiências. Isso inclui o uso de atributos como <code>alt</code> em imagens, <code>aria-* </code> para melhorar a acessibilidade de elementos interativos, e a estruturação correta do conteúdo.</p>
-            <pre><code>&lt;img src="imagem.jpg" alt="Descrição da imagem para leitores de tela"&gt;
-&lt;button aria-label="Fechar"&gt;X&lt;/button&gt;</code></pre>
-        </section>
+    <hr>
 
-        <!-- Formulários HTML -->
-        <section id="formularios" class="content-section">
-            <h2>4. Formulários HTML</h2>
-            <p>Formulários são uma parte essencial de muitos sites. Um especialista em HTML sabe como estruturar formulários de forma eficiente, usando elementos como <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, e <code>&lt;button&gt;</code>.</p>
-            <pre><code>&lt;form action="/enviar" method="post"&gt;
-    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
-    &lt;input type="text" id="nome" name="nome" required&gt;
+    <section id="acessibilidade" class="content-section">
+        <h2>3. Acessibilidade (a11y): A Web é para Todos</h2>
+        <p>
+            Um especialista em HTML não coda apenas para quem vê; coda para quem ouve. Usuários cegos navegam na web usando softwares chamados <em>Screen Readers</em> (Leitores de Tela). Se o seu HTML for ruim, o site é invisível para eles.
+        </p>
+        
+        <h3>Regras de Ouro:</h3>
+        <ol>
+            <li><strong>Imagens:</strong> Sempre use o atributo <code>alt</code>. Se a imagem for decorativa, use <code>alt=""</code> vazio.</li>
+            <li><strong>Botões vs Links:</strong> Use <code>&lt;button&gt;</code> para ações (enviar, abrir modal) e <code>&lt;a&gt;</code> para navegação (ir para outra página). Nunca troque os dois.</li>
+            <li><strong>WAI-ARIA:</strong> Quando o HTML nativo não for suficiente, use atributos <code>aria-*</code> para explicar o que está acontecendo (ex: <code>aria-expanded="true"</code>).</li>
+        </ol>
 
-    &lt;label for="email"&gt;Email:&lt;/label&gt;
-    &lt;input type="email" id="email" name="email" required&gt;
+        <pre><code>&lt;!-- Ruim --&gt;
+&lt;div onclick="fechar()"&gt;X&lt;/div&gt;
 
-    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
-    &lt;textarea id="mensagem" name="mensagem" required&gt;&lt;/textarea&gt;
+&lt;!-- Bom --&gt;
+&lt;button aria-label="Fechar Janela" onclick="fechar()"&gt;X&lt;/button&gt;
 
-    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;!-- Imagem com descrição --&gt;
+&lt;img src="grafico-vendas.jpg" alt="Gráfico de barras mostrando aumento de 20% nas vendas"&gt;</code></pre>
+    </section>
+
+    <hr>
+
+    <section id="formularios" class="content-section">
+        <h2>4. Formulários: Coletando Dados</h2>
+        <p>
+            Formulários são a principal forma de interação do usuário. Um bom formulário deve ser claro e associar corretamente as etiquetas aos campos.
+        </p>
+        <p>
+            <strong>Dica Pro:</strong> Sempre use o atributo <code>for</code> na tag <code>&lt;label&gt;</code> conectando com o <code>id</code> do input. Isso permite que o usuário clique no texto "Nome" para focar no campo.
+        </p>
+        <pre><code>&lt;form action="/api/cadastro" method="POST"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="email_usuario"&gt;Seu Melhor E-mail:&lt;/label&gt;
+        &lt;input type="email" id="email_usuario" name="email" placeholder="joao@exemplo.com" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="bio"&gt;Sobre você:&lt;/label&gt;
+        &lt;textarea id="bio" name="biografia" rows="4"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit"&gt;Criar Conta&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-        </section>
+    </section>
 
-        <!-- SEO e Meta Tags -->
-        <section id="seo" class="content-section">
-            <h2>5. Meta Tags e SEO</h2>
-            <p>Um especialista em HTML entende a importância das meta tags para o SEO (Search Engine Optimization). Isso inclui a definição de meta charset, meta name="description", meta name="keywords", e outras tags que ajudam os motores de busca a entender o conteúdo da página.</p>
-            <pre><code>&lt;meta name="description" content="Descrição do site para motores de busca"&gt;
-&lt;meta name="keywords" content="HTML, CSS, JavaScript, Web Development"&gt;
-&lt;meta name="author" content="Seu Nome"&gt;</code></pre>
-        </section>
+    <hr>
 
-        <!-- Boas Práticas -->
-        <section id="boas-praticas" class="content-section">
-            <h2>6. Boas Práticas</h2>
-            <p>Validação: Sempre validar o código HTML usando ferramentas como o W3C Validator para garantir que o código esteja livre de erros.</p>
-            <p>Compatibilidade: Garantir que o HTML seja compatível com diferentes navegadores e dispositivos.</p>
-            <p>Manutenção: Escrever código limpo e bem organizado, com comentários quando necessário, para facilitar a manutenção.</p>
-        </section>
+    <section id="seo" class="content-section">
+        <h2>5. SEO Técnico: Conversando com o Google</h2>
+        <p>
+            O Googlebot lê o <code>&lt;head&gt;</code> do seu site para decidir se ele merece estar na primeira página. As <strong>Meta Tags</strong> são o cartão de visitas do seu site.
+        </p>
+        <p>
+            Além das tags padrão, hoje é vital usar <strong>Open Graph (OG)</strong> para que seu site fique bonito quando compartilhado no WhatsApp, LinkedIn ou Twitter.
+        </p>
+        <pre><code>&lt;!-- Básico --&gt;
+&lt;meta name="description" content="Aprenda HTML5 do zero ao avançado com este guia completo."&gt;
+&lt;meta name="keywords" content="HTML, Tutorial, Desenvolvimento Web"&gt;
 
-        <!-- CSS e JavaScript -->
-        <section id="css-js" class="content-section">
-            <h2>7. Integração com CSS e JavaScript</h2>
-            <p>Um especialista em HTML sabe como integrar corretamente CSS e JavaScript no documento HTML, usando as tags <code>&lt;link&gt;</code> e <code>&lt;script&gt;</code>.</p>
-            <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;
-&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
-        </section>
+&lt;!-- Redes Sociais (Open Graph) --&gt;
+&lt;meta property="og:title" content="HTML5: O Guia Definitivo"&gt;
+&lt;meta property="og:description" content="Domine a web com este tutorial."&gt;
+&lt;meta property="og:image" content="https://meusite.com/capa-html.jpg"&gt;</code></pre>
+    </section>
 
-        <!-- HTML5 APIs -->
-        <section id="html5-apis" class="content-section">
-            <h2>8. HTML5 APIs</h2>
-            <p>Um especialista em HTML está familiarizado com as APIs do HTML5, como localStorage, sessionStorage, geolocation, canvas, video, e audio, que permitem criar experiências interativas e dinâmicas.</p>
-            <pre><code>&lt;canvas id="meuCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+    <hr>
+
+    <section id="boas-praticas" class="content-section">
+        <h2>6. Clean Code no HTML</h2>
+        <p>Escrever HTML é fácil, escrever HTML limpo e manutenível exige disciplina.</p>
+        <ul class="summary-list">
+            <li><strong>Validação:</strong> O navegador tenta corrigir erros, mas não confie nisso. Use o <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+            <li><strong>Lowercase:</strong> Escreva tags sempre em minúsculas (<code>&lt;div&gt;</code>, não <code>&lt;DIV&gt;</code>).</li>
+            <li><strong>Aspas:</strong> Sempre use aspas nos atributos (<code>class="btn"</code>).</li>
+            <li><strong>Indentação:</strong> Mantenha a hierarquia visual clara para quem for ler seu código depois.</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="css-js" class="content-section">
+        <h2>7. Integração: Conectando Estilo e Lógica</h2>
+        <p>
+            O HTML nunca trabalha sozinho. Ele precisa carregar recursos externos. A performance do site depende de <em>onde</em> e <em>como</em> você carrega esses arquivos.
+        </p>
+        <blockquote style="border-left: 5px solid #E34F26; background: #252322; padding: 15px;">
+            <strong>Dica de Performance:</strong> Carregue o CSS no <code>&lt;head&gt;</code> para evitar que a página "pisque" sem estilo. Carregue o JavaScript no final do <code>&lt;body&gt;</code> ou use o atributo <code>defer</code> para não bloquear o carregamento visual da página.
+        </blockquote>
+        <pre><code>&lt;!-- CSS: No Head --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;!-- JS: No Head com Defer (Melhor prática moderna) --&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+    </section>
+
+    <hr>
+
+    <section id="html5-apis" class="content-section">
+        <h2>8. HTML5 APIs: Poder de Aplicativo</h2>
+        <p>
+            O HTML5 transformou navegadores em sistemas operacionais. Hoje, você pode acessar a câmera, geolocalização e até desenhar gráficos complexos direto no HTML.
+        </p>
+        <h3>Exemplo: Canvas</h3>
+        <p>Usado para desenhar gráficos, jogos 2D ou manipulação de imagens.</p>
+        <pre><code>&lt;canvas id="meuCanvas" width="200" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;
+
 &lt;script&gt;
-    var canvas = document.getElementById('meuCanvas');
-    var ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#FF0000';
-    ctx.fillRect(0, 0, 150, 75);
+    var c = document.getElementById("meuCanvas");
+    var ctx = c.getContext("2d");
+    ctx.fillStyle = "#E34F26"; // Laranja HTML
+    ctx.fillRect(10, 10, 150, 80);
 &lt;/script&gt;</code></pre>
-        </section>
+    </section>
 
-        <!-- Responsividade -->
-        <section id="responsividade" class="content-section">
-            <h2>9. Responsividade</h2>
-            <p>Um especialista em HTML entende a importância de criar layouts responsivos que se adaptem a diferentes tamanhos de tela. Isso envolve o uso de meta tags como viewport e a integração com CSS para criar designs flexíveis.</p>
-            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
-        </section>
+    <hr>
 
-        <!-- Performance -->
-        <section id="performance" class="content-section">
-            <h2>10. Performance</h2>
-            <p>Um especialista em HTML considera a performance ao criar páginas web, minimizando o uso de recursos pesados, otimizando imagens e usando técnicas como lazy loading para melhorar o tempo de carregamento.</p>
-            <pre><code>&lt;img src="imagem.jpg" loading="lazy" alt="Descrição da imagem"&gt;</code></pre>
-        </section>
+    <section id="responsividade" class="content-section">
+        <h2>9. Responsividade: Mobile First</h2>
+        <p>
+            Seu site vai ser aberto em um iPhone, em uma TV 4K e num Tablet. O HTML precisa estar preparado. A tag mais importante para isso é a <strong>Viewport Meta Tag</strong>.
+        </p>
+        <p>Sem ela, os celulares vão tentar "diminuir" o site inteiro como se fosse uma imagem, tornando o texto ilegível.</p>
+        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+    </section>
 
-        <section class="content-section">
-            <h2>Comandos HTML</h2>
+    <hr>
+
+    <section id="performance" class="content-section">
+        <h2>10. Performance: Imagens Inteligentes</h2>
+        <p>
+            Imagens são as maiores causadoras de lentidão na web. O HTML moderno traz o atributo <code>loading="lazy"</code>.
+        </p>
+        <p>
+            Isso diz ao navegador: "Só carregue essa imagem quando o usuário rolar a página até ela". Isso economiza dados e bateria do usuário.
+        </p>
+        <pre><code>&lt;img src="foto-pesada.jpg" loading="lazy" alt="Foto em alta resolução"&gt;</code></pre>
+    </section>
+
+    <hr>
+
+    <section class="content-section">
+        <h2>Apêndice: Glossário de Tags Essenciais</h2>
+        <p>Não decore todas, entenda as categorias. Aqui estão as mais usadas no dia a dia.</p>
         <table class="content-table">
             <thead>
                 <tr>
+                    <th>Categoria</th>
                     <th>Tag</th>
-                    <th>Descrição</th>
+                    <th>Função Prática</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>&lt;!DOCTYPE html&gt;</td>
-                    <td>Define o tipo de documento como HTML5.</td>
+                    <td rowspan="4"><strong>Estrutura</strong></td>
+                    <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                    <td>Ativa o modo HTML5 moderno.</td>
                 </tr>
                 <tr>
-                    <td>&lt;head&gt;</td>
-                    <td>Contém metadados sobre o documento, como título, links para CSS e scripts.</td>
+                    <td><code>&lt;html&gt;</code></td>
+                    <td>A raiz do documento.</td>
                 </tr>
                 <tr>
-                    <td>&lt;title&gt;</td>
-                    <td>Define o título da página, exibido na aba do navegador.</td>
+                    <td><code>&lt;head&gt;</code></td>
+                    <td>Cérebro (metadados, títulos, scripts).</td>
                 </tr>
                 <tr>
-                    <td>&lt;body&gt;</td>
-                    <td>Contém o conteúdo visível da página.</td>
+                    <td><code>&lt;body&gt;</code></td>
+                    <td>Corpo (tudo que é visível).</td>
                 </tr>
+                
                 <tr>
-                    <td>&lt;h1&gt;</td>
-                    <td>Define um cabeçalho de nível 1 (título principal).</td>
+                    <td rowspan="3"><strong>Texto</strong></td>
+                    <td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td>
+                    <td>Títulos hierárquicos (H1 é o mais importante).</td>
                 </tr>
                 <tr>
-                    <td>&lt;h2&gt;</td>
-                    <td>Define um cabeçalho de nível 2 (subtítulo).</td>
+                    <td><code>&lt;p&gt;</code></td>
+                    <td>Parágrafos de texto.</td>
                 </tr>
                 <tr>
-                    <td>&lt;h3&gt;</td>
-                    <td>Define um cabeçalho de nível 3.</td>
+                    <td><code>&lt;a&gt;</code></td>
+                    <td>Links (Anchor) para navegação.</td>
                 </tr>
+
                 <tr>
-                    <td>&lt;h4&gt;</td>
-                    <td>Define um cabeçalho de nível 4.</td>
+                    <td rowspan="3"><strong>Semântica</strong></td>
+                    <td><code>&lt;header&gt;</code> / <code>&lt;footer&gt;</code></td>
+                    <td>Cabeçalho e Rodapé.</td>
                 </tr>
                 <tr>
-                    <td>&lt;h5&gt;</td>
-                    <td>Define um cabeçalho de nível 5.</td>
+                    <td><code>&lt;main&gt;</code></td>
+                    <td>Conteúdo principal.</td>
                 </tr>
                 <tr>
-                    <td>&lt;h6&gt;</td>
-                    <td>Define um cabeçalho de nível 6.</td>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td>Links de navegação.</td>
                 </tr>
+
                 <tr>
-                    <td>&lt;p&gt;</td>
-                    <td>Define um parágrafo de texto.</td>
+                    <td rowspan="2"><strong>Mídia</strong></td>
+                    <td><code>&lt;img&gt;</code></td>
+                    <td>Imagens (requer atributo <code>src</code> e <code>alt</code>).</td>
                 </tr>
                 <tr>
-                    <td>&lt;a&gt;</td>
-                    <td>Cria um link para outra página ou recurso.</td>
+                    <td><code>&lt;iframe&gt;</code></td>
+                    <td>Janela para outro site (ex: YouTube).</td>
                 </tr>
+
                 <tr>
-                    <td>&lt;img&gt;</td>
-                    <td>Exibe uma imagem na página.</td>
+                    <td rowspan="4"><strong>Formulário</strong></td>
+                    <td><code>&lt;form&gt;</code></td>
+                    <td>Container do formulário.</td>
                 </tr>
                 <tr>
-                    <td>&lt;ul&gt;</td>
-                    <td>Cria uma lista não ordenada (com marcadores).</td>
+                    <td><code>&lt;input&gt;</code></td>
+                    <td>Campos de entrada (texto, email, senha).</td>
                 </tr>
                 <tr>
-                    <td>&lt;ol&gt;</td>
-                    <td>Cria uma lista ordenada (com números ou letras).</td>
+                    <td><code>&lt;label&gt;</code></td>
+                    <td>Etiqueta descritiva do campo.</td>
                 </tr>
                 <tr>
-                    <td>&lt;li&gt;</td>
-                    <td>Define um item de lista (usado dentro de &lt;ul&gt; ou &lt;ol&gt;).</td>
-                </tr>
-                <tr>
-                    <td>&lt;div&gt;</td>
-                    <td>Cria uma divisão ou seção genérica no documento.</td>
-                </tr>
-                <tr>
-                    <td>&lt;br&gt;</td>
-                    <td>Cria uma linha de quebra de texto (sem fechamento).</td>
-                </tr>
-                <tr>
-                    <td>&lt;hr&gt;</td>
-                    <td>Cria uma linha horizontal (usada para separar conteúdo).</td>
-                </tr>
-                <tr>
-                    <td>&lt;form&gt;</td>
-                    <td>Define um formulário para coletar dados do usuário.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input&gt;</td>
-                    <td>Cria um campo de entrada de texto, e-mail, senha, etc.</td>
-                </tr>
-                <tr>
-                    <td>&lt;button&gt;</td>
-                    <td>Define um botão clicável.</td>
-                </tr>
-                <tr>
-                    <td>&lt;textarea&gt;</td>
-                    <td>Cria uma área de texto para múltiplas linhas de entrada.</td>
-                </tr>
-                <tr>
-                    <td>&lt;select&gt;</td>
-                    <td>Define uma lista suspensa (dropdown).</td>
-                </tr>
-                <tr>
-                    <td>&lt;option&gt;</td>
-                    <td>Define uma opção em uma lista suspensa (usada dentro de &lt;select&gt;).</td>
-                </tr>
-                <tr>
-                    <td>&lt;fieldset&gt;</td>
-                    <td>Agrupa elementos em um formulário e adiciona uma legenda.</td>
-                </tr>
-                <tr>
-                    <td>&lt;legend&gt;</td>
-                    <td>Define a legenda de um &lt;fieldset&gt;.</td>
-                </tr>
-                <tr>
-                    <td>&lt;table&gt;</td>
-                    <td>Cria uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;tr&gt;</td>
-                    <td>Define uma linha em uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;th&gt;</td>
-                    <td>Define uma célula de cabeçalho em uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;td&gt;</td>
-                    <td>Define uma célula de dados em uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;thead&gt;</td>
-                    <td>Define o cabeçalho de uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;tbody&gt;</td>
-                    <td>Define o corpo de uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;tfoot&gt;</td>
-                    <td>Define o rodapé de uma tabela.</td>
-                </tr>
-                <tr>
-                    <td>&lt;figure&gt;</td>
-                    <td>Cria um contêiner para conteúdo multimídia, como vídeos ou áudios.</td>
-                </tr>
-                <tr>
-                    <td>&lt;figcaption&gt;</td>
-                    <td>Define uma legenda para um &lt;figure&gt;.</td>
-                </tr>
-                <tr>
-                    <td>&lt;blockquote&gt;</td>
-                    <td>Cria um bloco de citação.</td>
-                </tr>
-                <tr>
-                    <td>&lt;q&gt;</td>
-                    <td>Define uma citação curta.</td>
-                </tr>
-                <tr>
-                    <td>&lt;em&gt;</td>
-                    <td>Define texto em itálico (ênfase).</td>
-                </tr>
-                <tr>
-                    <td>&lt;strong&gt;</td>
-                    <td>Define texto em negrito (importância).</td>
-                </tr>
-                <tr>
-                    <td>&lt;u&gt;</td>
-                    <td>Define texto sublinhado.</td>
-                </tr>
-                <tr>
-                    <td>&lt;s&gt;</td>
-                    <td>Define texto riscado.</td>
-                </tr>
-                <tr>
-                    <td>&lt;small&gt;</td>
-                    <td>Define texto pequeno (comentários ou notas).</td>
-                </tr>
-                <tr>
-                    <td>&lt;code&gt;</td>
-                    <td>Define texto como código de computador.</td>
-                </tr>
-                <tr>
-                    <td>&lt;pre&gt;</td>
-                    <td>Define texto pré-formatado (preserva espaços e quebras de linha).</td>
-                </tr>
-                <tr>
-                    <td>&lt;link&gt;</td>
-                    <td>Cria um link para um arquivo CSS externo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;script&gt;</td>
-                    <td>Define um script JavaScript dentro do documento.</td>
-                </tr>
-                <tr>
-                    <td>&lt;style&gt;</td>
-                    <td>Define um estilo CSS dentro do documento.</td>
-                </tr>
-                <tr>
-                    <td>&lt;!-- --&gt;</td>
-                    <td>Define um comentário (não é exibido no navegador).</td>
-                </tr>
-                <tr>
-                    <td>&lt;header&gt;</td>
-                    <td>Define o cabeçalho da página ou seção.</td>
-                </tr>
-                <tr>
-                    <td>&lt;footer&gt;</td>
-                    <td>Define o rodapé da página ou seção.</td>
-                </tr>
-                <tr>
-                    <td>&lt;main&gt;</td>
-                    <td>Define a seção principal do conteúdo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;article&gt;</td>
-                    <td>Define uma seção independente do conteúdo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;section&gt;</td>
-                    <td>Define uma seção genérica do conteúdo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;nav&gt;</td>
-                    <td>Define uma barra de navegação.</td>
-                </tr>
-                <tr>
-                    <td>&lt;aside&gt;</td>
-                    <td>Define conteúdo adicional ou relacionado ao conteúdo principal.</td>
-                </tr>
-                <tr>
-                    <td>&lt;details&gt;</td>
-                    <td>Define detalhes que podem ser expandidos/recolhidos pelo usuário.</td>
-                </tr>
-                <tr>
-                    <td>&lt;summary&gt;</td>
-                    <td>Define o resumo visível de um &lt;details&gt;.</td>
-                </tr>
-                <tr>
-                    <td>&lt;video&gt;</td>
-                    <td>Define um vídeo incorporado na página.</td>
-                </tr>
-                <tr>
-                    <td>&lt;audio&gt;</td>
-                    <td>Define um áudio incorporado na página.</td>
-                </tr>
-                <tr>
-                    <td>&lt;track&gt;</td>
-                    <td>Define uma legenda para um vídeo ou áudio.</td>
-                </tr>
-                <tr>
-                    <td>&lt;iframe&gt;</td>
-                    <td>Define um contêiner para conteúdo externo, como um mapa ou vídeo do YouTube.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="date"&gt;</td>
-                    <td>Define um campo de entrada de data.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="color"&gt;</td>
-                    <td>Define um campo de entrada de cor.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="email"&gt;</td>
-                    <td>Define um campo de entrada de e-mail.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="password"&gt;</td>
-                    <td>Define um campo de entrada de senha.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="number"&gt;</td>
-                    <td>Define um campo de entrada de número.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="file"&gt;</td>
-                    <td>Define um campo de entrada de arquivo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="search"&gt;</td>
-                    <td>Define um campo de entrada de pesquisa.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="url"&gt;</td>
-                    <td>Define um campo de entrada de URL.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="range"&gt;</td>
-                    <td>Define um campo de entrada de intervalo (slider).</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="time"&gt;</td>
-                    <td>Define um campo de entrada de tempo.</td>
-                </tr>
-                <tr>
-                    <td>&lt;input type="datetime-local"&gt;</td>
-                    <td>Define um campo de entrada de data e hora.</td>
+                    <td><code>&lt;button&gt;</code></td>
+                    <td>Botão de ação.</td>
                 </tr>
             </tbody>
         </table>
     </section>
-    </main>
+
+    <section class="content-section">
+        <h2>Conclusão: Onde ir agora?</h2>
+        <p>
+            O HTML é o primeiro passo. Agora que você tem a estrutura, o próximo desafio é deixá-la bonita e interativa.
+        </p>
+        <p class="final-quote" style="border-left: 5px solid #E34F26; background: #1d1b1a; padding: 20px; font-style: italic; color: #fffefe; margin-top: 30px;">
+            <strong>Próximo Passo:</strong> Combine este conhecimento com nosso guia de <strong>CSS Moderno</strong> para estilizar suas páginas e depois pule para o <strong>JavaScript</strong> para dar vida a elas. A Web é sua! 🚀
+        </p>
+    </section>
+
+</main>
 
     <!-- Rodapé -->
     <footer class="site-footer">
