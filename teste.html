@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pcpropr - Tutoriais, documentações e artigos sobre desenvolvimento web, mobile e backend.">
+    <title>Pcpropr - O Seu Portal de Desenvolvimento</title>
+    
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#0f172a',
+                        'brand-header': '#242424',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+            background-image: url('/img/fundo desfocado.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        /* Classe para limitar linhas de texto (estilo resumo de notícia) */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-200 flex flex-col min-h-screen">
+
+    <header class="bg-[#242424] text-white py-3 shadow-md z-50 sticky top-0">
+        <div class="max-w-[1100px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+            <div class="flex items-center">
+                <a href="/index.html" class="hover:bg-white/10 p-1 rounded transition duration-300">
+                    <img src="/img/logo barra menu.png" alt="Pcpropr Logo" class="h-[40px] md:h-[50px] object-contain"/>
+                </a>
+            </div>
+
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-wrap justify-center gap-2 list-none p-0 m-0">
+                    <li><a href="/index.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition duration-300 text-sm font-medium text-white">Início</a></li>
+                    <li><a href="#tutoriais" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">Últimos Artigos</a></li>
+                    <li><a href="#tecnologias" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">Tecnologias</a></li>
+                    <li><a href="https://aram-cyan.vercel.app/" target="_blank" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">SaaS System</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-bg py-20 md:py-28 text-white relative border-b border-gray-800">
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+        
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-2/3">
+                <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Destaque da Semana</span>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Otimização de Performance em React: Guia Definitivo 2026</h1>
+                <p class="text-base md:text-xl font-light text-gray-200 mb-6 max-w-2xl">Descubra como reduzir o tempo de carregamento e melhorar a experiência do usuário utilizando as novas features do React e técnicas avançadas de memoization.</p>
+                <a href="/paginas/documentacao/documentacoes/react/react.html" class="inline-block bg-white text-slate-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition duration-300">Ler Matéria Completa</a>
+            </div>
+            <div class="hidden md:block md:w-1/3 bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl text-center">
+                <p class="text-sm text-gray-400 mb-2">Publicidade</p>
+                <div class="w-full h-[250px] bg-gray-700/50 rounded flex items-center justify-center">
+                    <span class="text-gray-500 text-xs">Espaço AdSense (300x250)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow bg-[#0f111a] py-16 relative overflow-hidden">
+        
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-600/05 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-600/05 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+
+            <div class="flex flex-col lg:flex-row gap-12">
+
+                <div class="lg:w-3/4">
+                    
+                    <div id="tecnologias" class="mb-16">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
+                            Explore por Tecnologia
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <a href="/paginas/documentacao/documentacoes/type/type.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-blue-500 transition group">
+                                <img src="/svg/ts.svg" alt="TS" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
+                                <div>
+                                    <h3 class="font-semibold text-white group-hover:text-blue-400">TypeScript</h3>
+                                    <p class="text-xs text-gray-400">Tipagem estática</p>
+                                </div>
+                            </a>
+
+                            <a href="/paginas/documentacao/documentacoes/react/react.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-cyan-500 transition group">
+                                <img src="/svg/react.svg" alt="React" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
+                                <div>
+                                    <h3 class="font-semibold text-white group-hover:text-cyan-400">React JS</h3>
+                                    <p class="text-xs text-gray-400">Frontend Moderno</p>
+                                </div>
+                            </a>
+
+                            <a href="/paginas/documentacao/documentacoes/java/java.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-red-500 transition group">
+                                <img src="/svg/java.svg" alt="Java" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
+                                <div>
+                                    <h3 class="font-semibold text-white group-hover:text-red-400">Java</h3>
+                                    <p class="text-xs text-gray-400">Backend Enterprise</p>
+                                </div>
+                            </a>
+
+                            <a href="/paginas/documentacao/documentacoes/docker/docker.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-blue-600 transition group">
+                                <img src="/svg/docker.svg" alt="Docker" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
+                                <div>
+                                    <h3 class="font-semibold text-white group-hover:text-blue-500">Docker</h3>
+                                    <p class="text-xs text-gray-400">DevOps & Containers</p>
+                                </div>
+                            </a>
+                            
+                            <a href="/paginas/documentacao/index.html" class="flex items-center justify-center bg-gray-800/50 p-4 rounded-xl border border-dashed border-gray-700 hover:bg-gray-800 hover:text-white text-gray-400 transition">
+                                Ver todas as tecnologias →
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="tutoriais">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-purple-500 rounded-full"></span>
+                            Últimas Atualizações
+                        </h2>
+
+                        <div class="space-y-6">
+                            <article class="bg-[#161b26] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition flex flex-col md:flex-row gap-6">
+                                <div class="w-full md:w-1/3 h-48 bg-gray-800 rounded-xl overflow-hidden relative">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center text-gray-600 font-bold text-4xl">JS</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-2 text-xs text-gray-400">
+                                        <span class="bg-yellow-500/10 text-yellow-500 px-2 py-1 rounded">JavaScript</span>
+                                        <span>• 05 Fev, 2026</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2 hover:text-blue-400 cursor-pointer">Manipulação de Arrays: Map, Filter e Reduce explicados</h3>
+                                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                                        Entenda de uma vez por todas como funcionam os métodos mais importantes do JavaScript moderno para manipulação de dados e pare de usar loops 'for' desnecessários.
+                                    </p>
+                                    <a href="/paginas/documentacao/documentacoes/Javascript/javascript.html" class="text-blue-500 text-sm font-semibold hover:underline">Ler artigo completo</a>
+                                </div>
+                            </article>
+
+                            <article class="bg-[#161b26] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition flex flex-col md:flex-row gap-6">
+                                <div class="w-full md:w-1/3 h-48 bg-gray-800 rounded-xl overflow-hidden relative">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center text-gray-600 font-bold text-4xl">BS</div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-2 text-xs text-gray-400">
+                                        <span class="bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Bootstrap</span>
+                                        <span>• 02 Fev, 2026</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2 hover:text-purple-400 cursor-pointer">Criando layouts responsivos em minutos</h3>
+                                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                                        Aprenda a utilizar o sistema de grid do Bootstrap 5 para criar interfaces que se adaptam perfeitamente a qualquer tamanho de tela sem escrever CSS customizado.
+                                    </p>
+                                    <a href="/paginas/documentacao/documentacoes/bootstrap/bootstrap.html" class="text-purple-500 text-sm font-semibold hover:underline">Ler artigo completo</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="lg:w-1/4 space-y-8">
+                    
+                    <div class="bg-[#1e2330] p-6 rounded-2xl border border-gray-800">
+                        <h3 class="text-lg font-bold text-white mb-4">Buscar</h3>
+                        <div class="relative">
+                            <input type="text" placeholder="O que você procura?" class="w-full bg-[#0f111a] border border-gray-700 rounded-lg py-2 px-4 text-sm text-gray-300 focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1e2330] p-6 rounded-2xl border border-gray-800">
+                        <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Mais Lidos</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="block group">
+                                    <span class="text-xs text-blue-400 mb-1 block">React</span>
+                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">Como configurar o Context API corretamente</h4>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block group">
+                                    <span class="text-xs text-orange-400 mb-1 block">Banco de Dados</span>
+                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">MySQL vs PostgreSQL: Qual escolher?</h4>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block group">
+                                    <span class="text-xs text-yellow-400 mb-1 block">Carreira</span>
+                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">O mercado para Dev Jr em 2026</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800/30 rounded-2xl border border-dashed border-gray-700 h-[600px] flex items-center justify-center">
+                        <span class="text-gray-600 text-sm rotate-90">Publicidade Vertical (160x600 ou 300x600)</span>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#242424] text-gray-400 py-10 border-t border-gray-700">
+        <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-1">
+                <img src="/img/logo barra menu.png" alt="Logo" class="h-10 mb-4 opacity-80">
+                <p class="text-sm">Seu hub central para conhecimento em desenvolvimento de software e tecnologia.</p>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Explorar</h4>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition">React</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition">Backend</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition">DevOps</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Institucional</h4>
+                <ul class="text-sm space-y-2">
+                    <li><a href="/paginas/contato/index.html" class="hover:text-white transition">Sobre Nós</a></li>
+                    <li><a href="/paginas/contato/index.html" class="hover:text-white transition">Contato</a></li>
+                    <li><a href="/politica-privacidade.html" class="hover:text-white transition">Política de Privacidade</a></li>
+                    <li><a href="/termos-uso.html" class="hover:text-white transition">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                <p class="text-xs mb-3">Receba novos tutoriais por e-mail.</p>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="Seu e-mail" class="bg-[#1e1e1e] border border-gray-600 rounded px-3 py-1 text-sm w-full">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-bold">OK</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-[1100px] mx-auto px-6 mt-10 pt-6 border-t border-gray-700 text-center text-xs">
+            <p>&copy; 2026 Pcpropr Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913" crossorigin="anonymous"></script>
+    <script src="/_vercel/insights/script.js" defer></script>
+</body>
+</html>
