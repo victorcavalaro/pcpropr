@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Pcpropr</title>
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #1e2330;
+            color: #1d1d1f;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .site-header { 
+            background-color: #242424; 
+            color: #fff; 
+            padding: 10px 0; 
+            z-index: 100; 
+            position: relative; 
+        }
+
+        .header-inner { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            max-width: 960px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
+
+        .logo-container { display: flex; align-items: center; }
+        .logotipo { height: 50px; transition: 0.3s; }
+
+        .site-nav ul { list-style: none; display: flex; flex-wrap: wrap; }
+        .site-nav ul li { margin: 0 5px; }
+        .site-nav ul li a { 
+            text-decoration: none; 
+            color: #fff; 
+            padding: 8px 12px; 
+            background-color: #2c2c2c; 
+            border-radius: 5px; 
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+        }
+        .site-nav ul li a:hover { background-color: #1e1e1e; }
+
+        /* Hero Section */
+        .hero-container {
+            background-color: #1e2330;
+            color: #ffffff;
+            padding: 60px 20px;
+            border-bottom: 6px solid #007AFF;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            background-color: #007AFF;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #b0c4de;
+            max-width: 650px;
+            margin: 15px auto 0;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007AFF;
+        }
+
+        .content-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin: 25px 0 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .content-section strong {
+            color: #1d1d1f;
+        }
+
+        .highlight-box {
+            background: #f0f8ff;
+            border-left: 4px solid #007AFF;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #1d1d1f;
+        }
+
+        /* Footer */
+        .site-footer { 
+            background-color: #242424; 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px 0; 
+            margin-top: auto; 
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-inner { 
+                flex-direction: column; 
+                gap: 10px; 
+                padding-bottom: 10px;
+            }
+            
+            .site-nav ul { 
+                display: flex; 
+                flex-wrap: nowrap; 
+                justify-content: center;
+                gap: 4px;
+            }
+            
+            .site-nav ul li a { 
+                font-size: 0.75rem; 
+                padding: 6px 8px;
+            }
+
+            .hero-title { font-size: 1.8rem; }
+            .hero-subtitle { font-size: 0.95rem; }
+            
+            .content-section { padding: 25px; }
+            .content-section h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="/index.html"><img src="/img/logo barra menu.png" alt="Pcpropr Logo" class="logotipo"/></a>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/paginas/contato/index.html">Conteúdos</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                    <li><a href="/paginas/sgf/sgf.html">SGF</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <header class="hero-container">
+        <div class="hero-content">
+            <span class="hero-tag">Proteção de Dados</span>
+            <h1 class="hero-title">Política de Privacidade</h1>
+            <p class="hero-subtitle">
+                Compromisso com a transparência e segurança das suas informações pessoais
+            </p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <section class="content-section">
+            <h2>1. Introdução</h2>
+            <p>
+                A <strong>Pcpropr Tecnologia</strong> ("nós", "nosso" ou "site") valoriza a privacidade de seus usuários. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você acessa nosso portal de desenvolvimento em <strong>pcpropr.com.br</strong>.
+            </p>
+            <p>
+                Ao utilizar nossos serviços, você concorda com as práticas descritas nesta política. Recomendamos a leitura atenta deste documento. Caso não concorde, solicitamos que não utilize nossos serviços.
+            </p>
+            <div class="highlight-box">
+                <p><strong>Última atualização:</strong> 11 de fevereiro de 2026 | <strong>Versão:</strong> 2.0</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Dados que Coletamos</h2>
+            <h3>2.1 Informações Fornecidas Diretamente</h3>
+            <ul>
+                <li><strong>Dados de cadastro:</strong> Nome, e-mail e informações opcionais fornecidas na newsletter</li>
+                <li><strong>Conteúdo gerado:</strong> Comentários, feedbacks e interações em nossos tutoriais</li>
+                <li><strong>Comunicações:</strong> Mensagens enviadas através de formulários de contato</li>
+            </ul>
+
+            <h3>2.2 Dados Coletados Automaticamente</h3>
+            <ul>
+                <li><strong>Dados de navegação:</strong> Endereço IP, tipo de navegador, páginas visitadas, tempo de permanência</li>
+                <li><strong>Cookies e tecnologias similares:</strong> Preferências de idioma, tema escuro/claro, itens salvos</li>
+                <li><strong>Dados de dispositivo:</strong> Sistema operacional, resolução de tela, tipo de dispositivo</li>
+                <li><strong>Dados de localização aproximada:</strong> País e região baseados no IP (não precisos)</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. Finalidade do Tratamento</h2>
+            <p>Utilizamos seus dados para as seguintes finalidades:</p>
+            <ul>
+                <li><strong>Personalização:</strong> Adaptar conteúdos e recomendações de acordo com seu perfil técnico</li>
+                <li><strong>Comunicação:</strong> Enviar newsletters, atualizações de tutoriais e respostas a contatos</li>
+                <li><strong>Melhoria contínua:</strong> Analisar métricas de uso para otimizar nossos materiais educacionais</li>
+                <li><strong>Segurança:</strong> Prevenir fraudes, spam e atividades maliciosas</li>
+                <li><strong>Publicidade:</strong> Exibir anúncios relevantes através de parceiros certificados (Google AdSense)</li>
+                <li><strong>Cumprimento legal:</strong> Atender obrigações regulatórias quando exigido</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>4. Compartilhamento de Dados</h2>
+            <p>
+                Não vendemos, alugamos ou comercializamos seus dados pessoais. O compartilhamento ocorre apenas nas seguintes situações:
+            </p>
+            <ul>
+                <li><strong>Prestadores de serviço:</strong> Hospedagem (Vercel), análise (Google Analytics), e-mail (serviços de newsletter)</li>
+                <li><strong>Parceiros de publicidade:</strong> Google AdSense, respeitando configurações de não personalização</li>
+                <li><strong>Obrigação legal:</strong> Quando requerido por autoridades competentes</li>
+                <li><strong>Proteção de direitos:</strong> Para investigar violações de nossos termos ou proteger usuários</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Nota importante:</strong> Nossos parceiros estão sujeitos a cláusulas contratuais de confidencialidade e segurança de dados.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Cookies e Tecnologias de Rastreamento</h2>
+            <p>
+                Utilizamos cookies para melhorar sua experiência. Você pode gerenciar suas preferências:
+            </p>
+            <ul>
+                <li><strong>Cookies essenciais:</strong> Necessários para funcionamento básico do site (não podem ser desativados)</li>
+                <li><strong>Cookies de preferências:</strong> Memorizam configurações de tema e idioma</li>
+                <li><strong>Cookies analíticos:</strong> Google Analytics para entender padrões de navegação</li>
+                <li><strong>Cookies de publicidade:</strong> Google AdSense para anúncios relevantes</li>
+            </ul>
+            <p>
+                Você pode desativar cookies não essenciais através do banner de consentimento ou configurações do navegador.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Segurança da Informação</h2>
+            <p>
+                Implementamos medidas técnicas e organizacionais para proteger seus dados:
+            </p>
+            <ul>
+                <li>Criptografia SSL/TLS em todas as transmissões de dados</li>
+                <li>Armazenamento em servidores seguros com acesso restrito</li>
+                <li>Monitoramento contínuo contra vulnerabilidades</li>
+                <li>Backups regulares e planos de recuperação de desastres</li>
+                <li>Treinamento da equipe em práticas de segurança</li>
+            </ul>
+            <p>
+                <strong>Limitação:</strong> Nenhum sistema é 100% seguro. Não podemos garantir segurança absoluta, mas comprometemo-nos a notificar você caso ocorra qualquer incidente que comprometa seus dados.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Seus Direitos (LGPD)</h2>
+            <p>
+                De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você possui os seguintes direitos:
+            </p>
+            <ul>
+                <li><strong>Acesso:</strong> Solicitar confirmação de que seus dados estão sendo tratados</li>
+                <li><strong>Correção:</strong> Retificar dados incompletos, inexatos ou desatualizados</li>
+                <li><strong>Exclusão:</strong> Solicitar a eliminação de dados desnecessários ou excessivos</li>
+                <li><strong>Portabilidade:</strong> Receber seus dados em formato estruturado e legível</li>
+                <li><strong>Revogação de consentimento:</strong> Retirar consentimento a qualquer momento</li>
+                <li><strong>Oposição:</strong> Contestar tratamento baseado em interesse legítimo</li>
+            </ul>
+            <p>
+                Para exercer seus direitos, envie e-mail para <strong>privacidade@pcpropr.com.br</strong> com assunto "Solicitação LGPD". Responderemos em até 15 dias úteis.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Retenção de Dados</h2>
+            <p>
+                Mantemos seus dados apenas pelo tempo necessário:
+            </p>
+            <ul>
+                <li><strong>Dados de navegação:</strong> 26 meses (Google Analytics)</li>
+                <li><strong>Cadastros de newsletter:</strong> Até cancelamento ou 2 anos de inatividade</li>
+                <li><strong>Logs de servidor:</strong> 90 dias para fins de segurança</li>
+                <li><strong>Comunicações:</strong> 3 anos para histórico de atendimento</li>
+            </ul>
+            <p>
+                Após esses períodos, os dados são anonimizados ou excluídos de forma segura.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Transferência Internacional</h2>
+            <p>
+                Alguns de nossos parceiros (Google, Vercel) podem processar dados em servidores fora do Brasil. Garantimos que:
+            </p>
+            <ul>
+                <li>As transferências ocorrem para países com nível adequado de proteção</li>
+                <li>São utilizadas cláusulas contratuais padrão aprovadas pela UE</li>
+                <li>Seus direitos permanecem protegidos conforme a LGPD</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Alterações nesta Política</h2>
+            <p>
+                Podemos atualizar esta política periodicamente. Alterações significativas serão notificadas por:
+            </p>
+            <ul>
+                <li>Banner destacado no site por 30 dias</li>
+                <li>E-mail para usuários cadastrados na newsletter</li>
+                <li>Data de "última atualização" no topo desta página</li>
+            </ul>
+            <p>
+                O uso continuado dos serviços após alterações constitui aceitação da nova versão.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Contato</h2>
+            <p>
+                Para questões sobre privacidade, entre em contato:
+            </p>
+            <ul>
+                <li><strong>E-mail DPO:</strong> privacidade@pcpropr.com.br</li>
+                <li><strong>Formulário:</strong> <a href="/paginas/contato/index.html">Página de Contato</a></li>
+                <li><strong>Endereço físico:</strong> Disponível mediante solicitação formal</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Resposta garantida:</strong> Todas as solicitações recebem protocolo de atendimento em até 48 horas.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Pcpropr Tecnologia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
