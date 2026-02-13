@@ -11,7 +11,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-color: #fafafa;
+  background-color: #000000;
   color: #000;
 }
 
@@ -126,8 +126,8 @@ body {
 /* Seção de Contato */
 #contato {
   padding: 50px 5px 50px 5px;
-  background-color: #fff;
-  border: 1px solid #fffbfb;
+  background-color: #0f172a;
+  border: 1px solid #06060e;
   margin: 1px 0px 1px 0px;
 }
 
@@ -145,8 +145,8 @@ body {
 }
 
 .card {
-  background-color: #ffffff;
-  border: 1px solid #c2c2c2;
+  background-color: #0f172a;
+  border: 1px solid #14203a;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
@@ -194,12 +194,12 @@ body {
     gap: 30px;
     padding: 30px 20px;
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f8f8;
+    background-color: #0f172a;
 }
 
 /* --- Estilo Base do Card --- */
 .social-card {
-    background-color: #ffffff;
+    background-color: #353546;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     width: 320px;
@@ -253,14 +253,14 @@ body {
     margin: 0 0 10px 0;
     font-size: 24px;
     font-weight: 700;
-    color: #333333;
+    color: #ffffff;
     letter-spacing: -0.5px;
 }
 
 /* --- Descrição dos Cards --- */
 .social-card p {
     font-size: 15px;
-    color: #666666;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 25px;
 }
@@ -338,13 +338,13 @@ body {
 .imagem-descricao p {
   margin-top: 10px;
   font-size: 1rem;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Footer */
 .site-footer {
   background-color: #333;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 15px 0;
   width: 100%;
