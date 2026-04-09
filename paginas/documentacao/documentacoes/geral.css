@@ -1,41 +1,36 @@
-/* --- Variáveis Globais (Tema Imersivo / Dark Glass) --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* --- Variáveis Globais (Cores e Fontes - Estilo Corporativo) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); /* Pesos mais comuns para corporativo */
 
 :root {
-  /* Cores Principais (Paleta Dark Imersiva) */
-  --cor-fundo-pagina: #0f172a; /* Azul marinho profundo (Slate 900) */
-  --cor-fundo-conteudo: rgba(255, 255, 255, 0.03); /* Vidro transparente para o card */
-  --cor-texto-principal: #e2e8f0; /* Cinza muito claro (quase branco) */
-  --cor-texto-secundario: #94a3b8; /* Cinza azulado para descrições */
-  --cor-borda-sutil: rgba(255, 255, 255, 0.1); /* Borda de vidro */
-  --cor-acento-primario: #3b82f6; /* Azul Neon */
-  --cor-acento-hover: #60a5fa; /* Azul mais claro e brilhante no hover */
+  /* Cores Principais (Paleta Corporativa) */
+  --cor-fundo-pagina: #f5f7fa; /* Cinza claro suave */
+  --cor-fundo-conteudo: #ffffff;
+  --cor-texto-principal: #343a40; /* Cinza escuro elegante */
+  --cor-texto-secundario: #6c757d; /* Cinza médio para descrições */
+  --cor-borda-sutil: #e9ecef; /* Borda bem suave */
+  --cor-acento-primario: #007bff; /* Azul corporativo padrão */
+  --cor-acento-hover: #0056b3; /* Azul mais escuro no hover */
 
-  /* Cores do Header */
-  --cor-header-fundo: #1e1e2e; /* Mantendo escuro, levemente roxo/azulado */
+  /* Cores do Header (Mantendo o contraste escuro e limpo) */
+  --cor-header-fundo: #212529; /* Preto muito escuro */
   --cor-header-texto: #ffffff;
-  --cor-header-botao: rgba(255, 255, 255, 0.05); /* Botão translúcido */
-  --cor-header-botao-hover: rgba(255, 255, 255, 0.15); /* Mais visível no hover */
+  --cor-header-botao: #343a40; /* Cinza escuro do texto */
+  --cor-header-botao-hover: #495057; /* Cinza um pouco mais claro no hover */
   
-  /* Cores do Bloco de Código (Tema Darker Glass) */
-  --cor-codigo-fundo: #020617; /* Quase preto para contraste máximo */
-  --cor-codigo-texto: #e2e8f0;
+  /* Cores do Bloco de Código (Tema VS Code Dark+ mantido para profissionalismo) */
+  --cor-codigo-fundo: #1e1e1e; /* Fundo do VS Code */
+  --cor-codigo-texto: #d4d4d4; /* Cor padrão do texto no VSCode */
 
   /* Fontes */
   --fonte-principal: 'Poppins', sans-serif;
-  --fonte-codigo: 'Consolas', 'Courier New', Courier, monospace;
+  --fonte-codigo: 'Consolas', 'Courier New', Courier, monospace; /* Consolas é uma boa fonte de código */
 
-  /* Espaçamentos e Geometria */
+  /* Espaçamentos Comuns */
   --espacamento-sm: 0.5rem;
   --espacamento-md: 1rem;
   --espacamento-lg: 1.5rem;
   --espacamento-xl: 2rem;
   --espacamento-xxl: 3rem;
-  
-  /* Efeitos Específicos do Tema Imersivo */
-  --efeito-blur: blur(16px);
-  --sombra-neon: 0 0 15px rgba(59, 130, 246, 0.3);
-  --sombra-card: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* --- Reset e Estilos Gerais da Página --- */
@@ -49,36 +44,19 @@ body {
   font-family: var(--fonte-principal);
   line-height: 1.6;
   background-color: var(--cor-fundo-pagina);
-  /* Adicionando a imagem de fundo para a imersão */
-  background-image: url('/img/fundo desfocado.png'); 
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: var(--cor-texto-principal);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Overlay opcional para garantir leitura sobre a imagem de fundo */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.85); /* Camada escura com 85% opacidade */
-    z-index: -1;
+  -webkit-font-smoothing: antialiased; /* Suavização de fonte */
+  -moz-osx-font-smoothing: grayscale; /* Suavização de fonte */
 }
 
 /* --- Container Principal --- */
 .container {
-  max-width: 1140px;
-  margin: var(--espacamento-xxl) auto;
-  padding: 0 var(--espacamento-xl);
+  max-width: 1140px; /* Um pouco mais largo para mais espaço */
+  margin: var(--espacamento-xxl) auto; /* Margem superior e inferior maior */
+  padding: 0 var(--espacamento-xl); /* Mais padding nas laterais */
   flex: 1;
 }
 
@@ -87,17 +65,14 @@ body::before {
   background-color: var(--cor-header-fundo);
   color: var(--cor-header-texto);
   padding: var(--espacamento-md) 0;
-  border-bottom: 1px solid var(--cor-borda-sutil);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve e elegante */
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1140px;
+  max-width: 1140px; /* Alinha com o container principal */
   margin: 0 auto;
   padding: 0 var(--espacamento-xl);
 }
@@ -108,13 +83,12 @@ body::before {
 }
 
 .logotipo {
-  height: 45px;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease;
+  height: 45px; /* Altura da logo um pouco ajustada */
+  transition: transform 0.2s ease-in-out;
 }
 
 .logotipo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3)); /* Brilho na logo */
+  transform: scale(1.05); /* Efeito suave no hover */
 }
 
 .site-nav ul {
@@ -122,68 +96,52 @@ body::before {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: var(--espacamento-md);
+  gap: var(--espacamento-md); /* Espaço entre os itens do menu */
 }
 
 .site-nav ul li a {
   text-decoration: none;
-  color: var(--cor-texto-principal); /* Texto claro */
+  color: var(--cor-header-texto);
   padding: var(--espacamento-sm) var(--espacamento-lg);
   background-color: var(--cor-header-botao);
-  border: 1px solid transparent; /* Preparando para borda no hover */
-  border-radius: 6px;
+  border-radius: 4px; /* Bordas levemente arredondadas */
   font-size: 0.95rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 500; /* Peso da fonte médio */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .site-nav ul li a:hover {
   background-color: var(--cor-header-botao-hover);
-  color: #fff;
-  border-color: var(--cor-borda-sutil);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  color: var(--cor-acento-primario); /* Cor de acento no texto do botão */
 }
 
-/* --- Conteúdo Principal do Artigo (Efeito Glassmorphism) --- */
+/* --- Conteúdo Principal do Artigo --- */
 .content-section {
   background-color: var(--cor-fundo-conteudo);
-  backdrop-filter: var(--efeito-blur); /* Desfoque do vidro */
-  -webkit-backdrop-filter: var(--efeito-blur);
-  padding: var(--espacamento-xxl);
-  border-radius: 16px; /* Bordas mais arredondadas */
-  box-shadow: var(--sombra-card);
-  margin-bottom: var(--espacamento-xxl);
-  border: 1px solid var(--cor-borda-sutil);
+  padding: var(--espacamento-xxl); /* Mais padding interno */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada mas suave */
+  margin-bottom: var(--espacamento-xxl); /* Espaço abaixo da seção */
+  border: 1px solid var(--cor-borda-sutil); /* Borda muito sutil */
 }
 
 .content-section h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 2.8rem; /* Título maior e impactante */
+  font-weight: 700;
   text-align: center;
-  /* Gradiente no texto do título principal */
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent; /* Necessário para o gradiente aparecer */
-  margin-bottom: var(--espacamento-xxl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xxl); /* Mais espaço após o H1 */
   line-height: 1.2;
-}
-
-/* Fallback para H1 se o gradiente não carregar */
-@supports not (background-clip: text) {
-  .content-section h1 {
-    color: var(--cor-acento-primario);
-  }
 }
 
 .content-section h2 {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #fff; /* Título branco puro */
+  color: var(--cor-texto-principal);
   margin-top: var(--espacamento-xxl);
   margin-bottom: var(--espacamento-lg);
   padding-bottom: var(--espacamento-sm);
-  border-bottom: 1px solid var(--cor-acento-primario); /* Linha neon */
+  border-bottom: 2px solid var(--cor-borda-sutil); /* Linha divisória mais destacada */
   line-height: 1.3;
 }
 
@@ -197,77 +155,75 @@ body::before {
 }
 
 .content-section p {
-  font-size: 1.05rem;
+  font-size: 1.05rem; /* Texto um pouco maior para melhor leitura */
   line-height: 1.8;
-  color: var(--cor-texto-principal); /* Cinza claro */
+  color: var(--cor-texto-principal);
   margin-bottom: var(--espacamento-lg);
 }
 
-/* --- Bloco de Código (Estilo Dark Terminal) --- */
+/* --- Bloco de Código (Estilo VS Code Simplificado - Integrado) --- */
 .content-section pre {
   background-color: var(--cor-codigo-fundo);
-  padding: var(--espacamento-lg) var(--espacamento-xl);
-  border-radius: 8px;
+  padding: var(--espacamento-lg) var(--espacamento-xl); /* Mais padding interno para o código */
+  border-radius: 6px;
   overflow-x: auto;
-  margin: var(--espacamento-xl) 0;
-  border: 1px solid var(--cor-borda-sutil);
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Profundidade interna */
+  margin: var(--espacamento-xl) 0; /* Margem consistente */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra interna sutil */
 }
 
 .content-section pre code {
   font-family: var(--fonte-codigo);
-  font-size: 0.92rem;
+  font-size: 0.92rem; /* Um pouco menor para caber melhor */
   color: var(--cor-codigo-texto);
   background: none;
   padding: 0;
-  display: block;
+  display: block; /* Garante que o code ocupe todo o espaço do pre */
 }
 
-/* --- Tabelas (Estilo Glass/Dark) --- */
+/* --- Tabelas (Estilo Corporativo) --- */
 .content-table {
   width: 100%;
-  border-collapse: separate; /* Necessário para border-radius no glass */
-  border-spacing: 0;
-  margin: var(--espacamento-xl) 0;
-  background-color: rgba(0, 0, 0, 0.2); /* Fundo mais escuro que o card */
+  border-collapse: collapse;
+  margin: var(--espacamento-xl) 0; /* Margem consistente */
+  background-color: var(--cor-fundo-conteudo);
   border-radius: 8px;
-  border: 1px solid var(--cor-borda-sutil);
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  overflow: hidden; /* Garante que bordas arredondadas funcionem */
 }
 
 .content-table th,
 .content-table td {
-  padding: var(--espacamento-md) var(--espacamento-lg);
+  padding: var(--espacamento-md) var(--espacamento-lg); /* Padding para células */
   text-align: left;
   border-bottom: 1px solid var(--cor-borda-sutil);
-  color: var(--cor-texto-principal);
 }
 
 .content-table th {
-  background-color: rgba(59, 130, 246, 0.1); /* Azul bem suave e transparente */
-  color: #fff;
+  background-color: #f8f9fa; /* Fundo mais claro para cabeçalho */
+  color: var(--cor-texto-principal);
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Cabeçalho em maiúsculas */
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px; /* Espaçamento entre letras */
 }
 
 .content-table tbody tr:last-child td {
-  border-bottom: none;
+  border-bottom: none; /* Remove a borda da última linha */
 }
 
 .content-table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* Efeito hover sutil */
+  background-color: #f0f3f6; /* Fundo suave ao passar o mouse */
 }
 
 /* --- Rodapé --- */
 .site-footer {
-  background: var(--cor-header-fundo);
+  background: var(--cor-fundo-conteudo);
   color: var(--cor-texto-secundario);
   text-align: center;
   padding: var(--espacamento-xl) 0;
   margin-top: auto;
   font-size: 0.9rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.03); /* Sombra sutil */
   border-top: 1px solid var(--cor-borda-sutil);
 }
 
@@ -275,8 +231,8 @@ body::before {
   margin: 0;
 }
 
-/* --- Responsividade (Mantida igual, apenas ajustes visuais) --- */
-@media (max-width: 992px) {
+/* --- Responsividade (Ajustes para Mobile) --- */
+@media (max-width: 992px) { /* Tablet e Mobile */
   .container {
     max-width: 90%;
     margin: var(--espacamento-xl) auto;
@@ -298,7 +254,7 @@ body::before {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Mobile */
   .header-inner {
     flex-direction: column;
     align-items: center;
@@ -348,7 +304,7 @@ body::before {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Small Mobile */
   .container {
     padding: 0 var(--espacamento-sm);
   }

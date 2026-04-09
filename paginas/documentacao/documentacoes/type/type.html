@@ -2,9 +2,11 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,follow,max-image-preview:large">
+    <meta name="description" content="Documentação técnica arquivada do Pcpropr.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--titulo-->
-    <title>Pcpropr</title>
+    <title>Documentações Pcpropr</title>
     <!--link css-->
     <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css"/>
     <!--link da logo da barra do navegador-->
@@ -38,769 +40,1965 @@
         </nav>
       </div>
     </header>
-<section>
+
+    <!-- Conteúdo Principal -->
+     <section>
     <main class="container">
-        <header class="hero-container">
-    <style>
-        /* CSS Específico para o Hero do TypeScript */
-        .hero-container {
-            background-color: #1a1a1a; /* Fundo Dark */
-            color: #ffffff;
-            padding: 80px 20px;
-            border-bottom: 6px solid #3178c6; /* AZUL TYPESCRIPT */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            margin-bottom: 40px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .ts-logo {
-            width: 100px;
-            height: 100px;
-            background-color: white; /* Contraste para o logo */
-            border-radius: 15px;
-            padding: 5px;
-            box-shadow: 0 0 25px rgba(49, 120, 198, 0.5); /* Brilho azul */
-            transition: transform 0.3s ease;
-        }
-
-        .ts-logo:hover {
-            transform: scale(1.1);
-        }
-
-        .hero-tag-ts {
-            background-color: #3178c6; /* Azul TS */
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 4px;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 800;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: #d1d1d1;
-            max-width: 650px;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-        }
-    </style>
-
-    <div class="hero-content">
-        <div class="hero-logo">
-            
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="Logo Oficial TypeScript" class="ts-logo">
-        </div>
-        
-        <div class="hero-text">
-            <span class="hero-tag-ts">JavaScript com Superpoderes</span>
-            <h1 class="hero-title">TypeScript: O Guia Definitivo</h1>
-            <p class="hero-subtitle">
-                Pare de corrigir bugs em produção. Aprenda a tipagem estática e descubra por que os maiores projetos do mundo não usam mais JavaScript puro.
-            </p>
-            <div class="hero-meta">
-                <span>📘 Atualizado em 2026</span>
-                <span>⏱️ 25 min de leitura</span>
-            </div>
-        </div>
-    </div>
-        </header>
-    
         <section class="content-section">
-        
-        <main class="container">
-            <section class="content-section">
-        <h2>1. TypeScript: A Evolução Necessária</h2>
-        <p>
-            Para entender o TypeScript, precisamos olhar para a história. O JavaScript foi criado em 1995 em apenas <strong>10 dias</strong>. O objetivo dele era simples: fazer pequenas animações e validações de formulário em sites estáticos.
-        </p>
-        <p>
-            Ninguém imaginava que, 20 anos depois, usaríamos essa mesma linguagem para criar sistemas bancários, jogos 3D e inteligências artificiais. O JavaScript cresceu, mas sua base continuou "frágil" para projetos grandes. Foi aí que a Microsoft interveio.
-        </p>
-
-        <hr>
-
-        <h3>1.1. O Conceito de "Superset" (Superconjunto)</h3>
-        <p>
-            Muitos acham que TypeScript é uma linguagem totalmente nova. Não é. Ele é um <strong>Superset</strong> do JavaScript.
-        </p>
-        <p>
-            Imagine círculos concêntricos:
-        </p>
-        
-        <ul>
-            <li><strong>Círculo Menor (JavaScript):</strong> É a linguagem padrão que roda no navegador.</li>
-            <li><strong>Círculo Maior (TypeScript):</strong> Engloba todo o JavaScript e adiciona uma camada extra de funcionalidades (Tipagem, Interfaces, Enums).</li>
-        </ul>
-        <blockquote style="border-left: 5px solid #3178c6; background: #222327; padding: 15px;">
-            <strong>A Regra de Ouro:</strong> Todo código JavaScript válido é automaticamente um código TypeScript válido. Você pode pegar um arquivo <code>.js</code>, mudar a extensão para <code>.ts</code>, e ele funcionará (embora sem os benefícios da tipagem ainda).
-        </blockquote>
-
-        <hr>
-
-        <h3>1.2. Por que ele foi criado? (A Dor da Escala)</h3>
-        <p>
-            A Microsoft criou o TypeScript em 2012 (liderada por Anders Hejlsberg, o pai do C#) para resolver um problema específico: <strong>A Falta de Escalabilidade do JS.</strong>
-        </p>
-        <p>
-            No JavaScript puro (Dinâmico e Fracamente Tipado), você tem liberdade total, o que é perigoso em times grandes:
-        </p>
-        <ul>
-            <li>Você não sabe o que uma função espera receber (é um número? uma string? um objeto?).</li>
-            <li>Você só descobre erros quando o código roda no navegador do cliente (Runtime Error).</li>
-            <li>O autocompletar (IntelliSense) das IDEs é limitado porque o editor não sabe o tipo das variáveis.</li>
-        </ul>
-        <p>
-            O TypeScript traz a disciplina de linguagens como Java e C# para o mundo Web, permitindo que equipes gigantes trabalhem no mesmo código sem quebrar as funcionalidades uns dos outros.
-        </p>
-
-        <hr>
-
-        <h3>1.3. Como funciona "Por Baixo do Capô"?</h3>
-        <p>
-            Aqui está o segredo que confunde iniciantes: <strong>O navegador NÃO entende TypeScript.</strong> O Chrome, Firefox e Edge só leem JavaScript.
-        </p>
-        <p>
-            Então, como funciona? O TypeScript precisa de um processo chamado <strong>Transpilação</strong>.
-        </p>
-
-        
-
-        <ol>
-            <li><strong>Desenvolvimento:</strong> Você escreve código em arquivos <code>.ts</code> com tipagem forte e segurança.</li>
-            <li><strong>Compilação (TSC):</strong> O compilador do TypeScript (<code>tsc</code>) lê seu código. Se houver erros de tipo, ele trava e te avisa.</li>
-            <li><strong>Transpilação:</strong> Se não houver erros, ele remove toda a tipagem e gera um arquivo <code>.js</code> limpo.</li>
-            <li><strong>Execução:</strong> O navegador roda esse arquivo <code>.js</code> gerado.</li>
-        </ol>
-
-        <p>
-            Ou seja: O TypeScript é uma ferramenta de <strong>Desenvolvimento</strong>. Ele existe para ajudar o programador a não cometer erros. No final, tudo vira JavaScript.
-        </p>
-             </section>
-        </main>
-
-       <main class="container">
-            <section class="content-section">
-        <h2>2. O Sistema de Tipos: Dominando a Base</h2>
-        <p>
-            No JavaScript, as variáveis são "caixas abertas": você pode colocar um gato dentro, tirar o gato e colocar um tijolo. No TypeScript, as caixas têm etiquetas. Se a caixa diz "Gato", você jamais poderá colocar um "Tijolo" lá dentro.
-        </p>
-
-        <hr>
-
-        <h3>2.1. O Duelo: Tipagem Explícita vs. Inferência</h3>
-        <p>
-            Uma dúvida comum é: <em>"Eu preciso colocar <code>: string</code> em todas as minhas variáveis?"</em>. A resposta é: <strong>Não.</strong>
-        </p>
-        <p>
-            O TypeScript possui um recurso poderoso chamado <strong>Type Inference</strong> (Inferência de Tipo). Ele analisa o valor que você atribuiu e "trava" a variável automaticamente.
-        </p>
-
-        <h4>A) Inferência (O jeito limpo)</h4>
-        <p>Use quando você já inicializa a variável com um valor. Deixe o código menos verboso.</p>
-        <pre><code>// O TS vê as aspas e entende: "Isso é uma string para sempre"
-let curso = "TypeScript"; 
-
-// curso = 10; // ❌ Erro: O TS não deixa mudar para número</code></pre>
-
-        <h4>B) Tipagem Explícita (O jeito seguro)</h4>
-        <p>Use em dois casos principais:</p>
-        <ol>
-            <li>Quando você cria a variável mas não atribui valor na hora.</li>
-            <li><strong>Em parâmetros de função (Obrigatório).</strong></li>
-        </ol>
-        <pre><code>// Caso 1: Variável iniciada vazia
-let resposta: string; 
-// ...muitas linhas depois...
-resposta = "Sucesso";
-
-// Caso 2: Parâmetros de Função
-// O TS não tem como adivinhar o que 'n1' e 'n2' serão, você TEM que dizer.
-function somar(n1: number, n2: number) {
-    return n1 + n2;
-}</code></pre>
-
-        <hr>
-
-        <h3>2.2. Guia Prático dos Tipos Essenciais</h3>
-        <p>
-            Abaixo, temos exemplos reais de como aplicar cada tipo primitivo. Copie e teste no seu editor.
-        </p>
-
-        <h4>🔤 String, Number e Boolean (Os Primitivos)</h4>
-        <p>A base de 90% das variáveis.</p>
-        <pre><code>// STRING: Textos, frases e Template Strings
-const nomeCompleto: string = "Maria Silva";
-const mensagem: string = `Bem-vinda, ${nomeCompleto}`; // Template String
-
-// NUMBER: Inteiros e Decimais (tudo é number em JS)
-const idade: number = 30;
-const altura: number = 1.65;
-
-// BOOLEAN: Verdadeiro ou Falso (Flags de controle)
-const isAdmin: boolean = true;
-const temPermissao: boolean = false;</code></pre>
-
-        <h4>⚠️ Any vs. Unknown (O Perigo e a Solução)</h4>
-        <p>Aqui mora a diferença entre um júnior e um sênior.</p>
-        
-        <p><strong>ANY (O Vilão):</strong> Desliga o TypeScript. Aceita qualquer coisa e não avisa erros.</p>
-        <pre><code>let variavelPerigosa: any = "Texto";
-variavelPerigosa = 10;      // Aceita mudar
-variavelPerigosa.metodoQueNaoExiste(); // ❌ Aceita rodar (mas vai quebrar o site!)</code></pre>
-
-        <p><strong>UNKNOWN (O Herói Seguro):</strong> Aceita qualquer coisa, mas te obriga a verificar antes de usar.</p>
-        <pre><code>let variavelSegura: unknown = "Texto";
-variavelSegura = 10; // Aceita mudar
-
-// variavelSegura.toUpperCase(); // ❌ O TS bloqueia: "Você não garantiu que é texto!"
-
-// Passo a passo para usar Unknown:
-if (typeof variavelSegura === "string") {
-    console.log(variavelSegura.toUpperCase()); // ✅ Agora o TS permite
-}</code></pre>
-
-        <h4>🛑 Void vs. Never (O Retorno das Funções)</h4>
-        <p>Usados para tipar o que uma função devolve.</p>
-        
-        <p><strong>VOID (Vazio):</strong> A função executa algo, mas não devolve nenhum valor útil (apenas <code>undefined</code>).</p>
-        <pre><code>function logarMensagem(msg: string): void {
-    console.log("Log do Sistema: " + msg);
-    // Não tem 'return'
-}</code></pre>
-
-        <p><strong>NEVER (Nunca):</strong> A função <strong>jamais</strong> termina sua execução com sucesso. Geralmente usada para erros fatais ou loops infinitos.</p>
-        <pre><code>function tratarErro(mensagem: string): never {
-    throw new Error(mensagem); 
-    // O script morre aqui. Ele nunca chega na linha de baixo.
-}</code></pre>
-
-        <blockquote style="border-left: 5px solid #3178c6; background: #23262b; padding: 15px;">
-            <strong>Resumo de Estudo:</strong><br>
-            1. Use <strong>Inferência</strong> sempre que possível para limpar o código.<br>
-            2. Use <strong>Explícita</strong> em parâmetros de funções.<br>
-            3. Jamais use <code>any</code>, prefira <code>unknown</code>.<br>
-            4. Use <code>void</code> para funções de efeito colateral (logs, alertas).
-        </blockquote>
-
-            </section>
-        </main>
-
-        <main class="container">
-            <section class="content-section">
-                <h2>3. Modelagem de Dados: O Poder da Estrutura</h2>
-                <p>
-                    No JavaScript, um objeto é uma bagunça. Você pode criar um usuário com `nome`, depois adicionar um `endereço` e, por fim, deletar o `nome`. O código vira uma terra sem lei.
-                </p>
-                <p>
-                    No TypeScript, nós impomos a ordem. Antes de criar um objeto, nós desenhamos a "planta baixa" dele. Se o objeto não seguir a planta, o código não compila.
-                </p>
-
-                <hr>
-
-                <h3>3.1. Interfaces: O Contrato do seu Código</h3>
-                <p>
-                    <strong>O que é?</strong> Uma Interface é um <strong>contrato</strong>. Ela define a forma exata que um objeto deve ter.
-                </p>
-                <p>
-                    <strong>Por que usar?</strong>
-                </p>
-                <ul>
-                    <li><strong>Segurança:</strong> Impede que você esqueça um campo obrigatório (ex: esquecer a senha do usuário).</li>
-                    <li><strong>IntelliSense:</strong> Ao digitar <code>usuario.</code>, o VS Code vai listar todas as propriedades disponíveis automaticamente.</li>
-                    <li><strong>Manutenção:</strong> Se você mudar o nome de um campo na Interface, o TS avisa todos os lugares do código que precisam ser atualizados.</li>
-                </ul>
-
-                
-
-                <h4>🎓 Passo a Passo: Modelando um E-commerce</h4>
-                <p>
-                    Vamos criar um sistema de produtos. Queremos garantir que todo produto tenha nome e preço, mas a descrição seja opcional.
-                </p>
-
-                <p><strong>Passo 1: Criar o Contrato (A Interface)</strong></p>
-                <pre><code>interface Produto {
-            id: number;
-            titulo: string;
-            preco: number;
-            
-            // O '?' indica que este campo não é obrigatório
-            descricao?: string; 
-            
-            // 'readonly' significa que, uma vez criado, não pode mudar
-            readonly dataCadastro: Date; 
-        }</code></pre>
-
-                <p><strong>Passo 2: Assinar o Contrato (Criar o Objeto)</strong></p>
-                <pre><code>// O TS verifica se 'meuCelular' respeita a Interface 'Produto'
-        const meuCelular: Produto = {
-            id: 1,
-            titulo: "iPhone 15",
-            preco: 5000,
-            dataCadastro: new Date()
-            // Note que não coloquei 'descricao', e o TS aceitou porque é opcional (?)
-        };</code></pre>
-
-                <p><strong>Passo 3: Testando as Regras</strong></p>
-                <pre><code>meuCelular.titulo = "iPhone 16"; // ✅ Permitido (é string)
-        meuCelular.preco = "Caro";       // ❌ Erro: Esperava number, recebeu string
-
-        // ❌ Erro: 'dataCadastro' é somente leitura (readonly)
-        // meuCelular.dataCadastro = new Date();</code></pre>
-
-                <hr>
-
-                <h3>3.2. Union Types: O Poder do "OU" (Flexibilidade)</h3>
-                <p>
-                    <strong>O que é?</strong> O operador <code>|</code> (pipe) funciona como um "OU". Ele diz ao TypeScript: "Esta variável pode ser X <strong>OU</strong> Y".
-                </p>
-                <p>
-                    <strong>Por que usar?</strong> O mundo real não é perfeito. Às vezes um ID vem do banco como número (1), às vezes vem da URL como texto ("1"). Às vezes um status pode ser "sucesso" ou "falha". O Union Type modela essa incerteza de forma segura.
-                </p>
-
-                <h4>🎓 Tutorial Prático 1: O "ID Híbrido"</h4>
-                <p>
-                    Vamos criar uma função que aceita tanto número quanto texto.
-                </p>
-
-                <pre><code>// Definimos um "Type Alias" para não repetir código
-        type ID = string | number;
-
-        function exibirID(codigo: ID) {
-            // O TS sabe que 'codigo' pode ser string ou number
-            console.log(`O código do produto é: ${codigo}`);
-        }
-
-        exibirID(10);      // ✅ Funciona
-        exibirID("A-50");  // ✅ Funciona
-        exibirID(true);    // ❌ Erro: Boolean não está na lista permitida</code></pre>
-
-                <h4>🎓 Tutorial Prático 2: Literal Types (O Semáforo)</h4>
-                <p>
-                    Podemos ser ainda mais específicos. Em vez de permitir <em>qualquer</em> string, podemos permitir apenas palavras específicas. Isso é incrível para configurações.
-                </p>
-
-                <pre><code>// A variável só pode ter um desses 3 valores exatos
-        type StatusPedido = "pendente" | "aprovado" | "cancelado";
-
-        function atualizarStatus(novoStatus: StatusPedido) {
-            console.log(`Status alterado para: ${novoStatus}`);
-        }
-
-        atualizarStatus("aprovado"); // ✅ Funciona
-        // atualizarStatus("entregue"); // ❌ Erro: "entregue" não existe no tipo StatusPedido</code></pre>
-
-                <blockquote style="border-left: 5px solid #3178c6; background: #292c30; padding: 15px;">
-                    <strong>Dica de Mestre (Type Guard):</strong><br>
-                    Quando você usa Union Types (ex: <code>string | number</code>), às vezes precisa saber qual dos dois é o atual para usar métodos específicos (como <code>.toUpperCase()</code> que só existe em strings).<br><br>
-                    Use o <code>typeof</code> para garantir:
-                    <pre style="background: none; border: none; padding: 0; margin: 10px 0;"><code>function formatar(entrada: string | number) {
-            if (typeof entrada === "string") {
-                return entrada.toUpperCase(); // ✅ TS sabe que aqui é string
-            } else {
-                return entrada.toFixed(2);    // ✅ TS sabe que aqui sobrou o number
-            }
-        }</code></pre>
-                </blockquote>
-
-            </section>
-        </main>
-
-       <main class="container">
-            <section class="content-section">
-                <h2>4. TypeScript e o DOM: A Ponte entre Código e Tela</h2>
-                <p>
-                    Antes de falarmos de código, precisamos entender o conceito. <strong>DOM (Document Object Model)</strong> é a representação do seu HTML na memória do navegador.
-                </p>
-                <p>
-                    Imagine que o HTML é a "planta arquitetônica" da casa (papel estático). O DOM é a "casa construída" (interativa). O JavaScript/TypeScript precisa manipular a casa construída, não o papel.
-                </p>
-
-                
-
-                <h3>4.1. O Problema: A Cegueira do TypeScript</h3>
-                <p>
-                    Aqui está o segredo que ninguém conta: <strong>O TypeScript NÃO lê o seu arquivo HTML.</strong>
-                </p>
-                <p>
-                    Quando você escreve <code>document.getElementById("meu-input")</code>, o TypeScript não faz ideia se esse ID existe no HTML, nem se ele é um botão, uma imagem ou um campo de texto.
-                </p>
-                <p>
-                    Por segurança, o TS assume que o elemento é um <strong><code>HTMLElement</code></strong> (um elemento genérico).
-                </p>
-                <ul>
-                    <li><strong>HTMLElement (Genérico):</strong> Tem coisas básicas como <code>.style</code>, <code>.id</code>, <code>.click()</code>.</li>
-                    <li><strong>HTMLInputElement (Específico):</strong> Tem tudo do genérico MAIS o <code>.value</code>.</li>
-                </ul>
-                <p>
-                    Se você tentar acessar <code>.value</code> em um elemento genérico, o TS grita: "Ei! Nem todo elemento HTML tem valor! E se isso for uma <code>&lt;div&gt;</code>?".
-                </p>
-
-                
-
-                <hr>
-
-                <h3>4.2. A Solução: Type Assertion (O comando 'as')</h3>
-                <p>
-                    Já que o TS é cego para o HTML, você precisa ser os olhos dele. Usamos a palavra-chave <code>as</code> para garantir: "TypeScript, confie em mim, eu sei que esse ID pertence a um Input".
-                </p>
-
-                <h4>Tutorial Passo a Passo: Capturando um Valor</h4>
-
-                <p><strong>Cenário:</strong> Temos um campo de texto no HTML e queremos pegar o que o usuário digitou.</p>
-
-                <p><strong>1. O HTML (A Tela)</strong></p>
-                <pre><code>&lt;!-- Um campo de e-mail --&gt;
-        &lt;input type="email" id="email-usuario" placeholder="Digite seu e-mail"&gt;</code></pre>
-
-                <p><strong>2. O Erro (Sem Tipagem)</strong></p>
-                <pre><code>const email = document.getElementById("email-usuario");
-
-        // ❌ ERRO: Property 'value' does not exist on type 'HTMLElement'.
-        // O TS pensa: "Isso pode ser uma div, e div não tem value!"
-        console.log(email.value);</code></pre>
-
-                <p><strong>3. A Correção (Type Assertion)</strong></p>
-                <pre><code>// ✅ CORRETO: Usamos 'as HTMLInputElement'
-        const email = document.getElementById("email-usuario") as HTMLInputElement;
-
-        // Agora o TS sabe que é um Input e habilita o .value
-        console.log(email.value);</code></pre>
-
-                <hr>
-
-                <h3>4.3. Glossário: Qual tipo devo usar?</h3>
-                <p>
-                    Como saber qual <code>HTML...Element</code> usar? Geralmente o nome é óbvio, mas aqui está uma tabela dos mais comuns para você consultar:
-                </p>
-
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Tag HTML</th>
-                            <th>Tipo no TypeScript</th>
-                            <th>Propriedade Exclusiva (Exemplo)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>&lt;input&gt;</code></td>
-                            <td><code>HTMLInputElement</code></td>
-                            <td><code>.value</code>, <code>.placeholder</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;button&gt;</code></td>
-                            <td><code>HTMLButtonElement</code></td>
-                            <td><code>.disabled</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;a&gt;</code></td>
-                            <td><code>HTMLAnchorElement</code></td>
-                            <td><code>.href</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;img&gt;</code></td>
-                            <td><code>HTMLImageElement</code></td>
-                            <td><code>.src</code>, <code>.alt</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;form&gt;</code></td>
-                            <td><code>HTMLFormElement</code></td>
-                            <td><code>.submit()</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;div&gt;</code></td>
-                            <td><code>HTMLDivElement</code></td>
-                            <td>(Apenas propriedades genéricas)</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <blockquote style="border-left: 5px solid #3178c6; background: #292d33; padding: 15px;">
-                    <strong>Dica de Segurança:</strong><br>
-                    O comando <code>getElementById</code> pode retornar <code>null</code> (se o ID não existir). Em projetos rigorosos, o TS pode exigir que você verifique se o elemento existe antes de usar:
-                    <pre style="margin-top: 10px;"><code>const btn = document.getElementById("botao") as HTMLButtonElement;
-
-        if (btn) { // Só entra aqui se 'btn' não for nulo
-            btn.disabled = true;
-        }</code></pre>
-                </blockquote>
-
-            </section>
-        </main>
-        
-        <main class="container">
-            <section class="content-section">
-                <h2>5. Projeto Prático: To-Do List (Tipada e Segura)</h2>
-                <p>
-                    A melhor forma de aprender TypeScript é vendo ele "salvar" seu código. Vamos refatorar uma lista de tarefas. Em JavaScript puro, você poderia acidentalmente adicionar um número na lista ou esquecer de salvar o texto. Com TypeScript, o código nem compila se você errar.
-                </p>
-                <p>
-                    Vamos dividir a construção em 3 camadas lógicas:
-                </p>
-                <ol>
-                    <li><strong>Modelagem:</strong> O Contrato de Dados (Interface).</li>
-                    <li><strong>Visualização:</strong> O HTML (Estrutura).</li>
-                    <li><strong>Controle:</strong> A Lógica (TypeScript).</li>
-                </ol>
-
-                <hr>
-
-                <h3>Passo 1: A Modelagem (O Contrato)</h3>
-                <p>
-                    Antes de pensar em funções ou botões, pense nos <strong>DADOS</strong>. O que compõe uma tarefa?
-                </p>
-                <p>
-                    Criamos uma <code>interface</code>. Ela será o nosso "molde". Todo objeto que criarmos no futuro precisará passar nesse teste de qualidade.
-                </p>
-
-                <pre><code>// 1. O Contrato de Dados
-        interface Tarefa {
-            id: number;          // Identificador único (para podermos apagar depois)
-            texto: string;       // O conteúdo da tarefa
-            concluida: boolean;  // Estado: true (riscada) ou false (pendente)
-        }</code></pre>
-
-                <blockquote style="border-left: 5px solid #3178c6; background: #25272b; padding: 15px;">
-                    <strong>Por que fazer isso?</strong><br>
-                    Se no futuro você tentar fazer <code>tarefa.concluida = "sim"</code> (string), o TypeScript vai gritar erro. Você garante a integridade do banco de dados na memória.
-                </blockquote>
-
-                <hr>
-
-                <h3>Passo 2: A Estrutura (HTML)</h3>
-                <p>
-                    Precisamos dos elementos na tela. Crie um arquivo <code>index.html</code> simples:
-                </p>
-                <pre><code>&lt;!-- Simples e Limpo --&gt;
-        &lt;div class="container"&gt;
-            &lt;h2&gt;Minhas Tarefas&lt;/h2&gt;
-            
-            &lt;div class="input-group"&gt;
-                &lt;input type="text" id="taskInput" placeholder="Nova tarefa..."&gt;
-                &lt;button id="btnAdd"&gt;Adicionar&lt;/button&gt;
-            &lt;/div&gt;
-
-            &lt;ul id="lista"&gt;
-                &lt;!-- As tarefas vão aparecer aqui --&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;</code></pre>
-
-                <hr>
-
-                <h3>Passo 3: A Lógica Segura (TypeScript)</h3>
-                <p>
-                    Agora vamos conectar tudo. Leia os comentários no código abaixo para entender a decisão técnica de cada linha.
-                </p>
-
-                <h4>3.1. Seleção e Estado</h4>
-                <p>
-                    Aqui usamos o <strong>Type Assertion</strong> (`as HTML...`) que aprendemos antes.
-                </p>
-                <pre><code>// A. Capturando elementos do DOM (A Ponte)
-        const inputTask = document.getElementById("taskInput") as HTMLInputElement;
-        const btnAdd = document.getElementById("btnAdd") as HTMLButtonElement;
-        const listElement = document.getElementById("lista") as HTMLUListElement;
-
-        // B. O Estado da Aplicação (Single Source of Truth)
-        // Dizemos: "Este é um array que SÓ aceita objetos do tipo Tarefa"
-        const tarefas: Tarefa[] = [];</code></pre>
-
-                <h4>3.2. A Função de Adicionar</h4>
-                <pre><code>function adicionarTarefa() {
-            // Validação básica
-            if (inputTask.value === "") return;
-
-            // C. Criação do Objeto
-            // Se eu esquecer o 'id', o TS avisa que o contrato foi quebrado!
-            const novaTarefa: Tarefa = {
-                id: Date.now(),       // Gera um número único baseado no tempo (timestamp)
-                texto: inputTask.value,
-                concluida: false
-            };
-
-            // Adiciona ao array e atualiza a tela
-            tarefas.push(novaTarefa);
-            renderizar();
-            
-            // UX: Limpa o campo e foca para digitar a próxima
-            inputTask.value = "";
-            inputTask.focus();
-        }
-
-        // Ouvinte de Evento
-        btnAdd.addEventListener("click", adicionarTarefa);</code></pre>
-
-                <h4>3.3. A Função de Renderizar (O Espelho)</h4>
-                <p>
-                    Esta função pega o estado (Array) e o reflete na tela (HTML).
-                </p>
-                <pre><code>function renderizar() {
-            listElement.innerHTML = ""; // 1. Limpa a lista visual atual
-            
-            tarefas.forEach(task => {
-                // 2. Cria o elemento na memória
-                const li = document.createElement("li");
-                li.innerText = task.texto;
-                
-                // 3. Aplica estilo se estiver concluída
-                if (task.concluida) {
-                    li.style.textDecoration = "line-through";
-                    li.style.opacity = "0.6";
-                }
-
-                // 4. Funcionalidade Extra: Clique para riscar
-                li.addEventListener("click", () => {
-                    task.concluida = !task.concluida; // Inverte (true <-> false)
-                    renderizar(); // Atualiza a tela novamente
-                });
-                
-                // 5. Joga o elemento na tela
-                listElement.appendChild(li);
-            });
-        }</code></pre>
-
-                <hr>
-
-                <h3>Análise Técnica: Onde o TypeScript brilhou?</h3>
-                <p>
-                    Se tivéssemos feito isso em JavaScript puro, estaríamos expostos a vários riscos que o TS eliminou:
-                </p>
-                <ul class="summary-list">
-                    <li><strong>Autocompletar Inteligente:</strong> Ao digitar <code>task.</code> dentro do <code>forEach</code>, o VS Code sugeriu <code>.texto</code> e <code>.concluida</code>. No JS, teríamos que decorar os nomes.</li>
-                    <li><strong>Segurança no Array:</strong> Se tentássemos fazer <code>tarefas.push("Comprar pão")</code> (apenas a string), o TS impediria, pois definimos que o array espera objetos completos da interface <code>Tarefa</code>.</li>
-                    <li><strong>Manipulação do DOM:</strong> Ao usar <code>as HTMLInputElement</code>, garantimos que a propriedade <code>.value</code> existe, evitando erros de "undefined" em tempo de execução.</li>
-                </ul>
-
-            </section>
-        </main>
-
-        <main class="container">
-            <section class="content-section">
-                <h2>6. Conclusão: A Verdade sobre o TypeScript</h2>
-                <p>
-                    Vou ser bem honesto com você: nas primeiras semanas, o TypeScript parece chato. Você vai tentar somar dois números e o VS Code vai gritar um erro vermelho. Você vai pensar: <em>"Poxa, em JavaScript isso funcionava, por que complicar?"</em>.
-                </p>
-                <p>
-                    Mas a virada de chave acontece quando você volta no seu código 2 meses depois. Graças à tipagem, você sabe exatamente o que aquela função <code>calcularImposto(valor)</code> espera receber, sem precisar ler o código inteiro de novo.
-                </p>
-                <p>
-                    <strong>TypeScript não é sobre escrever mais código. É sobre dormir tranquilo sabendo que seu sistema não vai quebrar na mão do cliente por um erro bobo de digitação.</strong>
-                </p>
-
-                <hr>
-
-                <h3>O Grande Desafio Final: A Trindade (Node + TS + Docker)</h3>
-                <p>
-                    Lembra que criamos um container Docker no artigo passado? E agora aprendemos TypeScript? O mercado de trabalho exige que você saiba misturar os dois.
-                </p>
-                <p>
-                    <strong>Sua missão:</strong> Criar uma API simples em Node.js usando TypeScript e fazê-la rodar dentro de um container Docker.
-                </p>
-                <p>
-                    Parece difícil? Tente fazer sozinho primeiro. Se travar (ou se quiser conferir se fez do jeito "profissional"), clique na caixa abaixo. Eu deixei o gabarito completo para você.
-                </p>
-
-                <details style="background-color: #27272c; border: 1px solid #18181a; border-radius: 8px; padding: 15px; margin-top: 20px;">
-                    <summary style="cursor: pointer; font-weight: bold; color: #3178c6; font-size: 1.1rem; list-style: none;">
-                        👁️ Ver a Solução Completa (Gabarito)
-                    </summary>
-                    
-                    <div style="margin-top: 20px;">
-                        <p>Para isso funcionar, você precisa de 4 arquivos na mesma pasta. Aqui está a receita:</p>
-
-                        <h4>1. package.json (As Dependências)</h4>
-                        <p>Inicie com <code>npm init -y</code> e instale: <code>npm i express</code> e <code>npm i -D typescript @types/express @types/node</code>.</p>
-
-                        <h4>2. tsconfig.json (Configuração do TS)</h4>
-                        <p>Crie este arquivo para dizer ao TS: "Transforme o código da pasta /src para JavaScript na pasta /dist".</p>
-                        <pre><code>{
-        "compilerOptions": {
-            "target": "es2016",
-            "module": "commonjs",
-            "rootDir": "./src",
-            "outDir": "./dist",
-            "strict": true,
-            "esModuleInterop": true
-        }
-        }</code></pre>
-
-                        <h4>3. src/index.ts (O Código da API)</h4>
-                        <pre><code>import express, { Request, Response } from 'express';
-
-        const app = express();
-        const port = 3000;
-
-        app.get('/', (req: Request, res: Response) => {
-            res.json({ 
-                mensagem: "Funcionou! TypeScript + Docker 🐳💙",
-                timestamp: new Date()
-            });
-        });
-
-        app.listen(port, () => {
-            console.log(`Servidor rodando na porta ${port}`);
-        });</code></pre>
-
-                        <h4>4. Dockerfile (A Mágica)</h4>
-                        <p>Aqui está o segredo: O Docker precisa <strong>compilar</strong> o TS para JS antes de rodar.</p>
-                        <pre><code># Etapa 1: Base
-        FROM node:18-alpine
-
-        WORKDIR /app
-
-        # Etapa 2: Instalar Dependências
-        COPY package*.json ./
-        RUN npm install
-
-        # Etapa 3: Copiar código e COMPILAR (Build)
-        COPY . .
-        RUN npx tsc
-
-        # Etapa 4: Rodar o JavaScript gerado na pasta dist
-        EXPOSE 3000
-        CMD ["node", "dist/index.js"]</code></pre>
-
-                        <p><strong>Como rodar?</strong></p>
-                        <pre><code>docker build -t minha-api-ts .
-        docker run -p 3000:3000 minha-api-ts</code></pre>
-                    </div>
-                </details>
-
-                <p class="final-quote" style="margin-top: 30px;">
-                    Isso encerra nossa série de fundamentos. Agora você tem a base de HTML, CSS, JS, Docker e TypeScript. O próximo passo? Escolha um framework (React ou Next.js) e comece a construir projetos reais para o seu portfólio. <strong>Te vejo no topo! 🚀</strong>
-                </p>
-
-            </section>
-        </main>
-
-    </section>
-</main>
+            <section>
+            <h1>Documentação do TypeScript</h1>
+
+    <h2>1. Fundamentos do TypeScript</h2>
+    <ul>
+        <li>Superset do JavaScript</li>
+        <li>Tipagem estática opcional</li>
+        <li>Transpilação para JavaScript</li>
+    </ul>
+
+    <h2>2. Tipos Primitivos</h2>
+    <ul>
+        <li>string, number, boolean</li>
+        <li>null e undefined</li>
+        <li>any (evitar sempre que possível)</li>
+        <li>unknown (alternativa mais segura ao any)</li>
+        <li>void (usado em funções que não retornam valor)</li>
+        <li>never (para funções que nunca retornam)</li>
+    </ul>
+
+    <h2>3. Tipos Avançados</h2>
+    <ul>
+        <li><strong>Arrays e Tuplas</strong> (string[], [number, string])</li>
+        <li><strong>Enums</strong> (define conjuntos de valores fixos)</li>
+        <li><strong>Union & Intersection Types</strong> (string | number, A & B)</li>
+        <li><strong>Type Aliases e Interfaces</strong> (type vs interface)</li>
+        <li><strong>Generics</strong> (Array&lt;T&gt;, Promise&lt;T&gt;)</li>
+        <li><strong>Type Assertions</strong> (as, &lt;Type&gt;value)</li>
+    </ul>
+
+    <h2>4. Orientação a Objetos</h2>
+    <ul>
+        <li>Classes e Modificadores (public, private, protected)</li>
+        <li>Herança e Implementação de Interfaces</li>
+        <li>Métodos e Propriedades Estáticas</li>
+        <li>Getters e Setters</li>
+    </ul>
+
+    <h2>5. Manipulação de Código</h2>
+    <ul>
+        <li>Namespaces e Módulos (import/export)</li>
+        <li>Decorators (para metaprogramação)</li>
+        <li>Tipagem Estrutural</li>
+    </ul>
+
+    <h2>6. Ferramentas e Configuração</h2>
+    <ul>
+        <li><strong>Arquivo tsconfig.json</strong> (configuração do compilador)</li>
+        <li><strong>Compilador tsc</strong> (TypeScript Compiler)</li>
+        <li><strong>Linting e Formatação</strong> (ESLint, Prettier)</li>
+    </ul>
+
+    <h2>7. Integração com Frameworks</h2>
+    <ul>
+        <li><strong>Node.js</strong> (tipagem com @types/node)</li>
+        <li><strong>React</strong> (tsx, React.FC&lt;T&gt;)</li>
+        <li><strong>Angular</strong> (forte integração com TypeScript)</li>
+    </ul>
+
+    <h2>8. Boas Práticas</h2>
+    <ul>
+        <li>Evitar any sempre que possível</li>
+        <li>Usar interfaces para contratos de dados</li>
+        <li>Preferir readonly para propriedades imutáveis</li>
+        <li>Documentação com JSDoc</li>
+    </ul>
+</section>
+<hr>
+<br>
+<br>
+
+    <h1>1. Fundamentos do TypeScript</h1>
+
+<p>TypeScript é uma linguagem que expande o JavaScript adicionando tipagem estática e recursos avançados. Ele foi criado pela Microsoft e se tornou muito popular para desenvolvimento web, especialmente em projetos grandes.</p>
+
+<p>Agora, vamos entender os três conceitos fundamentais do TypeScript:</p>
+
+<hr>
+
+<h2>1.1 Superset do JavaScript</h2>
+
+<p><strong>O que significa ser um superset?</strong></p>
+<p>TypeScript é um <em>superset</em> de JavaScript, o que significa que <strong>todo código JavaScript válido também é válido em TypeScript</strong>. Isso facilita a adoção da linguagem, pois você pode começar usando JavaScript puro e, aos poucos, adicionar funcionalidades do TypeScript.</p>
+
+<p><strong>Exemplo:</strong> Código JavaScript puro válido em TypeScript:</p>
+<pre><code>
+function soma(a, b) {
+return a + b;
+}
+console.log(soma(2, 3)); // 5
+</code></pre>
+<p>Esse código funciona tanto em JavaScript quanto em TypeScript.</p>
+
+<p><strong>Expansão do JavaScript:</strong></p>
+<p>TypeScript adiciona novos recursos que o JavaScript não tem, como:</p>
+<ul>
+    <li><strong>Tipagem estática</strong> (explicada abaixo)</li>
+    <li><strong>Interfaces e Generics</strong></li>
+    <li><strong>Modificadores de acesso</strong> (private, protected, public)</li>
+    <li><strong>Decorators</strong></li>
+</ul>
+<p>Esses recursos ajudam a melhorar a segurança e a organização do código.</p>
+
+<hr>
+
+<h2>1.2 Tipagem Estática Opcional</h2>
+
+<p><strong>O que é tipagem estática?</strong></p>
+<p>Em JavaScript, os tipos das variáveis são dinâmicos, ou seja, podem mudar em tempo de execução:</p>
+<pre><code>
+let x = "Olá";
+x = 10; // JavaScript permite isso, mas pode causar erros inesperados
+</code></pre>
+<p>Já em TypeScript, podemos <strong>definir tipos explicitamente</strong>, garantindo que as variáveis sempre contenham valores esperados:</p>
+<pre><code>
+let x: string = "Olá";
+x = 10; // Erro: Type 'number' is not assignable to type 'string'
+</code></pre>
+
+<p><strong>Benefícios da tipagem estática:</strong></p>
+<ul>
+    <li>Evita erros em tempo de execução</li>
+    <li>Facilita a refatoração do código</li>
+    <li>Melhora a legibilidade e a manutenção</li>
+    <li>Ajuda ferramentas como VS Code a oferecer sugestões inteligentes (IntelliSense)</li>
+</ul>
+
+<p><strong>Tipagem opcional:</strong></p>
+<p>TypeScript não obriga você a tipar tudo. Se você não especificar um tipo, ele tentará inferir automaticamente:</p>
+<pre><code>
+let nome = "Maria"; // TypeScript entende que é uma string
+nome = 42; // Erro: Type 'number' is not assignable to type 'string'
+</code></pre>
+
+<hr>
+
+<h2>1.3 Transpilação para JavaScript</h2>
+
+<p><strong>Por que transpilação?</strong></p>
+<p>Os navegadores e runtimes como Node.js não entendem TypeScript diretamente. Por isso, o código TypeScript precisa ser <strong>transpilado</strong> para JavaScript antes de ser executado.</p>
+
+<p><strong>Como funciona a transpilação?</strong></p>
+<p>O TypeScript Compiler (tsc) converte o código TypeScript para JavaScript puro:</p>
+
+<p><strong>Código TypeScript:</strong></p>
+<pre><code>
+const mensagem: string = "Olá, TypeScript!";
+console.log(mensagem);
+</code></pre>
+
+<p><strong>Código JavaScript gerado após a transpilação:</strong></p>
+<pre><code>
+const mensagem = "Olá, TypeScript!";
+console.log(mensagem);
+</code></pre>
+<p>Perceba que os tipos (string) desaparecem no JavaScript final. Isso acontece porque os tipos existem apenas no tempo de desenvolvimento, ajudando o programador, mas não impactam o código final.</p>
+
+<p><strong>Configuração da transpilação (tsconfig.json):</strong></p>
+<p>Podemos personalizar como o TypeScript é convertido para JavaScript através do arquivo tsconfig.json. Um exemplo básico:</p>
+<pre><code>
+{
+"compilerOptions": {
+"target": "ES6",  // Define a versão do JavaScript gerado
+"outDir": "dist", // Pasta de saída do código JavaScript
+"strict": true    // Habilita verificações rigorosas de tipo
+}
+}
+</code></pre>
+<p>Isso garante que o código gerado seja compatível com a versão desejada do JavaScript e siga regras de tipagem mais seguras.</p>
+
+<h2>Conclusão</h2>
+<p>TypeScript é um superset do JavaScript, adicionando <strong>tipagem estática opcional</strong> para evitar erros e melhorar a produtividade. Como os navegadores não entendem TypeScript, ele precisa ser <strong>transpilado para JavaScript</strong> antes de ser executado.</p>
+<hr>
+<br>
+<h1>2. Tipos Primitivos no TypeScript</h1>
+
+<p>Os tipos primitivos são os tipos básicos de dados que representam valores simples. Eles são fundamentais para garantir segurança no código e evitar erros inesperados.</p>
+
+<hr>
+
+<h2>2.1 string, number e boolean</h2>
+
+<p><strong>string</strong>: Representa textos e cadeias de caracteres.</p>
+<pre><code>
+let nome: string = "João";
+let mensagem: string = `Olá, ${nome}!`; // Template string
+</code></pre>
+<p>➜ Se tentarmos atribuir outro tipo, TypeScript gera um erro:</p>
+<pre><code>
+nome = 123; // Erro: Type 'number' is not assignable to type 'string'
+</code></pre>
+
+<p><strong>number</strong>: Representa valores numéricos (inteiros ou decimais).</p>
+<pre><code>
+let idade: number = 30;
+let temperatura: number = 36.5;
+let hexadecimal: number = 0xff; // Suporte a hexadecimal
+</code></pre>
+<p>➜ O TypeScript aceita <strong>inteiros, decimais, hexadecimais e binários</strong>.</p>
+
+<p><strong>boolean</strong>: Representa valores true ou false.</p>
+<pre><code>
+let ativo: boolean = true;
+ativo = false;
+</code></pre>
+
+<hr>
+
+<h2>2.2 null e undefined</h2>
+
+<p>O TypeScript trata null e undefined de forma especial.</p>
+
+<p><strong>undefined</strong>: Representa uma variável que foi declarada, mas não recebeu valor.</p>
+<pre><code>
+let x: undefined;
+console.log(x); // undefined
+</code></pre>
+
+<p><strong>null</strong>: Representa a ausência intencional de um valor.</p>
+<pre><code>
+let y: null = null;
+</code></pre>
+
+<p>Por padrão, o TypeScript pode impedir que variáveis tenham null ou undefined a menos que seja explicitamente permitido:</p>
+<pre><code>
+let nome: string = null; // Erro se o modo "strictNullChecks" estiver ativado!
+</code></pre>
+
+<p>Se quisermos permitir null, podemos usar <strong>Union Types</strong>:</p>
+<pre><code>
+let nome: string | null = "Maria";
+nome = null; // Agora isso é permitido
+</code></pre>
+
+<hr>
+
+<h2>2.3 any (evitar sempre que possível!)</h2>
+
+<p>O tipo any desativa a verificação de tipos, permitindo que a variável contenha qualquer valor.</p>
+<pre><code>
+let valor: any = "Olá";
+valor = 42;
+valor = true;
+</code></pre>
+
+<p><strong>Problema com any:</strong> Ele elimina as vantagens do TypeScript, pois o código perde segurança e previsibilidade.</p>
+
+<p><strong>Quando usar any?</strong></p>
+<ul>
+    <li>Quando não sabemos o tipo exato dos dados (por exemplo, dados vindos de uma API desconhecida).</li>
+    <li>Quando migramos código JavaScript para TypeScript e ainda não adicionamos tipagem correta.</li>
+</ul>
+
+<p><strong>Alternativa ao any: unknown (veja abaixo 👇)</strong></p>
+
+<hr>
+
+<h2>2.4 unknown (alternativa mais segura ao any)</h2>
+
+<p>unknown é um tipo semelhante ao <code>any</code>, mas com <strong>mais segurança</strong>.</p>
+<pre><code>
+let dado: unknown;
+
+dado = "Olá";
+dado = 42;
+dado = true;
+</code></pre>
+
+<p>A diferença é que <strong>não podemos acessar propriedades ou chamar métodos sem verificar o tipo primeiro</strong>:</p>
+<pre><code>
+dado.toUpperCase(); // Erro: Object is of type 'unknown'
+</code></pre>
+
+<p>Para usar um valor (unknown), precisamos primeiro fazer uma verificação de tipo:</p>
+<pre><code>
+if (typeof dado === "string") {
+console.log(dado.toUpperCase()); // Agora funciona!
+}
+</code></pre>
+
+<p>✅ <strong>Melhor prática</strong>: Prefira unknown em vez de any, pois obriga você a validar os dados antes de usá-los.</p>
+
+<hr>
+
+<h2>2.5 void (para funções que não retornam valor)</h2>
+
+<p>O tipo void é usado para indicar que uma função <strong>não retorna um valor</strong>.</p>
+<pre><code>
+function logMensagem(mensagem: string): void {
+console.log(mensagem);
+}
+</code></pre>
+
+<ul>
+    <li>Se tentarmos retornar algo de uma função void, TypeScript gera um erro:
+        <pre><code>
+function erro(): void {
+return "Erro!"; // ❌ Erro: Type 'string' is not assignable to type 'void'
+}
+        </code></pre>
+    </li>
+    <li>O <code>void</code> também pode ser usado em variáveis, mas raramente é útil:
+        <pre><code>
+let resultado: void = undefined; // Permitido, mas pouco prático
+        </code></pre>
+    </li>
+</ul>
+
+<hr>
+
+<h2>2.6 never (para funções que nunca retornam)</h2>
+
+<p>O tipo never é usado quando <strong>uma função nunca retorna um valor</strong> porque ela gera um erro ou entra em um loop infinito.</p>
+
+<h3>Exemplo 1: Função que lança um erro</h3>
+<pre><code>
+function erro(mensagem: string): never {
+throw new Error(mensagem);
+}
+</code></pre>
+<p>Essa função <strong>nunca retorna nada</strong> porque <strong>interrompe a execução do programa</strong>.</p>
+
+<h3>Exemplo 2: Loop infinito</h3>
+<pre><code>
+function loopInfinito(): never {
+while (true) {
+console.log("Executando...");
+}
+}
+</code></pre>
+<p>Como a função <strong>nunca termina</strong>, seu retorno é never.</p>
+
+<p>✅ <strong>Quando usar never?</strong></p>
+<ul>
+    <li>Em funções que <strong>sempre lançam exceções</strong>.</li>
+    <li>Em funções que <strong>nunca alcançam um ponto final de execução</strong>.</li>
+</ul>
+
+<hr>
+
+<h2>Resumo</h2>
+
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>string</td>
+            <td>Texto (cadeia de caracteres)</td>
+            <td>"Hello"</td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>Números inteiros e decimais</td>
+            <td>42, 3.14</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>Valores lógicos</td>
+            <td>true, false</td>
+        </tr>
+        <tr>
+            <td>null</td>
+            <td>Ausência intencional de valor</td>
+            <td>null</td>
+        </tr>
+        <tr>
+            <td>undefined</td>
+            <td>Variável sem valor atribuído</td>
+            <td>undefined</td>
+        </tr>
+        <tr>
+            <td>any</td>
+            <td>Pode conter qualquer valor (evitar)</td>
+            <td>"texto", 42, true</td>
+        </tr>
+        <tr>
+            <td>unknown</td>
+            <td>Tipo desconhecido, exige verificação antes do uso</td>
+            <td>"string", 42, true (mas com segurança)</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Função sem retorno</td>
+            <td>function log(): void {}</td>
+        </tr>
+        <tr>
+            <td>never</td>
+            <td>Função que nunca retorna</td>
+            <td>throw new Error("Erro")</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Conclusão</h2>
+
+<ul>
+    <li><strong>Use string, number e boolean sempre que possível.</strong></li>
+    <li><strong>Evite any</strong> e prefira unknown quando o tipo não for conhecido.</li>
+    <li><strong>Use void</strong> para funções sem retorno.</li>
+    <li><strong>Use never</strong> para funções que nunca retornam um valor válido.</li>
+</ul>
+
+<p>Isso garante código mais seguro, legível e fácil de manter! 🚀</p>
+
+<h1>3. Tipos Avançados no TypeScript</h1>
+
+    <p>O TypeScript fornece tipos mais sofisticados para aumentar a flexibilidade e segurança do código. Vamos explorar cada um deles.</p>
+
+    <hr>
+
+    <h2>3.1 Arrays e Tuplas</h2>
+
+    <h3>Arrays</h3>
+    <p>No TypeScript, podemos definir <strong>arrays tipados</strong> para garantir que todos os elementos tenham um tipo específico.</p>
+    <pre><code>
+let numeros: number[] = [1, 2, 3, 4, 5]; // Apenas números
+let nomes: string[] = ["Alice", "Bob", "Carlos"]; // Apenas strings
+    </code></pre>
+    <p>Outra forma de definir arrays é usando <strong>Generics (Array&lt;T&gt;)</strong>:</p>
+    <pre><code>
+let numeros: Array&lt;number&gt; = [10, 20, 30]; // Equivalente a number[]
+    </code></pre>
+    <p>📌 <strong>Observação:</strong> O TypeScript impede operações inválidas em arrays tipados:</p>
+    <pre><code>
+numeros.push("Texto"); // Erro: Type 'string' is not assignable to type 'number'
+    </code></pre>
+
+    <h3>Tuplas</h3>
+    <p>Tuplas são um tipo especial de array com <strong>um número fixo de elementos e tipos específicos para cada posição</strong>.</p>
+    <pre><code>
+let pessoa: [string, number] = ["Alice", 30];
+    </code></pre>
+    <p>📌 A diferença entre arrays e tuplas é que <strong>tuplas têm uma estrutura rígida</strong>, então a ordem e os tipos dos elementos devem ser seguidos.</p>
+    <pre><code>
+pessoa = [30, "Alice"]; // Erro: Type 'number' is not assignable to type 'string'
+    </code></pre>
+    <p>As tuplas também podem ter elementos opcionais e valores variáveis:</p>
+    <pre><code>
+let usuario: [number, string, boolean?] = [1, "Carlos"]; // O boolean é opcional
+usuario = [2, "Maria", true]; // Também válido
+    </code></pre>
+
+    <hr>
+
+    <h2>3.2 Enums</h2>
+    <p>Enums são usados para definir um conjunto de valores fixos e nomeados, tornando o código mais legível.</p>
+    <pre><code>
+enum StatusPedido {
+  Pendente,
+  Enviado,
+  Entregue
+}
+
+let statusAtual: StatusPedido = StatusPedido.Enviado;
+console.log(statusAtual); // 1 (os valores padrão são números, começando em 0)
+    </code></pre>
+    <p>Podemos atribuir valores específicos:</p>
+    <pre><code>
+enum Status {
+  Pendente = "PENDENTE",
+  Enviado = "ENVIADO",
+  Entregue = "ENTREGUE"
+}
+
+let pedido: Status = Status.Entregue;
+console.log(pedido); // "ENTREGUE"
+    </code></pre>
+    <p>📌 <strong>Boas práticas:</strong></p>
+    <ul>
+        <li><strong>Use strings em enums</strong> para evitar problemas com valores numéricos inesperados.</li>
+        <li><strong>Evite enums quando possível</strong> – prefira const com objetos.</li>
+    </ul>
+    <p>Exemplo alternativo sem enum:</p>
+    <pre><code>
+const StatusPedido = {
+  Pendente: "PENDENTE",
+  Enviado: "ENVIADO",
+  Entregue: "ENTREGUE"
+} as const;
+
+let pedido: keyof typeof StatusPedido = "Pendente";
+    </code></pre>
+
+    <hr>
+
+    <h2>3.3 Union & Intersection Types</h2>
+
+    <h3>Union Types (<code>|</code>)</h3>
+    <p>Permitem que uma variável aceite <strong>mais de um tipo</strong>.</p>
+    <pre><code>
+let idade: number | string;
+idade = 25;
+idade = "25 anos"; // Ambos são válidos
+    </code></pre>
+    <p>Útil para tratar valores dinâmicos, como entrada de usuários.</p>
+    <pre><code>
+function mostrarId(id: number | string) {
+  console.log(`ID: ${id}`);
+}
+mostrarId(123);
+mostrarId("ABC123");
+    </code></pre>
+    <p>📌 <strong>Verificação de tipo necessária</strong></p>
+    <pre><code>
+function processar(valor: number | string) {
+  if (typeof valor === "string") {
+    console.log(valor.toUpperCase());
+  } else {
+    console.log(valor.toFixed(2));
+  }
+}
+    </code></pre>
+
+    <h3>Intersection Types (&)</h3>
+    <p>Permitem combinar múltiplos tipos.</p>
+    <pre><code>
+type Pessoa = { nome: string };
+type Funcionario = { cargo: string };
+
+type Empregado = Pessoa & Funcionario;
+
+let emp: Empregado = { nome: "João", cargo: "Desenvolvedor" };
+    </code></pre>
+    <p>📌 <strong>Uso comum:</strong> Para compor objetos complexos e herança de tipos.</p>
+
+    <hr>
+
+    <h2>3.4 Type Aliases vs Interfaces</h2>
+
+    <h3>Type Aliases (type)</h3>
+    <p>Permitem criar <strong>nomes personalizados</strong> para tipos existentes.</p>
+    <pre><code>
+type ID = string | number;
+let userId: ID = 123;
+    </code></pre>
+
+    <h3>Interfaces (interfaces)</h3>
+    <p>Definem a <strong>estrutura de objetos</strong>.</p>
+    <pre><code>
+interface Usuario {
+  nome: string;
+  idade: number;
+}
+
+let user: Usuario = { nome: "Carlos", idade: 28 };
+    </code></pre>
+
+    <p>📌 <strong>Diferenças entre type e interface:</strong></p>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>type</th>
+                <th>interface</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Uso para objetos</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Uso para primitivos (string, number)</td>
+                <td>✅</td>
+                <td>❌</td>
+            </tr>
+            <tr>
+                <td>Extensível (extends)</td>
+                <td>❌</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Combinação (&)</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>3.5 Generics (&lt;T&gt;)</h2>
+    <p>Generics permitem <strong>criar funções e classes reutilizáveis</strong> sem definir tipos fixos.</p>
+
+    <h3>Exemplo 1: Função Genérica</h3>
+    <pre><code>
+function identidade&lt;T&gt;(valor: T): T {
+  return valor;
+}
+
+console.log(identidade&lt;string&gt;("Teste"));
+console.log(identidade&lt;number&gt;(123));
+    </code></pre>
+    <p>📌 <strong>Vantagem:</strong> Podemos usar identidade() para qualquer tipo sem perder a segurança.</p>
+
+    <h3>Exemplo 2: Array Genérico</h3>
+    <pre><code>
+function primeiroElemento&lt;T&gt;(array: T[]): T {
+  return array[0];
+}
+
+console.log(primeiroElemento&lt;string&gt;(["a", "b", "c"])); // "a"
+console.log(primeiroElemento&lt;number&gt;([1, 2, 3])); // 1
+    </code></pre>
+
+    <h3>Exemplo 3: Classe Genérica</h3>
+    <pre><code>
+class Caixa&lt;T&gt; {
+  conteudo: T;
+  constructor(conteudo: T) {
+    this.conteudo = conteudo;
+  }
+}
+
+let caixaDeNumeros = new Caixa&lt;number&gt;(100);
+let caixaDeTexto = new Caixa&lt;string&gt;("Olá");
+    </code></pre>
+    <p>✅ <strong>Uso comum:</strong></p>
+    <ul>
+        <li>Trabalhar com arrays de diferentes tipos (Array&lt;T&gt;)</li>
+        <li>Criar funções flexíveis</li>
+        <li>Criar classes reutilizáveis</li>
+    </ul>
+
+    <hr>
+
+    <h2>3.6 Type Assertions (as e &lt;Type&gt;)</h2>
+    <p>Type Assertions permitem informar ao TypeScript que um valor tem um tipo específico.</p>
+    <pre><code>
+let valor: any = "Olá, TypeScript!";
+let tamanho: number = (valor as string).length;
+console.log(tamanho); // 17
+    </code></pre>
+    <p>📌 <strong>Outro modo:</strong></p>
+    <pre><code>
+let tamanho2: number = (&lt;string&gt;valor).length;
+    </code></pre>
+    <p>✅ <strong>Quando usar?</strong></p>
+    <ul>
+        <li>Quando sabemos que um valor tem um tipo específico, mas o TypeScript não consegue inferir.</li>
+        <li>Ao trabalhar com o DOM:
+            <pre><code>
+let input = document.getElementById("meuInput") as HTMLInputElement;
+console.log(input.value);
+            </code></pre>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>Conclusão</h2>
+
+    <h3>Resumo dos conceitos principais</h3>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Tipo Avançado</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Arrays & Tuplas</strong></td>
+                <td>Estruturas ordenadas de dados</td>
+            </tr>
+            <tr>
+                <td><strong>Enums</strong></td>
+                <td>Conjuntos de valores fixos</td>
+            </tr>
+            <tr>
+                <td><strong>Union (<code>|</code>)</strong></td>
+                <td>Combina múltiplos tipos</td>
+            </tr>
+            <tr>
+                <td><strong>Intersection (<code>&</code>)</strong></td>
+                <td>Combina múltiplos tipos</td>
+            </tr>
+            <tr>
+                <td><strong>Type vs Interface</strong></td>
+                <td>Criam tipos personalizados</td>
+            </tr>
+            <tr>
+                <td><strong>Generics</strong></td>
+                <td>Código reutilizável para diferentes tipos</td>
+            </tr>
+            <tr>
+                <td><strong>Type Assertions</strong></td>
+                <td>Força a interpretação de um tipo</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Esses conceitos tornam o TypeScript <strong>mais poderoso</strong> e <strong>flexível</strong>! 🚀</p>
+<hr>
+<br>
+    <p>A <strong>Orientação a Objetos (OO) no TypeScript</strong> traz mais organização e reutilização para o código. Vamos explorar <strong>Classes, Modificadores, Herança, Interfaces, Métodos Estáticos, Getters e Setters</strong> com exemplos práticos.</p>
+    <hr>
+    <br>
+    <h1>4. Orientação a Objetos no TypeScript</h1>
+
+    <p>O TypeScript estende os recursos de <strong>classes do JavaScript</strong> adicionando <strong>tipagem estática, modificadores de acesso, herança e interfaces</strong>.</p>
+
+    <h2>4.1 Classes e Modificadores de Acesso</h2>
+
+    <p>Uma classe é um modelo para criar objetos. No TypeScript, podemos definir <strong>propriedades e métodos</strong> dentro de uma classe.</p>
+
+    <h3>Criando uma Classe</h3>
+    <pre><code>
+    class Pessoa {
+     nome: string;
+     idade: number;
+
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+
+  apresentar(): string {
+    return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`;
+  }
+}
+
+const pessoa1 = new Pessoa("Alice", 25);
+console.log(pessoa1.apresentar());
+    </code></pre>
+
+    <h3>Modificadores de Acesso (public, private, protected)</h3>
+    <p>Os <strong>modificadores de acesso</strong> controlam <strong>como as propriedades e métodos</strong> podem ser acessados dentro e fora da classe.</p>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Modificador</th>
+                <th>Acesso na própria classe</th>
+                <th>Acesso em subclasses</th>
+                <th>Acesso fora da classe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>public (padrão)</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>private</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+            </tr>
+            <tr>
+                <td>protected</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Exemplo de Modificadores</h3>
+    <pre><code>
+class ContaBancaria {
+  public titular: string; // Acessível de qualquer lugar
+  private saldo: number; // Só acessível dentro da classe
+  protected tipo: string; // Acessível na classe e subclasses
+
+  constructor(titular: string, saldoInicial: number, tipo: string) {
+    this.titular = titular;
+    this.saldo = saldoInicial;
+    this.tipo = tipo;
+  }
+
+  public depositar(valor: number): void {
+    this.saldo += valor;
+    console.log(`Depósito de R$${valor}. Novo saldo: R$${this.saldo}`);
+  }
+
+  private exibirSaldo(): void {
+    console.log(`Saldo atual: R$${this.saldo}`);
+  }
+}
+
+const conta = new ContaBancaria("João", 1000, "Corrente");
+conta.depositar(500);
+// conta.saldo = 5000; // ❌ Erro: saldo é privado!
+    </code></pre>
+
+    <hr>
+
+    <h2>4.2 Herança e Implementação de Interfaces</h2>
+
+    <p>A <strong>herança</strong> permite que uma classe <strong>herde propriedades e métodos</strong> de outra.</p>
+
+    <h3>Exemplo de Herança (extends)</h3>
+    <pre><code>
+class Animal {
+  nome: string;
+
+  constructor(nome: string) {
+    this.nome = nome;
+  }
+
+  emitirSom(): void {
+    console.log("Som genérico de um animal...");
+  }
+}
+
+class Cachorro extends Animal {
+  raca: string;
+
+  constructor(nome: string, raca: string) {
+    super(nome);
+    this.raca = raca;
+  }
+
+  emitirSom(): void {
+    console.log("Au Au!"); // Sobrescrevendo método
+  }
+}
+
+const dog = new Cachorro("Rex", "Labrador");
+dog.emitirSom(); // "Au Au!"
+console.log(dog.nome); // "Rex"
+    </code></pre>
+    <p>📌 <strong>O que acontece aqui?</strong></p>
+    <ul>
+        <li>A classe Cachorro <strong>herda</strong> a propriedade nome e o método emitirSom() da classe Animal.</li>
+        <li>O método emitirSom() foi <strong>sobrescrito</strong> (polimorfismo).</li>
+        <li>O super(nome) chama o construtor da classe <strong>pai</strong> (Animal).</li>
+    </ul>
+
+    <h3>Interfaces (implements)</h3>
+    <p>Interfaces definem <strong>um contrato</strong> que uma classe deve seguir.</p>
+    <pre><code>
+interface IUsuario {
+  nome: string;
+  idade: number;
+  logar(): boolean;
+}
+
+class Usuario implements IUsuario {
+  nome: string;
+  idade: number;
+
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+
+  logar(): boolean {
+    console.log(`${this.nome} está logado!`);
+    return true;
+  }
+}
+
+const usuario = new Usuario("Maria", 30);
+usuario.logar();
+    </code></pre>
+    <p>📌 <strong>Quando usar extends e implements?</strong></p>
+    <ul>
+        <li>extends: <strong>Herda</strong> propriedades e métodos de uma classe.</li>
+        <li>implements: <strong>Garante</strong> que uma classe siga um contrato, sem herdar implementações.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4.3 Métodos e Propriedades Estáticas (static)</h2>
+
+    <p>Os <strong>métodos e propriedades estáticas</strong> pertencem à classe, <strong>não aos objetos</strong>.</p>
+
+    <h3>Exemplo</h3>
+    <pre><code>
+class Util {
+  static versao: string = "1.0";
+
+  static saudacao(): string {
+    return "Bem-vindo ao sistema!";
+  }
+}
+
+console.log(Util.versao); // "1.0"
+console.log(Util.saudacao()); // "Bem-vindo ao sistema!"
+    </code></pre>
+    <p>📌 <strong>Uso comum de static</strong></p>
+    <ul>
+        <li>Criar <strong>constantes globais</strong> (Math.PI, Date.now()).</li>
+        <li>Métodos auxiliares que <strong>não dependem de instâncias</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4.4 Getters e Setters</h2>
+
+    <p><strong>Getters (get)</strong> e <strong>setters (set)</strong> são usados para acessar e modificar propriedades <strong>de forma controlada</strong>.</p>
+
+    <h3>Exemplo</h3>
+    <pre><code>
+class Produto {
+  private _preco: number;
+
+  constructor(preco: number) {
+    this._preco = preco;
+  }
+
+  get preco(): number {
+    return this._preco;
+  }
+
+  set preco(valor: number) {
+    if (valor <= 0) {
+      console.log("O preço deve ser maior que zero!");
+      return;
+    }
+    this._preco = valor;
+  }
+}
+
+const p = new Produto(100);
+console.log(p.preco); // Usa o getter -> 100
+
+p.preco = 150; // Usa o setter
+console.log(p.preco); // 150
+
+p.preco = -50; // "O preço deve ser maior que zero!"
+    </code></pre>
+    <p>📌 <strong>Vantagens dos Getters e Setters</strong></p>
+    <ul>
+        <li>Protegem a modificação de dados.</li>
+        <li>Permitem lógica adicional ao acessar/modificar propriedades.</li>
+        <li>Mantêm a <strong>encapsulação</strong> dos dados internos.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Resumo</h2>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Conceito</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Classes</strong></td>
+                <td>Definem modelos para criar objetos</td>
+            </tr>
+            <tr>
+                <td><strong>Modificadores</strong></td>
+                <td>public (acessível em qualquer lugar), private (somente dentro da classe), protected (acessível em subclasses)</td>
+            </tr>
+            <tr>
+                <td><strong>Herança</strong></td>
+                <td>extends permite herdar propriedades e métodos</td>
+            </tr>
+            <tr>
+                <td><strong>Interfaces</strong></td>
+                <td>implements define um contrato que a classe deve seguir</td>
+            </tr>
+            <tr>
+                <td><strong>Métodos Estáticos</strong></td>
+                <td>static permite métodos e propriedades sem precisar criar instância</td>
+            </tr>
+            <tr>
+                <td><strong>Getters/Setters</strong></td>
+                <td>Métodos especiais para acessar/modificar propriedades com validação</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Conclusão</h2>
+
+    <p>A Orientação a Objetos no TypeScript oferece <strong>encapsulamento, reutilização de código e organização</strong>. 🚀</p>
+
+
+    <h1>5. Manipulação de Código no TypeScript</h1>
+
+    <hr>
+
+    <h2>5.1 Namespaces e Módulos (import/export)</h2>
+
+    <h3>Namespaces</h3>
+    <p>Os <strong>namespaces</strong> eram usados no TypeScript para <strong>organizar o código e evitar conflitos de nomes</strong> em projetos grandes. Hoje, <strong>módulos são mais recomendados</strong>, mas namespaces ainda podem ser úteis em certos cenários.</p>
+
+    <p>📌 <strong>Exemplo de Namespace</strong></p>
+    <pre><code>
+namespace Utils {
+  export function saudacao(nome: string): string {
+    return `Olá, ${nome}!`;
+  }
+
+  export const versao = "1.0";
+}
+
+console.log(Utils.saudacao("Alice"));
+console.log(Utils.versao);
+    </code></pre>
+    <ul>
+        <li>A palavra-chave export torna a função e a constante acessíveis fora do namespace.</li>
+        <li>Para acessar os membros do namespace, usamos Utils.saudacao() e Utils.versao.</li>
+    </ul>
+    <p>⚠ <strong>Nota:</strong> Namespaces <strong>não são mais recomendados</strong> para projetos modernos, pois os módulos (import/export) são mais poderosos e escaláveis.</p>
+
+    <h3>Módulos (import/export)</h3>
+    <p>Os <strong>módulos</strong> permitem dividir o código em arquivos reutilizáveis e organizados.</p>
+
+    <p>📌 <strong>Exemplo de Módulo</strong></p>
+    <p>Criamos dois arquivos:</p>
+
+    <p>📌 <strong>Arquivo: utils.ts (módulo exportador)</strong></p>
+    <pre><code>
+export function saudacao(nome: string): string {
+  return `Olá, ${nome}!`;
+}
+
+export const versao = "1.0";
+    </code></pre>
+
+    <p>📌 <strong>Arquivo: main.ts (módulo importador)</strong></p>
+    <pre><code>
+import { saudacao, versao } from "./utils";
+
+console.log(saudacao("Alice"));
+console.log(versao);
+    </code></pre>
+
+    <p>✅ <strong>Vantagens dos módulos (import/export)</strong></p>
+    <ul>
+        <li>Melhor suporte em projetos grandes.</li>
+        <li>Permite importar apenas o que é necessário.</li>
+        <li>Funciona nativamente no ES6+ e em ferramentas como Webpack e Node.js.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5.2 Decorators (Metaprogramação)</h2>
+
+    <p>Os <strong>Decorators</strong> são um recurso avançado do TypeScript para <strong>modificar classes, métodos, propriedades e parâmetros</strong> em tempo de execução.</p>
+
+    <p>📌 <strong>⚠ Importante:</strong></p>
+    <ul>
+        <li>Decorators precisam que o <strong>(experimentalDecorators) esteja ativado</strong> no tsconfig.json.</li>
+        <li>São muito usados em frameworks como <strong>Angular</strong> e bibliotecas como <strong>TypeORM</strong>.</li>
+    </ul>
+
+    <h3>Exemplo de Decorator de Classe</h3>
+    <p>Criamos um <strong>decorator</strong> que adiciona um log quando uma classe é instanciada.</p>
+    <pre><code>
+function LogarInstancia(construtor: Function) {
+  console.log(`Classe ${construtor.name} foi instanciada.`);
+}
+
+@LogarInstancia
+class Pessoa {
+  constructor(public nome: string) {}
+}
+
+const p = new Pessoa("Carlos"); // "Classe Pessoa foi instanciada."
+    </code></pre>
+    <p>📌 <strong>Explicação:</strong></p>
+    <ul>
+        <li>@LogarInstancia é um <strong>decorator de classe</strong> que executa código quando a classe é carregada.</li>
+    </ul>
+
+    <h3>Exemplo de Decorator de Método</h3>
+    <p>Criamos um <strong>decorator que registra chamadas de métodos</strong>.</p>
+    <pre><code>
+function LogarMetodo(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  const metodoOriginal = descriptor.value;
+
+  descriptor.value = function (...args: any[]) {
+    console.log(`Chamando método ${propertyKey} com argumentos:`, args);
+    return metodoOriginal.apply(this, args);
+  };
+}
+
+class Calculadora {
+  @LogarMetodo
+  somar(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+const calc = new Calculadora();
+console.log(calc.somar(2, 3)); // "Chamando método somar com argumentos: [2,3]"
+    </code></pre>
+    <p>📌 <strong>Explicação:</strong></p>
+    <ul>
+        <li>@LogarMetodo intercepta chamadas do método somar(), registrando seus parâmetros.</li>
+    </ul>
+
+    <h3>Exemplo de Decorator de Propriedade</h3>
+    <p>Criamos um <strong>decorator que valida se um valor é positivo</strong>.</p>
+    <pre><code>
+function ValidaNumero(target: any, propertyKey: string) {
+  let valor: number;
+
+  Object.defineProperty(target, propertyKey, {
+    get: () => valor,
+    set: (novoValor: number) => {
+      if (novoValor < 0) {
+        throw new Error("O valor não pode ser negativo!");
+      }
+      valor = novoValor;
+    }
+  });
+}
+
+class Conta {
+  @ValidaNumero
+  saldo!: number;
+}
+
+const conta = new Conta();
+conta.saldo = 100;
+console.log(conta.saldo); // 100
+
+// conta.saldo = -50; // ❌ Erro: "O valor não pode ser negativo!"
+    </code></pre>
+    <p>📌 <strong>Explicação:</strong></p>
+    <ul>
+        <li>O <strong>getter/setter personalizado</strong> impede que saldo receba valores negativos.</li>
+    </ul>
+
+    <p>✅ <strong>Onde os Decorators são usados?</strong></p>
+    <ul>
+        <li><strong>Frameworks como Angular</strong> (@Component, @Injectable).</li>
+        <li><strong>ORMs como TypeORM</strong> (@Entity, @Column).</li>
+        <li><strong>Validação de entrada de dados</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5.3 Tipagem Estrutural</h2>
+
+    <p>O <strong>TypeScript usa "tipagem estrutural" ao invés de tipagem nominal</strong>. Isso significa que <strong>o que importa não é o nome do tipo, mas sua estrutura</strong>.</p>
+
+    <p>📌 <strong>Exemplo de Tipagem Estrutural</strong></p>
+    <pre><code>
+class Carro {
+  modelo: string;
+  ano: number;
+
+  constructor(modelo: string, ano: number) {
+    this.modelo = modelo;
+    this.ano = ano;
+  }
+}
+
+interface Veiculo {
+  modelo: string;
+  ano: number;
+}
+
+let meuCarro: Veiculo = new Carro("Fusca", 1970);
+    </code></pre>
+    <p>📌 <strong>Explicação:</strong></p>
+    <ul>
+        <li>O objeto meuCarro é da <strong>interface Veiculo</strong>, mas recebe um objeto da classe Carro.</li>
+        <li>Isso <strong>funciona porque as estruturas são compatíveis</strong> (mesmos atributos).</li>
+    </ul>
+
+    <p>✅ <strong>Vantagens da Tipagem Estrutural</strong></p>
+    <ul>
+        <li>Maior flexibilidade no uso de objetos.</li>
+        <li>Facilita o uso de diferentes classes que tenham a mesma estrutura.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Resumo</h2>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Conceito</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Namespaces</strong></td>
+                <td>Organização de código (não recomendados para novos projetos)</td>
+            </tr>
+            <tr>
+                <td><strong>Módulos</strong></td>
+                <td>import/export para dividir código em arquivos reutilizáveis</td>
+            </tr>
+            <tr>
+                <td><strong>Decorators</strong></td>
+                <td>Metaprogramação para modificar classes, métodos e propriedades</td>
+            </tr>
+            <tr>
+                <td><strong>Tipagem Estrutural</strong></td>
+                <td>Comparação de tipos baseada na estrutura e não no nome</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Conclusão</h2>
+
+    <p>A <strong>manipulação de código no TypeScript</strong> ajuda a criar código <strong>mais organizado, reutilizável e dinâmico</strong>. 🚀</p>
+
+    <hr>
+    <br>
+
+    <h1>6. Ferramentas e Configuração do TypeScript</h1>
+
+    <p>O TypeScript oferece um ecossistema robusto com várias ferramentas essenciais para desenvolvimento profissional. Aqui estão os três pilares fundamentais:</p>
+    <ol>
+        <li><strong>tsconfig.json</strong> – Configuração do compilador TypeScript.</li>
+        <li><strong>tsc (TypeScript Compiler)</strong> – Transpila TypeScript para JavaScript.</li>
+        <li><strong>Linting e Formatação (ESLint, Prettier)</strong> – Mantém o código limpo e padronizado.</li>
+    </ol>
+
+    <hr>
+
+    <h2>6.1 tsconfig.json (Configuração do Compilador)</h2>
+
+    <p>O arquivo tsconfig.json é a <strong>configuração central</strong> do TypeScript. Ele define <strong>como o código será compilado</strong> e quais regras serão aplicadas.</p>
+
+    <p>📌 <strong>Criando um tsconfig.json</strong></p>
+    <p>Execute no terminal:</p>
+    <pre><code>
+tsc --init
+    </code></pre>
+    <p>Isso gera um arquivo tsconfig.json com várias configurações comentadas.</p>
+
+    <p>📌 <strong>Exemplo de tsconfig.json Básico</strong></p>
+    <pre><code>
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
+    </code></pre>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Opção</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>"target": "ES6"</strong></td>
+                <td>Compila TypeScript para JavaScript ES6.</td>
+            </tr>
+            <tr>
+                <td><strong>"module": "CommonJS"</strong></td>
+                <td>Usa módulos no estilo Node.js.</td>
+            </tr>
+            <tr>
+                <td><strong>"outDir": "./dist"</strong></td>
+                <td>Define a pasta onde o código compilado será salvo.</td>
+            </tr>
+            <tr>
+                <td><strong>"rootDir": "./src"</strong></td>
+                <td>Define a pasta onde o código TypeScript está localizado.</td>
+            </tr>
+            <tr>
+                <td><strong>"strict": true</strong></td>
+                <td>Ativa verificações rigorosas de tipo.</td>
+            </tr>
+            <tr>
+                <td><strong>"noImplicitAny": true</strong></td>
+                <td>Evita variáveis sem tipo explícito.</td>
+            </tr>
+            <tr>
+                <td><strong>"esModuleInterop": true</strong></td>
+                <td>Permite importações de módulos ES6.</td>
+            </tr>
+            <tr>
+                <td><strong>"include": ["src"]</strong></td>
+                <td>Compila apenas arquivos dentro da pasta src.</td>
+            </tr>
+            <tr>
+                <td><strong>"exclude": ["node_modules"]</strong></td>
+                <td>Exclui node_modules da compilação.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>✅ <strong>Personalizando o tsconfig.json</strong></p>
+    <p>Se estiver usando <strong>React</strong>, altere "module" para "ESNext" e "jsx" para "react".</p>
+    <pre><code>
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "jsx": "react"
+  }
+}
+    </code></pre>
+
+    <hr>
+
+    <h2>6.2 tsc (Compilador TypeScript)</h2>
+
+    <p>O <strong>TypeScript Compiler (tsc)</strong> é a ferramenta que <strong>converte TypeScript em JavaScript</strong>.</p>
+
+    <p>📌 <strong>Compilar um arquivo manualmente</strong></p>
+    <pre><code>
+tsc meuArquivo.ts
+    </code></pre>
+    <p>Isso gera um <strong>meuArquivo.js</strong> com o código JavaScript equivalente.</p>
+
+    <p>📌 <strong>Compilar todo o projeto baseado no tsconfig.json</strong></p>
+    <pre><code>
+tsc
+    </code></pre>
+    <p>Isso compila todos os arquivos .ts conforme definido no tsconfig.json.</p>
+
+    <p>📌 <strong>Compilar e assistir mudanças automaticamente</strong></p>
+    <pre><code>
+tsc --watch
+    </code></pre>
+    <p>Isso recompila automaticamente os arquivos ao serem alterados.</p>
+
+    <hr>
+
+    <h2>6.3 ESLint e Prettier (Linting e Formatação)</h2>
+
+    <h3>ESLint (Análise de Código Estático)</h3>
+    <p>O <strong>ESLint</strong> ajuda a identificar <strong>erros e padrões ruins</strong> no código.</p>
+
+    <p>📌 <strong>Instalando o ESLint no projeto</strong></p>
+    <pre><code>
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+    </code></pre>
+
+    <p>📌 <strong>Criando um arquivo de configuração .eslintrc.json</strong></p>
+    <pre><code>
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "@typescript-eslint/no-explicit-any": "warn"
+  }
+}
+    </code></pre>
+
+    <p>📌 <strong>Rodando o ESLint no código</strong></p>
+    <pre><code>
+npx eslint src/**/*.ts
+    </code></pre>
+
+    <h3>Prettier (Formatação de Código)</h3>
+    <p>O <strong>Prettier</strong> formata o código automaticamente. Ele é útil junto com o ESLint.</p>
+
+    <p>📌 <strong>Instalando o Prettier</strong></p>
+    <pre><code>
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+    </code></pre>
+
+    <p>📌 <strong>Criando um arquivo de configuração .prettierrc</strong></p>
+    <pre><code>
+{
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2
+}
+    </code></pre>
+
+    <p>📌 <strong>Formatando código com Prettier</strong></p>
+    <pre><code>
+npx prettier --write src/**/*.ts
+    </code></pre>
+
+    <hr>
+
+    <h2>Resumo</h2>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Ferramenta</th>
+                <th>Função</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>tsconfig.json</strong></td>
+                <td>Configuração do compilador TypeScript</td>
+            </tr>
+            <tr>
+                <td><strong>tsc (TypeScript Compiler)</strong></td>
+                <td>Transpila código TypeScript para JavaScript</td>
+            </tr>
+            <tr>
+                <td><strong>ESLint</strong></td>
+                <td>Detecta erros e melhora a qualidade do código</td>
+            </tr>
+            <tr>
+                <td><strong>Prettier</strong></td>
+                <td>Formata o código automaticamente</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Conclusão</h2>
+
+    <p>Com essas ferramentas, você garante que seu projeto TypeScript seja <strong>bem configurado, compilado corretamente e siga padrões de qualidade</strong>. 🚀</p>
+
+    <h1>7. Integração com Frameworks no TypeScript</h1>
+
+    <hr>
+
+    <h2>7.1 TypeScript com Node.js</h2>
+
+    <p>O <strong>Node.js</strong> é uma plataforma para execução de JavaScript no backend. O TypeScript funciona com o Node.js, mas como o Node não entende TypeScript diretamente, precisamos de:</p>
+    <ol>
+        <li><strong>Compilar TypeScript para JavaScript</strong> usando tsc.</li>
+        <li><strong>Adicionar as tipagens do Node.js</strong> com @types/node.</li>
+    </ol>
+
+    <h3>Configurando um projeto TypeScript no Node.js</h3>
+
+    <p>📌 <strong>1. Criar um novo projeto</strong></p>
+    <pre><code>
+mkdir meu-projeto-node && cd meu-projeto-node
+npm init -y
+    </code></pre>
+
+    <p>📌 <strong>2. Instalar o TypeScript e as tipagens do Node.js</strong></p>
+    <pre><code>
+npm install --save-dev typescript ts-node @types/node
+    </code></pre>
+
+    <p>📌 <strong>3. Criar um tsconfig.json</strong></p>
+    <pre><code>
+tsc --init
+    </code></pre>
+
+    <p>📌 <strong>4. Criar um arquivo server.ts</strong></p>
+    <pre><code>
+import http from "http";
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Olá, TypeScript com Node.js!");
+});
+
+server.listen(3000, () => console.log("Servidor rodando em http://localhost:3000"));
+    </code></pre>
+
+    <p>📌 <strong>5. Executar o servidor com ts-node</strong></p>
+    <pre><code>
+npx ts-node server.ts
+    </code></pre>
+
+    <p>✅ <strong>Destaques:</strong></p>
+    <ul>
+        <li>@types/node fornece <strong>tipagens para as APIs do Node.js</strong>.</li>
+        <li>ts-node permite <strong>executar TypeScript diretamente</strong>, sem precisar compilar antes.</li>
+    </ul>
+
+    <hr>
+
+    <h2>7.2 TypeScript com React</h2>
+
+    <p>O React tem <strong>suporte nativo ao TypeScript</strong>, usando arquivos <strong><code>.tsx</code></strong> para tipagem de componentes.</p>
+
+    <h3>Criando um projeto React com TypeScript</h3>
+
+    <p>📌 <strong>1. Criar um novo projeto React com TypeScript</strong></p>
+    <pre><code>
+npx create-react-app meu-app --template typescript
+    </code></pre>
+
+    <p>📌 <strong>2. Criar um componente com tipagem (App.tsx)</strong></p>
+    <pre><code>
+import React from "react";
+
+type Props = {
+  nome: string;
+};
+
+const Saudacao: React.FC&lt;Props&gt; = ({ nome }) => {
+  return &lt;h1&gt;Olá, {nome}!&lt;/h1&gt;;
+};
+
+const App: React.FC = () => {
+  return &lt;Saudacao nome="Alice" /&gt;;
+};
+
+export default App;
+    </code></pre>
+
+    <p>✅ <strong>Destaques:</strong></p>
+    <ul>
+        <li>O <strong>React.FC&lt;T&gt;</strong> define que Saudacao é um <strong>componente funcional com props tipadas</strong>.</li>
+        <li>O nome tem <strong>tipagem explícita (string)</strong>, reduzindo erros.</li>
+    </ul>
+
+    <h3>Tipagem de Estados e Eventos no React</h3>
+
+    <p>📌 <strong>Gerenciando estado com useState</strong></p>
+    <pre><code>
+import React, { useState } from "react";
+
+const Contador: React.FC = () => {
+  const [contador, setContador] = useState&lt;number&gt;(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Valor: {contador}&lt;/p&gt;
+      &lt;button onClick={() => setContador(contador + 1)}&gt;Incrementar&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default Contador;
+    </code></pre>
+
+    <p>📌 <strong>Tipagem de eventos (onChange, onClick)</strong></p>
+    <pre><code>
+const InputTexto: React.FC = () => {
+  const [texto, setTexto] = useState&lt;string&gt;("");
+
+  const handleChange = (event: React.ChangeEvent&lt;HTMLInputElement&gt;) => {
+    setTexto(event.target.value);
+  };
+
+  return &lt;input type="text" value={texto} onChange={handleChange} /&gt;;
+};
+    </code></pre>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Destaque</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>useState&lt;number&gt;(0)</strong></td>
+                <td>Garante que o estado só aceite <strong>números</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>onChange={handleChange}</strong></td>
+                <td>handleChange recebe um evento <strong>tipado corretamente</strong> (ChangeEvent&lt;HTMLInputElement&gt;).</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <hr>
+
+    <h2>7.3 TypeScript com Angular</h2>
+
+    <p>O <strong>Angular</strong> foi criado pelo Google e tem <strong>suporte nativo ao TypeScript</strong>. Na verdade, <strong>o Angular usa TypeScript como linguagem principal</strong>.</p>
+
+    <h3>Criando um projeto Angular com TypeScript</h3>
+
+    <p>📌 <strong>1. Instalar o Angular CLI</strong></p>
+    <pre><code>
+npm install -g @angular/cli
+    </code></pre>
+
+    <p>📌 <strong>2. Criar um novo projeto Angular</strong></p>
+    <pre><code>
+ng new meu-app-angular
+cd meu-app-angular
+ng serve
+    </code></pre>
+
+    <p>✅ O Angular já usa TypeScript por padrão, então não é necessário configurá-lo manualmente.</p>
+
+    <h3>Tipagem no Angular</h3>
+
+    <p>📌 <strong>Criando um (Component) com tipagem (app.component.ts)</strong></p>
+    <pre><code>
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-root",
+  template: "&lt;h1&gt;Olá, {{ nome }}&lt;/h1&gt;",
+})
+export class AppComponent {
+  nome: string = "Mundo";
+}
+    </code></pre>
+
+    <p>📌 <strong>Tipando um serviço (usuario.service.ts)</strong></p>
+    <pre><code>
+import { Injectable } from "@angular/core";
+
+interface Usuario {
+  id: number;
+  nome: string;
+}
+
+@Injectable({
+  providedIn: "root",
+})
+export class UsuarioService {
+  private usuarios: Usuario[] = [
+    { id: 1, nome: "Alice" },
+    { id: 2, nome: "Bob" },
+  ];
+
+  getUsuarios(): Usuario[] {
+    return this.usuarios;
+  }
+}
+    </code></pre>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Destaque</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Component()</td>
+                <td>Define um <strong>componente Angular</strong>.</td>
+            </tr>
+            <tr>
+                <td>@Injectable()</td>
+                <td>Define um <strong>serviço Angular</strong>.</td>
+            </tr>
+            <tr>
+                <td>interface Usuario</td>
+                <td>Melhora a segurança do código.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <hr>
+
+    <h2>Comparação entre Node.js, React e Angular com TypeScript</h2>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Framework</th>
+                <th>Integração com TypeScript</th>
+                <th>Exemplo de uso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Node.js</strong></td>
+                <td>Usa @types/node para APIs</td>
+                <td>Servidor HTTP, APIs REST</td>
+            </tr>
+            <tr>
+                <td><strong>React</strong></td>
+                <td>Usa .tsx, React.FC&lt;T&gt;</td>
+                <td>Componentes, hooks, eventos</td>
+            </tr>
+            <tr>
+                <td><strong>Angular</strong></td>
+                <td><strong>Baseado 100% em TypeScript</strong></td>
+                <td>Componentes, serviços, injeção de dependências</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Conclusão</h2>
+
+    <p>O <strong>TypeScript traz grandes benefícios</strong> ao trabalhar com frameworks modernos:</p>
+    <ul>
+        <li><strong>Node.js</strong>: Tipagem para APIs e maior segurança no backend.</li>
+        <li><strong>React</strong>: Melhor suporte a componentes e eventos com <code>.tsx</code>.</li>
+        <li><strong>Angular</strong>: Integração total, pois é construído sobre TypeScript.</li>
+    </ul>
+
+</code></pre>
+<hr>
+<br>
+<h1>Aprenda um CRUD</h1>
+
+<h3>Aqui está um exemplo de um CRUD simples para cadastrar alunos:</h3>
+
+<h2>HTML</h2>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt; Crud para cadastrar anluos&lt;/h1&gt;
+
+&lt;form id="aluno-form"&gt;
+    &lt;input type="text" id="nome" placeholder="nome do aluno" required&gt;
+    &lt;button type="submit"&gt;Adicionar aluno&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nome&lt;/th&gt;
+            &lt;th&gt;Ação&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id="alunos-tabela"&gt;
+        &lt;!--os dados serão inseridos aqui--&gt;
+
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>CSS</h2>
+<pre><code>
+/* Reset básico */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Arial', sans-serif;
+background-color: #f9f9f9;
+color: #333;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+h1 {
+color: #333;
+margin-bottom: 20px;
+}
+
+form {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+input[type="text"] {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+width: 200px;
+}
+
+button {
+padding: 10px 15px;
+border: none;
+background-color: #000000;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #6b6b6b;
+}
+
+table {
+width: 80%;
+max-width: 600px;
+border-collapse: collapse;
+margin-top: 10px;
+}
+
+thead {
+background-color: #000000;
+color: white;
+}
+
+th, td {
+padding: 12px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+td button {
+padding: 5px 10px;
+font-size: 14px;
+background-color: #28a745;
+border: none;
+color: white;
+border-radius: 3px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+td button:nth-child(2) {
+background-color: #dc3545;
+}
+
+td button:hover {
+opacity: 0.8;
+}
+</code></pre>
+
+<h2>JavaScript</h2>
+<pre><code>
+const formulario = document.getElementById ("aluno-form");
+const tabela = document.getElementById("alunos-tabela");
+
+let alunos = []; // Armazena os dados dos alunos
+
+formulario.addEventListener("submit", (evento)=> {
+evento.preventDefault();
+
+const nomeInput = document.getElementById("nome");
+const nomeAluno = nomeInput.value.trim();
+
+if(nomeAluno){
+    // Adicionar o aluno na lista e renderizar
+    adicionarAluno(nomeAluno);
+    nomeInput.value = ""; // Limpa o campo após adicionar
+}
+});
+
+function adicionarAluno(nome) {
+const novoAluno = {id: Date.now(), nome: nome}; // cria o aluno com ID unico
+alunos.push(novoAluno);
+atualizarTabela();
+}
+
+function atualizarTabela(){
+tabela.innerHTML = ""; // Limpa a tabela antes de renderizar
+
+alunos.forEach(aluno => {
+    const linha = document.createElement("tr");
+
+    linha.innerHTML = `
+    &lt;td&gt;${aluno.nome}&lt;/td&gt;
+    &lt;td&gt;
+        &lt;button onclick="editarAluno(${aluno.id})"&gt;Editar&lt;/button&gt;
+        &lt;button onclick="deletarAluno(${aluno.id})"&gt;Excluir&lt;/button&gt;
+    &lt;/td&gt;
+    `;
+    tabela.appendChild(linha);
+});
+}
+
+function editarAluno(id){
+const aluno = alunos.find(aluno => aluno.id === id);
+
+if(aluno){
+    const novoNome = prompt("Digite o novo nome do aluno", aluno.nome);
+
+    if(novoNome && novoNome.trim() !== ""){
+        aluno.nome = novoNome.trim();
+        atualizarTabela();
+    }
+}
+}
+
+function deletarAluno(id){
+alunos = alunos.filter(aluno => aluno.id !== id);
+atualizarTabela();
+}
+</section>
+</code></pre>
+        </section>
+        <section class="content-section">
+            <h1>Comandos TypeScript e o que fazem</h1>
+          
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Comando / Sintaxe</th>
+                  <th>Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>let nome: string</td><td>Declaração de variável com tipo string</td></tr>
+                <tr><td>const idade: number</td><td>Constante com tipo numérico</td></tr>
+                <tr><td>let ativo: boolean</td><td>Booleano verdadeiro ou falso</td></tr>
+                <tr><td>number[]</td><td>Array de números</td></tr>
+                <tr><td>[string, number]</td><td>Tupla com tipos fixos</td></tr>
+                <tr><td>enum Status { Ativo, Inativo }</td><td>Enumeração de estados fixos</td></tr>
+                <tr><td>function soma(a: number, b: number): number</td><td>Função com tipos definidos</td></tr>
+                <tr><td>: void</td><td>Função que não retorna valor</td></tr>
+                <tr><td>: any</td><td>Tipo genérico (qualquer valor)</td></tr>
+                <tr><td>type User = {}</td><td>Tipo personalizado (alias)</td></tr>
+                <tr><td>interface User {}</td><td>Interface com estrutura de objeto</td></tr>
+                <tr><td>readonly</td><td>Propriedade somente leitura</td></tr>
+                <tr><td>optional?:</td><td>Propriedade opcional</td></tr>
+                <tr><td>as string</td><td>Type casting (conversão de tipo)</td></tr>
+                <tr><td>typeof variável</td><td>Retorna o tipo da variável</td></tr>
+                <tr><td>keyof Tipo</td><td>Retorna as chaves de um tipo</td></tr>
+                <tr><td>Record&lt;Chave, Valor&gt;</td><td>Objeto com chaves e valores dinâmicos</td></tr>
+                <tr><td>Partial&lt;T&gt;</td><td>Todos os campos opcionais</td></tr>
+                <tr><td>Required&lt;T&gt;</td><td>Todos os campos obrigatórios</td></tr>
+                <tr><td>Pick&lt;T, 'a' | 'b'&gt;</td><td>Seleciona algumas props</td></tr>
+                <tr><td>Omit&lt;T, 'a'&gt;</td><td>Remove uma prop de T</td></tr>
+                <tr><td>extends</td><td>Herança entre tipos ou classes</td></tr>
+                <tr><td>implements</td><td>Classe implementando interface</td></tr>
+                <tr><td>abstract class</td><td>Classe base abstrata</td></tr>
+                <tr><td>function &lt;T&gt;(arg: T): T</td><td>Função genérica</td></tr>
+                <tr><td>T extends U ? X : Y</td><td>Tipo condicional</td></tr>
+                <tr><td>never</td><td>Função que nunca retorna (ex: erro)</td></tr>
+                <tr><td>unknown</td><td>Tipo desconhecido (seguro)</td></tr>
+                <tr><td>as const</td><td>Valor literal e imutável</td></tr>
+                <tr><td>namespace MeuNS {}</td><td>Agrupamento de código em namespaces</td></tr>
+                <tr><td>declare var</td><td>Declara uma variável externa (ambient)</td></tr>
+                <tr><td>export / import</td><td>Trabalhar com módulos</td></tr>
+              </tbody>
+            </table>
+          </section>
+    </main>
 
     <!-- Rodapé -->
     <footer class="site-footer">

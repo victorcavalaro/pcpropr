@@ -1,1616 +1,286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,follow,max-image-preview:large">
+    <meta name="description" content="Documentação técnica arquivada do Pcpropr.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pcpropr - Documentação JavaScript</title>
-    <link
-      rel="stylesheet"
-      href="/paginas/documentacao/documentacoes/geral.css"
-    />
-    <link
-      rel="shortcut icon"
-      href="/img/logo barra superior.png"
-      type="image/x-icon"
-    />
+    <title>Documentações Pcpropr</title>
+    <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
+    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+    <meta name="google-adsense-account" content="ca-pub-2949468008594913">
+</head>
+<body>
     <!-- Cabeçalho -->
     <header class="site-header">
-      <div class="header-inner">
-        <div class="logo-container">
-          <a href="/index.html"
-            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
-          /></a>
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+            </div>
+            <!-- Menu de Navegação -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                   <!-- <li><a href="/paginas/sobre/index.html">Sobre</a></li> -->
+                    <li><a href="/paginas/contato/index.html">Conteudos</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                     <li><a href="/paginas/sgf/sgf.html">SGF</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Menu de Navegação -->
-        <nav class="site-nav">
-          <ul>
-            <li><a href="/index.html">Início</a></li>
-            <!-- <li><a href="/paginas/sobre/index.html">Sobre</a></li> -->
-            <li><a href="/paginas/contato/index.html">Conteudos</a></li>
-            <li>
-              <a href="/paginas/documentacao/index.html">Documentações</a>
-            </li>
-            <li><a href="/paginas/sgf/sgf.html">SGF</a></li>
-          </ul>
-        </nav>
-      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="container">
-      <header class="hero-container">
-        <style>
-          /* Container Principal com fundo escuro */
-          .hero-container {
-            background-color: #1a1a1a; /* Preto suave */
-            color: #ffffff;
-            padding: 80px 20px;
-            border-bottom: 6px solid #f7df1e; /* O Amarelo JS */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px; /* Espaço para começar o artigo */
-          }
+        <section class="content-section">
+            <h1>JavaScript: Documentação Completa</h1>
 
-          /* Centralizador do conteúdo */
-          .hero-content {
-            max-width: 900px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-          }
-
-          /* Estilo da Logo JS */
-          .js-logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(247, 223, 30, 0.4); /* Brilho amarelo */
-            transition: transform 0.3s ease;
-          }
-
-          .js-logo:hover {
-            transform: scale(1.1) rotate(3deg); /* Animação leve ao passar o mouse */
-          }
-
-          /* Tag "Desenvolvimento Web" */
-          .hero-tag {
-            background-color: #f7df1e;
-            color: #000;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-          }
-
-          /* Título Principal */
-          .hero-title {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -1px;
-          }
-
-          /* Subtítulo */
-          .hero-subtitle {
-            font-size: 1.3rem;
-            color: #d1d1d1;
-            max-width: 650px;
-            margin: 0;
-            line-height: 1.6;
-            font-weight: 300;
-          }
-
-          /* Metadados (Data e Tempo) */
-          .hero-meta {
-            margin-top: 10px;
-            font-size: 0.95rem;
-            color: #888;
-            display: flex;
-            gap: 25px;
-            font-weight: 500;
-          }
-
-          /* Ícones pequenos nos metadados */
-          .hero-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-          }
-
-          /* Responsividade para Celulares */
-          @media (max-width: 768px) {
-            .hero-container {
-              padding: 50px 20px;
-            }
-
-            .hero-title {
-              font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-              font-size: 1.1rem;
-            }
-
-            .js-logo {
-              width: 80px;
-              height: 80px;
-            }
-          }
-        </style>
-
-        <div class="hero-content">
-          <div class="hero-logo">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-              alt="Logo Oficial JavaScript"
-              class="js-logo"
-            />
-          </div>
-
-          <div class="hero-text">
-            <span class="hero-tag">Guia Oficial</span>
-            <h1 class="hero-title">JavaScript: O Guia Definitivo</h1>
-            <p class="hero-subtitle">
-              Saia do zero e domine a linguagem mais poderosa da web. Aprenda
-              lógica, manipulação do DOM e boas práticas modernas.
-            </p>
-
-            <div class="hero-meta">
-              <span>📅 Atualizado em 2026</span>
-              <span>⏱️ 20 min de leitura</span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section class="content-section">
-        <main class="container">
-          <section class="content-section">
-            <h1>1. Introdução: O Motor da Web Moderna</h1>
+            <!-- Introdução ao JavaScript -->
+            <h2>Introdução ao JavaScript</h2>
             <p>
-              O JavaScript (JS) transcendeu seu propósito original. Criado em 10
-              dias por Brendan Eich em 1995 apenas para validar formulários
-              simples, ele se tornou a **espinha dorsal da internet
-              interativa**. Enquanto o HTML estrutura o conteúdo (o esqueleto) e
-              o CSS define a estética (a pele), o JavaScript é o sistema
-              nervoso, responsável pela
-              <strong>lógica, comportamento e inteligência</strong> da
-              aplicação.
+                JavaScript é uma linguagem de programação de alto nível, interpretada e multiparadigma, amplamente utilizada para desenvolvimento web. Criada originalmente para adicionar interatividade às páginas da web, hoje o JavaScript é uma das linguagens mais populares do mundo, sendo usada tanto no front-end quanto no back-end.
             </p>
             <p>
-              Tecnicamente, o JS é classificado como uma linguagem de
-              <strong>alto nível</strong>,
-              <strong>interpretada (JIT - Just-In-Time)</strong> e
-              <strong>multiparadigma</strong>. Isso significa que ela abstrai a
-              complexidade do hardware para o programador e é flexível o
-              suficiente para aceitar estilos de programação funcional e
-              orientada a objetos no mesmo código.
-            </p>
-
-            <hr />
-
-            <h2>1.1. A Onipresença: Por que o JS domina o mundo?</h2>
-            <p>
-              Quando dizemos que o JavaScript é onipresente, não é exagero. Ele
-              detém um monopólio técnico virtuoso: é a
-              <strong
-                >única linguagem de programação que os navegadores entendem
-                nativamente</strong
-              >.
-            </p>
-            <p>
-              Você pode escrever o back-end em Python, Java, PHP ou Ruby. Mas,
-              no momento em que o código chega ao navegador do usuário
-              (Client-Side), ele precisa conversar em JavaScript.
-            </p>
-            <h3>Além do Navegador</h3>
-            <p>
-              A "Revolução da Onipresença" aconteceu quando o JS escapou do
-              navegador. Hoje, aprender JavaScript oferece o maior ROI (Retorno
-              sobre Investimento) para um desenvolvedor, pois permite criar para
-              qualquer plataforma:
+                Com o JavaScript, você pode:
             </p>
             <ul>
-              <li>
-                <strong>Web (Navegadores):</strong> Manipulação do DOM e SPAs
-                (Single Page Applications).
-              </li>
-              <li>
-                <strong>Mobile (Android/iOS):</strong> Com
-                <em>React Native</em> e <em>Expo</em>, você cria aplicativos
-                nativos usando a mesma sintaxe da web.
-              </li>
-              <li>
-                <strong>Desktop (Windows/Mac/Linux):</strong> O framework
-                <em>Electron</em> permite criar softwares de computador (como o
-                VS Code, Discord e WhatsApp Desktop, que são feitos em JS).
-              </li>
-              <li>
-                <strong>IoT (Internet das Coisas):</strong> Placas como
-                Raspberry Pi e Arduino já aceitam controle via JS (Johnny-Five).
-              </li>
+                <li><strong>Criar páginas web interativas:</strong> Manipular o DOM, validar formulários e criar animações.</li>
+                <li><strong>Desenvolver aplicações web modernas:</strong> Usar frameworks como React, Angular e Vue.js.</li>
+                <li><strong>Construir back-ends robustos:</strong> Com Node.js, é possível criar servidores e APIs.</li>
+                <li><strong>Desenvolver aplicações móveis:</strong> Usando frameworks como React Native.</li>
             </ul>
 
-            <hr />
-
-            <h2>1.2. O Ecossistema Node.js: JavaScript no Servidor</h2>
+            <!-- Para que serve o JavaScript? -->
+            <h2>Para que serve o JavaScript?</h2>
             <p>
-              Historicamente, o JavaScript vivia preso dentro do navegador. Para
-              rodar código no servidor (Back-end), usávamos PHP ou Java. Isso
-              mudou em 2009 com o lançamento do <strong>Node.js</strong>.
-            </p>
-
-            <h3>O que é o Node.js realmente?</h3>
-            <p>
-              Muitos iniciantes confundem: Node.js
-              <strong>não é uma linguagem</strong>, nem um framework. Ele é um
-              <strong>Ambiente de Execução (Runtime)</strong>.
-            </p>
-            <p>
-              Ryan Dahl, o criador, pegou o motor <strong>V8</strong> (a
-              "engine" ultra-rápida do Google Chrome escrita em C++) e a separou
-              do navegador, permitindo que o JavaScript rodasse diretamente no
-              sistema operacional do servidor.
-            </p>
-            <h3>O Poder do NPM</h3>
-            <p>
-              O Node.js trouxe consigo o
-              <strong>NPM (Node Package Manager)</strong>. É o maior registro de
-              bibliotecas de software do mundo. Se você precisa gerar um PDF,
-              criptografar uma senha ou formatar uma data, alguém já escreveu um
-              pacote e o disponibilizou no NPM. Isso acelera o desenvolvimento
-              de forma exponencial.
-            </p>
-            <p>
-              Graças ao Node.js, surgiu o conceito de
-              <strong>Fullstack JavaScript</strong>: um único desenvolvedor pode
-              construir o sistema inteiro (banco de dados, servidor e front-end)
-              usando uma única linguagem.
-            </p>
-
-            <hr />
-
-            <h2>1.3. Aprofundando: Síncrono vs. Assíncrono</h2>
-            <p>
-              Este é o divisor de águas entre programadores juniores e plenos. O
-              JavaScript é, por natureza, <strong>Single-Threaded</strong>. Isso
-              significa que ele possui apenas uma "linha de execução" (Call
-              Stack). Ele só consegue fazer uma coisa de cada vez.
-            </p>
-
-            <h3>O Modelo Síncrono (Bloqueante)</h3>
-            <p>
-              No modelo síncrono, uma tarefa precisa terminar para a próxima
-              começar. Imagine uma fila em um banco com apenas um caixa. Se o
-              cliente atual demorar 10 minutos, ninguém atrás dele é atendido.
-            </p>
-            <p><strong>Exemplo de código Síncrono (O Problema):</strong></p>
-            <pre><code>console.log("Passo 1: Início");
-
-// Imagine que este alert é uma operação pesada
-alert("O código parou aqui! O usuário não consegue clicar em nada."); 
-
-console.log("Passo 2: Fim"); // Só executa depois que você fechar o alert</code></pre>
-
-            <h3>O Modelo Assíncrono (Não-Bloqueante)</h3>
-            <p>
-              Para evitar que a página trave (congelamento) quando precisamos
-              buscar dados em um servidor lento, o JavaScript usa o
-              <strong>Assincronismo</strong>.
-            </p>
-            <p>
-              Ele delega a tarefa pesada para as APIs do navegador e continua
-              executando o restante do código. Quando a tarefa pesada termina,
-              ela volta para a fila de execução. É como um garçom em um
-              restaurante: ele anota seu pedido e vai para a próxima mesa. Ele
-              não fica parado na cozinha esperando seu prato ficar pronto.
-            </p>
-            <p><strong>Exemplo de código Assíncrono (A Solução):</strong></p>
-            <pre><code>console.log("1. Garçom anotou o pedido");
-
-// setTimeout simula uma requisição ao servidor que demora 2 segundos
-setTimeout(() => {
-    console.log("3. Cozinha entregou o prato (2 segundos depois)");
-}, 2000);
-
-console.log("2. Garçom foi atender outra mesa (Imediato)");</code></pre>
-
-            <p><strong>Saída no Console:</strong></p>
-            <pre><code>> "1. Garçom anotou o pedido"
-> "2. Garçom foi atender outra mesa (Imediato)"
-> "3. Cozinha entregou o prato (2 segundos depois)"</code></pre>
-            <p>
-              Perceba que a linha 3 (entrega do prato) apareceu por último,
-              mesmo estando no meio do código. Isso é o
-              <strong>Event Loop</strong> do JavaScript em ação, permitindo alta
-              performance sem travar a navegação.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>2. A Arquitetura do JavaScript: O Segredo da Performance</h2>
-            <p>
-              Muitos desenvolvedores escrevem código por anos sem entender o que
-              acontece nos bastidores. Mas, para otimizar aplicações e evitar
-              travamentos de tela, você precisa dominar quatro conceitos
-              fundamentais: <strong>Single Thread</strong>,
-              <strong>Call Stack</strong>, <strong>Web APIs</strong> e o famoso
-              <strong>Event Loop</strong>.
-            </p>
-            <p>Vamos desmontar essa máquina peça por peça.</p>
-
-            <hr />
-
-            <h3>2.1. O que é "Single-Threaded"?</h3>
-            <p>
-              Imagine que o JavaScript é um escritório com
-              <strong>apenas um funcionário</strong>. Esse funcionário só
-              consegue realizar uma tarefa de cada vez. Ele não pode atender o
-              telefone e digitar um e-mail simultaneamente.
-            </p>
-            <p>
-              Tecnicamente, isso significa que o JavaScript possui uma única
-              <strong>Thread de Execução</strong>. Diferente de linguagens como
-              Java ou C#, que podem criar múltiplas threads (vários
-              funcionários) para processar tarefas paralelas, o JS executa
-              código linha por linha, sequencialmente.
-            </p>
-            <p>
-              <strong>O perigo:</strong> Se esse único funcionário pegar uma
-              tarefa muito demorada (como processar uma imagem gigante), ele
-              fica "bloqueado" e não consegue fazer mais nada (nem clicar em
-              botões, nem rolar a tela). É aí que o navegador trava.
-            </p>
-
-            <h3>2.2. Call Stack (Pilha de Chamadas)</h3>
-            <p>
-              A <strong>Call Stack</strong> é a lista de tarefas desse
-              funcionário. Ela funciona com uma estrutura de dados chamada
-              <strong>LIFO (Last In, First Out)</strong>, ou seja, "O último a
-              entrar é o primeiro a sair".
-            </p>
-            <p>
-              Imagine uma pilha de pratos. Você coloca o prato A, depois o prato
-              B por cima. Para pegar o prato A, você precisa primeiro remover o
-              prato B.
-            </p>
-            <p>Veja como o JS organiza isso no código:</p>
-            <pre><code>function multiplicar(a, b) {
-    return a * b;
-}
-
-function imprimirQuadrado(n) {
-    const res = multiplicar(n, n); // Adiciona 'multiplicar' ao topo da pilha
-    console.log(res);
-}
-
-imprimirQuadrado(5); // 1. Entra na Stack</code></pre>
-
-            <p><strong>O Fluxo na Pilha:</strong></p>
-            <ol>
-              <li>
-                O script chama <code>imprimirQuadrado(5)</code>. (Entra na
-                Stack)
-              </li>
-              <li>
-                Dentro dela, chamamos <code>multiplicar(5, 5)</code>. (Entra no
-                topo da Stack)
-              </li>
-              <li>
-                <code>multiplicar</code> retorna 25 e termina. (Sai da Stack)
-              </li>
-              <li><code>console.log</code> exibe 25. (Entra e sai da Stack)</li>
-              <li><code>imprimirQuadrado</code> termina. (A Stack esvazia)</li>
-            </ol>
-
-            <hr />
-
-            <h3>2.3. O Grande Truque: Web APIs e Callback Queue</h3>
-            <p>
-              Se o JS é single-threaded, como ele faz requisições à internet ou
-              espera um tempo (setTimeout) sem travar a tela? A resposta é:
-              <strong>Ele terceiriza.</strong>
-            </p>
-            <p>
-              O navegador (Chrome, Firefox) é mais poderoso que o motor do JS.
-              Ele possui ferramentas chamadas <strong>Web APIs</strong>. Essas
-              APIs são capazes de trabalhar em paralelo (multi-thread).
+                O JavaScript é essencial para o desenvolvimento web moderno. Aqui estão alguns dos principais usos:
             </p>
             <ul>
-              <li>
-                <strong>Web APIs:</strong> Quando você usa
-                <code>setTimeout</code> ou <code>fetch</code>, o JS entrega essa
-                tarefa para o Navegador e diz: "Me avise quando terminar". O JS
-                então volta imediatamente a executar a próxima linha do código,
-                sem esperar.
-              </li>
-              <li>
-                <strong>Callback Queue (Fila de Tarefas):</strong> Quando a Web
-                API termina a tarefa (ex: o tempo do timer acabou), ela não joga
-                o resultado direto na pilha. Ela coloca o resultado numa "Fila
-                de Espera" organizada.
-              </li>
+                <li><strong>Interatividade no Front-end:</strong> Manipulação do DOM, validação de formulários e criação de animações.</li>
+                <li><strong>Desenvolvimento de Aplicações Web:</strong> Uso de frameworks como React, Angular e Vue.js para criar interfaces dinâmicas.</li>
+                <li><strong>Back-end com Node.js:</strong> Criação de servidores, APIs e aplicações escaláveis.</li>
+                <li><strong>Desenvolvimento Mobile:</strong> Uso de frameworks como React Native para criar aplicativos móveis.</li>
+                <li><strong>Automação e Scripting:</strong> Automatizar tarefas e criar scripts para diversas finalidades.</li>
             </ul>
 
-            <h3>2.4. O Event Loop (O Gerente de Tráfego)</h3>
+            <!-- Aplicação prática do JavaScript -->
+            <h2>Aplicação prática do JavaScript</h2>
             <p>
-              Aqui entra a peça final. O <strong>Event Loop</strong> é um
-              monitor constante que tem apenas uma regra simples, mas crucial:
+                O JavaScript pode ser aplicado em diversos cenários de desenvolvimento, incluindo:
             </p>
-            <blockquote>
-              "Eu só vou pegar algo da <strong>Fila (Queue)</strong> e colocar
-              na <strong>Pilha (Stack)</strong> se a Pilha estiver
-              <strong>VAZIA</strong>."
-            </blockquote>
+            <ul>
+                <li><strong>Desenvolvimento Web:</strong> Criação de páginas e aplicações web interativas.</li>
+                <li><strong>Desenvolvimento Mobile:</strong> Uso de frameworks como React Native para criar aplicativos móveis.</li>
+                <li><strong>Desenvolvimento de Jogos:</strong> Criação de jogos simples usando bibliotecas como Phaser.</li>
+                <li><strong>Automação de Tarefas:</strong> Uso de ferramentas como Node.js para automatizar processos.</li>
+                <li><strong>Internet das Coisas (IoT):</strong> Desenvolvimento de aplicações para dispositivos IoT.</li>
+            </ul>
+
+            <!-- Instalação -->
+            <h2>Instalação</h2>
             <p>
-              Isso garante que o JavaScript nunca interrompa uma tarefa
-              importante (como renderizar a tela) para rodar um callback que
-              acabou de chegar.
+                O JavaScript é executado diretamente no navegador, mas para desenvolvimento back-end com Node.js, você precisa instalá-lo. Abaixo estão os passos para instalação:
             </p>
-
-            <h3>Resumo Visual do Ciclo:</h3>
-            <ol>
-              <li>
-                <strong>Call Stack:</strong> Executa o código síncrono (ex:
-                <code>console.log</code>).
-              </li>
-              <li>
-                <strong>Web API:</strong> Recebe tarefas demoradas (ex:
-                <code>setTimeout</code>).
-              </li>
-              <li>
-                <strong>Callback Queue:</strong> Recebe as tarefas prontas da
-                Web API.
-              </li>
-              <li>
-                <strong>Event Loop:</strong> Fica girando. Se a Stack esvaziar,
-                ele empurra o primeiro item da Queue para a Stack.
-              </li>
-            </ol>
-
-            <h4>Desafio Prático (Teste seu conhecimento)</h4>
-            <p>Tente adivinhar a ordem dos números antes de rodar o código:</p>
-            <pre><code>console.log("1");
-
-setTimeout(() => {
-    console.log("2");
-}, 0); // Tempo de 0 milissegundos!
-
-console.log("3");</code></pre>
-
+            <pre><code>npm install -g node</code></pre>
             <p>
-              <strong>A Resposta:</strong> A ordem será <code>1, 3, 2</code>.
-              Por que?
+                Após a instalação, você pode verificar a versão instalada com o seguinte comando:
             </p>
+            <pre><code>node --version</code></pre>
             <p>
-              Mesmo com o tempo zero, o <code>setTimeout</code> é enviado para a
-              Web API, depois para a Fila. O Event Loop obriga o número "2" a
-              esperar o número "3" (que estava na Stack principal) terminar de
-              ser executado. Isso prova que a Stack tem prioridade sobre a Fila.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>3. Dominando Variáveis: Escopo, Hoisting e Boas Práticas</h2>
-            <p>
-              Até 2015 (antes do ES6), o JavaScript tinha apenas uma maneira de
-              declarar variáveis: <code>var</code>. Isso causava inúmeros
-              problemas de organização e bugs silenciosos. Hoje, temos um
-              sistema robusto de gerenciamento de memória.
-            </p>
-            <p>
-              Para escrever código profissional, você precisa entender dois
-              conceitos fundamentais: <strong>Escopo</strong> (onde sua variável
-              vive) e <strong>Mutabilidade</strong> (se ela pode mudar).
+                Isso garantirá que o Node.js esteja pronto para uso em seu ambiente de desenvolvimento.
             </p>
 
+            <!-- Tabela de Comandos JavaScript -->
+            <h2>Comandos JavaScript</h2>
             <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Declaração</th>
-                  <th>Escopo (Onde funciona?)</th>
-                  <th>Pode mudar valor?</th>
-                  <th>Sofre Hoisting?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>const</code></td>
-                  <td>Bloco <code>{ ... }</code></td>
-                  <td>Não (Referência imutável)</td>
-                  <td>Não (Zona Morta Temporal)</td>
-                </tr>
-                <tr>
-                  <td><code>let</code></td>
-                  <td>Bloco <code>{ ... }</code></td>
-                  <td>Sim</td>
-                  <td>Não (Zona Morta Temporal)</td>
-                </tr>
-                <tr>
-                  <td><code>var</code></td>
-                  <td>Função</td>
-                  <td>Sim</td>
-                  <td>Sim (Inicializa como undefined)</td>
-                </tr>
-              </tbody>
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>console.log()</td>
+                        <td>Exibe uma mensagem no console do navegador.</td>
+                    </tr>
+                    <tr>
+                        <td>document.getElementById()</td>
+                        <td>Seleciona um elemento HTML pelo seu ID.</td>
+                    </tr>
+                    <tr>
+                        <td>document.querySelector()</td>
+                        <td>Seleciona o primeiro elemento que corresponde a um seletor CSS.</td>
+                    </tr>
+                    <tr>
+                        <td>document.querySelectorAll()</td>
+                        <td>Seleciona todos os elementos que correspondem a um seletor CSS.</td>
+                    </tr>
+                    <tr>
+                        <td>addEventListener()</td>
+                        <td>Adiciona um evento a um elemento HTML.</td>
+                    </tr>
+                    <tr>
+                        <td>setTimeout()</td>
+                        <td>Executa uma função após um determinado tempo (em milissegundos).</td>
+                    </tr>
+                    <tr>
+                        <td>setInterval()</td>
+                        <td>Executa uma função repetidamente em intervalos de tempo específicos.</td>
+                    </tr>
+                    <tr>
+                        <td>Array.push()</td>
+                        <td>Adiciona um ou mais elementos ao final de um array.</td>
+                    </tr>
+                    <tr>
+                        <td>Array.pop()</td>
+                        <td>Remove o último elemento de um array.</td>
+                    </tr>
+                    <tr>
+                        <td>Array.map()</td>
+                        <td>Cria um novo array com os resultados de uma função aplicada a cada elemento.</td>
+                    </tr>
+                    <tr>
+                        <td>Array.filter()</td>
+                        <td>Cria um novo array com todos os elementos que passam em um teste.</td>
+                    </tr>
+                    <tr>
+                        <td>JSON.parse()</td>
+                        <td>Converte uma string JSON em um objeto JavaScript.</td>
+                    </tr>
+                    <tr>
+                        <td>JSON.stringify()</td>
+                        <td>Converte um objeto JavaScript em uma string JSON.</td>
+                    </tr>
+                    <tr>
+                        <td>fetch()</td>
+                        <td>Faz uma requisição HTTP para buscar recursos de uma API.</td>
+                    </tr>
+                    <tr>
+                        <td>Promise</td>
+                        <td>Representa um valor que pode estar disponível agora, no futuro ou nunca.</td>
+                    </tr>
+                    <tr>
+                        <td>async/await</td>
+                        <td>Permite trabalhar com código assíncrono de forma síncrona.</td>
+                    </tr>
+                </tbody>
             </table>
 
-            <hr />
-
-            <h3>3.1. Por que abandonamos o "var"? (O Problema do Hoisting)</h3>
+            <!-- Tipos de Dados -->
+            <h2>Tipos de Dados</h2>
             <p>
-              O <code>var</code> não respeita blocos de código (como
-              <code>if</code>, <code>for</code> ou <code>while</code>). Ele
-              "vaza" para fora deles. Além disso, ele sofre de
-              <strong>Hoisting</strong> (içamento), onde o JavaScript move a
-              declaração para o topo do código, mas não o valor.
-            </p>
-            <p><strong>Veja o bug que isso causa:</strong></p>
-            <pre><code>console.log(mensagem); // Saída: undefined (Não dá erro, mas não tem valor!)
-var mensagem = "Olá!";
-
-// Exemplo de Vazamento de Escopo
-if (true) {
-    var segredo = "1234";
-}
-console.log(segredo); // Saída: "1234" (O segredo vazou do if!)</code></pre>
-            <p>
-              <strong>Quando usar <code>var</code> hoje em dia?</strong><br />
-              Praticamente nunca em projetos novos. Ele é mantido na linguagem
-              apenas para que sites antigos criados nos anos 2000 continuem
-              funcionando.
-            </p>
-
-            <h3>3.2. A Revolução do Escopo de Bloco (let e const)</h3>
-            <p>
-              Diferente do <code>var</code>, o <code>let</code> e o
-              <code>const</code> nascem e morrem dentro do par de chaves
-              <code>{}</code> onde foram criados. Isso evita conflitos de nomes
-              e torna o código mais seguro.
-            </p>
-            <pre><code>if (true) {
-    let nome = "Ana";
-    const idade = 25;
-}
-
-console.log(nome); // Erro: nome is not defined
-// Isso é ÓTIMO! Garante que variáveis auxiliares não sujem o resto do código.</code></pre>
-
-            <hr />
-
-            <h3>3.3. O Poder do "const" e o Mito da Imutabilidade</h3>
-            <p>
-              Muitos iniciantes acham que <code>const</code> deixa o valor
-              totalmente congelado. Isso é verdade para tipos primitivos
-              (números, strings), mas
-              <strong>não para Objetos e Arrays</strong>.
-            </p>
-            <p>
-              O <code>const</code> protege a <strong>referência</strong> (o
-              endereço de memória), não o conteúdo.
-            </p>
-            <pre><code>const usuario = { nome: "Carlos" };
-
-// ISSO É PERMITIDO: Alterar propriedades internas
-usuario.nome = "Roberto"; 
-console.log(usuario.nome); // "Roberto"
-
-// ISSO É PROIBIDO: Tentar trocar o objeto inteiro
-usuario = { nome: "Maria" }; // Erro: Assignment to constant variable.</code></pre>
-
-            <hr />
-
-            <h3>3.4. Aplicação Prática: Variáveis em Funções e Classes</h3>
-            <p>
-              Saber declarar variáveis soltas é fácil. O desafio é usá-las
-              dentro de estruturas complexas. Veja como aplicar as boas práticas
-              em um cenário real:
-            </p>
-
-            <h4>Em uma Função (Iteração e Lógica)</h4>
-            <pre><code>function calcularTotal(precos) {
-    // 1. Use const para o que não vai mudar de tipo/referência
-    const taxa = 1.1; 
-    let total = 0; // 2. Use let para acumuladores que vão mudar
-
-    for (let i = 0; i < precos.length; i++) {
-        // O 'i' precisa ser let pois muda a cada volta
-        total += precos[i];
-    }
-
-    return total * taxa;
-}</code></pre>
-
-            <h4>Em uma Classe (POO Moderna)</h4>
-            <pre><code>class ContaBancaria {
-    // Variável de Classe (Propriedade Pública)
-    banco = "Nubank";
-
-    constructor(saldoInicial) {
-        // Variável de Instância (só existe neste objeto)
-        this.saldo = saldoInicial;
-    }
-
-    depositar(valor) {
-        // Variável Local (nasce e morre nesta função)
-        const novoSaldo = this.saldo + valor;
-        this.saldo = novoSaldo;
-    }
-}</code></pre>
-
-            <h3>Resumo da Regra de Ouro:</h3>
-            <p>
-              Para ter um código limpo e aprovado em code reviews (e pelo
-              algoritmo do Google):
-            </p>
-            <ol>
-              <li>
-                Use <strong><code>const</code></strong> por padrão (95% do seu
-                código).
-              </li>
-              <li>
-                Use <strong><code>let</code></strong> apenas se você
-                <em>realmente</em> precisar reatribuir o valor (ex: contadores,
-                loops).
-              </li>
-              <li>
-                Esqueça que o <strong><code>var</code></strong> existe.
-              </li>
-            </ol>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>4. Tipos de Dados: Primitivos vs. Referência</h2>
-            <p>
-              O JavaScript possui <strong>tipagem dinâmica</strong>, o que
-              significa que uma variável não fica "presa" a um tipo específico.
-              Porém, entender como esses dados são armazenados na memória é o
-              que evita bugs catastróficos em produção.
-            </p>
-            <p>
-              Basicamente, dividimos os dados em duas categorias de
-              armazenamento:
-            </p>
-
-            <hr />
-
-            <h3>4.1. Tipos Primitivos (Valores Imutáveis)</h3>
-            <p>
-              Os tipos primitivos são dados simples. Eles são armazenados
-              diretamente na <strong>Memória Stack</strong> (pilha), que é super
-              rápida. Quando você manipula um primitivo, você manipula o
-              <strong>valor</strong> real.
-            </p>
-
-            <h4>1. String (Texto)</h4>
-            <p>
-              Representa sequências de caracteres. Pode ser declarada com aspas
-              simples <code>'</code>, duplas <code>"</code> ou, modernamente,
-              com crases <code>`</code> (Template Literals).
+                JavaScript é uma linguagem de tipagem dinâmica, o que significa que os tipos de dados são inferidos automaticamente. Aqui estão os principais tipos de dados:
             </p>
             <ul>
-              <li>
-                <strong>Dica Pro:</strong> Prefira sempre usar crases. Elas
-                permitem interpolar variáveis diretamente.
-              </li>
-              <li>
-                <em>Exemplo:</em> <code>const saudacao = `Olá, ${nome}`;</code>
-              </li>
+                <li><strong>string:</strong> Representa valores de texto, como "Olá, mundo!".</li>
+                <li><strong>number:</strong> Representa números inteiros ou decimais, como 42 ou 3.14.</li>
+                <li><strong>boolean:</strong> Representa valores verdadeiros ou falsos (true ou false).</li>
+                <li><strong>null:</strong> Representa a ausência intencional de valor.</li>
+                <li><strong>undefined:</strong> Representa uma variável que não foi inicializada.</li>
+                <li><strong>object:</strong> Representa uma coleção de propriedades e valores.</li>
+                <li><strong>array:</strong> Representa uma lista ordenada de valores.</li>
             </ul>
 
-            <h4>2. Number (Números)</h4>
+            <!-- Estruturas de Dados -->
+            <h2>Estruturas de Dados</h2>
             <p>
-              Diferente de outras linguagens que separam
-              <code>int</code> (inteiro) e <code>float</code> (decimal), no JS
-              <strong>tudo é number</strong> (ponto flutuante de 64 bits).
-            </p>
-            <ul>
-              <li>
-                <strong>Atenção:</strong> Cuidado com imprecisões decimais. Em
-                JS, <code>0.1 + 0.2</code> não resulta em exatamente
-                <code>0.3</code>.
-              </li>
-              <li>
-                Existe também o valor especial <strong>NaN</strong> (Not a
-                Number), que aparece quando você tenta fazer matemática com algo
-                que não é número (ex: <code>"texto" / 2</code>).
-              </li>
-            </ul>
-
-            <h4>3. Boolean (Lógico)</h4>
-            <p>
-              A base da lógica de programação. Só possui dois valores possíveis:
-              <code>true</code> (verdadeiro) ou <code>false</code> (falso). É
-              usado em estruturas condicionais (if/else).
+                JavaScript oferece suporte a várias estruturas de dados, como arrays e objetos. Veja exemplos abaixo:
             </p>
 
-            <h4>4. Undefined (Indefinido)</h4>
-            <p>
-              É o valor padrão de uma variável que foi declarada, mas não
-              inicializada. Significa: "O sistema sabe que isso existe, mas
-              ainda não tem valor".
-            </p>
+            <h3>Arrays</h3>
+            <pre><code>let numeros = [1, 2, 3];
+let frutas = ["maçã", "banana", "laranja"];</code></pre>
 
-            <h4>5. Null (Nulo)</h4>
-            <p>
-              É uma ausência de valor <strong>intencional</strong>. Significa:
-              "Eu, programador, declaro que esta variável está vazia de
-              propósito". É muito usado para "limpar" uma variável ou indicar
-              que um objeto ainda não foi carregado.
-            </p>
-
-            <h4>Aplicação Prática: Primitivos em uma Classe</h4>
-            <pre><code>class Produto {
-    constructor(nome, preco) {
-        this.nome = nome;        // String
-        this.preco = preco;      // Number
-        this.estoque = true;     // Boolean
-        this.descricao = null;   // Null (será preenchido depois)
-    }
-
-    exibirDados() {
-        // Uso de Template String
-        return `O produto ${this.nome} custa R$${this.preco}`;
-    }
-}</code></pre>
-
-            <hr />
-
-            <h3>4.2. Tipos de Referência (Objetos Mutáveis)</h3>
-            <p>
-              Aqui mora o perigo para iniciantes. Objetos, Arrays e Funções são
-              <strong>Tipos de Referência</strong>. Eles são grandes e
-              complexos, por isso não cabem na Stack. Eles ficam na
-              <strong>Memória Heap</strong>.
-            </p>
-            <p>
-              A variável, na verdade, não guarda o objeto. Ela guarda apenas um
-              <strong>Endereço de Memória</strong> (um ponteiro) que diz onde o
-              objeto está guardado.
-            </p>
-
-            <h4>O Problema da Cópia (Mutação)</h4>
-            <p>
-              Quando você tenta copiar um objeto usando <code>=</code>, você não
-              está copiando os dados. Você está copiando o endereço. Isso
-              significa que ambas as variáveis apontam para o
-              <strong>mesmo lugar</strong>.
-            </p>
-
-            <pre><code>// 1. Criamos um objeto na memória HEAP
-const carroOriginal = { 
-    modelo: "Fusca", 
-    ano: 1980 
-};
-
-// 2. Aqui NÃO criamos um novo carro. Apenas copiamos o endereço.
-const carroNovo = carroOriginal; 
-
-// 3. Alteramos o 'carroNovo'
-carroNovo.modelo = "Ferrari";
-
-// 4. O RESULTADO SURPREENDENTE:
-console.log(carroOriginal.modelo); 
-// Saída: "Ferrari" -> O original foi alterado!</code></pre>
-
-            <h4>Como copiar corretamente? (Imutabilidade)</h4>
-            <p>
-              Para evitar esse "bug de referência", usamos o
-              <strong>Spread Operator</strong> (<code>...</code>) para criar uma
-              cópia real em um novo espaço de memória.
-            </p>
-            <pre><code>const carroSeguro = { ...carroOriginal }; // Cria uma cópia nova
-carroSeguro.modelo = "Tesla";
-
-console.log(carroOriginal.modelo); // "Fusca" (O original está seguro!)</code></pre>
-
-            <p>
-              Dominar essa distinção entre valor (Stack) e referência (Heap) é o
-              que permite manipular grandes volumes de dados (como listas de
-              usuários ou carrinhos de compra) sem causar efeitos colaterais
-              indesejados na sua aplicação.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>5. Funções: O Coração da Linguagem</h2>
-            <p>
-              Em JavaScript, funções são blocos de código reutilizáveis
-              projetados para executar uma tarefa específica. Elas evitam a
-              repetição (seguindo o princípio DRY -
-              <em>Don't Repeat Yourself</em>) e organizam a lógica do sistema.
-            </p>
-            <p>
-              O JS trata funções como
-              <strong>"Cidadãos de Primeira Classe"</strong>. Isso significa que
-              uma função pode ser:
-            </p>
-            <ul>
-              <li>Armazenada em uma variável.</li>
-              <li>Passada como argumento para outra função (Callback).</li>
-              <li>Retornada por outra função.</li>
-            </ul>
-
-            <hr />
-
-            <h3>5.1. Function Declaration (O Modo Clássico)</h3>
-            <p>
-              É a forma tradicional. Sua principal característica é o
-              <strong>Hoisting</strong> (Içamento). O JavaScript "lê" essas
-              funções antes de executar o código, permitindo que você chame a
-              função antes mesmo de declará-la.
-            </p>
-
-            <h4>Tutorial Prático: Criando uma Calculadora de IMC</h4>
-            <pre><code>// 1. A chamada funciona mesmo antes da declaração (Hoisting)
-const resultado = calcularIMC(80, 1.75);
-console.log(resultado); 
-
-// 2. A Declaração da Função
-function calcularIMC(peso, altura) {
-    // Escopo: O 'this' aqui depende de QUEM chamou a função
-    const imc = peso / (altura * altura);
-    return imc.toFixed(2);
-}</code></pre>
-            <p>
-              <strong>Quando usar?</strong> Quando você precisa de flexibilidade
-              na ordem do código ou precisa acessar o contexto
-              (<code>this</code>) dinâmico do elemento HTML que disparou um
-              evento.
-            </p>
-
-            <hr />
-
-            <h3>5.2. Arrow Functions (O Padrão Moderno ES6)</h3>
-            <p>
-              Introduzidas em 2015, as Arrow Functions (<code>=></code>) não são
-              apenas uma maneira "bonita" ou curta de escrever código. Elas
-              mudaram a forma como lidamos com o escopo.
-            </p>
-
-            <h4>As 3 Vantagens Técnicas:</h4>
-            <ol>
-              <li>
-                <strong>Sintaxe Limpa:</strong> Se tiver apenas um parâmetro,
-                não precisa de parênteses. Se tiver apenas uma linha, não
-                precisa de <code>return</code> nem chaves
-                <code>{}</code> (Retorno Implícito).
-              </li>
-              <li>
-                <strong>Não sofrem Hoisting:</strong> Você é obrigado a declarar
-                a função antes de usá-la. Isso evita bagunça no código.
-              </li>
-              <li>
-                <strong>Escopo Léxico do 'this' (O Diferencial Real):</strong>
-                Elas não criam seu próprio contexto. Elas herdam o
-                <code>this</code> do pai. Isso é crucial para bibliotecas como
-                React.
-              </li>
-            </ol>
-
-            <h4>Tutorial Prático: Filtrando Dados com Arrow Function</h4>
-            <p>
-              Vamos imaginar que temos uma lista de preços e queremos aplicar um
-              desconto apenas nos produtos caros. Veja como a Arrow Function
-              torna isso elegante:
-            </p>
-
-            <pre><code>const precos = [10, 50, 200, 5, 100];
-
-// Versão Antiga (Verborrágica)
-const carosAntigo = precos.filter(function(preco) {
-    return preco > 40;
-});
-
-// Versão Arrow Function (One-Liner)
-// Lê-se: "Para cada preço, mantenha se preço for maior que 40"
-const carosModerno = precos.filter(preco => preco > 40);
-
-console.log(carosModerno); // Saída: [50, 200, 100]</code></pre>
-
-            <hr />
-
-            <h3>5.3. Comparativo Visual e Técnico</h3>
-            <p>Entenda as diferenças para saber qual escolher:</p>
-
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Característica</th>
-                  <th>Function (Clássica)</th>
-                  <th>Arrow Function (Moderna)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Sintaxe</strong></td>
-                  <td><code>function x() {}</code></td>
-                  <td><code>const x = () => {}</code></td>
-                </tr>
-                <tr>
-                  <td><strong>Hoisting</strong></td>
-                  <td>Sim (pode chamar antes)</td>
-                  <td>Não (dá erro se chamar antes)</td>
-                </tr>
-                <tr>
-                  <td><strong>Contexto (this)</strong></td>
-                  <td>Dinâmico (varia conforme a chamada)</td>
-                  <td>Léxico (fixo, herda do pai)</td>
-                </tr>
-                <tr>
-                  <td><strong>Retorno</strong></td>
-                  <td>Exige <code>return</code> explícito</td>
-                  <td>Pode ser implícito (sem chaves)</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h4>O Erro Comum do "this" (Demonstração)</h4>
-            <p>
-              Muitos iniciantes erram ao usar Arrow Functions dentro de Objetos.
-              Veja por que:
-            </p>
-            <pre><code>const pessoa = {
+            <h3>Objetos</h3>
+            <pre><code>let pessoa = {
     nome: "João",
-    // Errado: Arrow Function aqui herda o 'this' global (window), não o objeto
-    falarArrow: () => console.log(`Oi, eu sou ${this.nome}`),
-    
-    // Certo: Função comum cria o escopo no objeto
-    falarComum: function() { console.log(`Oi, eu sou ${this.nome}`) }
-};
+    idade: 25,
+    ativo: true
+};</code></pre>
 
-pessoa.falarArrow(); // Saída: "Oi, eu sou undefined"
-pessoa.falarComum(); // Saída: "Oi, eu sou João"</code></pre>
-
+            <!-- Funções -->
+            <h2>Funções</h2>
             <p>
-              <strong>Conclusão:</strong> Use
-              <strong>Arrow Functions</strong> para cálculos, callbacks de array
-              (map, filter) e React. Use
-              <strong>Funções Clássicas</strong> quando estiver criando métodos
-              dentro de objetos puros.
+                Funções são blocos de código reutilizáveis que podem ser chamados em diferentes partes do programa. Veja um exemplo:
             </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>6. Manipulação de Arrays (High Order Functions)</h2>
-            <p>
-              No desenvolvimento Front-End moderno, 90% do seu trabalho será
-              pegar dados brutos (vindos de um banco de dados) e transformá-los
-              em algo visual para o usuário. É aqui que entram as
-              <strong>High Order Functions</strong>.
-            </p>
-            <p>
-              Diferente do loop <code>for</code> tradicional, essas funções
-              promovem a <strong>Imutabilidade</strong>. Elas não alteram a
-              lista original; elas criam uma <strong>nova lista</strong> com as
-              modificações, o que evita bugs e deixa o código mais seguro e
-              previsível.
-            </p>
-
-            <hr />
-
-            <h3>6.1. O Método .map() (A Fábrica de Transformação)</h3>
-            <p>
-              <strong>O que é?</strong> O <code>.map()</code> percorre cada item
-              da sua lista, aplica uma transformação e devolve uma nova lista
-              com <strong>exatamente o mesmo tamanho</strong> da original.
-            </p>
-            <p>
-              <strong>Analogia:</strong> Imagine uma fábrica. Entra metal bruto,
-              sai uma peça pronta. Se entrarem 10 pedaços de metal, sairão 10
-              peças. Nada é perdido, apenas transformado.
-            </p>
-            <p>
-              <strong>Exemplo Prático:</strong> Converter preços de Dólar para
-              Real.
-            </p>
-            <pre><code>const precosDolar = [10, 20, 30];
-
-// Sintaxe: array.map( (item) => transformação )
-const precosReal = precosDolar.map((preco) => {
-    return preco * 5.50; // Cotação do dia
-});
-
-console.log(precosReal); // Saída: [55, 110, 165]
-// Note que 'precosDolar' continua intacto!</code></pre>
-            <p>
-              <strong>Quando usar?</strong> Sempre que você quiser "traduzir"
-              dados. Exemplo: Pegar uma lista de objetos de usuários e criar uma
-              lista apenas com os e-mails deles.
-            </p>
-
-            <hr />
-
-            <h3>6.2. O Método .filter() (O Segurança da Balada)</h3>
-            <p>
-              <strong>O que é?</strong> O <code>.filter()</code> serve para
-              filtrar dados. Ele analisa cada item e decide se ele fica ou sai
-              da lista baseada em uma condição (Verdadeiro ou Falso). O
-              resultado é uma lista <strong>menor ou igual</strong> à original.
-            </p>
-            <p>
-              <strong>Analogia:</strong> Pense num segurança de festa. Ele olha
-              a identidade de cada pessoa. Se for maior de 18, entra (True). Se
-              não, fica de fora (False).
-            </p>
-            <p>
-              <strong>Exemplo Prático:</strong> Remover tarefas já concluídas de
-              uma lista.
-            </p>
-            <pre><code>const tarefas = [
-    { id: 1, texto: "Estudar JS", feita: true },
-    { id: 2, texto: "Ir na academia", feita: false },
-    { id: 3, texto: "Ler um livro", feita: false }
-];
-
-// Queremos apenas as tarefas PENDENTES (feita === false)
-const pendentes = tarefas.filter((tarefa) => {
-    return tarefa.feita === false;
-});
-
-console.log(pendentes); 
-// Saída: Apenas os objetos das tarefas 2 e 3.</code></pre>
-            <p>
-              <strong>Quando usar?</strong> Para sistemas de busca, exclusão de
-              itens ou categorização (ex: mostrar apenas produtos da categoria
-              "Eletrônicos").
-            </p>
-
-            <hr />
-
-            <h3>6.3. O Método .reduce() (O Acumulador)</h3>
-            <p>
-              <strong>O que é?</strong> Este é o mais poderoso e o que mais
-              assusta os alunos. O <code>.reduce()</code> pega uma lista inteira
-              e a reduz a um <strong>único valor</strong> (pode ser um número,
-              uma string ou um objeto).
-            </p>
-            <p>
-              <strong>Analogia:</strong> Imagine um caixa de supermercado. Ele
-              passa vários produtos (a lista), mas no final, ele te entrega
-              apenas um valor total a pagar.
-            </p>
-            <p>
-              <strong>Como funciona?</strong> Ele precisa de dois parâmetros
-              principais:
-            </p>
-            <ol>
-              <li>
-                <strong>Acumulador:</strong> O valor total que está sendo somado
-                a cada volta.
-              </li>
-              <li><strong>Atual:</strong> O item que está sendo lido agora.</li>
-            </ol>
-
-            <p>
-              <strong>Exemplo Prático:</strong> Somar o total de um carrinho de
-              compras.
-            </p>
-            <pre><code>const carrinho = [
-    { nome: "Teclado", preco: 100 },
-    { nome: "Mouse", preco: 50 },
-    { nome: "Monitor", preco: 500 }
-];
-
-// Sintaxe: array.reduce( (acumulador, itemAtual) => logica, valorInicial )
-const total = carrinho.reduce((acumulado, item) => {
-    return acumulado + item.preco;
-}, 0); // <--- O '0' é onde a conta começa
-
-console.log(total); // Saída: 650</code></pre>
-
-            <p><strong>Passo a Passo da Execução:</strong></p>
-            <ul>
-              <li>Volta 1: Acumulado (0) + Teclado (100) = 100</li>
-              <li>Volta 2: Acumulado (100) + Mouse (50) = 150</li>
-              <li>
-                Volta 3: Acumulado (150) + Monitor (500) = 650 (Resultado Final)
-              </li>
-            </ul>
-
-            <p>
-              Dominar esses três métodos é fundamental. Eles permitem escrever
-              códigos limpos, elegantes e fáceis de dar manutenção, substituindo
-              dezenas de linhas de loops complexos.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>7. O DOM: A Ponte entre Código e Interface</h2>
-            <p>
-              O <strong>DOM (Document Object Model)</strong> não é o HTML, e
-              também não é o JavaScript. Ele é uma
-              <strong>API (Interface de Programação)</strong> que funciona como
-              um "tradutor".
-            </p>
-            <p>
-              Quando o navegador carrega sua página, ele converte seu HTML
-              (texto estático) em uma <strong>Árvore de Objetos</strong> viva na
-              memória. O JavaScript usa o DOM para acessar essa árvore e
-              modificar a página em tempo real, sem precisar recarregar.
-            </p>
-
-            <p>Imagine que o DOM é uma árvore genealógica:</p>
-            <ul>
-              <li>
-                <strong>Window:</strong> O "Deus" de tudo (a aba do navegador).
-              </li>
-              <li><strong>Document:</strong> A página web em si.</li>
-              <li>
-                <strong>Element (Nós):</strong> Cada tag HTML (`div`, `p`,
-                `body`) é um "nó" dessa árvore.
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>7.1. A Arte da Seleção: Encontrando Elementos</h3>
-            <p>
-              Antes de alterar algo, você precisa encontrá-lo. Antigamente,
-              usávamos <code>getElementById</code>, mas hoje temos métodos muito
-              mais poderosos inspirados no CSS.
-            </p>
-
-            <h4>A) document.querySelector() (O Sniper)</h4>
-            <p>
-              Este método busca com precisão cirúrgica. Ele aceita
-              <strong>qualquer seletor CSS</strong> (IDs, classes, tags,
-              atributos) e retorna apenas o <strong>PRIMEIRO</strong> elemento
-              que encontrar na árvore, de cima para baixo.
-            </p>
-            <p>
-              <strong>Exemplo Prático:</strong> Imagine que você quer alterar o
-              título de um cartão específico.
-            </p>
-            <pre><code>// HTML: &lt;h1 class="titulo"&gt;Texto Antigo&lt;/h1&gt;
-
-// 1. Selecionando pela classe (note o ponto final, igual no CSS)
-const meuTitulo = document.querySelector('.titulo');
-
-// 2. Modificando o conteúdo
-meuTitulo.textContent = "Texto Novo via JS!";
-
-// 3. Modificando o estilo diretamente
-meuTitulo.style.color = "blue";</code></pre>
-            <p>
-              <em>Dica de Performance:</em> Como ele para na primeira
-              correspondência, ele é muito rápido para elementos únicos.
-            </p>
-
-            <h4>B) document.querySelectorAll() (A Rede de Pesca)</h4>
-            <p>
-              E se você quiser mudar a cor de <strong>todos</strong> os
-              parágrafos de um site? O <code>querySelector</code> pegaria apenas
-              o primeiro. Para pegar todos, usamos o
-              <code>querySelectorAll</code>.
-            </p>
-            <p>
-              <strong>Atenção (Conceito Avançado):</strong> Ele não retorna um
-              "Array" comum. Ele retorna uma <strong>NodeList</strong>. Embora
-              pareça um array, ela não tem todos os métodos (como
-              <code>map</code> ou <code>filter</code>), mas possui o
-              <code>forEach</code>.
-            </p>
-
-            <p><strong>Tutorial Prático: Modo Noturno em Parágrafos</strong></p>
-            <pre><code>// 1. Pega TODOS os elementos &lt;p&gt; da página
-const todosParagrafos = document.querySelectorAll('p');
-
-// O console mostrará: NodeList(5) [p, p, p, p, p]
-console.log(todosParagrafos);
-
-// 2. Usamos forEach para aplicar a mudança em CADA um deles
-todosParagrafos.forEach((paragrafo) => {
-    paragrafo.style.backgroundColor = "#333"; // Fundo escuro
-    paragrafo.style.color = "#FFF";           // Texto branco
-    paragrafo.innerText += " (Lido)";         // Adiciona texto
-});</code></pre>
-
-            <hr />
-
-            <h3>7.2. Manipulação Segura e Performance</h3>
-            <p>
-              Saber selecionar é fácil. O segredo está em como alterar o
-              elemento sem quebrar o site ou criar brechas de segurança.
-            </p>
-
-            <h4>Mudar Texto: textContent vs innerHTML</h4>
-            <p>Esta é uma distinção que separa juniores de seniores:</p>
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Comando</th>
-                  <th>O que faz?</th>
-                  <th>Segurança</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>element.textContent</code></td>
-                  <td>Insere apenas texto puro.</td>
-                  <td><strong>Seguro.</strong> Ignora tags HTML maliciosas.</td>
-                </tr>
-                <tr>
-                  <td><code>element.innerHTML</code></td>
-                  <td>Processa tags HTML.</td>
-                  <td>
-                    <strong>Perigoso (XSS).</strong> Se o usuário inserir um
-                    script aqui, ele será executado.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h4>A Forma Correta de Alterar Estilos</h4>
-            <p>
-              Evite encher seu JavaScript de linhas <code>style.color</code>,
-              <code>style.margin</code>, etc. Isso mistura lógica com design.
-            </p>
-            <p>
-              <strong>A Boa Prática:</strong> Use o
-              <strong>classList</strong> para adicionar ou remover classes CSS
-              inteiras.
-            </p>
-
-            <pre><code>const botao = document.querySelector('#meuBotao');
-
-// RUIM (Difícil de manter):
-// botao.style.backgroundColor = "red";
-// botao.style.fontSize = "20px";
-
-// BOM (Profissional):
-// Adiciona uma classe que já existe no seu arquivo CSS
-botao.classList.add('botao-ativo');
-
-// Para criar interatividade (toggle liga/desliga a classe)
-botao.classList.toggle('modo-escuro');</code></pre>
-
-            <p>
-              Dominar o DOM é o passo final antes de entrar em bibliotecas como
-              React. Lembre-se: O React nada mais é do que uma forma
-              automatizada e eficiente de fazer exatamente o que vimos acima:
-              selecionar e alterar nós do DOM.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>8. Projeto Prático: Construindo sua Primeira Web App</h2>
-            <p>
-              Chegou a hora de sair da teoria. Vamos construir um
-              <strong>Gerenciador de Tarefas (To-Do List)</strong> funcional.
-              Mas antes de digitar o código, você precisa entender como uma
-              aplicação web é estruturada.
-            </p>
-
-            <hr />
-
-            <h3>8.1. A Trindade da Web: HTML, CSS e JS</h3>
-            <p>
-              Uma aplicação web funciona como o corpo humano. Para que ela
-              exista e interaja, precisamos de três camadas trabalhando juntas:
-            </p>
-
-            <ul>
-              <li>
-                <strong>HTML (O Esqueleto):</strong> É a estrutura. Ele define o
-                que existe na tela (um botão, um campo de texto, uma lista). Sem
-                ele, não há conteúdo.
-              </li>
-              <li>
-                <strong>CSS (A Aparência):</strong> É a pele e as roupas. Ele
-                define as cores, espaçamentos e fontes. Sem ele, a página seria
-                feia e desorganizada.
-              </li>
-              <li>
-                <strong>JavaScript (O Cérebro):</strong> É o comportamento. Ele
-                "ouve" o clique do usuário e decide o que fazer (adicionar um
-                item, apagar, marcar como feito). Sem ele, a página seria
-                estática.
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>8.2. Preparando o Ambiente (Passo a Passo)</h3>
-            <p>
-              Para começar, crie uma pasta no seu computador chamada
-              <code>meu-projeto-js</code>. Dentro dela, crie três arquivos
-              vazios:
-            </p>
-            <ol>
-              <li><code>index.html</code></li>
-              <li><code>style.css</code></li>
-              <li><code>script.js</code></li>
-            </ol>
-
-            <h4>Passo 1: A Estrutura (HTML)</h4>
-            <p>
-              Abra o <code>index.html</code>. Aqui, criaremos os elementos
-              visuais e faremos a ligação (link) com os outros dois arquivos.
-            </p>
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="pt-br"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Minha Lista de Tarefas&lt;/title&gt;
-    &lt;!-- LIGANDO O CSS --&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;div class="todo-app"&gt;
-        &lt;h2&gt;Minhas Tarefas&lt;/h2&gt;
-        &lt;input type="text" id="taskInput" placeholder="O que precisa ser feito?"&gt;
-        &lt;button id="addTaskBtn"&gt;Adicionar&lt;/button&gt;
-        
-        &lt;!-- A lista começa vazia. O JS vai preencher isso aqui. --&gt;
-        &lt;ul id="taskList"&gt;&lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;!-- LIGANDO O JAVASCRIPT (Sempre no final do body) --&gt;
-    &lt;script src="script.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-            <h4>Passo 2: O Estilo (CSS)</h4>
-            <p>
-              No arquivo <code>style.css</code>, vamos definir uma classe visual
-              importante. O JavaScript vai adicionar e remover essa classe para
-              riscar a tarefa.
-            </p>
-            <pre><code>body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-/* Esta classe será ativada pelo JavaScript */
-.completed {
-    text-decoration: line-through; /* Risco no texto */
-    color: gray;
-    opacity: 0.6;
-}
-
-li {
-    cursor: pointer;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
+            <pre><code>function saudacao(nome) {
+    return `Olá, ${nome}!`;
 }</code></pre>
 
-            <h4>Passo 3: A Lógica (JavaScript)</h4>
+            <h3>Funções Anônimas e Arrow Functions</h3>
+            <pre><code>// Função anônima
+let soma = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+let multiplicacao = (a, b) => a * b;</code></pre>
+
+            <!-- Classes e POO -->
+            <h2>Classes e POO</h2>
             <p>
-              Agora, no <code>script.js</code>, a mágica acontece. O código
-              abaixo captura o clique e manipula o DOM (o HTML) em tempo real.
+                JavaScript suporta programação orientada a objetos (POO) com classes e herança. Veja um exemplo:
             </p>
-            <pre><code>// 1. CACHE DO DOM: Selecionamos os elementos que vamos usar
-const input = document.getElementById('taskInput');
-const btn = document.getElementById('addTaskBtn');
-const list = document.getElementById('taskList');
-
-// 2. FUNÇÃO PRINCIPAL: O que acontece ao adicionar?
-function handleAddTask() {
-    const textoDigitado = input.value;
-
-    // Validação: Se estiver vazio, para a execução aqui.
-    if (textoDigitado === "") {
-        alert("Por favor, digite uma tarefa!");
-        return;
+            <pre><code>class Animal {
+    constructor(nome) {
+        this.nome = nome;
     }
-
-    // A. Criar o elemento &lt;li&gt; do zero
-    const novoItem = document.createElement('li');
-    novoItem.innerText = textoDigitado;
-
-    // B. Adicionar evento de "Concluir" (Risco no texto)
-    novoItem.addEventListener('click', function() {
-        // 'this' refere-se ao elemento clicado (o li)
-        this.classList.toggle('completed');
-    });
-
-    // C. Criar o botão de excluir
-    const botaoExcluir = document.createElement('button');
-    botaoExcluir.innerText = "X";
-    botaoExcluir.style.marginLeft = "10px";
-    
-    // D. Lógica de Exclusão (Conceito de Event Bubbling)
-    botaoExcluir.addEventListener('click', (evento) => {
-        // stopPropagation impede que o clique no "X" ative o "Concluir" do pai
-        evento.stopPropagation(); 
-        novoItem.remove(); // Remove o &lt;li&gt; da tela
-    });
-
-    // E. Montagem final: Coloca o botão dentro do item, e o item na lista
-    novoItem.appendChild(botaoExcluir);
-    list.appendChild(novoItem);
-
-    // F. Limpeza: Apaga o texto do input e foca nele para digitar a próxima
-    input.value = "";
-    input.focus();
+    falar() {
+        console.log(`${this.nome} faz um som.`);
+    }
 }
 
-// 3. GATILHO: Quando o botão for clicado, execute a função
-btn.addEventListener('click', handleAddTask);
+class Cachorro extends Animal {
+    latir() {
+        console.log(`${this.nome} late!`);
+    }
+}
 
-// Extra: Permitir adicionar apertando ENTER
-input.addEventListener('keypress', (e) => {
-    if(e.key === 'Enter') handleAddTask();
+let dog = new Cachorro("Rex");
+dog.falar();
+dog.latir();</code></pre>
+
+            <!-- Manipulação do DOM -->
+            <h2>Manipulação do DOM</h2>
+            <p>
+                O DOM (Document Object Model) é uma representação da estrutura de uma página web. Com JavaScript, você pode manipular o DOM para criar páginas dinâmicas. Veja um exemplo:
+            </p>
+            <pre><code>// Seleciona um elemento pelo ID
+let titulo = document.getElementById("titulo");
+
+// Altera o conteúdo do elemento
+titulo.textContent = "Olá, Mundo!";
+
+// Adiciona um evento de clique
+titulo.addEventListener("click", function() {
+    alert("Título clicado!");
 });</code></pre>
 
-            <hr />
-
-            <h3>8.3. Entendendo o Código (Deep Dive)</h3>
+            <!-- Conclusão -->
+            <h2>Conclusão</h2>
             <p>
-              Para que você aprenda de verdade, vamos dissecar duas partes
-              cruciais desse código que diferenciam programadores iniciantes:
-            </p>
-            <ul>
-              <li>
-                <strong>createElement vs innerHTML:</strong> Note que usamos
-                <code>document.createElement('li')</code>. Poderíamos ter usado
-                <code>list.innerHTML += ...</code>, mas isso recriaria toda a
-                lista a cada adição, deixando o site lento. Criar o elemento
-                isolado é mais performático e seguro.
-              </li>
-              <li>
-                <strong>Event Bubbling (stopPropagation):</strong> Quando você
-                coloca um botão DENTRO de um item clicável, clicar no botão
-                também aciona o clique do item. O comando
-                <code>e.stopPropagation()</code> diz ao navegador: "Pare o
-                clique aqui, não deixe subir para o elemento pai". Sem isso, ao
-                tentar excluir, você também riscaria a tarefa.
-              </li>
-            </ul>
-
-            <p>
-              Parabéns! Você acabou de criar uma aplicação
-              <strong>CRUD</strong> básica (Create, Read, Update, Delete) usando
-              apenas JavaScript puro.
-            </p>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>9. Conclusão: Sua Jornada de "Codificador" a "Engenheiro"</h2>
-            <p>
-              Chegamos ao fim deste guia definitivo. Se você leu e praticou os
-              exemplos até aqui, você já está à frente da maioria dos iniciantes
-              que apenas copiam e colam código sem entender o porquê.
+                JavaScript é uma linguagem poderosa e versátil, essencial para o desenvolvimento web moderno. Com ele, você pode criar páginas interativas, aplicações web completas, back-ends robustos e até aplicativos móveis.
             </p>
             <p>
-              Neste artigo, nós desconstruímos o JavaScript não apenas como uma
-              ferramenta, mas como uma peça de engenharia. Vamos recapitular os
-              pilares que você dominou hoje:
+                Seja você um iniciante ou um desenvolvedor experiente, dominar o JavaScript é fundamental para construir soluções modernas e eficientes. Continue explorando e aprimorando suas habilidades com essa incrível linguagem!
             </p>
-
-            <h3>Resumo do que foi aprendido:</h3>
-            <ul class="summary-list">
-              <li>
-                <strong>Arquitetura de Performance:</strong> Você aprendeu que o
-                JS é <em>Single-Threaded</em>, mas usa o <em>Event Loop</em> e
-                as <em>Web APIs</em> para não travar o navegador.
-              </li>
-              <li>
-                <strong>Gestão de Memória:</strong> Entendeu a diferença vital
-                entre a <em>Stack</em> (para primitivos rápidos) e a
-                <em>Heap</em> (para objetos e referências), evitando bugs de
-                mutação.
-              </li>
-              <li>
-                <strong>Sintaxe Moderna (ES6+):</strong> Substituiu o velho
-                <code>var</code> por <code>let/const</code> e aprendeu a
-                elegância e os perigos do <code>this</code> nas
-                <em>Arrow Functions</em>.
-              </li>
-              <li>
-                <strong>Poder dos Dados:</strong> Viu como manipular listas
-                complexas usando <em>Map</em>, <em>Filter</em> e
-                <em>Reduce</em>, a base para trabalhar com dados reais.
-              </li>
-              <li>
-                <strong>Manipulação do DOM:</strong> Aprendeu a "tocar" na
-                interface do usuário de forma performática e segura, evitando
-                falhas de segurança como XSS.
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>O Próximo Nível: Aplicações Reais e Conexão com o Mundo</h3>
-            <p>
-              Agora que você domina a base, qual é o próximo passo? A resposta
-              é: <strong>Comunicação de Dados (APIs)</strong>.
-            </p>
-            <p>
-              O projeto "To-Do List" que criamos roda apenas no seu navegador.
-              Se você recarregar a página, as tarefas somem. No mundo real, uma
-              aplicação JavaScript precisa persistir dados.
-            </p>
-
-            <h4>Onde aplicar o JavaScript agora?</h4>
-            <p>
-              O mercado atual exige que você saiba conectar seu Front-End a um
-              Back-End. Seu próximo desafio de estudo deve ser:
-            </p>
-            <ol>
-              <li>
-                <strong>Fetch API e AJAX:</strong> Aprender a buscar dados
-                externos (ex: consumir uma API de previsão do tempo ou de
-                cotação de moedas em tempo real).
-              </li>
-              <li>
-                <strong>JSON (JavaScript Object Notation):</strong> O formato
-                padrão mundial para troca de dados entre sistemas.
-              </li>
-              <li>
-                <strong>Frameworks (React, Vue ou Angular):</strong> Ferramentas
-                que automatizam a manipulação do DOM que aprendemos na seção 7,
-                permitindo criar aplicações gigantes como o Facebook ou a
-                Netflix.
-              </li>
-            </ol>
-
-            <p class="final-quote">
-              <strong>Lembre-se:</strong> Programação é uma maratona, não uma
-              corrida de 100 metros. O código que você escreve hoje é melhor que
-              o de ontem, e pior que o de amanhã. Continue praticando, quebre
-              seu código, conserte-o e construa coisas incríveis.
-            </p>
-          </section>
-        </main>
-      </section>
+        </section>
     </main>
 
     <!-- Rodapé -->
     <footer class="site-footer">
-      <p>&copy; 2025 Pcpropr.</p>
+        <p>&copy; 2025 Pcpropr.</p>
     </footer>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
-      crossorigin="anonymous"
-    ></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
+     crossorigin="anonymous"></script>
 
-    <script>
-      window.va =
-        window.va ||
-        function () {
-          (window.va.q = window.va.q || []).push(arguments);
-        };
+       <script>
+      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
     </script>
     <script src="/_vercel/insights/script.js" defer></script>
-  </body>
+</body>
 </html>

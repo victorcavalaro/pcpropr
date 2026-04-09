@@ -1,319 +1,635 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pcpropr - Tutoriais, documentações e artigos sobre desenvolvimento web, mobile e backend.">
-    <title>Pcpropr - O Seu Portal de Desenvolvimento</title>
-    
-    <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Pcpropr e PcproPay: organização financeira prática com artigos, provas e
+      educação | Pcpropr
+    </title>
+    <meta
+      name="description"
+      content="Nova página inicial do Pcpropr com foco total em mostrar como o PcproPay ajuda a organizar contas, ganhos, cartão, previsões e relatórios."
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
+    <meta name="theme-color" content="#111827" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Pcpropr e PcproPay: organização financeira prática com artigos, provas e educação | Pcpropr"
+    />
+    <meta
+      property="og:description"
+      content="Nova página inicial do Pcpropr com foco total em mostrar como o PcproPay ajuda a organizar contas, ganhos, cartão, previsões e relatórios."
+    />
+    <meta property="og:image" content="/assets/images/product-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pcpropr e PcproPay: organização financeira prática com artigos, provas e educação | Pcpropr"
+    />
+    <meta
+      name="twitter:description"
+      content="Nova página inicial do Pcpropr com foco total em mostrar como o PcproPay ajuda a organizar contas, ganhos, cartão, previsões e relatórios."
+    />
+    <meta name="twitter:image" content="/assets/images/product-cover.jpg" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/favicon.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-dark': '#0f172a',
-                        'brand-header': '#242424',
-                    }
-                }
-            }
-        }
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pcpropr",
+        "description": "Conteúdo sobre organização financeira com foco no uso do PcproPay.",
+        "inLanguage": "pt-BR"
+      }
     </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          href="/index.html"
+          class="brand"
+          aria-label="Ir para a página inicial do Pcpropr"
+        >
+          <img
+            src="/assets/images/logo-menu.png"
+            alt="Logo Pcpropr"
+            class="brand-logo"
+          />
+          <span class="brand-copy">
+            <strong>Pcpropr</strong>
+            <small>Entenda como funciona o PcproPay</small>
+          </span>
+        </a>
 
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .hero-bg {
-            background-image: url('/img/fundo desfocado.png');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-        /* Classe para limitar linhas de texto (estilo resumo de notícia) */
-        .line-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body class="bg-slate-900 text-gray-200 flex flex-col min-h-screen">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <span></span><span></span><span></span>
+          <span class="sr-only">Abrir menu</span>
+        </button>
 
-    <header class="bg-[#242424] text-white py-3 shadow-md z-50 sticky top-0">
-        <div class="max-w-[1100px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
-            <div class="flex items-center">
-                <a href="/index.html" class="hover:bg-white/10 p-1 rounded transition duration-300">
-                    <img src="/img/logo barra menu.png" alt="Pcpropr Logo" class="h-[40px] md:h-[50px] object-contain"/>
-                </a>
-            </div>
-
-            <nav class="w-full md:w-auto">
-                <ul class="flex flex-wrap justify-center gap-2 list-none p-0 m-0">
-                    <li><a href="/index.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition duration-300 text-sm font-medium text-white">Início</a></li>
-                    <li><a href="#tutoriais" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">Últimos Artigos</a></li>
-                    <li><a href="/paginas/documentacao/index.html" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">Tecnologias</a></li>
-                    <li><a href="https://pay.pcpropr.com.br/" target="_blank" class="bg-[#2c2c2c] hover:bg-[#1e1e1e] px-4 py-2 rounded-md transition duration-300 text-sm text-white">Pcpropay</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="site-nav" id="menu-principal" aria-label="Menu principal">
+          <ul>
+            <li><a href="/index.html" class="is-active">Início</a></li>
+            <li><a href="/paginas/artigos/index.html">Artigos</a></li>
+            <li>
+              <a href="/paginas/documentacao/index.html">Documentações</a>
+            </li>
+            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+            <li><a href="/paginas/contato/index.html">Contato</a></li>
+            <li>
+              <a
+                href="https://pay.pcpropr.com.br/"
+                class="nav-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Acessar PcproPay</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <section class="hero-bg py-20 md:py-28 text-white relative border-b border-gray-800">
-        <div class="absolute inset-0 bg-black/60 z-0"></div>
-        
-        <div class="max-w-[1100px] mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-10">
-            <div class="md:w-2/3">
-                <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Destaque da Semana</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Otimização de Performance em React: Guia Definitivo 2026</h1>
-                <p class="text-base md:text-xl font-light text-gray-200 mb-6 max-w-2xl">Descubra como reduzir o tempo de carregamento e melhorar a experiência do usuário utilizando as novas features do React e técnicas avançadas de memoization.</p>
-                <a href="/paginas/documentacao/documentacoes/react/react.html" class="inline-block bg-white text-slate-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition duration-300">Ler Matéria Completa</a>
+    <main id="conteudo" class="page-shell">
+      <section class="hero">
+        <div class="hero-inline-image">
+          <div>
+            <span class="eyebrow">Pcpropr + PcproPay</span>
+            <h1>
+              Conteúdo feito para mostrar como organizar sua vida financeira com
+              clareza.
+            </h1>
+            <p>
+              O Pcpropr tem como base mostrar como você pode utilizar o
+              <strong>PcproPay</strong> para ajustar a sua vida financeira, cada
+              artigo explica uma dor real do dia a dia financeiro e mostra, na
+              prática, como o sistema ajuda a organizar ganhos, contas, cartões,
+              previsões e relatórios.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="/paginas/artigos/index.html"
+                >Ver todos os artigos</a
+              >
+              <a
+                class="button button-secondary"
+                href="https://pay.pcpropr.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Abrir PcproPay</a
+              >
             </div>
-            <!-- <div class="hidden md:block md:w-1/3 bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl text-center">
-                <p class="text-sm text-gray-400 mb-2">Publicidade</p>
-                <div class="w-full h-[250px] bg-gray-700/50 rounded flex items-center justify-center">
-                    <span class="text-gray-500 text-xs">Espaço AdSense (300x250)</span>
-                </div> -->
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>10</strong
+                ><span>artigos publicados em ordem estratégica</span>
+              </div>
+              <div class="metric">
+                <strong>1 foco</strong
+                ><span>mostrar por que e como usar o PcproPay</span>
+              </div>
+              <div class="metric">
+                <strong>Base pronta</strong
+                ><span>para conteúdo, confiança e monetização</span>
+              </div>
             </div>
+          </div>
+          <div class="product-box">
+            <img
+              src="/assets/images/product-cover.jpg"
+              alt="Ilustração do produto PcproPay"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <main class="flex-grow bg-[#0f111a] py-16 relative overflow-hidden">
-        
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div class="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-600/05 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-600/05 rounded-full blur-[100px]"></div>
+      <!-- <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Nova proposta do site</p>
+            <h2>
+              O Pcpropr deixa de ser genérico e vira um canal centrado em dor
+              real e solução prática.
+            </h2>
+          </div>
+          <p>
+            Em vez de falar de tecnologia de forma ampla, o site passa a
+            responder dúvidas de quem quer sair do aperto, controlar cartão,
+            entender para onde o dinheiro foi, organizar contas mensais e usar o
+            PcproPay como ferramenta de apoio.
+          </p>
         </div>
 
-        <div class="max-w-[1100px] mx-auto px-6 relative z-10">
+        <div class="grid-3">
+          <article class="card">
+            <h3>Clareza do mês</h3>
+            <p>
+              O conteúdo passa a explicar como o painel do PcproPay ajuda a
+              enxergar receitas, pendências, vencidas e percentual comprometido
+              sem depender de planilhas soltas.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Rotina simples</h3>
+            <p>
+              Os artigos vendem rotina, não só função. Registrar ganhos,
+              atualizar contas, acompanhar a fatura e revisar o mês vira um
+              hábito replicável.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Conversão com contexto</h3>
+            <p>
+              Todo conteúdo foi desenhado para educar primeiro e converter
+              depois, evitando páginas rasas, promessas genéricas ou textos que
+              parecem só propaganda.
+            </p>
+          </article>
+        </div>
+      </section> -->
 
-            <div class="flex flex-col lg:flex-row gap-12">
+      <section class="section" id="funcionalidades">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Como o PcproPay ajuda</p>
+            <h2>
+              As principais funções do sistema que o site vai transformar em
+              conteúdo.
+            </h2>
+          </div>
+          <p>
+            Essas são as frentes do produto que aparecem tanto na navegação da
+            plataforma quanto na narrativa editorial do novo Pcpropr. Cada uma
+            delas vira argumento de valor e também prova prática dentro dos
+            artigos.
+          </p>
+        </div>
 
-                <div class="lg:w-3/4">
-                    
-                    <div id="tecnologias" class="mb-16">
-                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                            <span class="w-2 h-8 bg-blue-500 rounded-full"></span>
-                            Explore por Tecnologia
-                        </h2>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <a href="/paginas/documentacao/documentacoes/type/type.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-blue-500 transition group">
-                                <img src="/svg/ts.svg" alt="TS" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-blue-400">TypeScript</h3>
-                                    <p class="text-xs text-gray-400">Tipagem estática</p>
-                                </div>
-                            </a>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Dashboard financeiro</h3>
+            <p>
+              Resumo do mês com saldo projetado, receitas, pendências, vencidas
+              e percentual comprometido.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Ganhos e valor líquido</h3>
+            <p>
+              Registro de bruto, descontos e líquido para planejar o mês com
+              base no que realmente entrou.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Previsão de ganhos</h3>
+            <p>
+              Leitura antecipada do mês para ajustar decisões antes do aperto
+              financeiro acontecer.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Contas e despesas</h3>
+            <p>
+              Cadastro de contas fixas, variáveis e parceladas com vencimento e
+              status de pagamento.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Cartão de crédito</h3>
+            <p>
+              Acompanhamento de cartões, lançamentos, faturas e cobranças para
+              reduzir sustos no fechamento.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Relatórios</h3>
+            <p>
+              Leitura por período e por tipo de dado para tomar decisão com
+              números e não com achismo.
+            </p>
+          </article>
+        </div>
+      </section>
 
-                            <a href="/paginas/documentacao/documentacoes/react/react.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-cyan-500 transition group">
-                                <img src="/svg/react.svg" alt="React" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-cyan-400">React JS</h3>
-                                    <p class="text-xs text-gray-400">Frontend Moderno</p>
-                                </div>
-                            </a>
-
-                            <a href="/paginas/documentacao/documentacoes/java/java.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-red-500 transition group">
-                                <img src="/svg/java.svg" alt="Java" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-red-400">Java</h3>
-                                    <p class="text-xs text-gray-400">Backend Enterprise</p>
-                                </div>
-                            </a>
-
-                            <a href="/paginas/documentacao/documentacoes/docker/docker.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-blue-600 transition group">
-                                <img src="/svg/docker.svg" alt="Docker" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-blue-500">Docker</h3>
-                                    <p class="text-xs text-gray-400">DevOps & Containers</p>
-                                </div>
-                            </a>
-                            <a href="/paginas/documentacao/documentacoes/Javascript/javascript.html" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-yellow-600 transition group">
-                                <img src="/svg/js.svg" alt="JavaScript" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-yellow-500">JavaScript</h3>
-                                    <p class="text-xs text-gray-400">Automatize as suas ideias </p>
-                                </div>
-                            </a>
-                            <a href="/paginas/documentacao/documentacoes/banco de dados/banco.htm" class="flex items-center bg-[#1e2330] p-4 rounded-xl border border-gray-800 hover:border-gray-600 transition group">
-                                <img src="/svg/mysql.svg" alt="Banco de dados" class="w-10 h-10 mr-4 group-hover:scale-110 transition">
-                                <div>
-                                    <h3 class="font-semibold text-white group-hover:text-gray-500">Docker</h3>
-                                    <p class="text-xs text-gray-400">Armazenamento e segurança</p>
-                                </div>
-                            </a>
-                            
-                            <a href="/paginas/documentacao/index.html" class="flex items-center justify-center bg-gray-800/50 p-4 rounded-xl border border-dashed border-gray-700 hover:bg-gray-800 hover:text-white text-gray-400 transition">
-                                Ver todas as tecnologias →
-                            </a>
-                        </div>
-                    </div>
-
-                    <div id="tutoriais">
-                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                            <span class="w-2 h-8 bg-purple-500 rounded-full"></span>
-                            Últimas Atualizações
-                        </h2>
-
-                        <div class="space-y-6">
-                            <article class="bg-[#161b26] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition flex flex-col md:flex-row gap-6">
-                                <div class="w-full md:w-1/3 h-48 bg-gray-800 rounded-xl overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-900 to-slate-900 flex items-center justify-center text-gray-600 font-bold text-4xl"> <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-              alt="Logo Oficial JavaScript"
-              class="js-logo"
-            /></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-2 text-xs text-gray-400">
-                                        <span class="bg-yellow-500/10 text-yellow-500 px-2 py-1 rounded">JavaScript</span>
-                                        <span>• 05 Fev, 2026</span>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-white mb-2 hover:text-yellow-400 cursor-pointer">Manipulação de Arrays: Map, Filter e Reduce explicados</h3>
-                                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
-                                        Entenda de uma vez por todas como funcionam os métodos mais importantes do JavaScript moderno para manipulação de dados e pare de usar loops 'for' desnecessários.
-                                    </p>
-                                    <a href="/paginas/documentacao/documentacoes/Javascript/javascript.html" class="text-yellow-500 text-sm font-semibold hover:underline">Ler artigo completo</a>
-                                </div>
-                            </article>
-
-                            <article class="bg-[#161b26] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition flex flex-col md:flex-row gap-6">
-                                <div class="w-full md:w-1/3 h-48 bg-gray-800 rounded-xl overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center text-gray-600 font-bold text-4xl"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Logo Oficial Bootstrap" class="bs-logo"></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-2 text-xs text-gray-400">
-                                        <span class="bg-purple-500/10 text-purple-500 px-2 py-1 rounded">Bootstrap</span>
-                                        <span>• 02 Fev, 2026</span>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-white mb-2 hover:text-purple-400 cursor-pointer">Criando layouts responsivos em minutos</h3>
-                                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
-                                        Aprenda a utilizar o sistema de grid do Bootstrap 5 para criar interfaces que se adaptam perfeitamente a qualquer tamanho de tela sem escrever CSS customizado.
-                                    </p>
-                                    <a href="/paginas/documentacao/documentacoes/bootstrap/bootstrap.html" class="text-purple-500 text-sm font-semibold hover:underline">Ler artigo completo</a>
-                                </div>
-                            </article>
-                            <article class="bg-[#161b26] p-6 rounded-2xl border border-gray-800 hover:border-gray-600 transition flex flex-col md:flex-row gap-6">
-                                <div class="w-full md:w-1/3 h-48 bg-gray-800 rounded-xl overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center text-gray-600 font-bold text-4xl">   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="Logo Oficial TypeScript" class="ts-logo"></div>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-2 text-xs text-gray-400">
-                                        <span class="bg-purple-500/10 text-blue-500 px-2 py-1 rounded">TypeScript</span>
-                                        <span>• 13 Fev, 2026</span>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-white mb-2 hover:text-blue-400 cursor-pointer">TypeScript: A Evolução Necessária</h3>
-                                    <p class="text-gray-400 text-sm line-clamp-3 mb-4">
-                                        Pare de corrigir bugs em produção. Aprenda a tipagem estática e descubra por que os maiores projetos do mundo não usam mais JavaScript puro.
-                                    </p>
-                                    <a href="/paginas/documentacao/documentacoes/type/type.html" class="text-blue-500 text-sm font-semibold hover:underline">Ler artigo completo</a>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-
-                </div>
-
-                <aside class="lg:w-1/4 space-y-8">
-                    
-                    <div class="bg-[#1e2330] p-6 rounded-2xl border border-gray-800">
-                        <h3 class="text-lg font-bold text-white mb-4">Buscar</h3>
-                        <div class="relative">
-                            <input type="text" placeholder="O que você procura?" class="w-full bg-[#0f111a] border border-gray-700 rounded-lg py-2 px-4 text-sm text-gray-300 focus:outline-none focus:border-blue-500 transition">
-                        </div>
-                    </div>
-
-                    <div class="bg-[#1e2330] p-6 rounded-2xl border border-gray-800">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Mais Lidos</h3>
-                        <ul class="space-y-4">
-                            <li>
-                                <a href="#" class="block group">
-                                    <span class="text-xs text-blue-400 mb-1 block">React</span>
-                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">Como configurar o Context API corretamente</h4>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block group">
-                                    <span class="text-xs text-orange-400 mb-1 block">Banco de Dados</span>
-                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">MySQL vs PostgreSQL: Qual escolher?</h4>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block group">
-                                    <span class="text-xs text-yellow-400 mb-1 block">Carreira</span>
-                                    <h4 class="text-sm font-medium text-gray-300 group-hover:text-white transition">O mercado para Dev Jr em 2026</h4>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- <div class="bg-gray-800/30 rounded-2xl border border-dashed border-gray-700 h-[600px] flex items-center justify-center">
-                        <span class="text-gray-600 text-sm rotate-90">Publicidade Vertical (160x600 ou 300x600)</span>
-                    </div> -->
-
-                </aside>
-
+      <section class="section" id="artigos">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Artigos estratégicos</p>
+            <h2>
+              Página inicial com os 10 conteúdos principais em ordem ideal de
+              publicação.
+            </h2>
+          </div>
+          <p>
+            Esses artigos foram organizados para atacar primeiro as dores mais
+            fortes de busca e conversão. A ideia é criar autoridade topical em
+            torno de organização financeira prática e do uso do PcproPay como
+            solução.
+          </p>
+        </div>
+        <div class="article-grid">
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-sair-do-vermelho-organizando-contas-e-ganhos/index.html"
+          >
+            <span class="index-badge">01</span>
+            <div class="card-meta">
+              <span class="tag">sair do vermelho</span>
+              <span class="tag">8 min</span>
             </div>
+            <h3>
+              Como sair do vermelho organizando contas e ganhos no mesmo lugar
+            </h3>
+            <p>
+              Um guia prático para quem trabalha, recebe todo mês e ainda sente
+              que o dinheiro desaparece antes do fim do mês.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-organizar-contas-mensais-sem-esquecer-vencimentos/index.html"
+          >
+            <span class="index-badge">02</span>
+            <div class="card-meta">
+              <span class="tag">organizar contas mensais</span>
+              <span class="tag">7 min</span>
+            </div>
+            <h3>Como organizar suas contas mensais sem esquecer vencimentos</h3>
+            <p>
+              Um passo a passo para reduzir atrasos, multas e a ansiedade de
+              esquecer contas importantes ao longo do mês.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-controlar-cartao-de-credito-sem-susto-com-a-fatura/index.html"
+          >
+            <span class="index-badge">03</span>
+            <div class="card-meta">
+              <span class="tag">controlar cartão de crédito</span>
+              <span class="tag">9 min</span>
+            </div>
+            <h3>
+              Como controlar cartão de crédito sem levar susto com a fatura
+            </h3>
+            <p>
+              Um conteúdo direto para quem sente que o cartão parece leve no dia
+              a dia, mas pesa de verdade quando a fatura fecha.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-prever-seu-mes-antes-que-ele-vire-um-problema/index.html"
+          >
+            <span class="index-badge">04</span>
+            <div class="card-meta">
+              <span class="tag">planejamento financeiro mensal</span>
+              <span class="tag">7 min</span>
+            </div>
+            <h3>Como prever seu mês antes que ele vire um problema</h3>
+            <p>
+              Planejamento não é adivinhar o futuro. É usar o que você já sabe
+              para evitar decisões no desespero.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/para-onde-foi-meu-dinheiro-no-fim-do-mes/index.html"
+          >
+            <span class="index-badge">05</span>
+            <div class="card-meta">
+              <span class="tag">para onde foi meu dinheiro</span>
+              <span class="tag">6 min</span>
+            </div>
+            <h3>
+              Por que você nunca sabe para onde foi seu dinheiro no fim do mês
+            </h3>
+            <p>
+              Um artigo para quem vive a sensação de trabalhar muito, pagar
+              muita coisa e ainda assim não conseguir explicar onde o dinheiro
+              foi parar.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-controlar-salario-descontos-e-valor-liquido/index.html"
+          >
+            <span class="index-badge">06</span>
+            <div class="card-meta">
+              <span class="tag">controlar salário</span>
+              <span class="tag">7 min</span>
+            </div>
+            <h3>
+              O jeito mais simples de controlar salário, descontos e valor
+              líquido
+            </h3>
+            <p>
+              Um conteúdo essencial para quem ainda organiza a vida financeira
+              com base no valor bruto e sofre quando o dinheiro disponível é
+              menor do que parecia.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/erro-que-faz-seu-orcamento-dar-errado-na-pratica/index.html"
+          >
+            <span class="index-badge">07</span>
+            <div class="card-meta">
+              <span class="tag">orçamento pessoal</span>
+              <span class="tag">8 min</span>
+            </div>
+            <h3>
+              O erro que faz seu orçamento parecer certo no papel e dar errado
+              na prática
+            </h3>
+            <p>
+              Nem todo orçamento falha porque a pessoa gasta sem controle.
+              Muitas vezes, ele falha porque foi montado sem considerar o que já
+              estava comprometido.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-decidir-com-numeros-na-vida-financeira/index.html"
+          >
+            <span class="index-badge">08</span>
+            <div class="card-meta">
+              <span class="tag">relatório financeiro pessoal</span>
+              <span class="tag">7 min</span>
+            </div>
+            <h3>Como parar de improvisar e começar a decidir com números</h3>
+            <p>
+              Controlar dinheiro não é só registrar gasto. É aprender a tomar
+              decisões com base em dados do próprio mês.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-ter-mais-clareza-financeira-mesmo-ganhando-pouco/index.html"
+          >
+            <span class="index-badge">09</span>
+            <div class="card-meta">
+              <span class="tag">organizar finanças ganhando pouco</span>
+              <span class="tag">6 min</span>
+            </div>
+            <h3>Como ter mais clareza financeira mesmo ganhando pouco</h3>
+            <p>
+              Quando a renda é curta, cada erro pesa mais. Por isso a clareza
+              financeira deixa de ser luxo e vira necessidade.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
+          <a
+            class="article-card"
+            href="/paginas/artigos/como-usar-um-sistema-financeiro-pessoal-para-mudar-sua-rotina/index.html"
+          >
+            <span class="index-badge">10</span>
+            <div class="card-meta">
+              <span class="tag">sistema financeiro pessoal</span>
+              <span class="tag">8 min</span>
+            </div>
+            <h3>
+              Como usar um sistema financeiro pessoal para mudar sua rotina
+            </h3>
+            <p>
+              Um artigo para quem já entendeu que precisa de ferramenta, mas
+              quer algo prático e útil no dia a dia.
+            </p>
+            <span class="tag">Ler artigo completo</span>
+          </a>
         </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <div class="highlight-box">
+            <p class="kicker">Documentações</p>
+            <h2>
+              Tambem desfrute de alguns artigos de documentações de liguagens de
+              programação para estudos.
+            </h2>
+            <p>
+              A aba <strong>Documentações</strong> foi mantida como arquivo de
+              conteúdos já existentes. Assim, o foco principal do site fica
+              concentrado no PcproPay, enquanto o acervo técnico continua
+              acessível em um espaço separado.
+            </p>
+            <a
+              class="button button-primary"
+              href="/paginas/documentacao/index.html"
+              >Abrir Documentações</a
+            >
+          </div>
+          <div class="card">
+            <h3>O que este site já entrega pronto</h3>
+            <ul class="list-check">
+              <li>Mostra como o PcproPay pode ajuda na sua vida financeira.</li>
+              <li>Artigos com ensinamentos de como utiliza o sistema Pcpropay</li>
+              <li>Sobre, Contato, Política de Privacidade, Termos e Cookies</li>
+              <li>Documentações de linguagens de programação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Perguntas frequentes</p>
+            <h2>
+              O que a pessoa precisa entender rapidamente antes de testar o
+              PcproPay
+            </h2>
+          </div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>O PcproPay é só para quem está endividado?</summary>
+            <p>
+              Não. Ele também ajuda quem quer se planejar melhor, acompanhar
+              cartão, organizar contas mensais, controlar ganhos e usar
+              relatórios para tomar decisões com mais clareza.
+            </p>
+          </details>
+          <details>
+            <summary>
+              O site já foi estruturado para confiança e monetização?
+            </summary>
+            <p>
+              Sim. A nova estrutura já inclui navegação clara, páginas legais,
+              organização por conteúdo principal e área de documentações
+              separada, o que fortalece a percepção de qualidade do projeto.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Os artigos foram feitos para pessoas ou só para SEO?
+            </summary>
+            <p>
+              O foco foi conteúdo útil, com linguagem prática, dor real, função
+              do produto e chamada para ação contextual. O SEO entra para
+              organizar melhor esse conteúdo, não para inflar texto
+              artificialmente.
+            </p>
+          </details>
+        </div>
+      </section>
     </main>
 
-    <footer class="bg-[#242424] text-gray-400 py-10 border-t border-gray-700">
-        <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="md:col-span-1">
-                <img src="/img/logo barra menu.png" alt="Logo" class="h-10 mb-4 opacity-80">
-                <p class="text-sm">Seu hub central para conhecimento em desenvolvimento de software e tecnologia.</p>
-            </div>
-            
-            <div>
-                <h4 class="text-white font-bold mb-4">Explorar</h4>
-                <ul class="text-sm space-y-2">
-                    <li><a href="#" class="hover:text-blue-400 transition">React</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition">Backend</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition">DevOps</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4">Institucional</h4>
-                <ul class="text-sm space-y-2">
-                    <li><a href="/paginas/contato/index.html" class="hover:text-white transition">Sobre Nós</a></li>
-                    <li><a href="/paginas/contato/index.html" class="hover:text-white transition">Contato</a></li>
-                    <li><a href="/politica-privacidade.html" class="hover:text-white transition">Política de Privacidade</a></li>
-                    <li><a href="/termos-uso.html" class="hover:text-white transition">Termos de Uso</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4">Newsletter</h4>
-                <p class="text-xs mb-3">Receba novos tutoriais por e-mail.</p>
-                <div class="flex gap-2">
-                    <input type="email" placeholder="Seu e-mail" class="bg-[#1e1e1e] border border-gray-600 rounded px-3 py-1 text-sm w-full">
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-bold">OK</button>
-                </div>
-            </div>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h2>Pcpropr</h2>
+          <p>
+            Educação financeira prática com foco total em como o PcproPay ajuda
+            pessoas a organizar contas, ganhos, cartões, previsões e decisões do
+            mês.
+          </p>
         </div>
-        
-        <div class="max-w-[1100px] mx-auto px-6 mt-10 pt-6 border-t border-gray-700 text-center text-xs">
-            <p>&copy; 2026 Pcpropr Tecnologia. Todos os direitos reservados.</p>
+        <div>
+          <h3>Navegação</h3>
+          <ul class="footer-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/paginas/artigos/index.html">Artigos</a></li>
+            <li>
+              <a href="/paginas/documentacao/index.html">Documentações</a>
+            </li>
+            <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+            <li><a href="/paginas/contato/index.html">Contato</a></li>
+          </ul>
         </div>
+        <div>
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="/paginas/politica-de-privacidade/index.html"
+                >Política de Privacidade</a
+              >
+            </li>
+            <li>
+              <a href="/paginas/politica-de-cookies/index.html"
+                >Política de Cookies</a
+              >
+            </li>
+            <li>
+              <a href="/paginas/termos-de-uso/index.html">Termos de Uso</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Pcpropr. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913" crossorigin="anonymous"></script>
-    <script src="/_vercel/insights/script.js" defer></script>
-    <script>
-        const aviso = ok 
-        
+    <aside class="cookie-banner" id="cookie-banner" hidden>
+      <div>
+        <strong>Privacidade e cookies</strong>
+        <p>
+          Este site pode usar cookies para métricas, preferências e publicidade.
+          Leia nossa
+          <a href="/paginas/politica-de-privacidade/index.html"
+            >Política de Privacidade</a
+          >
+          e a
+          <a href="/paginas/politica-de-cookies/index.html"
+            >Política de Cookies</a
+          >.
+        </p>
+      </div>
+      <button
+        type="button"
+        class="button button-primary"
+        id="accept-cookies"
+        onclick="window.pcproprAcceptCookies && window.pcproprAcceptCookies()"
+      >
+        Entendi
+      </button>
+    </aside>
 
+    <script src="assets/js/site.js" defer></script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.va.q = window.va.q || []).push(arguments);
+        };
     </script>
-</body>
+    <script src="/_vercel/insights/script.js" defer></script>
+  </body>
 </html>

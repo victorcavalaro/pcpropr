@@ -1,1133 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pcpropr - Documentação Docker</title>
-    <link
-      rel="stylesheet"
-      href="/paginas/documentacao/documentacoes/geral.css"
-    />
-    <link
-      rel="shortcut icon"
-      href="/img/logo barra superior.png"
-      type="image/x-icon"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
-  </head>
-  <body>
-    <!-- Cabeçalho -->
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="logo-container">
-          <a href="/index.html"
-            ><img src="/img/logo barra menu.png" alt="logo" class="logotipo"
-          /></a>
-        </div>
-        <nav class="site-nav">
-          <ul>
+<head>
+  <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,follow,max-image-preview:large">
+    <meta name="description" content="Documentação técnica arquivada do Pcpropr.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentações Pcpropr</title>
+  <link rel="stylesheet" href="/paginas/documentacao/documentacoes/geral.css" />
+  <link rel="shortcut icon" href="/img/logo barra superior.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta name="google-adsense-account" content="ca-pub-2949468008594913">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-container">
+        <a href="/index.html"><img src="/img/logo barra menu.png" alt="logo" class="logotipo" /></a>
+      </div>
+      <nav class="site-nav">
+        <ul>
             <li><a href="/index.html">Início</a></li>
             <!-- <li><a href="/paginas/sobre/index.html">Sobre</a></li> -->
             <li><a href="/paginas/contato/index.html">Conteudos</a></li>
-            <li>
-              <a href="/paginas/documentacao/index.html">Documentações</a>
-            </li>
+            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
             <li><a href="/paginas/sgf/sgf.html">SGF</a></li>
           </ul>
-        </nav>
-      </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="container">
-      <header class="hero-container">
-        <style>
-          /* CSS Específico para o Hero do Docker */
-          .hero-container {
-            background-color: #0d121b; /* Fundo quase preto (Terminal style) */
-            color: #ffffff;
-            padding: 80px 20px;
-            border-bottom: 6px solid #2496ed; /* AZUL DOCKER */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px;
-          }
+  <!-- Conteúdo Principal -->
+  <main class="container">
+    <section class="content-section">
+      <h1>Docker: Guia Completo</h1>
+      <p style="text-align: center;">Aprenda tudo sobre containers, imagens, Dockerfile, Docker Compose e mais!</p>
 
-          .hero-content {
-            max-width: 900px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-          }
-
-          .docker-logo {
-            width: 120px;
-            height: auto;
-            /* Brilho azul característico */
-            filter: drop-shadow(0 0 20px rgba(36, 150, 237, 0.4));
-            transition: transform 0.3s ease;
-          }
-
-          .docker-logo:hover {
-            transform: scale(1.1) translateY(-5px); /* Efeito de flutuar */
-          }
-
-          .hero-tag-docker {
-            background-color: #2496ed; /* Azul Docker */
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 5px; /* Bordas mais quadradas (técnico) */
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-          }
-
-          .hero-title {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 800;
-            line-height: 1.1;
-          }
-
-          .hero-subtitle {
-            font-size: 1.3rem;
-            color: #9baec8; /* Cinza azulado */
-            max-width: 650px;
-            line-height: 1.6;
-            font-weight: 300;
-          }
-
-          @media (max-width: 768px) {
-            .hero-title {
-              font-size: 2.2rem;
-            }
-          }
-        </style>
-
-        <div class="hero-content">
-          <div class="hero-logo">
-            <img
-              src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png"
-              alt="Logo Oficial Docker"
-              class="docker-logo"
-            />
-          </div>
-
-          <div class="hero-text">
-            <span class="hero-tag-docker">DevOps & Infra</span>
-            <h1 class="hero-title">Docker: O Guia Definitivo</h1>
-            <p class="hero-subtitle">
-              Acabe com o "na minha máquina funciona". Aprenda a criar,
-              distribuir e escalar aplicações em containers como um Engenheiro
-              DevOps.
-            </p>
-            <div class="hero-meta">
-              <span>🐳 Atualizado em 2026</span>
-              <span>⏱️ 30 min de leitura</span>
-            </div>
-          </div>
+      <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
+        <!-- Cards -->
+        <!-- Modelo de Card -->
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Conceito" style="width: 50px;">
+          <h3>📦 O que é Docker?</h3>
+          <p>Plataforma de código aberto para empacotar, distribuir e executar aplicações em containers de forma isolada e consistente.</p>
         </div>
-      </header>
 
-      <section class="content-section">
-        <main class="container">
-          <section class="content-section">
-            <h2>1. Introdução: O Fim do "Na minha máquina funciona"</h2>
-            <p>
-              Todo desenvolvedor já passou por isso: você passa semanas codando,
-              tudo funciona perfeitamente no seu notebook. Mas, quando envia
-              para o servidor de produção, <strong>tudo quebra</strong>.
-            </p>
-            <p>
-              O motivo? "Dependency Hell" (Inferno de Dependências). Talvez o
-              servidor tenha uma versão diferente do Node.js, ou o banco de
-              dados tenha uma configuração de permissão distinta.
-            </p>
-            <p>
-              O <strong>Docker</strong> resolveu isso criando o conceito de
-              <strong>Containerização</strong>. Ele não envia apenas o seu
-              código; ele envia o ambiente inteiro (o sistema operacional, as
-              bibliotecas, as configurações e o código) dentro de uma caixa
-              lacrada. Se essa caixa abre no seu notebook, ela abrirá exatamente
-              igual em qualquer servidor do mundo.
-            </p>
-
-            <hr />
-
-            <h2>2. VM vs. Containers: A Batalha da Arquitetura</h2>
-            <p>
-              Para entender por que o Docker é tão rápido, você precisa entender
-              o que veio antes dele: as Máquinas Virtuais (VMs).
-            </p>
-
-            <h3>A Analogia da Moradia</h3>
-            <p>Imagine que você precisa hospedar 3 famílias (3 aplicações):</p>
-            <ul>
-              <li>
-                <strong>Máquina Virtual (Casas Separadas):</strong> Cada família
-                constrói sua própria casa, com sua própria fundação, encanamento
-                e rede elétrica, mesmo que morem no mesmo terreno. Isso gasta
-                muito material (recursos) e demora para construir.
-              </li>
-              <li>
-                <strong>Container (Apartamentos):</strong> Você constrói um
-                único prédio com uma fundação robusta (o Kernel do Host). Cada
-                família tem seu apartamento privado (isolamento), mas todos
-                compartilham a mesma água e luz do prédio. É muito mais
-                eficiente.
-              </li>
-            </ul>
-
-            <h3>A Explicação Técnica (Hypervisor vs Kernel)</h3>
-            <p>A mágica acontece no nível do Sistema Operacional:</p>
-            <ul>
-              <li>
-                <strong>VMs (VirtualBox, VMware):</strong> Usam um
-                <em>Hypervisor</em> para emular hardware falso. Cada VM precisa
-                carregar um Sistema Operacional completo (ex: Windows ou Linux
-                inteiro) para rodar uma simples calculadora. Isso consome
-                Gigabytes de RAM.
-              </li>
-              <li>
-                <strong>Containers (Docker):</strong> Compartilham o
-                <strong>Kernel</strong> (o núcleo) do sistema operacional da
-                máquina hospedeira. O container carrega apenas o estritamente
-                necessário para a aplicação rodar. Por isso, ele liga em
-                milissegundos.
-              </li>
-            </ul>
-
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Característica</th>
-                  <th>Máquina Virtual (VM)</th>
-                  <th>Docker Container</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>O que carrega?</strong></td>
-                  <td>Um SO completo + Hardware Virtual.</td>
-                  <td>Apenas os binários da aplicação.</td>
-                </tr>
-                <tr>
-                  <td><strong>Peso (Tamanho)</strong></td>
-                  <td>Pesado (Gigabytes).</td>
-                  <td>Leve (Megabytes).</td>
-                </tr>
-                <tr>
-                  <td><strong>Tempo de Boot</strong></td>
-                  <td>Lento (Minutos para ligar o SO).</td>
-                  <td>Instantâneo (Milissegundos).</td>
-                </tr>
-                <tr>
-                  <td><strong>Desempenho</strong></td>
-                  <td>Menor (perda na emulação).</td>
-                  <td>Nativo (roda direto no processador).</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <hr />
-
-            <h2>3. Preparando o Terreno: Como Instalar o Docker</h2>
-            <p>
-              O Docker roda em qualquer lugar, mas a instalação varia conforme o
-              seu sistema. O padrão da indústria hoje é utilizar o
-              <strong>Docker Desktop</strong>.
-            </p>
-
-            <h3>Passo 1: Instalação</h3>
-
-            <h4>🪟 Para Windows (Atenção aqui!)</h4>
-            <p>
-              O Windows moderno usa o
-              <strong>WSL 2 (Windows Subsystem for Linux)</strong>. Isso permite
-              rodar o Docker com performance nativa de Linux.
-            </p>
-            <ol>
-              <li>
-                Baixe o instalador no site oficial:
-                <a
-                  href="https://www.docker.com/products/docker-desktop/"
-                  target="_blank"
-                  >Docker Desktop for Windows</a
-                >.
-              </li>
-              <li>
-                Durante a instalação, certifique-se de marcar a opção:
-                <strong>"Use WSL 2 instead of Hyper-V"</strong>.
-              </li>
-              <li>
-                Após instalar, abra o PowerShell e digite
-                <code>wsl --update</code> para garantir que o kernel do Linux
-                está atualizado.
-              </li>
-            </ol>
-
-            <h4>🍎 Para Mac (Apple Silicon ou Intel)</h4>
-            <ol>
-              <li>
-                Se você usa chip M1/M2/M3, baixe a versão
-                <strong>"Apple Silicon"</strong>.
-              </li>
-              <li>
-                Se usa Macs antigos, baixe a versão
-                <strong>"Intel Chip"</strong>.
-              </li>
-              <li>
-                Arraste para a pasta Applications e dê as permissões de
-                segurança solicitadas.
-              </li>
-            </ol>
-
-            <h4>🐧 Para Linux (Ubuntu/Debian)</h4>
-            <p>
-              No Linux, geralmente usamos o terminal direto, sem interface
-              gráfica (embora o Docker Desktop também exista para Linux).
-            </p>
-            <pre><code># 1. Atualize os pacotes
-sudo apt-get update
-
-# 2. Instale o Docker
-sudo apt-get install docker.io
-
-# 3. Dica Pro: Rode o Docker sem precisar de 'sudo' toda vez
-sudo usermod -aG docker $USER</code></pre>
-
-            <hr />
-
-            <h3>Passo 2: Verificando se funcionou</h3>
-            <p>
-              Abra seu terminal (CMD, PowerShell ou Terminal) e digite o comando
-              abaixo para ver a versão instalada:
-            </p>
-            <pre><code>docker --version</code></pre>
-
-            <p>Agora, vamos rodar seu primeiro container de teste oficial:</p>
-            <pre><code>docker run hello-world</code></pre>
-
-            <blockquote
-              style="
-                border-left: 5px solid #2496ed;
-                background: #2a2e31;
-                padding: 15px;
-              "
-            >
-              <strong>O que acabou de acontecer?</strong><br />
-              1. O Docker procurou a imagem "hello-world" no seu computador.<br />
-              2. Não achou, então foi até o Docker Hub (nuvem) e baixou.<br />
-              3. Criou um container, executou a mensagem de boas-vindas e
-              desligou.<br />
-              Tudo isso em questão de segundos.
-            </blockquote>
-          </section>
-        </main>
-        <main class="container">
-          <section class="content-section">
-            <h2>2. O Ciclo de Vida do Docker: Entendendo a Trindade</h2>
-            <p>
-              Muitos iniciantes travam no Docker porque confundem "Imagem" com
-              "Container". Para nunca mais esquecer, vamos aprofundar nossa
-              analogia culinária e ver os comandos que representam cada etapa.
-            </p>
-
-            <hr />
-
-            <h3>☁️ 1. Registry (O Supermercado)</h3>
-            <p>
-              <strong>O Conceito:</strong> É o catálogo global. Assim como você
-              vai ao mercado comprar ingredientes, o Docker vai ao Registry
-              baixar softwares prontos. O principal é o
-              <strong>Docker Hub</strong>.
-            </p>
-            <p>Existem dois tipos de produtos nesse mercado:</p>
-            <ul>
-              <li>
-                <strong>Imagens Oficiais:</strong> Criadas pelas próprias
-                empresas (ex: Python, Node, MySQL). São seguras e otimizadas.
-              </li>
-              <li>
-                <strong>Imagens da Comunidade:</strong> Criadas por usuários
-                comuns. Cuidado com estas!
-              </li>
-            </ul>
-            <p>
-              <strong>Comando Prático:</strong> <code>docker pull</code> (Baixar
-              da prateleira).
-            </p>
-
-            <h3>📜 2. Image (A Receita Imutável)</h3>
-            <p>
-              <strong>O Conceito:</strong> Depois que você baixa o software, ele
-              vira uma <strong>Imagem</strong> no seu HD. A característica mais
-              importante dela é ser
-              <strong>Somente Leitura (Read-Only)</strong>.
-            </p>
-            <p>
-              Você nunca "edita" uma imagem. Se quiser mudar algo (adicionar um
-              tempero), você precisa criar uma <em>nova</em> imagem baseada na
-              anterior. Isso garante que a receita original nunca seja
-              estragada.
-            </p>
-            <p>
-              <strong>Comando Prático:</strong> <code>docker images</code> (Ver
-              seu livro de receitas).
-            </p>
-
-            <h3>📦 3. Container (O Bolo no Forno)</h3>
-            <p>
-              <strong>O Conceito:</strong> É a execução. O Docker pega a cópia
-              da imagem e adiciona uma camada fina de "escrita" por cima.
-            </p>
-            <p>
-              <strong>A Mágica do Isolamento:</strong> Se você queimar o bolo
-              (travar o container), a receita (imagem) continua intacta. Você
-              pode simplesmente jogar o container fora e criar outro novo em
-              folha em milissegundos.
-            </p>
-            <p>
-              <strong>Comando Prático:</strong> <code>docker run</code> (Assar o
-              bolo).
-            </p>
-
-            <hr />
-
-            <h2>Tutorial Passo a Passo: O Ciclo Completo</h2>
-            <p>
-              Vamos ver essa trindade funcionando na prática. Faremos o download
-              de um mini-servidor Python e o colocaremos para rodar.
-            </p>
-
-            <h3>Passo 1: Ir ao Mercado (Registry)</h3>
-            <p>
-              Vamos baixar uma imagem super leve do Python chamada "Alpine".
-              Digite no terminal:
-            </p>
-            <pre><code># O comando 'pull' vai até o Docker Hub e traz a imagem
-docker pull python:alpine</code></pre>
-
-            <h3>Passo 2: Conferir a Receita (Image)</h3>
-            <p>
-              Verifique se ela foi baixada corretamente e está salva no seu
-              disco:
-            </p>
-            <pre><code>docker images
-
-# Saída esperada:
-# REPOSITORY   TAG       IMAGE ID       SIZE
-# python       alpine    a1b2c3d4...    50MB</code></pre>
-            <p>
-              <em
-                >Note como ela é pequena (apenas ~50MB) comparada a instalar o
-                Python no Windows.</em
-              >
-            </p>
-
-            <h3>Passo 3: Assar o Bolo (Container)</h3>
-            <p>
-              Agora vamos criar um container que imprime a versão do Python e
-              depois se autodestrói (para não ocupar espaço).
-            </p>
-            <pre><code># Traduzindo o comando:
-# docker run : Crie e inicie um container
-# --rm       : Apague o container assim que ele terminar (limpeza automática)
-# python:alpine : Use esta imagem
-# python --version : O comando que quero rodar lá dentro
-
-docker run --rm python:alpine python --version</code></pre>
-
-            <blockquote
-              style="
-                border-left: 5px solid #2496ed;
-                background: #1e2124;
-                padding: 15px;
-              "
-            >
-              <strong>Dica Pro:</strong> Você pode ter 50 containers rodando
-              baseados nessa mesma imagem <code>python:alpine</code>. Eles não
-              ocupam 50x o espaço em disco, pois todos compartilham a mesma
-              imagem base (Read-Only). O Docker é inteligente!
-            </blockquote>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>3. Tutorial Prático: Seu Primeiro Servidor Web (Nginx)</h2>
-            <p>
-              Chega de teoria. Vamos colocar a mão na massa e subir um servidor
-              web profissional em menos de 1 minuto. O objetivo é ver uma página
-              HTML no seu navegador servida por um container, sem instalar o
-              Nginx no seu Windows/Mac/Linux.
-            </p>
-
-            <hr />
-
-            <h3>Passo 1: O "Check-up" Inicial</h3>
-            <p>
-              Antes de tentar correr, vamos ver se conseguimos andar. Abra seu
-              terminal e garanta que o Docker Desktop está aberto e rodando.
-            </p>
-            <pre><code>docker ps</code></pre>
-            <p>
-              <em
-                >Se aparecer uma tabela vazia (CONTAINER ID, IMAGE...), ótimo!
-                Se der erro, abra o aplicativo do Docker Desktop primeiro.</em
-              >
-            </p>
-
-            <h3>Passo 2: O Comando de Lançamento</h3>
-            <p>
-              Copie e cole o comando abaixo. Não se assuste se aparecer "Unable
-              to find image...", isso significa apenas que o Docker está
-              baixando a imagem pela primeira vez.
-            </p>
-            <pre><code>docker run -d -p 8080:80 --name meu-site nginx</code></pre>
-
-            <h3>Passo 3: Dissecando o Comando (Entenda para não Decorar)</h3>
-            <p>
-              Cada parte desse comando tem um propósito vital. Vamos entender a
-              lógica:
-            </p>
-
-            <ul class="summary-list">
-              <li>
-                <strong><code>docker run</code></strong
-                >: A ordem principal. "Crie e inicie um novo container".
-              </li>
-              <li>
-                <strong><code>nginx</code></strong
-                >: A imagem base. É o software que queremos rodar.
-              </li>
-              <li>
-                <strong><code>-d</code> (Detach Mode)</strong>: Roda em "segundo
-                plano". Sem isso, seu terminal ficaria travado rodando o
-                servidor. Com isso, ele libera o terminal para você continuar
-                usando.
-              </li>
-              <li>
-                <strong><code>--name meu-site</code></strong
-                >: Batiza o container. Sem isso, o Docker inventa nomes
-                aleatórios (como <em>vigilant_einstein</em>), o que dificulta
-                achar depois.
-              </li>
-            </ul>
-
-            <h4>A Mágica das Portas (<code>-p 8080:80</code>)</h4>
-            <p>Essa é a parte onde 90% dos iniciantes se confundem.</p>
-
-            <ul>
-              <li>
-                <strong>8080 (Lado Esquerdo):</strong> É a porta no
-                <strong>SEU computador</strong> (Host). Você pode mudar para
-                3000, 4000, 9090...
-              </li>
-              <li>
-                <strong>80 (Lado Direito):</strong> É a porta
-                <strong>DENTRO do container</strong>. O Nginx padrão escuta na
-                porta 80. Você não pode mudar isso a menos que altere a
-                configuração do Nginx.
-              </li>
-              <li>
-                <strong>A Ponte:</strong> O comando cria um túnel. Tudo que
-                chega na sua porta 8080 é teletransportado para a porta 80 do
-                container.
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>Passo 4: O Teste Real</h3>
-            <p>Agora, abra seu navegador (Chrome, Edge, etc.) e acesse:</p>
-            <div
-              style="
-                background: #1d2022;
-                padding: 15px;
-                border-left: 5px solid #2496ed;
-                margin: 20px 0;
-                font-family: monospace;
-                font-size: 1.2rem;
-              "
-            >
-              http://localhost:8080
-            </div>
-            <p>
-              Se você viu a mensagem <strong>"Welcome to nginx!"</strong>,
-              parabéns! Você tem um container rodando.
-            </p>
-
-            <hr />
-
-            <h3>Passo 5: Limpando a Casa (Ciclo de Vida)</h3>
-            <p>
-              Diferente de programas normais que você fecha no "X", o container
-              continua rodando em segundo plano (lembra do <code>-d</code>?).
-              Vamos aprender a desligá-lo corretamente.
-            </p>
-
-            <p><strong>1. Verifique se ele está lá:</strong></p>
-            <pre><code>docker ps</code></pre>
-            <p>Você verá o container "meu-site" na lista.</p>
-
-            <p><strong>2. Pare o container (Desligar):</strong></p>
-            <pre><code>docker stop meu-site</code></pre>
-            <p>Se você atualizar o navegador agora, o site terá saído do ar.</p>
-
-            <p><strong>3. Remova o container (Jogar fora):</strong></p>
-            <pre><code>docker rm meu-site</code></pre>
-            <p>
-              Isso libera o nome "meu-site" para ser usado novamente e limpa seu
-              disco.
-            </p>
-          </section>
-        </main>
-        <main class="container">
-          <section class="content-section">
-            <h2>4. Dockerfile: A Receita da Automação</h2>
-            <p>
-              Até agora usamos imagens criadas por outras pessoas (Nginx,
-              Python). Mas o verdadeiro poder do Docker surge quando você
-              empacota a <strong>SUA</strong> aplicação.
-            </p>
-            <p>
-              Para isso, usamos um arquivo de texto simples chamado
-              <code>Dockerfile</code> (exatamente assim, sem extensão .txt). Ele
-              é um manual de instruções que diz ao Docker: "Pegue este Linux,
-              instale este programa, copie meus arquivos e inicie o servidor".
-            </p>
-
-            <hr />
-
-            <h3>4.1. Passo a Passo: Criando sua Primeira Imagem</h3>
-            <p>
-              Vamos simular um cenário real. Imagine que você tem uma API
-              simples em Node.js.
-            </p>
-
-            <h4>Passo 1: Preparar os Arquivos</h4>
-            <p>Crie uma pasta vazia e coloque dois arquivos nela:</p>
-            <ul>
-              <li>
-                <code>package.json</code> (Gerenciador de dependências do Node).
-              </li>
-              <li><code>server.js</code> (O código do seu site/app).</li>
-            </ul>
-
-            <h4>Passo 2: Escrever o Dockerfile</h4>
-            <p>
-              Crie um arquivo chamado <code>Dockerfile</code> e cole o conteúdo
-              abaixo. Vamos dissecar cada linha para você entender a engenharia
-              por trás.
-            </p>
-
-            <pre><code># 1. A BASE (O Alicerce)
-# "Comece com uma imagem Linux leve que já tenha o Node v18 instalado"
-FROM node:18-alpine
-
-# 2. O ENDEREÇO (Organização)
-# "Crie uma pasta /app dentro do container e entre nela"
-WORKDIR /app
-
-# 3. A ESTRATÉGIA DE CACHE (Dica de Ouro)
-# "Copie apenas o arquivo de dependências primeiro"
-COPY package.json .
-
-# 4. A INSTALAÇÃO
-# "Baixe as bibliotecas necessárias"
-RUN npm install
-
-# 5. O CÓDIGO
-# "Agora sim, copie todo o resto dos arquivos do meu PC para o Container"
-COPY . .
-
-# 6. A DOCUMENTAÇÃO
-# "Avise que esse container usa a porta 3000"
-EXPOSE 3000
-
-# 7. A IGNIÇÃO
-# "Quando o container iniciar, rode este comando:"
-CMD ["npm", "start"]</code></pre>
-
-            <hr />
-
-            <h3>4.2. Entendendo a "Mágica" do Layer Caching</h3>
-            <p>
-              Você notou que copiamos o <code>package.json</code> (Passo 3)
-              separado do resto dos arquivos (Passo 5)? Isso não é por acaso. É
-              <strong>Engenharia de Performance</strong>.
-            </p>
-
-            <p>O Docker constrói a imagem em camadas (Layers), como um bolo.</p>
-            <ul>
-              <li>
-                <strong>Como funciona:</strong> Se você mudar uma linha de
-                código no <code>server.js</code>, o Docker percebe que o
-                <code>package.json</code> NÃO mudou.
-              </li>
-              <li>
-                <strong>O Resultado:</strong> Ele reutiliza a camada do
-                <code>npm install</code> do cache (que é a parte demorada) e
-                apenas refaz a cópia do código final.
-              </li>
-              <li>
-                <strong>Benefício:</strong> Seu "Build" cai de 2 minutos para
-                0.5 segundos.
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>4.3. Passo 3: O Build (Construindo a Imagem)</h3>
-            <p>
-              Agora que a receita está escrita, precisamos "cozinhar". No
-              terminal, dentro da pasta do projeto, rode:
-            </p>
-            <pre><code>docker build -t minha-api-node .</code></pre>
-
-            <p><strong>Entendendo o comando:</strong></p>
-            <ul class="summary-list">
-              <li><code>docker build</code>: A ordem de construção.</li>
-              <li>
-                <code>-t minha-api-node</code>: A "Tag" (Nome). Estamos
-                batizando a imagem.
-              </li>
-              <li>
-                <code>.</code> (Ponto Final):
-                <strong>MUITO IMPORTANTE!</strong> Diz ao Docker: "Procure o
-                Dockerfile na pasta onde estou agora".
-              </li>
-            </ul>
-
-            <hr />
-
-            <h3>4.4. Passo 4: Rodando sua Criação</h3>
-            <p>
-              Agora que a imagem <code>minha-api-node</code> existe no seu
-              computador (verifique com <code>docker images</code>), vamos criar
-              um container com ela.
-            </p>
-            <pre><code>docker run -d -p 3000:3000 --name meu-app-node minha-api-node</code></pre>
-
-            <p>
-              Pronto! Se você acessar <code>http://localhost:3000</code>, verá
-              sua aplicação rodando. Você acabou de empacotar e executar seu
-              próprio software em um ambiente isolado.
-            </p>
-
-            <blockquote
-              style="
-                border-left: 5px solid #2496ed;
-                background: #34383b;
-                padding: 15px;
-              "
-            >
-              <strong>Resumo da Ópera:</strong><br />
-              1. <strong>Dockerfile:</strong> Escreve a receita.<br />
-              2. <strong>Build:</strong> Transforma receita em Imagem.<br />
-              3. <strong>Run:</strong> Transforma Imagem em Container.
-            </blockquote>
-          </section>
-        </main>
-
-        <main class="container">
-          <section class="content-section">
-            <h2>5. Docker Compose: O Maestro da Orquestra</h2>
-            <p>
-              Imagine que sua aplicação é uma banda. O Node.js é o guitarrista,
-              o Postgres é o baterista e o Redis é o baixista.
-            </p>
-            <p>
-              Rodar <code>docker run</code> para cada um deles é como pedir para
-              cada músico tocar em uma sala diferente, sem se ouvirem. É o caos.
-              O <strong>Docker Compose</strong> é o Maestro. Ele garante que
-              todos subam no palco juntos, na hora certa, e saibam conversar
-              entre si.
-            </p>
-
-            <p>
-              Ele funciona através de um arquivo de texto chamado
-              <code>docker-compose.yml</code>. Vamos construir um agora mesmo.
-            </p>
-
-            <hr />
-
-            <h3>Passo a Passo: Sua Primeira Orquestração</h3>
-            <p>
-              Vamos criar um ambiente completo: uma API conectada a um Banco de
-              Dados.
-            </p>
-
-            <h4>Passo 1: Criar o Arquivo</h4>
-            <p>
-              Na raiz do seu projeto (onde está o Dockerfile), crie um arquivo
-              chamado <code>docker-compose.yml</code>.
-            </p>
-
-            <h4>Passo 2: Definir a Arquitetura (O Código)</h4>
-            <p>
-              Copie o código abaixo. <strong>Atenção:</strong> O arquivo YAML é
-              "alérgico" a tabulações. Use apenas espaços para indentar.
-            </p>
-
-            <pre><code>version: '3.8'  # Versão da sintaxe do Compose
-
-services:
-  # --- SERVIÇO 1: APLICAÇÃO (BACKEND) ---
-  api-node:
-    build: .            # "Construa a imagem usando o Dockerfile desta pasta"
-    ports:
-      - "3000:3000"     # "Abra a porta 3000 para o meu PC"
-    depends_on:
-      - banco_postgres  # "Só inicie depois que o banco estiver de pé"
-    environment:
-      - DB_HOST=banco_postgres # O endereço do banco é o NOME do serviço abaixo!
-
-  # --- SERVIÇO 2: BANCO DE DADOS ---
-  banco_postgres:
-    image: postgres:15  # "Baixe a imagem pronta do Docker Hub"
-    environment:
-      POSTGRES_PASSWORD: senha_secreta # Configuração obrigatória do Postgres
-    volumes:
-      - dados-do-banco:/var/lib/postgresql/data # "Salve os dados aqui!"
-
-# --- PERSISTÊNCIA (VOLUMES) ---
-volumes:
-  dados-do-banco:       # Cria uma "pasta virtual" segura no Docker</code></pre>
-
-            <hr />
-
-            <h3>Entendendo os Conceitos Críticos</h3>
-
-            <h4>1. Networking Mágico (DNS Automático)</h4>
-            <p>
-              Como o Node acha o Banco de Dados? Você não usa
-              <code>localhost</code>. No mundo do Docker Compose,
-              <strong>o nome do serviço vira o endereço</strong>.
-            </p>
-            <p>
-              Se você chamou o serviço de <code>banco_postgres</code>, sua API
-              vai conectar em: <code>postgres://banco_postgres:5432</code>. O
-              Docker resolve isso sozinho.
-            </p>
-
-            <h4>2. Volumes (A Salvação dos Dados)</h4>
-            <p>
-              Por padrão, containers são efêmeros. Se você deletar o container
-              do banco, seus dados somem.
-            </p>
-            <p>
-              Para evitar isso, usamos <code>volumes</code>. A linha
-              <code>dados-do-banco:/var...</code> diz ao Docker: "Crie um cofre
-              separado do container. Mesmo se o container explodir, mantenha os
-              arquivos do banco guardados nesse cofre".
-            </p>
-
-            <hr />
-
-            <h3>Passo 3: A Execução</h3>
-            <p>
-              Agora vem a mágica. Esqueça aqueles comandos longos. Abra o
-              terminal e digite:
-            </p>
-
-            <pre><code>docker-compose up -d</code></pre>
-
-            <ul class="summary-list">
-              <li>
-                <strong>up:</strong> Sobe toda a infraestrutura (cria redes,
-                volumes e containers).
-              </li>
-              <li><strong>-d:</strong> Detach (libera o terminal).</li>
-            </ul>
-
-            <p>
-              <strong
-                >Para monitorar o que está acontecendo (Logs de tudo
-                junto):</strong
-              >
-            </p>
-            <pre><code>docker-compose logs -f</code></pre>
-
-            <p>
-              <strong
-                >Para desligar tudo e remover os containers (Limpeza):</strong
-              >
-            </p>
-            <pre><code>docker-compose down</code></pre>
-
-            <blockquote
-              style="
-                border-left: 5px solid #2496ed;
-                background: #1d2124;
-                padding: 15px;
-              "
-            >
-              <strong>Dica de Carreira:</strong> Em empresas reais, você
-              raramente usará o comando <code>docker run</code> manual. Tudo é
-              definido em arquivos <code>docker-compose.yml</code> para garantir
-              que todos os desenvolvedores da equipe rodem o projeto exatamente
-              da mesma maneira.
-            </blockquote>
-          </section>
-        </main>
-        <main class="container">
-          <section class="content-section">
-            <h2>6. O Cinto de Utilidades: Comandos Essenciais</h2>
-            <p>
-              Você não precisa decorar a documentação inteira. No dia a dia de
-              um engenheiro DevOps ou Desenvolvedor, usamos apenas cerca de 10
-              comandos recorrentes.
-            </p>
-            <p>
-              Para facilitar, dividimos os comandos em três categorias:
-              <strong>Ciclo de Vida</strong> (Ligar/Desligar),
-              <strong>Limpeza</strong> (Faxina) e
-              <strong>Investigação</strong> (Sherlock Holmes).
-            </p>
-
-            <hr />
-
-            <h3>6.1. Ciclo de Vida (Gerenciamento)</h3>
-            <p>Comandos para controlar o estado dos seus containers.</p>
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Comando</th>
-                  <th>O que faz?</th>
-                  <th>Exemplo Real</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>docker ps</code></td>
-                  <td>Mostra o que está rodando <strong>agora</strong>.</td>
-                  <td><code>docker ps</code></td>
-                </tr>
-                <tr>
-                  <td><code>docker ps -a</code></td>
-                  <td>
-                    Mostra <strong>TUDO</strong> (inclusive os que deram erro ou
-                    pararam).
-                  </td>
-                  <td><code>docker ps -a</code></td>
-                </tr>
-                <tr>
-                  <td><code>docker start [id]</code></td>
-                  <td>Liga um container que estava desligado.</td>
-                  <td><code>docker start meu-site</code></td>
-                </tr>
-                <tr>
-                  <td><code>docker stop [id]</code></td>
-                  <td>
-                    Desliga o container com segurança (envia sinal SIGTERM).
-                  </td>
-                  <td><code>docker stop meu-site</code></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3>6.2. A Grande Faxina (Limpeza)</h3>
-            <p>
-              Docker consome muito disco se você não limpar. Use com cuidado.
-            </p>
-            <table class="content-table">
-              <thead>
-                <tr>
-                  <th>Comando</th>
-                  <th>O que faz?</th>
-                  <th>Diferença Chave</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>docker rm [id]</code></td>
-                  <td>Apaga um <strong>CONTAINER</strong>.</td>
-                  <td>Só funciona se o container estiver parado (stop).</td>
-                </tr>
-                <tr>
-                  <td><code>docker rmi [id]</code></td>
-                  <td>Apaga uma <strong>IMAGEM</strong> (A receita).</td>
-                  <td>
-                    Libera espaço real no HD. Use
-                    <code>docker images</code> para ver os IDs.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <blockquote
-              style="
-                border-left: 5px solid #bd2c00;
-                background: #fff5f5;
-                padding: 15px;
-                color: #333;
-              "
-            >
-              <strong>☢️ O Botão Nuclear (Use com sabedoria):</strong><br />
-              Se o seu disco estiver cheio e você quiser apagar TUDO que não
-              está sendo usado (containers parados, redes vazias e imagens
-              órfãs), rode:<br />
-              <code>docker system prune -a</code>
-            </blockquote>
-
-            <hr />
-
-            <h3>6.3. Investigação (Debug)</h3>
-            <p>Algo deu errado? O container não subiu? É hora de investigar.</p>
-
-            <h4>A) docker logs (O Diário de Bordo)</h4>
-            <p>
-              Se seu container "morreu" assim que ligou, o motivo está aqui. Ele
-              mostra tudo que a aplicação imprimiu no console (stdout).
-            </p>
-            <pre><code># O flag -f (follow) deixa o log aberto rodando em tempo real (igual matrix)
-docker logs -f meu-app-node</code></pre>
-
-            <h4>B) docker exec (O Teletransporte)</h4>
-            <p>
-              Este é o comando favorito dos profissionais. Ele permite que você
-              <strong>entre dentro</strong> de um container que está rodando e
-              execute comandos lá dentro, como se estivesse no terminal dele.
-            </p>
-            <p>
-              <strong>Cenário:</strong> Você quer verificar se um arquivo foi
-              criado lá dentro ou testar a conexão com o banco.
-            </p>
-
-            <pre><code># Sintaxe: docker exec -it [nome_container] [programa]
-# -it = Modo Interativo (permite digitar)
-# sh ou bash = O terminal que queremos abrir
-
-docker exec -it meu-app-node sh</code></pre>
-
-            <p>
-              Ao rodar isso, seu prompt vai mudar (geralmente para um
-              <code>#</code>). Agora você está "na Matrix". Pode dar
-              <code>ls</code>, <code>cd</code>, <code>cat</code> dentro do Linux
-              do container. Para sair, digite <code>exit</code>.
-            </p>
-
-            <hr />
-
-            <h3>Resumo Visual: RM vs RMI</h3>
-            <p>
-              A confusão mais comum de iniciantes é tentar apagar a imagem
-              enquanto o container ainda existe.
-            </p>
-            <ul>
-              <li>
-                Você não pode jogar fora a
-                <strong>Receita (Image)</strong> enquanto o
-                <strong>Bolo (Container)</strong> está no forno.
-              </li>
-              <li>
-                <strong>Ordem correta:</strong> Stop Container -> RM Container
-                -> RMI Image.
-              </li>
-            </ul>
-          </section>
-        </main>
-        <main class="container">
-          <section class="content-section">
-            <h2>7. Conclusão: Você desbloqueou um Superpoder</h2>
-            <p>
-              Chegamos ao fim. Se você seguiu este guia e rodou os comandos no
-              seu terminal, você já não é mais o mesmo desenvolvedor de 30
-              minutos atrás.
-            </p>
-            <p>
-              Você deixou de ser refém do "na minha máquina funciona" e passou a
-              dominar a <strong>Linguagem Universal da Infraestrutura</strong>.
-              Hoje, saber Docker é o divisor de águas entre um programador
-              amador e um Engenheiro de Software Sênior.
-            </p>
-
-            <h3>O Mapa do Tesouro (O que vem depois?)</h3>
-            <p>
-              O Docker é a peça fundamental, mas ele é apenas um tijolo. Para
-              construir arranha-céus, você precisará aprender a gerenciar
-              milhares desses containers.
-            </p>
-
-            <ul class="summary-list">
-              <li>
-                <strong>Agora:</strong> Pratique Docker Compose até sentir
-                confiança.
-              </li>
-              <li>
-                <strong>Em breve:</strong> Estude <strong>CI/CD</strong> (GitHub
-                Actions) para criar containers automaticamente quando você
-                salvar o código.
-              </li>
-              <li>
-                <strong>O Chefão Final:</strong>
-                <strong>Kubernetes (K8s)</strong>. É ele quem gerencia os
-                containers do Google, Amazon e Netflix. Mas não tenha pressa,
-                domine a base primeiro.
-              </li>
-            </ul>
-
-            <p
-              class="final-quote"
-              style="
-                border-left: 5px solid #2496ed;
-                background: #303336;
-                padding: 25px;
-                font-style: italic;
-                color: #ffffff;
-                margin-top: 40px;
-                border-radius: 0 10px 10px 0;
-              "
-            >
-              <strong>🏆 Desafio Final (Integração):</strong><br /><br />
-              Lembra do projeto <strong>"To-Do List"</strong> que criamos no
-              guia de JavaScript? Seu desafio é criar um
-              <code>Dockerfile</code> para ele.<br /><br />
-              1. Use uma imagem base do <code>nginx:alpine</code>.<br />
-              2. Copie os arquivos HTML/CSS/JS para a pasta
-              <code>/usr/share/nginx/html</code> dentro do container.<br />
-              3. Suba o site na porta 8080.<br /><br />
-              Se conseguir fazer isso, você oficialmente sabe colocar um site no
-              ar com Docker.
-              <strong>Boa sorte, a gente se vê no próximo nível! 🐳</strong>
-            </p>
-          </section>
-        </main>
-      </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="site-footer">
-      <p>&copy; 2025 Pcpropr.</p>
-    </footer>
-  </body>
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
-    crossorigin="anonymous"
-  ></script>
-
-  <script>
-    window.va =
-      window.va ||
-      function () {
-        (window.va.q = window.va.q || []).push(arguments);
-      };
-  </script>
-  <script src="/_vercel/insights/script.js" defer></script>
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3940/3940056.png" alt="Container" style="width: 50px;">
+          <h3>🧱 O que é um Container?</h3>
+          <p>Unidade leve que empacota o código, bibliotecas e dependências da aplicação de forma portátil.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="Funcionamento" style="width: 50px;">
+          <h3>⚙️ Como Funciona?</h3>
+          <p>Docker usa imagens como moldes para containers. Tudo é descrito em um Dockerfile.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Instalação" style="width: 50px;">
+          <h3>📥 Instalação</h3>
+          <p>Baixe do site oficial e verifique com docker --version.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Exemplo" style="width: 50px;">
+          <h3>🚀 Criando um Container</h3>
+          <p>Use Dockerfile, docker build e docker run.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="Comandos" style="width: 50px;">
+          <h3>📌 Comandos Essenciais</h3>
+          <p>build, run, ps, stop, rm, rmi.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Dockerfile" style="width: 50px;">
+          <h3>📄 Dockerfile</h3>
+          <p>Define a construção da imagem: base, comandos, dependências, portas e diretórios.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Compose" style="width: 50px;">
+          <h3>🧩 Docker Compose</h3>
+          <p>Gerencia múltiplos containers com docker-compose.yml.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3222/3222651.png" alt="Hub" style="width: 50px;">
+          <h3>☁️ Docker Hub</h3>
+          <p>Repositório de imagens. Use mysql, nginx, node e mais.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Vantagens" style="width: 50px;">
+          <h3>✅ Vantagens</h3>
+          <p>Ambiente padronizado, leve, rápido, escalável e ideal para CI/CD.</p>
+        </div>
+
+        <div class="card content-section" style="width: 300px; padding: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/857/857681.png" alt="Casos de Uso" style="width: 50px;">
+          <h3>💼 Casos de Uso</h3>
+          <p>Ambientes dev, microserviços, testes, integração contínua e deploy.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Pcpropr.</p>
+  </footer>
+</body>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913"
+     crossorigin="anonymous"></script>
+
+      <script>
+      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+    </script>
+    <script src="/_vercel/insights/script.js" defer></script>
 </html>
