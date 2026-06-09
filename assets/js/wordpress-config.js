@@ -12,6 +12,6 @@ window.PCPROPR_WP_CONFIG = {
   apiBase: 'https://public-api.wordpress.com/wp/v2/sites/p3690.wordpress.com',
   articlePage: '/paginas/artigo/index.html',
   postsPerPage: 12,
-  homePosts: 6,
+  homePosts: 8,
   cacheMinutes: 0
 };

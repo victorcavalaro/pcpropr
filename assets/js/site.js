@@ -211,6 +211,12 @@
 
   function getFeaturedImage(post) {
     const media = post && post._embedded && post._embedded['wp:featuredmedia'];
+    if ((!Array.isArray(media) || !media[0]) && post && post.jetpack_featured_media_url) {
+      return {
+        src: post.jetpack_featured_media_url,
+        alt: stripHtml(post.title && post.title.rendered) || 'Imagem do artigo Pcpropr',
+      };
+    }
     if (!Array.isArray(media) || !media[0]) return null;
     const item = media[0];
     const sizes = item.media_details && item.media_details.sizes ? item.media_details.sizes : {};
@@ -282,7 +288,7 @@
       : '<span class="tag">Pcpropr</span>';
 
     return `
-      <a class="article-card wp-post-card" href="${href}">
+      <a class="article-card wp-post-card ${image ? 'has-image' : 'no-image'}" href="${href}">
         ${image ? `<span class="wp-card-image"><img src="${image.src}" alt="${image.alt}" loading="lazy"></span>` : `<span class="index-badge">${String(index + 1).padStart(2, '0')}</span>`}
         <div class="card-meta">
           ${badges}
@@ -305,11 +311,10 @@
 
   function renderWpError(container, message) {
     container.innerHTML = `
-      <div class="wp-status-card">
-        <span class="eyebrow">WordPress headless</span>
-        <h3>Conecte o painel do WordPress para liberar os artigos dinâmicos.</h3>
-        <p>${message || 'Edite o arquivo /assets/js/wordpress-config.js e coloque a URL do WordPress no campo apiBase.'}</p>
-        <code>apiBase: 'https://public-api.wordpress.com/wp/v2/sites/p3690.wordpress.com'</code>
+      <div class="wp-status-card wp-status-card-compact">
+        <span class="eyebrow">WordPress conectado</span>
+        <h3>Os artigos aparecem aqui automaticamente.</h3>
+        <p>${message || 'Publique um post no WordPress para atualizar esta área do Pcpropr.'}</p>
       </div>
     `;
   }
@@ -323,17 +328,68 @@
       const posts = await fetchWp('/posts', {
         _embed: '1',
         per_page: limit,
-        status: 'publish',
         orderby: 'date',
         order: 'desc',
       });
       if (!Array.isArray(posts) || !posts.length) {
-        renderWpError(container, 'Nenhum post publicado foi encontrado no WordPress ainda.');
+        container.innerHTML = `
+          <div class="wp-status-card wp-status-card-compact">
+            <span class="eyebrow">Aguardando publicações</span>
+            <h3>Nenhum artigo publicado ainda.</h3>
+            <p>Crie um post no WordPress para ele aparecer automaticamente na home do Pcpropr.</p>
+          </div>
+        `;
         return;
       }
       container.innerHTML = posts.map(postCardHtml).join('');
     } catch (error) {
       renderWpError(container, error.message);
+    }
+  }
+
+
+  function sidebarPostHtml(post, index) {
+    const config = getWpConfig();
+    const title = decodeHtml(post.title && post.title.rendered) || 'Publicação Pcpropr';
+    const date = formatDate(post.date);
+    const terms = getPostTerms(post);
+    const category = terms[0] ? decodeHtml(terms[0].name) : 'Pcpropr';
+    const href = `${config.articlePage}?slug=${encodeURIComponent(post.slug)}`;
+    return `
+      <a class="sidebar-post-item" href="${href}">
+        <span class="sidebar-post-number">${String(index + 1).padStart(2, '0')}</span>
+        <span>
+          <strong>${title}</strong>
+          <small>${date || 'Publicado'} • ${category}</small>
+        </span>
+      </a>
+    `;
+  }
+
+  async function setupSidebarWordPressPosts() {
+    const container = document.querySelector('[data-wp-sidebar-posts]');
+    if (!container) return;
+    const limit = Number(container.getAttribute('data-limit') || 10);
+    container.innerHTML = Array.from({ length: Math.min(limit, 5) }).map((_, index) => `
+      <div class="sidebar-post-item sidebar-skeleton" aria-hidden="true">
+        <span class="sidebar-post-number">${String(index + 1).padStart(2, '0')}</span>
+        <span><strong></strong><small></small></span>
+      </div>
+    `).join('');
+    try {
+      const posts = await fetchWp('/posts', {
+        _embed: '1',
+        per_page: limit,
+        orderby: 'date',
+        order: 'desc',
+      });
+      if (!Array.isArray(posts) || !posts.length) {
+        container.innerHTML = '<div class="sidebar-empty">Nenhum artigo publicado ainda.</div>';
+        return;
+      }
+      container.innerHTML = posts.slice(0, limit).map(sidebarPostHtml).join('');
+    } catch (error) {
+      container.innerHTML = '<div class="sidebar-empty">Não foi possível carregar agora. Confira o arquivo wordpress-config.js e tente atualizar a página.</div>';
     }
   }
 
@@ -357,7 +413,6 @@
         const params = {
           _embed: '1',
           per_page: getWpConfig().postsPerPage || 12,
-          status: 'publish',
           orderby: 'date',
           order: 'desc',
           search: currentSearch,
@@ -442,7 +497,7 @@
     container.innerHTML = '<div class="wp-status-card"><h1>Carregando artigo…</h1><p>Buscando a publicação no WordPress.</p></div>';
 
     try {
-      const posts = await fetchWp('/posts', { slug, _embed: '1', status: 'publish' });
+      const posts = await fetchWp('/posts', { slug, _embed: '1' });
       const post = Array.isArray(posts) ? posts[0] : null;
       if (!post) {
         container.innerHTML = `<div class="wp-status-card"><h1>Artigo não encontrado.</h1><p>Confira se o slug existe no WordPress e se o post está publicado.</p><a class="button button-primary" href="/paginas/artigos/index.html">Ver artigos</a></div>`;
@@ -509,6 +564,7 @@
     setupCookies();
     setupProfileWidget();
     setupHomeWordPressPosts();
+    setupSidebarWordPressPosts();
     setupArchiveWordPressPosts();
     setupSingleWordPressPost();
 

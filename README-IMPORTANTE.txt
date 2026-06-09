@@ -119,3 +119,27 @@ https://public-api.wordpress.com/wp/v2/sites/p3690.wordpress.com/posts?per_page=
 
 Se aparecer JSON com title, content e slug, a API esta funcionando.
 Se aparecer [] significa que ainda nao existem posts publicados.
+
+
+Atualização desta versão
+------------------------
+- Home simplificada para reduzir excesso de blocos visuais.
+- Menu superior reduzido para Artigos, Documentações e PcproPay.
+- Primeira página reorganizada em formato editorial/magazine: lista principal de artigos à esquerda e bloco lateral com as 10 publicações mais recentes do WordPress.
+- Sidebar dinâmica atualizada pela API do WordPress gratuito, sempre em ordem do mais recente para o mais antigo.
+- Mantido o design premium inspirado na Apple, com vidro, curvas grandes, espaçamento e layout responsivo.
+
+Atualização de ajuste visual da home
+----------------------------------
+- A home foi corrigida para evitar cards gigantes ou colunas quebradas quando o WordPress ainda está carregando.
+- A lista principal de artigos agora busca posts do WordPress.com gratuito sem enviar o parametro status, melhorando compatibilidade com public-api.wordpress.com.
+- A lateral direita continua limitada a 10 publicações e sempre ordenada do mais recente para o mais antigo.
+- O menu superior permanece reduzido para Artigos, Documentações e PcproPay.
+- O conteúdo técnico de erro foi removido da home para manter a experiência limpa para o visitante.
+
+Atualização visual — hero aberto sem bloco
+-----------------------------------------
+- A primeira dobra da home foi ajustada para ficar aberta, de ponta a ponta, sem o card/caixa central.
+- Mantido o design premium inspirado na Apple, com fundo suave, esfera visual e card flutuante de veredito.
+- A lista de artigos e a sidebar dinâmica continuam buscando os posts do WordPress gratuito p3690.wordpress.com.
+- O menu superior permanece enxuto: Artigos, Documentações e PcproPay.
