@@ -3,203 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto editorial Pcpropr: plano de conteúdo para diferenciar o blog</title>
-    <meta
-      name="description"
-      content="Plano editorial do Pcpropr com posicionamento, editorias, séries fixas, calendário de 90 dias, ideias de artigos e padrão de análise para tecnologia prática."
-    />
+    <title>Pcpropr — Tecnologia testada na prática</title>
+    <meta name="description" content="Portal de tecnologia prática com artigos aprofundados, documentações completas e o PCProPay para gestão financeira pessoal." />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
-    <meta name="theme-color" content="#0b1020" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="/assets/css/home-redesign.css" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="/index.html" class="brand" aria-label="Ir para a página inicial do Pcpropr">
-          <img src="/assets/images/favicon.png" alt="Logo Pcpropr" class="brand-logo" />
-          <span class="brand-copy">
-            <strong>Pcpropr</strong>
-            <small>Tecnologia testada na prática</small>
-          </span>
+
+    <!-- Hidden #cookie-banner for backward compat with site.js -->
+    <aside id="cookie-banner" hidden style="display:none!important"></aside>
+
+    <!-- ── HEADER ──────────────────────────────────────────────── -->
+    <header class="ap-header">
+      <div class="ap-header-inner">
+        <a href="/index.html" class="ap-brand" aria-label="Pcpropr — início">
+          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-brand-icon" />
+          <span class="ap-brand-name">Pcpropr</span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-          <span></span><span></span><span></span>
-          <span class="sr-only">Abrir menu</span>
-        </button>
-        <nav class="site-nav" id="menu-principal" aria-label="Menu principal">
-          <ul>
-            <li><a href="/paginas/artigos/index.html">Artigos</a></li>
-            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
-            <li><a href="https://pay.pcpropr.com.br/" class="nav-pay" target="_blank" rel="noopener noreferrer">PcproPay</a></li>
-          </ul>
+        <nav class="ap-nav" id="menu-principal" aria-label="Menu principal">
+          <a href="/index.html" class="ap-nav-link is-active">Início</a>
+          <a href="/paginas/artigos/index.html" class="ap-nav-link">Artigos</a>
+          <a href="/paginas/documentacao/index.html" class="ap-nav-link">Docs</a>
+          <a href="https://pay.pcpropr.com.br/" class="ap-nav-link ap-nav-cta" target="_blank" rel="noopener noreferrer">PcproPay</a>
         </nav>
+        <button class="ap-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menu</span>
+        </button>
       </div>
     </header>
 
-    <main id="conteudo" class="page-shell">
+    <!-- ── HERO ─────────────────────────────────────────────────── -->
+    <section class="ap-hero" id="conteudo">
+      <div class="ap-hero-inner">
 
-      <section class="hero hero-lab">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">Projeto de conteúdo</span>
-            <h1>Codifique Seu Futuro. Controle Suas Finanças</h1>
-            <p>
-              O PC Pro é o seu portal definitivo de tecnologia. Explore artigos aprofundados, consulte documentações completas de linguagens e acesse o PCProPay — nosso sistema integrado para revolucionar sua gestão financeira pessoal.
-            </p>
-          </div>
-          <aside class="hero-panel">
-            <div class="panel-header">
-              <span>Novos usuarios</span>
-              <strong>127</strong>
-            </div>
-            <div class="score-card">
-              <div><span>Pcpropr</span><strong>36</strong></div>
-              <div class="score-bar"><span style="width:36%"></span></div>
-            </div>
-            <div class="score-card">
-              <div><span>Pcpropay</span><strong>91</strong></div>
-              <div class="score-bar"><span style="width:70%"></span></div>
-            </div>
-            <p>Venha ser membro do futuro.</p>
-          </aside>
-        </div>
-      </section>
-
-       <main id="conteudo" class="page-shell">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow"> Pcpropr </span>
-            <h1>Artigos publicados no painel. Visual de produto premium.</h1>
-            <p>
-              Esta página busca os posts publicados no WordPress e monta o arquivo automaticamente com o design Pcpropr.
-              Você escreve no WordPress; o leitor navega em uma experiência rápida, moderna e exclusiva.
-            </p>
-            <form class="wp-search" data-wp-search-form>
-              <label class="sr-only" for="busca-artigos">Buscar artigos</label>
-              <input id="busca-artigos" type="search" placeholder="Buscar por IA, setup, segurança, apps..." data-wp-search-input />
-              <button class="button button-primary" type="submit">Buscar</button>
-            </form>
-          </div>
-          <aside class="hero-panel">
-            <div class="panel-header">
-              <span>Status editorial</span>
-              <strong data-wp-status>Conectando ao WordPress…</strong>
-            </div>
-            <p>
-              Use categorias no WordPress para organizar as editorias: IA sem hype, Setup inteligente,
-              Segurança, Programação prática, Apps e PcproPay.
-            </p>
-            <a class="button button-secondary" href="/paginas/projeto-conteudo/index.html">Abrir projeto editorial</a>
-          </aside>
-        </div>
-      </section> -->
-
-      <section class="section" id="arquivo-wordpress">
-        <div class="section-header">
-          <div>
-            <p class="kicker">Arquivo vivo</p>
-            <h2>Saiba sobre o mundo Tec na palma da sua mão.</h2>
+        <!-- Hero copy -->
+        <div class="ap-hero-copy">
+          <span class="ap-label">Tecnologia testada na prática</span>
+          <h1 class="ap-hero-title">Codifique<br>seu futuro.</h1>
+          <p class="ap-hero-sub">Artigos com profundidade real. Documentações completas. Gestão financeira integrada com o PcproPay.</p>
+          <div class="ap-hero-actions">
+            <a href="/paginas/artigos/index.html" class="ap-btn ap-btn-primary">Explorar artigos</a>
+            <a href="https://pay.pcpropr.com.br/" class="ap-btn ap-btn-ghost" target="_blank" rel="noopener noreferrer">Conhecer PcproPay ↗</a>
           </div>
         </div>
 
-        <div class="wp-category-filter" data-wp-categories>
+        <!-- Stats panel with thermometer -->
+        <div class="ap-hero-panel">
+          <div class="ap-panel-header">
+            <span class="ap-panel-label">Novos usuários</span>
+            <span class="ap-panel-total">127</span>
+          </div>
+
+          <div class="ap-thermo-wrap">
+            <div class="ap-thermo">
+              <div class="ap-thermo-fill" id="thermo-fill" style="height:72%">
+                <span class="ap-thermo-val">72%</span>
+              </div>
+            </div>
+            <div class="ap-thermo-labels">
+              <span>100</span>
+              <span>75</span>
+              <span>50</span>
+              <span>25</span>
+              <span>0</span>
+            </div>
+          </div>
+
+          <div class="ap-stats-rows">
+            <div class="ap-stat-row">
+              <div class="ap-stat-info">
+                <span class="ap-stat-dot" style="background:#ff7a1a"></span>
+                <span class="ap-stat-name">Pcpropr</span>
+              </div>
+              <div class="ap-stat-bar-wrap">
+                <div class="ap-stat-bar" style="width:36%"></div>
+              </div>
+              <strong class="ap-stat-num">36</strong>
+            </div>
+            <div class="ap-stat-row">
+              <div class="ap-stat-info">
+                <span class="ap-stat-dot" style="background:#0a84ff"></span>
+                <span class="ap-stat-name">PcproPay</span>
+              </div>
+              <div class="ap-stat-bar-wrap">
+                <div class="ap-stat-bar" style="width:71%;background:#0a84ff"></div>
+              </div>
+              <strong class="ap-stat-num">91</strong>
+            </div>
+          </div>
+
+          <p class="ap-panel-cta">Venha ser membro do futuro.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── MAIN LAYOUT: sidebar + content ────────────────────────── -->
+    <main class="ap-main-layout">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="ap-sidebar">
+        <div class="ap-sidebar-search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="6.5" cy="6.5" r="5" stroke="#86868b" stroke-width="1.5"/>
+            <path d="M10.5 10.5L14 14" stroke="#86868b" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="search" id="sidebar-search" placeholder="Pesquisar artigos…" autocomplete="off" aria-label="Filtrar artigos na lista" />
+        </div>
+        <div class="ap-sidebar-section-label">Publicações recentes</div>
+        <nav class="ap-sidebar-list" id="sidebar-posts" aria-label="Lista de artigos" data-wp-sidebar-posts data-limit="20">
+          <!-- JS injected by site.js setupSidebarWordPressPosts() -->
+          <div class="sidebar-skeleton sidebar-post-item"><span class="sidebar-post-number">01</span><span><strong></strong><small></small></span></div>
+          <div class="sidebar-skeleton sidebar-post-item"><span class="sidebar-post-number">02</span><span><strong></strong><small></small></span></div>
+          <div class="sidebar-skeleton sidebar-post-item"><span class="sidebar-post-number">03</span><span><strong></strong><small></small></span></div>
+          <div class="sidebar-skeleton sidebar-post-item"><span class="sidebar-post-number">04</span><span><strong></strong><small></small></span></div>
+          <div class="sidebar-skeleton sidebar-post-item"><span class="sidebar-post-number">05</span><span><strong></strong><small></small></span></div>
+        </nav>
+      </aside>
+
+      <!-- RIGHT CONTENT AREA -->
+      <div class="ap-content-area">
+
+        <!-- Category filter (populated by site.js) -->
+        <div class="ap-categories" data-wp-categories>
           <button type="button" class="is-active">Todos</button>
         </div>
 
-        <div class="article-grid modern-article-grid" data-wp-archive>
-          <article class="article-card">
-            <span class="index-badge">WP</span>
-            <div class="card-meta"><span class="tag">Carregando</span></div>
-            <h3>Os artigos publicados no WordPress vão aparecer aqui.</h3>
-            <p>Configure a URL da API em /assets/js/wordpress-config.js.</p>
-          </article>
+        <!-- Article grid (populated by site.js setupArchiveWordPressPosts) -->
+        <div class="ap-article-grid" data-wp-archive>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
         </div>
-      </section>
-    </main>
 
-      <section class="section" id="metodo">
-        <div class="section-header">
-          <div>
-            <p class="kicker">Tese editorial</p>
-            <h2>O Pcpropr publica tecnologia com consequência.</h2>
+        <!-- Principles section -->
+        <section class="ap-principles">
+          <h2 class="ap-principles-title">O que guia o Pcpropr</h2>
+          <div class="ap-principles-grid">
+            <div class="ap-principle-card">
+              <div class="ap-principle-icon">◎</div>
+              <h3>Menos hype</h3>
+              <p>Não vendemos novidade como revolução. Mostramos onde funciona, onde falha e para quem não serve.</p>
+            </div>
+            <div class="ap-principle-card">
+              <div class="ap-principle-icon">▣</div>
+              <h3>Mais prova</h3>
+              <p>Prints, métricas, custos, tempo de configuração e os obstáculos reais encontrados nos testes.</p>
+            </div>
+            <div class="ap-principle-card">
+              <div class="ap-principle-icon">⊕</div>
+              <h3>Decisão por perfil</h3>
+              <p>Um produto pode ser ótimo para estudante e ruim para empresa. Separamos os públicos com clareza.</p>
+            </div>
+            <div class="ap-principle-card">
+              <div class="ap-principle-icon">↺</div>
+              <h3>Atualização viva</h3>
+              <p>Guias importantes são revisados com data de atualização e aviso explícito do que mudou.</p>
+            </div>
           </div>
-          <p>
-            A pergunta de cada pauta deve ser: “o que o leitor faz melhor depois de ler isso?” Se a resposta não for clara, a pauta precisa mudar.
-          </p>
-        </div>
-        <div class="editorial-matrix">
-          <article class="matrix-card">
-            <span>Princípio 1</span>
-            <h3>Menos hype</h3>
-            <p>Não vender novidade como revolução. Mostrar onde funciona, onde falha e para quem não serve.</p>
-          </article>
-          <article class="matrix-card">
-            <span>Princípio 2</span>
-            <h3>Mais prova</h3>
-            <p>Usar prints, métricas, custos, tempo de configuração e obstáculos encontrados no teste.</p>
-          </article>
-          <article class="matrix-card">
-            <span>Princípio 3</span>
-            <h3>Decisão por perfil</h3>
-            <p>Um produto pode ser ótimo para estudante e ruim para empresa. O veredito precisa separar públicos.</p>
-          </article>
-          <article class="matrix-card">
-            <span>Princípio 4</span>
-            <h3>Atualização viva</h3>
-            <p>Guias importantes devem ser revisados, com data de atualização e aviso do que mudou.</p>
-          </article>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div>
-          <h2>Pcpropr</h2>
-          <p>Tecnologia testada na prática, com método editorial próprio e conteúdo feito para decisão.</p>
+    <!-- ── FOOTER ────────────────────────────────────────────────── -->
+    <footer class="ap-footer">
+      <div class="ap-footer-inner">
+        <div class="ap-footer-brand">
+          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-footer-icon" />
+          <span>Pcpropr</span>
         </div>
-        <div>
-          <h3>Navegação</h3>
-          <ul class="footer-links">
-            <li><a href="/index.html">Início</a></li>
-            <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
-            <li><a href="/paginas/artigos/index.html">Artigos atuais</a></li>
-            <li><a href="/paginas/contato/index.html">Contato</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="/paginas/politica-de-privacidade/index.html">Política de Privacidade</a></li>
-            <li><a href="/paginas/politica-de-cookies/index.html">Política de Cookies</a></li>
-            <li><a href="/paginas/termos-de-uso/index.html">Termos de Uso</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Pcpropr. Todos os direitos reservados.</p>
+        <nav class="ap-footer-links" aria-label="Links do rodapé">
+          <a href="/index.html">Início</a>
+          <a href="/paginas/artigos/index.html">Artigos</a>
+          <a href="/paginas/documentacao/index.html">Docs</a>
+          <a href="/paginas/contato/index.html">Contato</a>
+          <a href="/paginas/politica-de-privacidade/index.html">Privacidade</a>
+          <a href="/paginas/termos-de-uso/index.html">Termos</a>
+        </nav>
+        <p class="ap-footer-copy">© 2026 Pcpropr. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <aside class="cookie-banner" id="cookie-banner" hidden>
-      <div>
-        <strong>Privacidade e cookies</strong>
-        <p>Este site pode usar cookies para métricas, preferências e publicidade.</p>
-      </div>
-      <button type="button" class="button button-primary" id="accept-cookies" onclick="window.pcproprAcceptCookies && window.pcproprAcceptCookies()">Entendi</button>
+    <!-- Cookie banner (new design) -->
+    <aside class="ap-cookie" id="ap-cookie-banner" hidden>
+      <p><strong>Cookies</strong> — Este site pode usar cookies para métricas e preferências.</p>
+      <button type="button" id="ap-accept-cookies" class="ap-btn ap-btn-primary ap-btn-sm">Entendi</button>
     </aside>
+
     <script src="/assets/js/site.js" defer></script>
     <script src="/assets/js/wordpress-config.js" defer></script>
-    <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/home-sidebar-search.js" defer></script>
     <script>
       window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
     </script>
