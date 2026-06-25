@@ -16,51 +16,72 @@
     }
   }
 
+  function getCookieBanners() {
+    return ['ap-cookie-banner', 'cookie-banner']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+  }
+
   function closeCookieBanner() {
-    const banner = document.getElementById('cookie-banner');
-    if (!banner) return;
+    const banners = getCookieBanners();
     safeStorageSet('pcpropr-cookie-ok', '1');
-    banner.hidden = true;
-    banner.style.display = 'none';
-    banner.setAttribute('aria-hidden', 'true');
+    banners.forEach((banner) => {
+      banner.hidden = true;
+      banner.style.display = 'none';
+      banner.setAttribute('aria-hidden', 'true');
+    });
   }
 
   function setupMenu() {
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
+    const toggles = document.querySelectorAll('.menu-toggle, .ap-menu-toggle');
+    if (!toggles.length) return;
 
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('is-open');
-    });
+    toggles.forEach((toggle) => {
+      const targetId = toggle.getAttribute('aria-controls');
+      const nav = targetId
+        ? document.getElementById(targetId)
+        : document.querySelector('.site-nav, .ap-nav');
+      if (!nav) return;
 
-    nav.addEventListener('click', (event) => {
-      const link = event.target.closest('a');
-      if (!link) return;
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('is-open');
+      });
+
+      nav.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (!link) return;
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('is-open');
+      });
     });
   }
 
   function setupCookies() {
-    const banner = document.getElementById('cookie-banner');
-    const accept = document.getElementById('accept-cookies');
-    if (banner) {
+    const banners = getCookieBanners();
+    const acceptButtons = document.querySelectorAll('#accept-cookies, #ap-accept-cookies');
+    if (banners.length) {
       const accepted = safeStorageGet('pcpropr-cookie-ok');
       if (!accepted) {
-        banner.hidden = false;
-        banner.style.display = 'flex';
-        banner.setAttribute('aria-hidden', 'false');
+        const visibleBanner = document.getElementById('ap-cookie-banner') || document.getElementById('cookie-banner');
+        banners.forEach((banner) => {
+          if (banner === visibleBanner) {
+            banner.hidden = false;
+            banner.style.display = 'flex';
+            banner.setAttribute('aria-hidden', 'false');
+          } else {
+            banner.hidden = true;
+            banner.style.display = 'none';
+            banner.setAttribute('aria-hidden', 'true');
+          }
+        });
       } else {
         closeCookieBanner();
       }
     }
 
-    if (accept) {
-      accept.addEventListener('click', closeCookieBanner);
-    }
+    acceptButtons.forEach((button) => button.addEventListener('click', closeCookieBanner));
   }
 
   function setupProfileWidget() {
@@ -143,6 +164,8 @@
       apiBase: '/wp-json/wp/v2',
       articlePage: '/paginas/artigo/index.html',
       postsPerPage: 12,
+      archivePageSize: 5,
+      archiveFetchLimit: 100,
       homePosts: 6,
       cacheMinutes: 10,
     };
@@ -401,35 +424,152 @@
     const searchInput = document.querySelector('[data-wp-search-input]');
     const categoryWrap = document.querySelector('[data-wp-categories]');
     const status = document.querySelector('[data-wp-status]');
-    let selectedCategory = new URLSearchParams(window.location.search).get('categoria') || '';
-    let currentSearch = new URLSearchParams(window.location.search).get('busca') || '';
+    const pagination = document.querySelector('[data-wp-pagination]') || createPaginationContainer(container);
+    const paramsFromUrl = new URLSearchParams(window.location.search);
+    const pageSize = Math.max(1, Number(container.getAttribute('data-page-size') || getWpConfig().archivePageSize || 5));
+    const fetchLimit = Math.min(100, Math.max(pageSize, Number(getWpConfig().archiveFetchLimit || 100)));
+    let selectedCategory = paramsFromUrl.get('categoria') || '';
+    let currentSearch = paramsFromUrl.get('busca') || '';
+    let currentPage = Math.max(1, Number(paramsFromUrl.get('pagina') || 1));
+    let allPosts = [];
 
     if (searchInput && currentSearch) searchInput.value = currentSearch;
 
-    async function loadPosts() {
-      renderLoading(container, 8);
+    function createPaginationContainer(reference) {
+      const nav = document.createElement('nav');
+      nav.className = 'ap-pagination';
+      nav.setAttribute('data-wp-pagination', '');
+      nav.setAttribute('aria-label', 'Paginação de artigos');
+      reference.insertAdjacentElement('afterend', nav);
+      return nav;
+    }
+
+    function updateArchiveUrl() {
+      if (!window.history || !window.history.replaceState) return;
+      const nextParams = new URLSearchParams(window.location.search);
+      if (selectedCategory) nextParams.set('categoria', selectedCategory); else nextParams.delete('categoria');
+      if (currentSearch) nextParams.set('busca', currentSearch); else nextParams.delete('busca');
+      if (currentPage > 1) nextParams.set('pagina', String(currentPage)); else nextParams.delete('pagina');
+      const query = nextParams.toString();
+      const nextUrl = window.location.pathname + (query ? '?' + query : '') + window.location.hash;
+      window.history.replaceState({}, '', nextUrl);
+    }
+
+    function scrollToArchiveTop() {
+      const layout = document.querySelector('.ap-main-layout') || document.querySelector('#arquivo-wordpress') || container;
+      if (!layout) return;
+      layout.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderPagination(totalPages) {
+      if (!pagination) return;
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        pagination.hidden = true;
+        return;
+      }
+
+      pagination.hidden = false;
+      const pages = [];
+      const startPage = Math.max(1, currentPage - 2);
+      const endPage = Math.min(totalPages, currentPage + 2);
+
+      if (startPage > 1) {
+        pages.push(1);
+        if (startPage > 2) pages.push('…');
+      }
+      for (let page = startPage; page <= endPage; page += 1) pages.push(page);
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) pages.push('…');
+        pages.push(totalPages);
+      }
+
+      pagination.innerHTML = `
+        <button type="button" class="ap-page-btn ap-page-prev" data-page-action="prev" ${currentPage <= 1 ? 'disabled' : ''}>Anterior</button>
+        <div class="ap-page-numbers" aria-label="Páginas">
+          ${pages.map((page) => page === '…'
+            ? '<span class="ap-page-ellipsis">…</span>'
+            : `<button type="button" class="ap-page-btn ${page === currentPage ? 'is-active' : ''}" data-page="${page}" aria-current="${page === currentPage ? 'page' : 'false'}">${page}</button>`
+          ).join('')}
+        </div>
+        <button type="button" class="ap-page-btn ap-page-next" data-page-action="next" ${currentPage >= totalPages ? 'disabled' : ''}>Próxima</button>
+      `;
+    }
+
+    function renderCurrentPage() {
+      const totalPages = Math.max(1, Math.ceil(allPosts.length / pageSize));
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const start = (currentPage - 1) * pageSize;
+      const posts = allPosts.slice(start, start + pageSize);
+
+      if (!posts.length) {
+        container.innerHTML = `<div class="wp-status-card"><h3>Nenhum artigo encontrado.</h3><p>Tente outra busca ou publique novos posts no WordPress.</p></div>`;
+        if (pagination) {
+          pagination.innerHTML = '';
+          pagination.hidden = true;
+        }
+        if (status) status.textContent = 'Nenhum resultado encontrado.';
+        return;
+      }
+
+      container.innerHTML = posts.map((post, index) => postCardHtml(post, start + index)).join('');
+      renderPagination(totalPages);
+      updateArchiveUrl();
+
+      const first = start + 1;
+      const last = Math.min(start + pageSize, allPosts.length);
+      if (status) {
+        status.textContent = `Mostrando ${first}-${last} de ${allPosts.length} artigo${allPosts.length > 1 ? 's' : ''}. Página ${currentPage} de ${totalPages}.`;
+      }
+    }
+
+    async function loadPosts(resetPage) {
+      if (resetPage) currentPage = 1;
+      renderLoading(container, pageSize);
+      if (pagination) {
+        pagination.innerHTML = '';
+        pagination.hidden = true;
+      }
       if (status) status.textContent = 'Carregando artigos do WordPress…';
       try {
         const params = {
           _embed: '1',
-          per_page: getWpConfig().postsPerPage || 12,
+          per_page: fetchLimit,
           orderby: 'date',
           order: 'desc',
           search: currentSearch,
           categories: selectedCategory,
         };
         const posts = await fetchWp('/posts', params);
-        if (!Array.isArray(posts) || !posts.length) {
-          container.innerHTML = `<div class="wp-status-card"><h3>Nenhum artigo encontrado.</h3><p>Tente outra busca ou publique novos posts no WordPress.</p></div>`;
-          if (status) status.textContent = 'Nenhum resultado encontrado.';
-          return;
-        }
-        container.innerHTML = posts.map(postCardHtml).join('');
-        if (status) status.textContent = `${posts.length} artigo${posts.length > 1 ? 's' : ''} carregado${posts.length > 1 ? 's' : ''} do WordPress.`;
+        allPosts = Array.isArray(posts) ? posts : [];
+        renderCurrentPage();
       } catch (error) {
+        allPosts = [];
         renderWpError(container, error.message);
+        if (pagination) {
+          pagination.innerHTML = '';
+          pagination.hidden = true;
+        }
         if (status) status.textContent = 'Aguardando configuração da API do WordPress.';
       }
+    }
+
+    function isCategorySelect() {
+      return categoryWrap && categoryWrap.tagName && categoryWrap.tagName.toLowerCase() === 'select';
+    }
+
+    function renderCategoryOptions(categories) {
+      const options = [`<option value="" ${selectedCategory ? '' : 'selected'}>Todos</option>`]
+        .concat((categories || []).map((category) => `<option value="${category.id}" ${String(category.id) === String(selectedCategory) ? 'selected' : ''}>${decodeHtml(category.name)}</option>`));
+      categoryWrap.innerHTML = options.join('');
+    }
+
+    function renderCategoryButtons(categories) {
+      const buttons = [`<button type="button" class="${selectedCategory ? '' : 'is-active'}" data-category="">Todos</button>`]
+        .concat((categories || []).map((category) => `<button type="button" class="${String(category.id) === String(selectedCategory) ? 'is-active' : ''}" data-category="${category.id}">${decodeHtml(category.name)}</button>`));
+      categoryWrap.innerHTML = buttons.join('');
     }
 
     async function loadCategories() {
@@ -441,10 +581,18 @@
           orderby: 'count',
           order: 'desc',
         });
-        const buttons = [`<button type="button" class="${selectedCategory ? '' : 'is-active'}" data-category="">Todos</button>`]
-          .concat((categories || []).map((category) => `<button type="button" class="${String(category.id) === String(selectedCategory) ? 'is-active' : ''}" data-category="${category.id}">${decodeHtml(category.name)}</button>`));
-        categoryWrap.innerHTML = buttons.join('');
+
+        if (isCategorySelect()) {
+          renderCategoryOptions(categories);
+          return;
+        }
+
+        renderCategoryButtons(categories);
       } catch (error) {
+        if (isCategorySelect()) {
+          categoryWrap.innerHTML = '<option value="">Todos</option>';
+          return;
+        }
         categoryWrap.innerHTML = '<button type="button" class="is-active" data-category="">Todos</button>';
       }
     }
@@ -453,23 +601,48 @@
       searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         currentSearch = searchInput ? searchInput.value.trim() : '';
-        loadPosts();
+        loadPosts(true);
       });
     }
 
     if (categoryWrap) {
-      categoryWrap.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-category]');
-        if (!button) return;
-        selectedCategory = button.getAttribute('data-category') || '';
-        categoryWrap.querySelectorAll('button').forEach((item) => item.classList.remove('is-active'));
-        button.classList.add('is-active');
-        loadPosts();
+      if (categoryWrap.tagName && categoryWrap.tagName.toLowerCase() === 'select') {
+        categoryWrap.addEventListener('change', () => {
+          selectedCategory = categoryWrap.value || '';
+          loadPosts(true);
+        });
+      } else {
+        categoryWrap.addEventListener('click', (event) => {
+          const button = event.target.closest('[data-category]');
+          if (!button) return;
+          selectedCategory = button.getAttribute('data-category') || '';
+          categoryWrap.querySelectorAll('button').forEach((item) => item.classList.remove('is-active'));
+          button.classList.add('is-active');
+          loadPosts(true);
+        });
+      }
+    }
+
+    if (pagination) {
+      pagination.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button || button.disabled) return;
+        const totalPages = Math.max(1, Math.ceil(allPosts.length / pageSize));
+        const action = button.getAttribute('data-page-action');
+        const page = Number(button.getAttribute('data-page'));
+
+        if (action === 'prev') currentPage -= 1;
+        else if (action === 'next') currentPage += 1;
+        else if (page) currentPage = page;
+
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
+        renderCurrentPage();
+        scrollToArchiveTop();
       });
     }
 
     await loadCategories();
-    await loadPosts();
+    await loadPosts(false);
   }
 
   function setMeta(name, value, property) {
@@ -489,70 +662,107 @@
     if (!container) return;
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('slug');
+    const statusCard = (title, text, actionLabel = 'Ver artigos') => `
+      <div class="reader-status-card">
+        <span class="reader-status-mark"></span>
+        <h1>${title}</h1>
+        <p>${text}</p>
+        <a class="ap-btn ap-btn-primary" href="/paginas/artigos/index.html">${actionLabel}</a>
+      </div>`;
+
     if (!slug) {
-      container.innerHTML = `<div class="wp-status-card"><h1>Artigo não informado.</h1><p>Volte para a página de artigos e escolha uma publicação.</p><a class="button button-primary" href="/paginas/artigos/index.html">Ver artigos</a></div>`;
+      container.innerHTML = statusCard('Artigo não informado.', 'Volte para a página de artigos e escolha uma publicação.');
       return;
     }
 
-    container.innerHTML = '<div class="wp-status-card"><h1>Carregando artigo…</h1><p>Buscando a publicação no WordPress.</p></div>';
+    container.innerHTML = '<div class="reader-status-card"><span class="reader-status-mark"></span><h1>Carregando artigo…</h1><p>Buscando a publicação no WordPress.</p></div>';
 
     try {
       const posts = await fetchWp('/posts', { slug, _embed: '1' });
       const post = Array.isArray(posts) ? posts[0] : null;
       if (!post) {
-        container.innerHTML = `<div class="wp-status-card"><h1>Artigo não encontrado.</h1><p>Confira se o slug existe no WordPress e se o post está publicado.</p><a class="button button-primary" href="/paginas/artigos/index.html">Ver artigos</a></div>`;
+        container.innerHTML = statusCard('Artigo não encontrado.', 'Confira se o slug existe no WordPress e se o post está publicado.');
         return;
       }
 
       const title = decodeHtml(post.title && post.title.rendered);
-      const excerpt = clampText(post.excerpt && post.excerpt.rendered, 170);
+      const excerpt = clampText(post.excerpt && post.excerpt.rendered, 210);
       const image = getFeaturedImage(post);
       const categories = getPostTerms(post).slice(0, 4);
+      const primaryCategory = categories[0] ? decodeHtml(categories[0].name) : 'Pcpropr';
       const author = getPostAuthor(post);
       const readTime = estimateReadTime(post.content && post.content.rendered);
       const date = formatDate(post.date);
-      const tags = categories.map((category) => `<span class="tag">${decodeHtml(category.name)}</span>`).join('');
+      const tags = categories.map((category) => `<span>${decodeHtml(category.name)}</span>`).join('');
+      const content = post.content && post.content.rendered ? post.content.rendered : '<p>Este artigo ainda não tem conteúdo.</p>';
 
       document.title = `${title} | Pcpropr`;
       setMeta('description', excerpt || title);
       setMeta('og:title', `${title} | Pcpropr`, true);
       setMeta('og:description', excerpt || title, true);
-      if (image) setMeta('og:image', image.src, true);
+      setMeta('twitter:title', `${title} | Pcpropr`);
+      setMeta('twitter:description', excerpt || title);
+      if (image) {
+        setMeta('og:image', image.src, true);
+        setMeta('twitter:image', image.src);
+      }
 
       container.innerHTML = `
-        <nav class="breadcrumbs" aria-label="Caminho do artigo">
-          <a href="/index.html">Início</a><span>/</span><a href="/paginas/artigos/index.html">Artigos</a><span>/</span><span>${title}</span>
-        </nav>
-        <article class="wp-article-shell">
-          <header class="wp-article-hero">
-            <div>
-              <span class="eyebrow">Publicado no WordPress</span>
-              <h1>${title}</h1>
-              <p>${excerpt}</p>
-              <div class="card-meta">
-                ${tags || '<span class="tag">Pcpropr</span>'}
-                <span class="tag">${date}</span>
-                <span class="tag">${readTime} min de leitura</span>
-                <span class="tag">Por ${author}</span>
-              </div>
+        <article class="reader-article">
+          <nav class="reader-breadcrumbs" aria-label="Caminho do artigo">
+            <a href="/index.html">Início</a>
+            <span>/</span>
+            <a href="/paginas/artigos/index.html">Artigos</a>
+            <span>/</span>
+            <strong>${primaryCategory}</strong>
+          </nav>
+
+          <header class="reader-hero">
+            <div class="reader-kicker-row">
+              <span class="reader-kicker">${primaryCategory}</span>
+              <span>${date}</span>
+              <span>${readTime} min de leitura</span>
             </div>
-            ${image ? `<figure class="wp-article-cover"><img src="${image.src}" alt="${image.alt}"></figure>` : ''}
+            <h1>${title}</h1>
+            ${excerpt ? `<p class="reader-excerpt">${excerpt}</p>` : ''}
+            <div class="reader-author-row" aria-label="Informações do artigo">
+              <span class="reader-author-avatar" aria-hidden="true">${author ? author.charAt(0).toUpperCase() : 'P'}</span>
+              <span><strong>Por ${author || 'Pcpropr'}</strong><small>Publicado no WordPress</small></span>
+            </div>
           </header>
-          <div class="wp-article-layout">
-            <main class="wp-article-content">
-              ${post.content && post.content.rendered ? post.content.rendered : '<p>Este artigo ainda não tem conteúdo.</p>'}
+
+          ${image ? `<figure class="reader-cover"><img src="${image.src}" alt="${image.alt}"></figure>` : ''}
+
+          <div class="reader-body-layout">
+            <section class="reader-side-card reader-reading-summary" aria-label="Resumo da leitura">
+              <div class="reader-side-main">
+                <span class="reader-side-label">Leitura</span>
+                <strong>${readTime} min</strong>
+                <p>Layout limpo, largura confortável e foco total no texto.</p>
+              </div>
+              <div class="reader-side-actions">
+                <div class="reader-tags">${tags || '<span>Pcpropr</span>'}</div>
+                <a href="/paginas/artigos/index.html">← Voltar aos artigos</a>
+              </div>
+            </section>
+
+            <main class="reader-content">
+              ${content}
             </main>
-            <aside class="wp-article-aside">
-              <h2>Veredito Pcpropr</h2>
-              <p>Use este bloco no WordPress para transformar cada post em uma decisão prática: para quem serve, quando vale a pena e qual o próximo passo.</p>
-              <a class="button button-primary" href="/paginas/artigos/index.html">Mais artigos</a>
-              <a class="button button-secondary" href="https://pay.pcpropr.com.br/" target="_blank" rel="noopener noreferrer">Conhecer PcproPay</a>
-            </aside>
           </div>
+
+          <section class="reader-next-card" aria-label="Continuar navegando">
+            <div>
+              <span>Continue lendo</span>
+              <h2>Explore outros artigos do Pcpropr</h2>
+              <p>Volte para a lista, filtre por categoria e encontre o próximo guia prático.</p>
+            </div>
+            <a class="ap-btn ap-btn-primary" href="/paginas/artigos/index.html">Ver artigos</a>
+          </section>
         </article>
       `;
     } catch (error) {
-      renderWpError(container, error.message);
+      container.innerHTML = statusCard('Não foi possível carregar.', error.message || 'Tente novamente em instantes.', 'Voltar aos artigos');
     }
   }
 

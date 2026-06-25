@@ -31,7 +31,7 @@
         <nav class="ap-nav" id="menu-principal" aria-label="Menu principal">
           <a href="/index.html" class="ap-nav-link is-active">Início</a>
           <!-- <a href="/paginas/artigos/index.html" class="ap-nav-link">Artigos</a> -->
-          <a href="/paginas/documentacao/index.html" class="ap-nav-link">Docs</a>
+          <!-- <a href="/paginas/documentacao/index.html" class="ap-nav-link">Docs</a> -->
           <a href="https://pay.pcpropr.com.br/" class="ap-nav-link ap-nav-cta" target="_blank" rel="noopener noreferrer">PcproPay</a>
         </nav>
         <button class="ap-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
@@ -119,6 +119,16 @@
           </svg>
           <input type="search" id="sidebar-search" placeholder="Pesquisar artigos…" autocomplete="off" aria-label="Filtrar artigos na lista" />
         </div>
+
+        <div class="ap-sidebar-filter" aria-label="Filtro de categorias">
+          <label class="ap-sidebar-section-label" for="category-filter">Filtro</label>
+          <div class="ap-filter-select-wrap">
+            <select id="category-filter" class="ap-category-select" data-wp-categories aria-label="Filtrar artigos por categoria">
+              <option value="">Todos</option>
+            </select>
+          </div>
+        </div>
+
         <div class="ap-sidebar-section-label">Publicações recentes</div>
         <nav class="ap-sidebar-list" id="sidebar-posts" aria-label="Lista de artigos" data-wp-sidebar-posts data-limit="20">
           <!-- JS injected by site.js setupSidebarWordPressPosts() -->
@@ -133,23 +143,19 @@
       <!-- RIGHT CONTENT AREA -->
       <div class="ap-content-area">
 
-        <!-- Category filter (populated by site.js) -->
-        <div class="ap-categories" data-wp-categories>
-          <button type="button" class="is-active">Todos</button>
+        <!-- Article grid (populated by site.js setupArchiveWordPressPosts) -->
+        <div class="ap-article-grid" data-wp-archive data-page-size="5">
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
+          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
         </div>
 
-        <!-- Article grid (populated by site.js setupArchiveWordPressPosts) -->
-        <div class="ap-article-grid" data-wp-archive>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-          <article class="ap-card skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></article>
-        </div>
+        <nav class="ap-pagination" data-wp-pagination aria-label="Paginação de artigos" hidden></nav>
 
         <!-- Principles section -->
-        <section class="ap-principles">
+        <!-- <section class="ap-principles">
           <h2 class="ap-principles-title">O que guia o Pcpropr</h2>
           <div class="ap-principles-grid">
             <div class="ap-principle-card">
@@ -173,7 +179,7 @@
               <p>Guias importantes são revisados com data de atualização e aviso explícito do que mudou.</p>
             </div>
           </div>
-        </section>
+        </section> -->
 
       </div>
     </main>

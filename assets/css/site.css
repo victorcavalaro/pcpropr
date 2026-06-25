@@ -2703,3 +2703,85 @@ body::before {
 .wp-article-shell {
   padding-top: clamp(22px, 4vw, 54px);
 }
+
+/* Pagination for WordPress article archive */
+.ap-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 28px 0 0;
+}
+
+.ap-pagination[hidden] {
+  display: none !important;
+}
+
+.ap-page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ap-page-btn {
+  min-width: 38px;
+  height: 38px;
+  border: 1px solid var(--line, rgba(0,0,0,0.1));
+  border-radius: 999px;
+  background: var(--surface, #fff);
+  color: var(--ink, #111827);
+  box-shadow: var(--shadow-soft, 0 8px 24px rgba(0,0,0,0.08));
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0 14px;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.ap-page-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow, 0 18px 48px rgba(0,0,0,0.12));
+}
+
+.ap-page-btn.is-active {
+  background: var(--ink, #111827);
+  color: #fff;
+  border-color: var(--ink, #111827);
+}
+
+.ap-page-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ap-page-prev,
+.ap-page-next {
+  min-width: 92px;
+}
+
+.ap-page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 38px;
+  color: var(--muted, #6b7280);
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  .ap-page-prev,
+  .ap-page-next {
+    flex: 1;
+  }
+
+  .ap-page-numbers {
+    width: 100%;
+    order: -1;
+  }
+}
