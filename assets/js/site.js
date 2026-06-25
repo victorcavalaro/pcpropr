@@ -751,14 +751,14 @@
             </main>
           </div>
 
-          <section class="reader-next-card" aria-label="Continuar navegando">
-            <div>
-              <span>Continue lendo</span>
-              <h2>Explore outros artigos do Pcpropr</h2>
-              <p>Volte para a lista, filtre por categoria e encontre o próximo guia prático.</p>
-            </div>
-            <a class="ap-btn ap-btn-primary" href="/paginas/artigos/index.html">Ver artigos</a>
-          </section>
+          // <section class="reader-next-card" aria-label="Continuar navegando">
+          //   <div>
+          //     <span>Continue lendo</span>
+          //     <h2>Explore outros artigos do Pcpropr</h2>
+          //     <p>Volte para a lista, filtre por categoria e encontre o próximo guia prático.</p>
+          //   </div>
+          //   <a class="ap-btn ap-btn-primary" href="/paginas/artigos/index.html">Ver artigos</a>
+          // </section>
         </article>
       `;
     } catch (error) {
