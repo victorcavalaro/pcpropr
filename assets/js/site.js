@@ -707,48 +707,46 @@
         setMeta('twitter:image', image.src);
       }
 
+      const heroTags = categories.slice(0, 2).map((category) => `<span>${decodeHtml(category.name)}</span>`).join('');
       container.innerHTML = `
-        <article class="reader-article">
-          <nav class="reader-breadcrumbs" aria-label="Caminho do artigo">
-            <a href="/index.html">Início</a>
-            <span>/</span>
-            <a href="/paginas/artigos/index.html">Artigos</a>
-            <span>/</span>
-            <strong>${primaryCategory}</strong>
-          </nav>
+        <article class="reader-article reader-article-clean">
+          <header class="reader-top-card ${image ? 'has-cover' : 'no-cover'}">
+            ${image ? `<figure class="reader-top-cover"><img src="${image.src}" alt="${image.alt}"></figure>` : ''}
 
-          <header class="reader-hero">
-            <div class="reader-kicker-row">
-              <span class="reader-kicker">${primaryCategory}</span>
-              <span>${date}</span>
-              <span>${readTime} min de leitura</span>
-            </div>
-            <h1>${title}</h1>
-            ${excerpt ? `<p class="reader-excerpt">${excerpt}</p>` : ''}
-            <div class="reader-author-row" aria-label="Informações do artigo">
-              <span class="reader-author-avatar" aria-hidden="true">${author ? author.charAt(0).toUpperCase() : 'P'}</span>
-              <span><strong>Por ${author || 'Pcpropr'}</strong><small>Publicado no WordPress</small></span>
+            <div class="reader-top-body" aria-label="Apresentação do artigo">
+              <div class="reader-top-meta">
+                ${heroTags || `<span>${primaryCategory}</span>`}
+                <span>${readTime} min</span>
+                <nav class="reader-breadcrumbs reader-breadcrumbs-chip" aria-label="Caminho do artigo">
+                  <a href="/index.html">Início</a>
+                  <span>/</span>
+                  <a href="/paginas/artigos/index.html">Artigos</a>
+                  <span>/</span>
+                  <strong>${primaryCategory}</strong>
+                </nav>
+              </div>
+
+              <h1 class="reader-top-title">${title}</h1>
+              ${excerpt ? `<p class="reader-top-excerpt">${excerpt}</p>` : ''}
+
+              <div class="reader-top-footer">
+                <span class="reader-top-date">${date}</span>
+                <div class="reader-author-actions">
+                  <div class="reader-author-row reader-author-inline" aria-label="Informações do artigo">
+                    <span class="reader-author-avatar" aria-hidden="true">${author ? author.charAt(0).toUpperCase() : 'P'}</span>
+                    <span><strong>Por ${author || 'Pcpropr'}</strong><small>Publicado no WordPress</small></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </header>
 
-          ${image ? `<figure class="reader-cover"><img src="${image.src}" alt="${image.alt}"></figure>` : ''}
-
-          <div class="reader-body-layout">
-            <section class="reader-side-card reader-reading-summary" aria-label="Resumo da leitura">
-              <div class="reader-side-main">
-                <span class="reader-side-label">Leitura</span>
-                <strong>${readTime} min</strong>
-                <p>Layout limpo, largura confortável e foco total no texto.</p>
-              </div>
-              <div class="reader-side-actions">
-                <div class="reader-tags">${tags || '<span>Pcpropr</span>'}</div>
-                <a href="/paginas/artigos/index.html">← Voltar aos artigos</a>
+          <div class="reader-content-wrap">
+            <section class="reader-content-card">
+              <div class="reader-content">
+                ${content}
               </div>
             </section>
-
-            <main class="reader-content">
-              ${content}
-            </main>
           </div>
 
           <section class="reader-next-card" aria-label="Continuar navegando">
