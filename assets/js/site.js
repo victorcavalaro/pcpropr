@@ -719,9 +719,9 @@
                 <span>${readTime} min</span>
                 <nav class="reader-breadcrumbs reader-breadcrumbs-chip" aria-label="Caminho do artigo">
                   <a href="/index.html">Início</a>
-                  <span>/</span>
+                  <strong>/</strong>
                   <a href="/paginas/artigos/index.html">Artigos</a>
-                  <span>/</span>
+                     <strong>/</strong>
                   <strong>${primaryCategory}</strong>
                 </nav>
               </div>
@@ -734,7 +734,7 @@
                 <div class="reader-author-actions">
                   <div class="reader-author-row reader-author-inline" aria-label="Informações do artigo">
                     <span class="reader-author-avatar" aria-hidden="true">${author ? author.charAt(0).toUpperCase() : 'P'}</span>
-                    <span><strong>Por ${author || 'Pcpropr'}</strong><small>Publicado no WordPress</small></span>
+                    <span><strong>Por ${author || 'Pcpropr'}</strong><small>Acesse PCpropay</small></span>
                   </div>
                 </div>
               </div>
@@ -749,14 +749,7 @@
             </section>
           </div>
 
-          <section class="reader-next-card" aria-label="Continuar navegando">
-            <div>
-              <span>Continue lendo</span>
-              <h2>Explore outros artigos do Pcpropr</h2>
-              <p>Volte para a lista, filtre por categoria e encontre o próximo guia prático.</p>
-            </div>
-            <a class="ap-btn ap-btn-primary" href="/paginas/artigos/index.html">Ver artigos</a>
-          </section>
+       
         </article>
       `;
     } catch (error) {
