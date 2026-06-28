@@ -1,91 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artigo | Pcpropr</title>
-    <meta name="description" content="Artigo Pcpropr carregado dinamicamente do WordPress." />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
-    <meta name="theme-color" content="#f5f5f7" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Artigo | Pcpropr" />
-    <meta property="og:description" content="Artigo Pcpropr carregado dinamicamente do WordPress." />
-    <meta property="og:image" content="/assets/images/product-cover.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Artigo | Pcpropr" />
-    <meta name="twitter:description" content="Artigo Pcpropr carregado dinamicamente do WordPress." />
-    <meta name="twitter:image" content="/assets/images/product-cover.jpg" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/home-redesign.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos sobre Finanças Pessoais | Pcpropr</title>
+    <meta name="description" content="Leia artigos práticos sobre organização financeira, controle de contas, cartão de crédito e gestão do mês no Pcpropr.">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-2949468008594913">
+    <meta name="theme-color" content="#111827">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Artigos sobre Finanças Pessoais | Pcpropr">
+    <meta property="og:description" content="Leia artigos práticos sobre organização financeira, controle de contas, cartão de crédito e gestão do mês no Pcpropr.">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2949468008594913" crossorigin="anonymous"></script>
-  </head>
-  <body class="article-reading-page">
+</head>
+<body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-    <!-- Hidden #cookie-banner for backward compat with site.js -->
-    <aside id="cookie-banner" hidden style="display:none!important"></aside>
-
-    <!-- ── HEADER IGUAL À HOME ──────────────────────────────────── -->
-    <header class="ap-header">
-      <div class="ap-header-inner">
-        <a href="/index.html" class="ap-brand" aria-label="Pcpropr — início">
-          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-brand-icon" />
-          <span class="ap-brand-name">Pcpropr</span>
-        </a>
-        <nav class="ap-nav" id="menu-principal" aria-label="Menu principal">
-          <a href="/index.html" class="ap-nav-link is-active">Início</a>
-          <!-- <a href="/paginas/documentacao/index.html" class="ap-nav-link">Docs</a> -->
-          <a href="https://pay.pcpropr.com.br/" class="ap-nav-link ap-nav-cta" target="_blank" rel="noopener noreferrer">PcproPay</a>
-        </nav>
-        <button class="ap-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-          <span></span><span></span><span></span>
-          <span class="sr-only">Menu</span>
-        </button>
-      </div>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/index.html" class="brand" aria-label="Ir para a página inicial do Pcpropr">
+                <img src="/assets/images/logo-menu.png" alt="Logo Pcpropr" class="brand-logo">
+                <span class="brand-copy">
+                    <strong>Pcpropr</strong>
+                    <small>Educação financeira prática</small>
+                </span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <span></span><span></span><span></span>
+                <span class="sr-only">Abrir menu</span>
+            </button>
+            <nav class="site-nav" id="menu-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="/paginas/artigos/index.html" class="is-active">Artigos</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                    <li><a href="https://pay.pcpropr.com.br/" class="nav-pay" target="_blank" rel="noopener noreferrer">PcproPay</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main id="conteudo" class="article-reader-shell" data-wp-single>
-      <div class="reader-status-card">
-        <span class="reader-status-mark"></span>
-        <h1>Carregando artigo…</h1>
-        <p>Buscando a publicação no WordPress.</p>
-      </div>
+    <main id="conteudo" class="page-shell">
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <p class="kicker">Artigos</p>
+                    <h1>Conteúdo prático sobre finanças pessoais</h1>
+                </div>
+                <p>Explore artigos sobre organização financeira, controle de contas, cartão de crédito e como tomar melhores decisões com o dinheiro que você já tem.</p>
+            </div>
+            <div class="grid-2">
+                <a class="card" href="/paginas/artigos/como-sair-do-vermelho-organizando-contas-e-ganhos/" style="text-decoration:none;color:inherit">
+                    <h2>Como sair do vermelho organizando contas e ganhos no mesmo lugar</h2>
+                    <p>Aprenda a enxergar o mês inteiro e organizar entradas e compromissos para reduzir o aperto financeiro.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-organizar-contas-mensais-sem-esquecer-vencimentos/" style="text-decoration:none;color:inherit">
+                    <h2>Como organizar suas contas mensais sem esquecer vencimentos</h2>
+                    <p>Uma rotina simples para acompanhar boletos, despesas fixas e contas parceladas sem depender da memória.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-controlar-cartao-de-credito-sem-susto-com-a-fatura/" style="text-decoration:none;color:inherit">
+                    <h2>Como controlar cartão de crédito sem levar susto com a fatura</h2>
+                    <p>Como acompanhar compras, parcelamentos e fechamento da fatura de forma mais consciente.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-prever-seu-mes-antes-que-ele-vire-um-problema/" style="text-decoration:none;color:inherit">
+                    <h2>Como prever seu mês antes que ele vire um problema</h2>
+                    <p>Veja como antecipar aperto financeiro e ajustar o mês com base em previsões e ganhos conhecidos.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/para-onde-foi-meu-dinheiro-no-fim-do-mes/" style="text-decoration:none;color:inherit">
+                    <h2>Por que você nunca sabe para onde foi seu dinheiro no fim do mês</h2>
+                    <p>Entenda por que o dinheiro some e como enxergar o quadro completo da sua rotina financeira.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-controlar-salario-descontos-e-valor-liquido/" style="text-decoration:none;color:inherit">
+                    <h2>O jeito mais simples de controlar salário, descontos e valor líquido</h2>
+                    <p>Como visualizar quanto realmente entra no seu bolso depois de todos os descontos.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/erro-que-faz-seu-orcamento-dar-errado-na-pratica/" style="text-decoration:none;color:inherit">
+                    <h2>O erro que faz seu orçamento parecer certo no papel e dar errado na prática</h2>
+                    <p>Descubra o motivo mais comum de falha nos planos financeiros pessoais.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-decidir-com-numeros-na-vida-financeira/" style="text-decoration:none;color:inherit">
+                    <h2>Como parar de improvisar e começar a decidir com números</h2>
+                    <p>A diferença entre tomar decisões financeiras por intuição e por dados reais.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-ter-mais-clareza-financeira-mesmo-ganhando-pouco/" style="text-decoration:none;color:inherit">
+                    <h2>Como ter mais clareza financeira mesmo ganhando pouco</h2>
+                    <p>Organização financeira não depende de quanto você ganha, mas de como você enxerga o que tem.</p>
+                </a>
+                <a class="card" href="/paginas/artigos/como-usar-um-sistema-financeiro-pessoal-para-mudar-sua-rotina/" style="text-decoration:none;color:inherit">
+                    <h2>Como usar um sistema financeiro pessoal para mudar sua rotina</h2>
+                    <p>Como uma ferramenta de gestão financeira pessoal pode transformar a relação com o dinheiro.</p>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer class="ap-footer">
-      <div class="ap-footer-inner">
-        <div class="ap-footer-brand">
-          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-footer-icon" />
-          <span>Pcpropr</span>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h2>Pcpropr</h2>
+                <p>Educação financeira prática para quem quer organizar contas, ganhos, cartões, previsões e decisões do mês.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul class="footer-links">
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/paginas/artigos/index.html">Artigos</a></li>
+                    <li><a href="/paginas/documentacao/index.html">Documentações</a></li>
+                    <li><a href="/paginas/sobre/index.html">Sobre</a></li>
+                    <li><a href="/paginas/contato/index.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/paginas/politica-de-privacidade/index.html">Política de Privacidade</a></li>
+                    <li><a href="/paginas/politica-de-cookies/index.html">Política de Cookies</a></li>
+                    <li><a href="/paginas/termos-de-uso/index.html">Termos de Uso</a></li>
+                </ul>
+            </div>
         </div>
-        <nav class="ap-footer-links" aria-label="Links do rodapé">
-          <a href="/index.html">Início</a>
-          <a href="/paginas/artigos/index.html">Artigos</a>
-          <a href="/paginas/documentacao/index.html">Docs</a>
-          <a href="/paginas/contato/index.html">Contato</a>
-          <a href="/paginas/politica-de-privacidade/index.html">Privacidade</a>
-          <a href="/paginas/termos-de-uso/index.html">Termos</a>
-        </nav>
-        <p class="ap-footer-copy">© 2026 Pcpropr. Todos os direitos reservados.</p>
-      </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pcpropr. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <aside class="ap-cookie" id="ap-cookie-banner" hidden>
-      <p><strong>Cookies</strong> — Este site pode usar cookies para métricas e preferências.</p>
-      <button type="button" id="ap-accept-cookies" class="ap-btn ap-btn-primary ap-btn-sm">Entendi</button>
+    <aside class="cookie-banner" id="cookie-banner" hidden>
+        <div>
+            <strong>Privacidade e cookies</strong>
+            <p>Este site pode usar cookies para métricas, preferências e publicidade. Leia nossa <a href="/paginas/politica-de-privacidade/index.html">Política de Privacidade</a> e a <a href="/paginas/politica-de-cookies/index.html">Política de Cookies</a>.</p>
+        </div>
+        <button type="button" class="button button-primary" id="accept-cookies" onclick="window.pcproprAcceptCookies && window.pcproprAcceptCookies()">Entendi</button>
     </aside>
 
-    <script src="/assets/js/wordpress-config.js" defer></script>
     <script src="/assets/js/site.js" defer></script>
-    <script>
-      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
-    </script>
-    <script src="/_vercel/insights/script.js" defer></script>
-  </body>
+</body>
 </html>
