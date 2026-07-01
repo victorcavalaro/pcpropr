@@ -392,6 +392,7 @@
   async function setupSidebarWordPressPosts() {
     const container = document.querySelector('[data-wp-sidebar-posts]');
     if (!container) return;
+    const staticSidebarHtml = container.innerHTML;
     const limit = Number(container.getAttribute('data-limit') || 10);
     container.innerHTML = Array.from({ length: Math.min(limit, 5) }).map((_, index) => `
       <div class="sidebar-post-item sidebar-skeleton" aria-hidden="true">
@@ -412,7 +413,9 @@
       }
       container.innerHTML = posts.slice(0, limit).map(sidebarPostHtml).join('');
     } catch (error) {
-      container.innerHTML = '<div class="sidebar-empty">Não foi possível carregar agora. Confira o arquivo wordpress-config.js e tente atualizar a página.</div>';
+      container.innerHTML = staticSidebarHtml && staticSidebarHtml.trim()
+        ? staticSidebarHtml
+        : '<div class="sidebar-empty">Não foi possível carregar agora. Confira o arquivo wordpress-config.js e tente atualizar a página.</div>';
     }
   }
 
@@ -432,6 +435,8 @@
     let currentSearch = paramsFromUrl.get('busca') || '';
     let currentPage = Math.max(1, Number(paramsFromUrl.get('pagina') || 1));
     let allPosts = [];
+    const staticArchiveHtml = container.innerHTML;
+    const staticStatusText = status ? status.textContent : '';
 
     if (searchInput && currentSearch) searchInput.value = currentSearch;
 
@@ -547,12 +552,16 @@
         renderCurrentPage();
       } catch (error) {
         allPosts = [];
-        renderWpError(container, error.message);
+        if (staticArchiveHtml && staticArchiveHtml.trim()) {
+          container.innerHTML = staticArchiveHtml;
+        } else {
+          renderWpError(container, error.message);
+        }
         if (pagination) {
           pagination.innerHTML = '';
           pagination.hidden = true;
         }
-        if (status) status.textContent = 'Aguardando configuração da API do WordPress.';
+        if (status) status.textContent = staticStatusText || 'Artigos publicados no Pcpropr.';
       }
     }
 
