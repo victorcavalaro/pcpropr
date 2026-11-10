@@ -1,293 +1,893 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pcpropr — Tecnologia testada na prática</title>
-    <meta name="description" content="Portal de tecnologia prática com artigos aprofundados, documentações completas e o PCProPay para gestão financeira pessoal." />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="google-adsense-account" content="ca-pub-2949468008594913" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/home-redesign.css" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFSM48PC9S"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YFSM48PC9S');
-    </script>
-  </head>
-  <body class="home-page">
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-    <!-- Hidden #cookie-banner for backward compat with site.js -->
-    <aside id="cookie-banner" hidden style="display:none!important"></aside>
-
-    <!-- ── HEADER ──────────────────────────────────────────────── -->
-    <header class="ap-header">
-      <div class="ap-header-inner">
-        <a href="/index.html" class="ap-brand" aria-label="Pcpropr — início">
-          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-brand-icon" />
-          <span class="ap-brand-name">Pcpropr</span>
-        </a>
-        <nav class="ap-nav" id="menu-principal" aria-label="Menu principal">
-          <a href="/index.html" class="ap-nav-link is-active">Início</a>
-          <!-- <a href="/paginas/artigos/index.html" class="ap-nav-link">Artigos</a> -->
-          <!-- <a href="/paginas/documentacao/index.html" class="ap-nav-link">Docs</a> -->
-          <a href="https://pay.pcpropr.com.br/" class="ap-nav-link ap-nav-cta" target="_blank" rel="noopener noreferrer">PcproPay</a>
-        </nav>
-        <button class="ap-menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-          <span></span><span></span><span></span>
-          <span class="sr-only">Menu</span>
-        </button>
-      </div>
-    </header>
-
-    <!-- ── HERO ─────────────────────────────────────────────────── -->
-    <section class="ap-hero" id="conteudo">
-      <div class="ap-hero-inner">
-
-        <!-- Hero copy -->
-        <div class="ap-hero-copy">
-          <span class="ap-label">Tecnologia testada na prática</span>
-          <h1 class="ap-hero-title">Codifique<br>seu futuro.</h1>
-          <p class="ap-hero-sub">Artigos com profundidade real. Documentações completas. Gestão financeira integrada com o PcproPay.</p>
-          <div class="ap-hero-actions">
-            <!-- <a href="/paginas/artigos/index.html" class="ap-btn ap-btn-primary">Explorar artigos</a> -->
-            <a href="https://pay.pcpropr.com.br/" class="ap-btn ap-btn-ghost" style="color:rgb(0, 0, 0)"rel="noopener noreferrer">Conhecer PcproPay ↗</a>
-          </div>
-        </div>
-
-        <!-- Stats panel with thermometer -->
-        <div class="ap-hero-panel">
-          <div class="ap-panel-header">
-            <span class="ap-panel-label">Novos usuários</span>
-            <span class="ap-panel-total">127</span>
-          </div>
-
-          <div class="ap-thermo-wrap">
-            <div class="ap-thermo">
-              <div class="ap-thermo-fill" id="thermo-fill" style="height:72%">
-                <span class="ap-thermo-val">72%</span>
-              </div>
-            </div>
-            <div class="ap-thermo-labels">
-              <span>100</span>
-              <span>75</span>
-              <span>50</span>
-              <span>25</span>
-              <span>0</span>
-            </div>
-          </div>
-
-          <div class="ap-stats-rows">
-            <div class="ap-stat-row">
-              <div class="ap-stat-info">
-                <span class="ap-stat-dot" style="background:#ff7a1a"></span>
-                <span class="ap-stat-name">Pcpropr</span>
-              </div>
-              <div class="ap-stat-bar-wrap">
-                <div class="ap-stat-bar" style="width:36%"></div>
-              </div>
-              <strong class="ap-stat-num">36</strong>
-            </div>
-            <div class="ap-stat-row">
-              <div class="ap-stat-info">
-                <span class="ap-stat-dot" style="background:#0a84ff"></span>
-                <span class="ap-stat-name">PcproPay</span>
-              </div>
-              <div class="ap-stat-bar-wrap">
-                <div class="ap-stat-bar" style="width:71%;background:#0a84ff"></div>
-              </div>
-              <strong class="ap-stat-num">91</strong>
-            </div>
-          </div>
-
-          <p class="ap-panel-cta">Venha ser membro do futuro.</p>
-        </div>
-
-      </div>
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Criação de sites, landing pages e tráfego pago para conectar seu negócio a novas oportunidades. Converse com a Pcpropr."><title>Pcpropr | Criação de Sites e Tráfego Pago</title><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script></head><body>
+<header>
+ <a class="brand" href="#inicio">
+  <span class="brand-icon">
+   <svg aria-hidden="true" class="lucide lucide-code-xml" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="m18 16 4-4-4-4">
+    </path>
+    <path d="m6 8-4 4 4 4">
+    </path>
+    <path d="m14.5 4-5 16">
+    </path>
+   </svg>
+  </span>
+  Pcpropr
+  <span class="brand-dot">
+   .
+  </span>
+ </a>
+ <nav class="" id="main-nav">
+  <a href="#servicos">
+   Serviços
+  </a>
+  <a href="#como-funciona">
+   Como funciona
+  </a>
+  <a href="#sobre">
+   A Pcpropr
+  </a>
+  <a href="#duvidas">
+   Dúvidas
+  </a>
+  </a>
+ <a href="https://pay.pcpropr.com.br/" 
+ class="ap-nav-link ap-nav-cta" 
+ target="_blank" 
+ rel="noopener noreferrer">PcproPay</a>
+  
+ </nav>
+ <button class="button small" data-contact="">
+  Vamos conversar
+  <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+   <path d="M7 7h10v10">
+   </path>
+   <path d="M7 17 17 7">
+   </path>
+  </svg>
+ </button>
+ <button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir navegação" class="menu">
+  <svg aria-hidden="true" class="lucide lucide-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M4 5h16">
+   </path>
+   <path d="M4 12h16">
+   </path>
+   <path d="M4 19h16">
+   </path>
+  </svg>
+ </button>
+</header>
+<main id="inicio">
+ <section aria-label="Destaques da Pcpropr" aria-roledescription="carrossel" class="hero">
+  <div class="hero-copy">
+   <div class="eyebrow">
+    <span>
+    </span>
+    SITES + TRÁFEGO PAGO + ESTRATÉGIA
+   </div>
+   <h1>
+    Seu negócio merece
+    <br/>
+    um site que
+    <span>
+     trabalha
+     <br/>
+     por você.
+    </span>
+   </h1>
+   <p>
+    Sites com identidade, páginas focadas em conversão e tráfego pago para conectar sua empresa a novas oportunidades.
+   </p>
+   <div class="hero-actions">
+    <button class="button" data-contact="">
+     Quero impulsionar meu negócio
+     <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="19" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 7h10v10">
+      </path>
+      <path d="M7 17 17 7">
+      </path>
+     </svg>
+    </button>
+    <a class="video-link" href="#sobre">
+     <span>
+      <svg aria-hidden="true" class="lucide lucide-play" fill="currentColor" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13" xmlns="http://www.w3.org/2000/svg">
+       <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+       </path>
+      </svg>
+     </span>
+     Conheça a Pcpropr
+    </a>
+   </div>
+   <div class="hero-note">
+    <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+     <path d="M20 6 9 17l-5-5">
+     </path>
+    </svg>
+    Uma conversa para entender o seu momento.
+   </div>
+   <div class="slide-controls">
+    <span>
+     01 / PRESENÇA DIGITAL
+    </span>
+    <div class="dots">
+     <button aria-current="true" aria-label="Mostrar imagem 1" class="active" data-slide="0">
+     </button>
+     <button aria-current="false" aria-label="Mostrar imagem 2" class="" data-slide="1">
+     </button>
+     <button aria-current="false" aria-label="Mostrar imagem 3" class="" data-slide="2">
+     </button>
+    </div>
+    <button aria-label="Pausar carrossel" data-action="pause">
+     <svg aria-hidden="true" class="lucide lucide-pause" fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13" xmlns="http://www.w3.org/2000/svg">
+      <rect height="18" rx="1" width="5" x="14" y="3">
+      </rect>
+      <rect height="18" rx="1" width="5" x="5" y="3">
+      </rect>
+     </svg>
+    </button>
+    <button aria-label="Imagem anterior" data-action="prev">
+     <svg aria-hidden="true" class="lucide lucide-chevron-left" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+      <path d="m15 18-6-6 6-6">
+      </path>
+     </svg>
+    </button>
+    <button aria-label="Próxima imagem" data-action="next">
+     <svg aria-hidden="true" class="lucide lucide-chevron-right" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+      <path d="m9 18 6-6-6-6">
+      </path>
+     </svg>
+    </button>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="photo-frame">
+    <img alt="Mesa de trabalho com computador e projeto de site" class="visible" src="images/sites.jpg"/>
+    <img alt="Computador com gráficos para análise de campanhas" class="" src="images/ads.jpg"/>
+    <img alt="Equipe reunida para planejar um projeto" class="" src="images/strategy.jpg"/>
+    <div class="image-gradient">
+    </div>
+    <span class="photo-tag">
+     <span>
+     </span>
+     IDEIAS QUE GANHAM FORMA
+    </span>
+    <div class="photo-bottom">
+     <span>
+      Uma boa primeira impressão começa aqui.
+     </span>
+     <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="31" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="31" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 7h10v10">
+      </path>
+      <path d="M7 17 17 7">
+      </path>
+     </svg>
+    </div>
+   </div>
+   <div class="orbit-label">
+    <svg aria-hidden="true" class="lucide lucide-mouse-pointer2 lucide-mouse-pointer-2" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+     <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z">
+     </path>
+    </svg>
+    <div>
+     Design com propósito.
+     <small>
+      Estratégia em cada clique.
+     </small>
+    </div>
+    <span class="orbit-check">
+     <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 6 9 17l-5-5">
+      </path>
+     </svg>
+    </span>
+   </div>
+   <div class="side-label">
+    DO CLIQUE À CONEXÃO
+   </div>
+  </div>
+ </section>
+ <div class="ticker">
+  <span>
+   CRIAÇÃO DE SITES
+  </span>
+  <b>
+   ✳
+  </b>
+  <span>
+   LANDING PAGES
+  </span>
+  <b>
+   ✳
+  </b>
+  <span>
+   TRÁFEGO PAGO
+  </span>
+  <b>
+   ✳
+  </b>
+  <span>
+   ESTRATÉGIA DIGITAL
+  </span>
+  <b>
+   ✳
+  </b>
+  <span>
+   MAIS CONEXÕES
+  </span>
+ </div>
+ <section class="section services" id="servicos">
+  <div class="section-heading">
+   <div>
+    <span class="eyebrow muted">
+     O QUE FAZEMOS
+    </span>
+    <h2>
+     Seu próximo nível digital.
+     <br/>
+     <span>
+      Vamos construir juntos.
+     </span>
+    </h2>
+   </div>
+   <p>
+    Uma presença que representa sua marca.
+    <br/>
+    Uma estratégia que aproxima seu público.
+   </p>
+  </div>
+  <div class="service-grid">
+   <article>
+    <div class="card-top">
+     <svg aria-hidden="true" class="lucide lucide-code-xml" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="m18 16 4-4-4-4">
+      </path>
+      <path d="m6 8-4 4 4 4">
+      </path>
+      <path d="m14.5 4-5 16">
+      </path>
+     </svg>
+     <span>
+      01
+     </span>
+    </div>
+    <h3>
+     Sites &amp; landing pages
+    </h3>
+    <p>
+     Apresente seu negócio com clareza e facilite o caminho de quem está pronto para falar com você.
+    </p>
+    <ul>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Layout adaptado para celular
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Conteúdo focado no seu serviço
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Integração com WhatsApp
+     </li>
+    </ul>
+    <button data-contact="Site ou landing page">
+     Quero um site para meu negócio
+     <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 7h10v10">
+      </path>
+      <path d="M7 17 17 7">
+      </path>
+     </svg>
+    </button>
+   </article>
+   <article class="featured">
+    <div class="card-top">
+     <svg aria-hidden="true" class="lucide lucide-target" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10">
+      </circle>
+      <circle cx="12" cy="12" r="6">
+      </circle>
+      <circle cx="12" cy="12" r="2">
+      </circle>
+     </svg>
+     <span>
+      02
+     </span>
+    </div>
+    <h3>
+     Gestão de tráfego pago
+    </h3>
+    <p>
+     Leve sua mensagem ao público certo com campanhas organizadas a partir dos seus objetivos.
+    </p>
+    <ul>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Planejamento de campanhas
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Definição de público e criativos
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Acompanhamento e ajustes
+     </li>
+    </ul>
+    <button data-contact="Tráfego pago">
+     Quero divulgar minha empresa
+     <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 7h10v10">
+      </path>
+      <path d="M7 17 17 7">
+      </path>
+     </svg>
+    </button>
+   </article>
+   <article>
+    <div class="card-top">
+     <svg aria-hidden="true" class="lucide lucide-chart-no-axes-combined" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 16v5">
+      </path>
+      <path d="M16 14.639V21">
+      </path>
+      <path d="M20 10.656V21">
+      </path>
+      <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15">
+      </path>
+      <path d="M4 18.463V21">
+      </path>
+      <path d="M8 14.656V21">
+      </path>
+     </svg>
+     <span>
+      03
+     </span>
+    </div>
+    <h3>
+     Site + tráfego pago
+    </h3>
+    <p>
+     Conecte os anúncios a uma página pensada para transformar o interesse em uma conversa.
+    </p>
+    <ul>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Mensagem alinhada ao anúncio
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Jornada até o contato
+     </li>
+     <li>
+      <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 6 9 17l-5-5">
+       </path>
+      </svg>
+      Estratégia integrada
+     </li>
+    </ul>
+    <button data-contact="Site + tráfego pago">
+     Quero uma solução completa
+     <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 7h10v10">
+      </path>
+      <path d="M7 17 17 7">
+      </path>
+     </svg>
+    </button>
+   </article>
+  </div>
+ </section>
+ <section class="strategy section">
+  <div class="strategy-copy">
+   <span class="eyebrow muted">
+    CADA CLIQUE TEM UM CAMINHO
+   </span>
+   <h2>
+    Atraia. Apresente.
+    <br/>
+    <span>
+     Comece uma conversa.
+    </span>
+   </h2>
+   <p>
+    Divulgar é só uma parte. A experiência depois do anúncio também importa. Por isso, a proposta da Pcpropr conecta a atenção do público a um próximo passo claro.
+   </p>
+   <button class="text-button" data-contact="Site + tráfego pago">
+    Planejar minha presença digital
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <div class="journey">
+   <div>
+    <span class="journey-icon">
+     <svg aria-hidden="true" class="lucide lucide-target" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10">
+      </circle>
+      <circle cx="12" cy="12" r="6">
+      </circle>
+      <circle cx="12" cy="12" r="2">
+      </circle>
+     </svg>
+    </span>
+    <section>
+     <small>
+      01 · ATRAÇÃO
+     </small>
+     <h3>
+      O anúncio desperta o interesse
+     </h3>
+     <p>
+      Uma mensagem alinhada ao seu público.
+     </p>
     </section>
+   </div>
+   <i>
+   </i>
+   <div>
+    <span class="journey-icon">
+     <svg aria-hidden="true" class="lucide lucide-code-xml" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="m18 16 4-4-4-4">
+      </path>
+      <path d="m6 8-4 4 4 4">
+      </path>
+      <path d="m14.5 4-5 16">
+      </path>
+     </svg>
+    </span>
+    <section>
+     <small>
+      02 · CONFIANÇA
+     </small>
+     <h3>
+      O site apresenta o seu valor
+     </h3>
+     <p>
+      Informação clara e uma boa experiência.
+     </p>
+    </section>
+   </div>
+   <i>
+   </i>
+   <div class="journey-final">
+    <span class="journey-icon">
+     <svg aria-hidden="true" class="lucide lucide-message-circle" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719">
+      </path>
+     </svg>
+    </span>
+    <section>
+     <small>
+      03 · CONEXÃO
+     </small>
+     <h3>
+      A conversa começa no WhatsApp
+     </h3>
+     <p>
+      Um contato com contexto para você atender.
+     </p>
+    </section>
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </div>
+  </div>
+ </section>
+ <section class="about section" id="sobre">
+  <div class="video-box">
+   <video aria-label="Vídeo promocional da Pcpropr" playsinline="" poster="images/video-poster.jpg" preload="metadata" src="pcpropr-promocional.mp4">
+   </video>
+   <button aria-label="Assistir ao vídeo promocional" class="play">
+    <svg aria-hidden="true" class="lucide lucide-play" fill="currentColor" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+     </path>
+    </svg>
+   </button>
+   <div class="video-caption">
+    <span>
+     CONHEÇA A PCPROPR
+    </span>
+    <span>
+     00:18
+    </span>
+   </div>
+  </div>
+  <div>
+   <span class="eyebrow muted">
+    CRIATIVIDADE ENCONTRA ESTRATÉGIA
+   </span>
+   <h2>
+    Seu negócio tem valor.
+    <br/>
+    <span>
+     Vamos mostrar isso.
+    </span>
+   </h2>
+   <p>
+    A Pcpropr reúne criação de sites e tráfego pago para ajudar negócios a construir uma presença digital com propósito.
+   </p>
+   <p>
+    O ponto de partida é entender o que você oferece, quem deseja alcançar e qual ação espera de quem chega até sua marca.
+   </p>
+   <a class="text-button" href="#como-funciona">
+    Veja como tiramos sua ideia do papel
+    <svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+     <path d="M5 12h14">
+     </path>
+     <path d="m12 5 7 7-7 7">
+     </path>
+    </svg>
+   </a>
+  </div>
+ </section>
+ <section class="process section" id="como-funciona">
+  <div class="section-heading">
+   <div>
+    <span class="eyebrow muted">
+     SEM COMPLICAÇÃO
+    </span>
+    <h2>
+     Da ideia ao próximo passo.
+    </h2>
+   </div>
+   <span class="process-tag">
+    UM PROCESSO CLARO, DO INÍCIO AO FIM
+   </span>
+  </div>
+  <div class="process-grid">
+   <article>
+    <span>
+     01
+    </span>
+    <h3>
+     Entendemos seu negócio
+    </h3>
+    <p>
+     Uma conversa sobre seu serviço, seu público e o que você deseja alcançar.
+    </p>
+   </article>
+   <article>
+    <span>
+     02
+    </span>
+    <h3>
+     Desenhamos a proposta
+    </h3>
+    <p>
+     Definimos o escopo, os prazos e o investimento de acordo com o seu projeto.
+    </p>
+   </article>
+   <article>
+    <span>
+     03
+    </span>
+    <h3>
+     Colocamos em prática
+    </h3>
+    <p>
+     Com a proposta aprovada, começamos a criação e as etapas combinadas.
+    </p>
+   </article>
+   <article>
+    <span>
+     04
+    </span>
+    <h3>
+     Acompanhamos o caminho
+    </h3>
+    <p>
+     Revisamos as entregas e alinhamos os próximos passos previstos no escopo.
+    </p>
+   </article>
+  </div>
+ </section>
+ <section class="faq section" id="duvidas">
+  <div>
+   <span class="eyebrow muted">
+    ANTES DA PRIMEIRA CONVERSA
+   </span>
+   <h2>
+    Vamos esclarecer
+    <br/>
+    <span>
+     algumas dúvidas?
+    </span>
+   </h2>
+   <button class="text-button" data-contact="">
+    Tenho outra pergunta
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <div>
+   <details>
+    <summary>
+     Posso contratar só o site ou só o tráfego pago?
+     <span>
+      +
+     </span>
+    </summary>
+    <p>
+     Sim. Você pode conversar sobre um serviço específico ou uma proposta que integre site e campanhas, conforme a necessidade do seu negócio.
+    </p>
+   </details>
+   <details>
+    <summary>
+     Quanto custa e qual é o prazo?
+     <span>
+      +
+     </span>
+    </summary>
+    <p>
+     O investimento e o prazo dependem do escopo, dos materiais e das entregas. A proposta é definida após entender seu projeto.
+    </p>
+   </details>
+   <details>
+    <summary>
+     O valor dos anúncios está incluído na gestão?
+     <span>
+      +
+     </span>
+    </summary>
+    <p>
+     A verba de mídia, paga às plataformas de anúncios, é separada do serviço de gestão. Os valores e responsabilidades devem constar na proposta.
+    </p>
+   </details>
+   <details>
+    <summary>
+     Preciso ter um site para começar?
+     <span>
+      +
+     </span>
+    </summary>
+    <p>
+     Não necessariamente. Na conversa inicial, avaliamos se faz sentido criar uma página, melhorar um site existente ou trabalhar outro destino para as campanhas.
+    </p>
+   </details>
+   <details>
+    <summary>
+     Existe garantia de vendas?
+     <span>
+      +
+     </span>
+    </summary>
+    <p>
+     Não. Os resultados dependem de fatores como oferta, investimento, concorrência e atendimento. A proposta é trabalhar a estratégia e acompanhar o desempenho, sem prometer resultados fixos.
+    </p>
+   </details>
+  </div>
+ </section>
+ <section class="cta-section">
+  <div class="cta-decoration">
+   ↗
+  </div>
+  <span class="eyebrow">
+   O PRÓXIMO PASSO É UMA CONVERSA
+  </span>
+  <h2>
+   Vamos colocar seu negócio
+   <br/>
+   <span>
+    em movimento?
+   </span>
+  </h2>
+  <p>
+   Conte sua ideia. A Pcpropr ajuda a desenhar o caminho.
+  </p>
+  <button class="button dark" data-contact="">
+   <svg aria-hidden="true" class="lucide lucide-message-circle" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719">
+    </path>
+   </svg>
+   Quero conversar sobre meu projeto
+   <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 7h10v10">
+    </path>
+    <path d="M7 17 17 7">
+    </path>
+   </svg>
+  </button>
+  <small>
+   Sem compromisso. Com foco no que faz sentido para você.
+  </small>
+ </section>
+</main>
+<footer>
+ <a class="brand" href="#inicio">
+  <span class="brand-icon">
+   <svg aria-hidden="true" class="lucide lucide-code-xml" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg">
+    <path d="m18 16 4-4-4-4">
+    </path>
+    <path d="m6 8-4 4 4 4">
+    </path>
+    <path d="m14.5 4-5 16">
+    </path>
+   </svg>
+  </span>
+  Pcpropr
+  <span class="brand-dot">
+   .
+  </span>
+ </a>
+ <p>
+  Sites, tráfego e novas possibilidades.
+ </p>
+ <span>
+  © 2026 Pcpropr
+ </span>
+ <button data-contact="">
+  Fale com a gente
+  <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15" xmlns="http://www.w3.org/2000/svg">
+   <path d="M7 7h10v10">
+   </path>
+   <path d="M7 17 17 7">
+   </path>
+  </svg>
+ </button>
+</footer>
+<button aria-label="Conversar no WhatsApp" class="floating" data-contact="">
+ <svg aria-hidden="true" class="lucide lucide-message-circle" fill="none" height="25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719">
+  </path>
+ </svg>
+</button>
+<dialog aria-labelledby="contact-title">
+ <button aria-label="Fechar" class="close">
+  <svg aria-hidden="true" class="lucide lucide-x" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M18 6 6 18">
+   </path>
+   <path d="m6 6 12 12">
+   </path>
+  </svg>
+ </button>
+ <span class="eyebrow muted" id="step-label">
+  VAMOS TIRAR SUA IDEIA DO PAPEL · 1/3
+ </span>
+ <h2 id="contact-title">
+  Seu projeto
+  <br/>
+  <span>
+   começa aqui.
+  </span>
+ </h2>
+ <div id="step-1">
+  <p>
+   O que você precisa para o seu negócio?
+  </p>
+  <div class="choices">
+   <button class="selected" data-service="Site ou landing page">
+    Site ou landing page
+    <svg aria-hidden="true" class="lucide lucide-check" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+     <path d="M20 6 9 17l-5-5">
+     </path>
+    </svg>
+   </button>
+   <button class="" data-service="Tráfego pago">
+    Tráfego pago
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </button>
+   <button class="" data-service="Site + tráfego pago">
+    Site + tráfego pago
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </button>
+   <button class="" data-service="Ainda preciso de orientação">
+    Ainda preciso de orientação
+    <svg aria-hidden="true" class="lucide lucide-arrow-up-right" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 7h10v10">
+     </path>
+     <path d="M7 17 17 7">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <button class="button full" id="to-details">
+   Continuar
+   <svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 12h14">
+    </path>
+    <path d="m12 5 7 7-7 7">
+    </path>
+   </svg>
+  </button>
+ </div>
+ <form hidden="" id="step-2">
+  <label for="name">
+   Como podemos chamar você?
+  </label>
+  <input autocomplete="given-name" id="name" maxlength="60" name="name" placeholder="Seu nome" required=""/>
+  <label for="business">
+   Qual é o seu negócio?
+  </label>
+  <input id="business" maxlength="120" name="business" placeholder="Ex.: loja de roupas, consultório, serviços..." required=""/>
+  <label for="objective">
+   Qual é o seu principal objetivo?
+  </label>
+  <select id="objective" name="objective">
+   <option>
+    Receber mais contatos
+   </option>
+   <option>
+    Criar minha presença digital
+   </option>
+   <option>
+    Divulgar meus serviços
+   </option>
+   <option>
+    Melhorar meu site atual
+   </option>
+  </select>
+  <button class="button full" type="submit">
+   Preparar minha mensagem →
+  </button>
+  <button class="back" id="back-service" type="button">
+   Voltar
+  </button>
+ </form>
+ <div hidden="" id="step-3">
+  <p>
+   Confira a mensagem antes de continuar:
+  </p>
+  <blockquote id="message-preview">
+  </blockquote>
+  <button class="button full" id="send-whatsapp">
+   Continuar no WhatsApp ↗
+  </button>
+  <p class="notice" hidden="" id="contact-notice" role="status">
+  </p>
+  <button class="back" id="edit-details">
+   Editar informações
+  </button>
+ </div>
+ <small class="privacy">
+  Seus dados não são armazenados neste site. Você revisa e envia a mensagem no WhatsApp.
+ </small>
+</dialog>
 
-    <!-- ── MAIN LAYOUT: sidebar + content ────────────────────────── -->
-    <main class="ap-main-layout">
-
-      <!-- LEFT SIDEBAR -->
-      <aside class="ap-sidebar">
-        <div class="ap-sidebar-search">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <circle cx="6.5" cy="6.5" r="5" stroke="#86868b" stroke-width="1.5"/>
-            <path d="M10.5 10.5L14 14" stroke="#86868b" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <input type="search" id="sidebar-search" placeholder="Pesquisar artigos…" autocomplete="off" aria-label="Filtrar artigos na lista" />
-        </div>
-
-        <div class="ap-sidebar-filter" aria-label="Filtro de categorias">
-          <label class="ap-sidebar-section-label" for="category-filter">Filtro</label>
-          <div class="ap-filter-select-wrap">
-            <select id="category-filter" class="ap-category-select" data-wp-categories aria-label="Filtrar artigos por categoria">
-              <option value="">Todos</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="ap-sidebar-section-label">Publicações recentes</div>
-        <nav class="ap-sidebar-list" id="sidebar-posts" aria-label="Lista de artigos" data-wp-sidebar-posts data-limit="20">
-          <a class="sidebar-post-item" href="/paginas/artigos/como-sair-do-vermelho-organizando-contas-e-ganhos/">
-            <span class="sidebar-post-number">01</span>
-            <span><strong>Como sair do vermelho organizando contas e ganhos no mesmo lugar</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-organizar-contas-mensais-sem-esquecer-vencimentos/">
-            <span class="sidebar-post-number">02</span>
-            <span><strong>Como organizar suas contas mensais sem esquecer vencimentos</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-controlar-cartao-de-credito-sem-susto-com-a-fatura/">
-            <span class="sidebar-post-number">03</span>
-            <span><strong>Como controlar cartão de crédito sem levar susto com a fatura</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-prever-seu-mes-antes-que-ele-vire-um-problema/">
-            <span class="sidebar-post-number">04</span>
-            <span><strong>Como prever seu mês antes que ele vire um problema</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/para-onde-foi-meu-dinheiro-no-fim-do-mes/">
-            <span class="sidebar-post-number">05</span>
-            <span><strong>Por que você nunca sabe para onde foi seu dinheiro no fim do mês</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-controlar-salario-descontos-e-valor-liquido/">
-            <span class="sidebar-post-number">06</span>
-            <span><strong>O jeito mais simples de controlar salário, descontos e valor líquido</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/erro-que-faz-seu-orcamento-dar-errado-na-pratica/">
-            <span class="sidebar-post-number">07</span>
-            <span><strong>O erro que faz seu orçamento parecer certo no papel e dar errado na prática</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-decidir-com-numeros-na-vida-financeira/">
-            <span class="sidebar-post-number">08</span>
-            <span><strong>Como parar de improvisar e começar a decidir com números</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-ter-mais-clareza-financeira-mesmo-ganhando-pouco/">
-            <span class="sidebar-post-number">09</span>
-            <span><strong>Como ter mais clareza financeira mesmo ganhando pouco</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-          <a class="sidebar-post-item" href="/paginas/artigos/como-usar-um-sistema-financeiro-pessoal-para-mudar-sua-rotina/">
-            <span class="sidebar-post-number">10</span>
-            <span><strong>Como usar um sistema financeiro pessoal para mudar sua rotina</strong><small>Publicado no Pcpropr</small></span>
-          </a>
-              </nav>
-      </aside>
-
-      <!-- RIGHT CONTENT AREA -->
-      <div class="ap-content-area">
-
-        <!-- Article grid (populated by site.js setupArchiveWordPressPosts) -->
-        <div class="ap-article-grid" data-wp-archive data-page-size="5">
-          <a class="article-card wp-post-card no-image" href="/paginas/artigos/como-sair-do-vermelho-organizando-contas-e-ganhos/">
-            <span class="index-badge">01</span>
-            <div class="card-meta"><span class="tag">8 min</span><span class="tag">Pcpropr</span></div>
-            <h3>Como sair do vermelho organizando contas e ganhos no mesmo lugar</h3>
-            <p>Aprenda a enxergar o mês inteiro, organizar entradas e compromissos e usar o PcproPay para reduzir o aperto financeiro com mais clareza.</p>
-            <span class="wp-card-footer">Publicado no Pcpropr <strong>Ler artigo</strong></span>
-          </a>
-          <a class="article-card wp-post-card no-image" href="/paginas/artigos/como-organizar-contas-mensais-sem-esquecer-vencimentos/">
-            <span class="index-badge">02</span>
-            <div class="card-meta"><span class="tag">7 min</span><span class="tag">Pcpropr</span></div>
-            <h3>Como organizar suas contas mensais sem esquecer vencimentos</h3>
-            <p>Descubra uma rotina simples para acompanhar boletos, despesas fixas e contas parceladas sem depender da memória.</p>
-            <span class="wp-card-footer">Publicado no Pcpropr <strong>Ler artigo</strong></span>
-          </a>
-          <a class="article-card wp-post-card no-image" href="/paginas/artigos/como-controlar-cartao-de-credito-sem-susto-com-a-fatura/">
-            <span class="index-badge">03</span>
-            <div class="card-meta"><span class="tag">9 min</span><span class="tag">Pcpropr</span></div>
-            <h3>Como controlar cartão de crédito sem levar susto com a fatura</h3>
-            <p>Entenda como acompanhar compras, parcelamentos e fechamento da fatura de forma mais consciente usando o PcproPay.</p>
-            <span class="wp-card-footer">Publicado no Pcpropr <strong>Ler artigo</strong></span>
-          </a>
-          <a class="article-card wp-post-card no-image" href="/paginas/artigos/como-prever-seu-mes-antes-que-ele-vire-um-problema/">
-            <span class="index-badge">04</span>
-            <div class="card-meta"><span class="tag">7 min</span><span class="tag">Pcpropr</span></div>
-            <h3>Como prever seu mês antes que ele vire um problema</h3>
-            <p>Veja como antecipar aperto financeiro e ajustar o mês com base em previsões, ganhos e compromissos já conhecidos.</p>
-            <span class="wp-card-footer">Publicado no Pcpropr <strong>Ler artigo</strong></span>
-          </a>
-          <a class="article-card wp-post-card no-image" href="/paginas/artigos/para-onde-foi-meu-dinheiro-no-fim-do-mes/">
-            <span class="index-badge">05</span>
-            <div class="card-meta"><span class="tag">6 min</span><span class="tag">Pcpropr</span></div>
-            <h3>Por que você nunca sabe para onde foi seu dinheiro no fim do mês</h3>
-            <p>Entenda por que seu dinheiro some no fim do mês e como o PcproPay ajuda a mostrar o quadro completo da sua rotina financeira.</p>
-            <span class="wp-card-footer">Publicado no Pcpropr <strong>Ler artigo</strong></span>
-          </a>
-        </div>
-
-        <nav class="ap-pagination" data-wp-pagination aria-label="Paginação de artigos" hidden></nav>
-
-        <!-- Principles section -->
-        <!-- <section class="ap-principles">
-          <h2 class="ap-principles-title">O que guia o Pcpropr</h2>
-          <div class="ap-principles-grid">
-            <div class="ap-principle-card">
-              <div class="ap-principle-icon">◎</div>
-              <h3>Menos hype</h3>
-              <p>Não vendemos novidade como revolução. Mostramos onde funciona, onde falha e para quem não serve.</p>
-            </div>
-            <div class="ap-principle-card">
-              <div class="ap-principle-icon">▣</div>
-              <h3>Mais prova</h3>
-              <p>Prints, métricas, custos, tempo de configuração e os obstáculos reais encontrados nos testes.</p>
-            </div>
-            <div class="ap-principle-card">
-              <div class="ap-principle-icon">⊕</div>
-              <h3>Decisão por perfil</h3>
-              <p>Um produto pode ser ótimo para estudante e ruim para empresa. Separamos os públicos com clareza.</p>
-            </div>
-            <div class="ap-principle-card">
-              <div class="ap-principle-icon">↺</div>
-              <h3>Atualização viva</h3>
-              <p>Guias importantes são revisados com data de atualização e aviso explícito do que mudou.</p>
-            </div>
-          </div>
-        </section> -->
-
-      </div>
-    </main>
-
-    <footer class="ap-footer">
-      <div class="ap-footer-inner">
-        <div class="ap-footer-brand">
-          <img src="/assets/images/favicon.png" alt="Pcpropr" class="ap-footer-icon" />
-          <span>Pcpropr</span>
-        </div>
-        <nav class="ap-footer-links" aria-label="Links do rodapé">
-          <a href="/index.html">Início</a>
-          <a href="/paginas/artigos/index.html">Artigos</a>
-          <!-- <a href="/paginas/documentacao/index.html">Docs</a> -->
-          <a href="/paginas/contato/index.html">Contato</a>
-          <a href="/paginas/politica-de-privacidade/index.html">Privacidade</a>
-          <a href="/paginas/termos-de-uso/index.html">Termos</a>
-        </nav>
-        <p class="ap-footer-copy">© 2026 Pcpropr. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-
-    <!-- Cookie banner (new design) -->
-    <aside class="ap-cookie" id="ap-cookie-banner" hidden>
-      <p><strong>Cookies</strong> — Este site pode usar cookies para métricas e preferências.</p>
-      <button type="button" id="ap-accept-cookies" class="ap-btn ap-btn-primary ap-btn-sm">Entendi</button>
-    </aside>
-
-    <script src="/assets/js/wordpress-config.js" defer></script>
-    <script src="/assets/js/site.js" defer></script>
-    <script src="/assets/js/home-sidebar-search.js" defer></script>
-    <script>
-      window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
-    </script>
-    <script src="/_vercel/insights/script.js" defer></script>
-  </body>
-</html>
+</body></html>

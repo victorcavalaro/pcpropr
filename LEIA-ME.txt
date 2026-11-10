@@ -1,0 +1,30 @@
+PCPROPR — HTML, CSS E JAVASCRIPT
+
+COMO ABRIR
+Extraia o ZIP e abra index.html no navegador. Não é necessário instalar React, Node ou ferramentas de compilação.
+
+COMO PUBLICAR
+Envie index.html, styles.css, script.js, pcpropr-promocional.mp4 e a pasta images para a mesma pasta na sua hospedagem. Mantenha os nomes e a estrutura.
+
+ATIVAR O WHATSAPP
+No início de script.js, preencha:
+const WHATSAPP = '';
+Entre as aspas, coloque seu número com código do país (55 para Brasil), DDD e telefone, somente números.
+Enquanto estiver vazio, o site informa que o contato não está configurado e não envia mensagens.
+
+O funil tem três etapas: escolha do serviço, informações do projeto e revisão da mensagem. O visitante abre o WhatsApp e confirma o envio. Os dados não são armazenados no site; não há banco de dados, CRM ou envio automático.
+
+ARQUIVOS
+index.html — conteúdo e estrutura da página.
+styles.css — aparência e adaptação para celular.
+script.js — carrossel, menu, vídeo e funil de WhatsApp.
+images/ — três fotos do carrossel e capa do vídeo.
+pcpropr-promocional.mp4 — vídeo promocional de 18 segundos, sem áudio.
+LICENCA-ICONES.txt — licença dos ícones Lucide.
+
+PERSONALIZAÇÃO
+Altere os textos das seções em index.html. Os três textos do carrossel também estão no array slides em script.js: mantenha o primeiro slide alinhado ao HTML.
+Cores principais estão nas variáveis :root de styles.css.
+Não foram incluídos depoimentos, clientes ou resultados fictícios.
+As fotografias são ilustrativas, provenientes do Unsplash, e não representam uma equipe real da Pcpropr.
+As fontes vêm do Google Fonts quando há internet; sem conexão, fontes alternativas são usadas. As imagens e o vídeo estão incluídos localmente.
